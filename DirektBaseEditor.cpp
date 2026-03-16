@@ -39,7 +39,9 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
     resizer = std::make_unique<juce::ResizableCornerComponent> (this, &constrainer);
     addAndMakeVisible (resizer.get());
 
-    setSize (defaultWidth, defaultHeight);
+    // Don't call setSize here — derived constructors must call setSize() as their
+    // last line so that virtual layoutCustomSections() dispatches correctly and all
+    // components added in the derived constructor are already created.
 }
 
 DirektBaseEditor::~DirektBaseEditor()
