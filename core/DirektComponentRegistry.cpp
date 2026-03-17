@@ -8,6 +8,7 @@
 #include "layout/DirektFlexContainer.h"
 #include "layout/DirektTabPanel.h"
 #include "theme/DirektColours.h"
+#include "theme/DirektLookAndFeel.h"
 
 namespace DirektDSP
 {
