@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include "DirektColours.h"
@@ -18,6 +19,11 @@ public:
 
     void paint (juce::Graphics& g) override;
     void resized() override;
+    void mouseDown (const juce::MouseEvent& e) override;
+
+    void updatePresetName();
+
+    std::function<void()> onPresetLabelClicked;
 
 private:
     juce::String pluginName;
@@ -28,8 +34,6 @@ private:
     juce::Label      presetLabel;
 
     Service::PresetManager& presetManager;
-
-    void updatePresetName();
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektHeader)
 };

@@ -31,6 +31,16 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (
                     break;
             }
 
+            if (slot.tooltip.isNotEmpty())
+            {
+                if (auto* knob = dynamic_cast<DirektKnob*> (control.get()))
+                    knob->getSlider().setTooltip (slot.tooltip);
+                else if (auto* toggle = dynamic_cast<DirektToggle*> (control.get()))
+                    toggle->getButton().setTooltip (slot.tooltip);
+                else if (auto* combo = dynamic_cast<DirektComboBox*> (control.get()))
+                    combo->getComboBox().setTooltip (slot.tooltip);
+            }
+
             built.section->addControl (control.get());
             built.controls.push_back (std::move (control));
         }

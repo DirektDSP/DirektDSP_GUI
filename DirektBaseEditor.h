@@ -7,6 +7,7 @@
 #include "DirektHeader.h"
 #include "DirektFooter.h"
 #include "DirektPopupPanel.h"
+#include "DirektPresetBrowser.h"
 #include "DirektSection.h"
 
 namespace Service { class PresetManager; }
@@ -49,10 +50,14 @@ private:
     DirektFooter footer;
     DirektPopupPanel popup;
 
+    std::unique_ptr<juce::TooltipWindow> tooltipWindow;
+
     juce::ComponentBoundsConstrainer constrainer;
     std::unique_ptr<juce::ResizableCornerComponent> resizer;
 
     float aspectRatio;
+    Service::PresetManager& presetManager;
+    std::unique_ptr<DirektPresetBrowser> presetBrowser;
 
     static constexpr int headerHeight = 36;
     static constexpr int footerHeight = 22;

@@ -16,6 +16,7 @@ struct ParamSlot
     juce::String paramID;
     juce::String label;
     ControlType  type = ControlType::Knob;
+    juce::String tooltip;  // optional — empty = no tooltip
 };
 
 struct SectionDescriptor

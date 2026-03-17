@@ -14,10 +14,13 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
     : AudioProcessorEditor (processor),
       apvts (apvtsRef),
       header (pluginName, accentColour, presetManager, apvtsRef),
-      aspectRatio (ratio)
+      aspectRatio (ratio),
+      presetManager (presetManager)
 {
     lookAndFeel.setAccentColour (accentColour);
     setLookAndFeel (&lookAndFeel);
+
+    tooltipWindow = std::make_unique<juce::TooltipWindow> (this, 500);
 
     addAndMakeVisible (header);
     addAndMakeVisible (footer);
@@ -29,6 +32,13 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
 
     // Popup (always on top, initially hidden)
     addChildComponent (popup);
+
+    // Preset browser (owned, shown via popup)
+    presetBrowser = std::make_unique<DirektPresetBrowser> (presetManager, accentColour);
+    presetBrowser->onPresetLoaded = [this] { header.updatePresetName(); };
+    header.onPresetLabelClicked = [this] {
+        showPopup ("Presets", presetBrowser.get(), 500, 400);
+    };
 
     // Resizable with fixed aspect ratio
     int defaultHeight = static_cast<int>(static_cast<float>(defaultWidth) / ratio);

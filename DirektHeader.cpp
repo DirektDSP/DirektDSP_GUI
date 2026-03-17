@@ -23,6 +23,8 @@ DirektHeader::DirektHeader (const juce::String& name,
     presetLabel.setJustificationType (juce::Justification::centred);
     presetLabel.setColour (juce::Label::textColourId, Colours::textBright);
     presetLabel.setFont (juce::Font (juce::FontOptions (13.0f)));
+    presetLabel.setInterceptsMouseClicks (true, false);
+    presetLabel.addMouseListener (this, false);
     addAndMakeVisible (presetLabel);
 
     updatePresetName();
@@ -60,6 +62,12 @@ void DirektHeader::resized()
     prevBtn.setBounds (presetArea.removeFromLeft (28));
     nextBtn.setBounds (presetArea.removeFromRight (28));
     presetLabel.setBounds (presetArea);
+}
+
+void DirektHeader::mouseDown (const juce::MouseEvent& e)
+{
+    if (e.eventComponent == &presetLabel && onPresetLabelClicked)
+        onPresetLabelClicked();
 }
 
 void DirektHeader::updatePresetName()
