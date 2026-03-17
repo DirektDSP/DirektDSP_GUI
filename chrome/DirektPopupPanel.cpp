@@ -1,4 +1,4 @@
-#include "DirektPopupPanel.h"
+#include "chrome/DirektPopupPanel.h"
 
 namespace DirektDSP
 {

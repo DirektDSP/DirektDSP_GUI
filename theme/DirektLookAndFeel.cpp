@@ -1,4 +1,4 @@
-#include "DirektLookAndFeel.h"
+#include "theme/DirektLookAndFeel.h"
 
 namespace DirektDSP
 {

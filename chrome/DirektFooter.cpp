@@ -1,4 +1,4 @@
-#include "DirektFooter.h"
+#include "chrome/DirektFooter.h"
 
 namespace DirektDSP
 {

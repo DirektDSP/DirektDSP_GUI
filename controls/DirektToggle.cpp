@@ -1,4 +1,4 @@
-#include "DirektToggle.h"
+#include "controls/DirektToggle.h"
 
 namespace DirektDSP
 {

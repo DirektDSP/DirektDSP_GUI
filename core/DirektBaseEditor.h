@@ -1,14 +1,18 @@
 #pragma once
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "DirektColours.h"
-#include "DirektLookAndFeel.h"
-#include "DirektAutoLayout.h"
-#include "DirektHeader.h"
-#include "DirektFooter.h"
-#include "DirektPopupPanel.h"
-#include "DirektPresetBrowser.h"
-#include "DirektSection.h"
+#include "theme/DirektColours.h"
+#include "theme/DirektLookAndFeel.h"
+#include "core/DirektAutoLayout.h"
+#include "core/DirektBuildContext.h"
+#include "core/DirektComponentRegistry.h"
+#include "config/DirektConfig.h"
+#include "config/DirektDescriptors.h"
+#include "chrome/DirektHeader.h"
+#include "chrome/DirektFooter.h"
+#include "chrome/DirektPopupPanel.h"
+#include "chrome/DirektPresetBrowser.h"
+#include "layout/DirektSection.h"
 
 namespace Service { class PresetManager; }
 
@@ -18,6 +22,14 @@ namespace DirektDSP
 class DirektBaseEditor : public juce::AudioProcessorEditor
 {
 public:
+    // NEW — config-driven, no subclassing needed
+    DirektBaseEditor (juce::AudioProcessor& processor,
+                      juce::AudioProcessorValueTreeState& apvts,
+                      Service::PresetManager& presetManager,
+                      const PluginConfig& config,
+                      NodeDescriptor rootDescriptor);
+
+    // LEGACY — preserved, internally bridges to new system
     DirektBaseEditor (juce::AudioProcessor& processor,
                       juce::AudioProcessorValueTreeState& apvts,
                       Service::PresetManager& presetManager,
@@ -32,6 +44,10 @@ public:
     void paint (juce::Graphics& g) override;
     void resized() override;
 
+    // New APIs for config-driven mode
+    juce::Component* findComponentByID (const juce::String& id) const;
+    void bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source);
+
 protected:
     // Override points for plugins
     virtual void layoutCustomSections (juce::Rectangle<int> mainArea);
@@ -42,9 +58,13 @@ protected:
     void hidePopup();
 
     juce::AudioProcessorValueTreeState& apvts;
-    std::vector<BuiltSection> builtSections;
+    std::vector<BuiltSection> builtSections;  // legacy mode
 
 private:
+    void initCommon (const juce::String& pluginName, juce::Colour accentColour,
+                     float ratio, int defaultWidth, int minWidth, int maxWidth,
+                     bool showHeader, bool showFooter, bool resizable, bool showTooltips);
+
     DirektLookAndFeel lookAndFeel;
     DirektHeader header;
     DirektFooter footer;
@@ -58,6 +78,14 @@ private:
     float aspectRatio;
     Service::PresetManager& presetManager;
     std::unique_ptr<DirektPresetBrowser> presetBrowser;
+
+    // Config-driven mode members
+    bool configDriven = false;
+    BuiltNode rootBuiltNode;
+    std::vector<std::unique_ptr<juce::Component>> ownedComponents;
+    BuildContext buildContext;
+    bool showHeaderFlag = true;
+    bool showFooterFlag = true;
 
     static constexpr int headerHeight = 36;
     static constexpr int footerHeight = 22;

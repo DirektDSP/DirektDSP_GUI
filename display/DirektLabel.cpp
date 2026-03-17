@@ -1,4 +1,4 @@
-#include "DirektLabel.h"
+#include "display/DirektLabel.h"
 
 namespace DirektDSP
 {

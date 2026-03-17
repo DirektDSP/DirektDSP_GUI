@@ -1,10 +1,11 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_audio_processors/juce_audio_processors.h>
-#include "DirektSection.h"
-#include "DirektKnob.h"
-#include "DirektToggle.h"
-#include "DirektComboBox.h"
+#include "layout/DirektSection.h"
+#include "controls/DirektKnob.h"
+#include "controls/DirektToggle.h"
+#include "controls/DirektComboBox.h"
+#include "config/DirektDescriptors.h"
 
 namespace DirektDSP
 {
@@ -35,8 +36,13 @@ struct BuiltSection
 class DirektAutoLayout
 {
 public:
+    // Legacy: build JUCE components from SectionDescriptors
     static std::vector<BuiltSection> buildSections (
         juce::AudioProcessorValueTreeState& apvts,
+        const std::vector<SectionDescriptor>& descriptors);
+
+    // Bridge: convert legacy SectionDescriptors to a NodeDescriptor tree
+    static NodeDescriptor convertLegacySections (
         const std::vector<SectionDescriptor>& descriptors);
 };
 

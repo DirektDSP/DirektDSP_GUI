@@ -1,5 +1,5 @@
-#include "DirektKnob.h"
-#include "DirektColours.h"
+#include "controls/DirektKnob.h"
+#include "theme/DirektColours.h"
 
 namespace DirektDSP
 {

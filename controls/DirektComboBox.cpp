@@ -1,5 +1,5 @@
-#include "DirektComboBox.h"
-#include "DirektColours.h"
+#include "controls/DirektComboBox.h"
+#include "theme/DirektColours.h"
 
 namespace DirektDSP
 {

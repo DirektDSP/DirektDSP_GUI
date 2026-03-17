@@ -1,4 +1,5 @@
-#include "DirektAutoLayout.h"
+#include "core/DirektAutoLayout.h"
+#include "config/DirektDescriptorHelpers.h"
 
 namespace DirektDSP
 {
@@ -49,6 +50,37 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (
     }
 
     return result;
+}
+
+NodeDescriptor DirektAutoLayout::convertLegacySections (
+    const std::vector<SectionDescriptor>& descriptors)
+{
+    std::vector<Node> sectionNodes;
+
+    for (auto& desc : descriptors)
+    {
+        std::vector<Node> childNodes;
+
+        for (auto& slot : desc.params)
+        {
+            switch (slot.type)
+            {
+                case ControlType::Knob:
+                    childNodes.push_back (node (KnobDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    break;
+                case ControlType::Toggle:
+                    childNodes.push_back (node (ToggleDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    break;
+                case ControlType::ComboBox:
+                    childNodes.push_back (node (ComboBoxDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    break;
+            }
+        }
+
+        sectionNodes.push_back (node (SectionDesc { {}, desc.title, desc.columns, std::move (childNodes) }));
+    }
+
+    return VBoxDesc { {}, std::move (sectionNodes) };
 }
 
 } // namespace DirektDSP

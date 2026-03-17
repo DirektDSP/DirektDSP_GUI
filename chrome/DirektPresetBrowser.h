@@ -1,7 +1,7 @@
 #pragma once
 #include <functional>
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "DirektColours.h"
+#include "theme/DirektColours.h"
 
 namespace Service { class PresetManager; struct PresetMetadata; }
 
