@@ -14,6 +14,7 @@
 #include "core/DirektAutoLayout.h"
 #include "core/DirektBuildContext.h"
 #include "core/DirektComponentRegistry.h"
+#include "core/DirektParameterHistory.h"
 #include "layout/DirektSection.h"
 #include "theme/DirektColours.h"
 #include "theme/DirektLookAndFeel.h"
@@ -43,6 +44,15 @@ public:
 
     void paint (juce::Graphics& g) override;
     void resized() override;
+    /**
+     * @brief Handles editor-local undo/redo shortcuts for parameter edits.
+     *
+     * Supported bindings:
+     * - Cmd/Ctrl + Z: undo
+     * - Cmd/Ctrl + Shift + Z: redo
+     * - Cmd/Ctrl + Y: redo
+     */
+    bool keyPressed (const juce::KeyPress& key) override;
 
     // New APIs for config-driven mode
     juce::Component* findComponentByID (const juce::String& id) const;
@@ -103,6 +113,7 @@ private:
 
     // Config-driven mode members
     bool configDriven = false;
+    DirektParameterHistory parameterHistory;
     BuiltNode rootBuiltNode;
     std::vector<std::unique_ptr<juce::Component>> ownedComponents;
     BuildContext buildContext;

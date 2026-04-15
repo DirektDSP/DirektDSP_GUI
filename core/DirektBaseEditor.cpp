@@ -19,6 +19,7 @@ void DirektBaseEditor::initCommon (const juce::String& /*pluginName*/, juce::Col
 
     lookAndFeel.setAccentColour (accentColour);
     setLookAndFeel (&lookAndFeel);
+    setWantsKeyboardFocus (true);
 
     if (showTooltips)
     {
@@ -89,7 +90,7 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::Audio
                                     const NodeDescriptor& rootDescriptor)
     : AudioProcessorEditor (processor), apvts (apvts),
       header (config.pluginName, config.accentColour, presetManager, apvts), presetManager (presetManager),
-      configDriven (true), buildContext{apvts, lookAndFeel, {}}
+      configDriven (true), buildContext{apvts, lookAndFeel, &parameterHistory, {}}
 {
     initCommon (config.pluginName, config.accentColour, config.aspectRatio, config.defaultWidth, config.minWidth,
                 config.maxWidth, config.showHeader, config.showFooter, config.resizable, config.showTooltips);
@@ -121,12 +122,12 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::Audio
                                     juce::Colour accentColour, float aspectRatio, int defaultWidth,
                                     const std::vector<SectionDescriptor>& sectionDescriptors)
     : AudioProcessorEditor (processor), apvts (apvts), header (pluginName, accentColour, presetManager, apvts),
-      presetManager (presetManager), buildContext{apvts, lookAndFeel, {}}
+      presetManager (presetManager), buildContext{apvts, lookAndFeel, &parameterHistory, {}}
 {
     initCommon (pluginName, accentColour, aspectRatio, defaultWidth, 400, 1600, true, true, true, true);
 
     // Build sections from descriptors (legacy path)
-    builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors);
+    builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors, &parameterHistory);
     for (auto& bs : builtSections)
     {
         addAndMakeVisible (bs.section.get());
@@ -196,6 +197,29 @@ void DirektBaseEditor::resized()
         // Legacy: let subclass override layout
         layoutCustomSections (bounds);
     }
+}
+
+bool DirektBaseEditor::keyPressed (const juce::KeyPress& key)
+{
+    auto const isCommandDown = key.getModifiers().isCommandDown();
+    if (!isCommandDown)
+    {
+        return AudioProcessorEditor::keyPressed (key);
+    }
+
+    auto const keyCode = key.getKeyCode();
+    if (keyCode == 'z' || keyCode == 'Z')
+    {
+        auto const wantsRedo = key.getModifiers().isShiftDown();
+        return wantsRedo ? parameterHistory.redo (apvts) : parameterHistory.undo (apvts);
+    }
+
+    if (keyCode == 'y' || keyCode == 'Y')
+    {
+        return parameterHistory.redo (apvts);
+    }
+
+    return AudioProcessorEditor::keyPressed (key);
 }
 
 void DirektBaseEditor::layoutCustomSections (juce::Rectangle<int> mainArea)
@@ -277,6 +301,12 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
     // For meters that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))
     {
+        
+        if (parent == nullptr)
+        {
+            return;
+        }
+
         if (auto* meter = dynamic_cast<DirektMeter*> (comp))
         {
             meter->setSource (source);

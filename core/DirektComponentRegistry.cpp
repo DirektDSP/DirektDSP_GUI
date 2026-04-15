@@ -40,7 +40,7 @@ void applyNodeProps (juce::Component& comp, const NodeProps& props)
 
 BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
@@ -51,7 +51,7 @@ BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 
 BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 {
-    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label);
+    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         toggle->getButton().setTooltip (desc.tooltip);
@@ -62,7 +62,7 @@ BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 
 BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
 {
-    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label);
+    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         combo->getComboBox().setTooltip (desc.tooltip);
@@ -73,7 +73,7 @@ BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
 
 BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
