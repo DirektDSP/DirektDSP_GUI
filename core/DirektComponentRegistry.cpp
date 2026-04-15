@@ -85,7 +85,7 @@ BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
     return {std::move (knob), {}};
 }
 
-BuiltNode buildButtonNode (const ButtonDesc& desc, BuildContext& ctx)
+BuiltNode buildButtonNode (const ButtonDesc& desc, BuildContext& /*ctx*/)
 {
     auto btn = std::make_unique<juce::TextButton> (desc.label);
     if (desc.tooltip.isNotEmpty())
@@ -253,32 +253,32 @@ namespace
 // complexity penalty of a large if-constexpr chain inside a single lambda.
 struct NodeBuilder
 {
-    BuildContext& ctx;
-    const DirektComponentRegistry& reg;
+    BuildContext* ctx;
+    const DirektComponentRegistry* reg;
 
-    BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, ctx); }
-    BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, ctx); }
-    BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, ctx); }
-    BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, ctx); }
-    BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, ctx); }
-    BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, ctx); }
-    BuiltNode operator() (const MeterDesc& d) const { return buildMeterNode (d, ctx); }
-    BuiltNode operator() (const LabelDesc& d) const { return buildLabelNode (d, ctx); }
-    BuiltNode operator() (const DividerDesc& d) const { return buildDividerNode (d, ctx); }
-    BuiltNode operator() (const SectionDesc& d) const { return buildSectionNode (d, ctx, reg); }
-    BuiltNode operator() (const CustomDesc& d) const { return buildCustomNode (d, ctx, reg.getCustomFactories()); }
+    BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
+    BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
+    BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
+    BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
+    BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
+    BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
+    BuiltNode operator() (const MeterDesc& d) const { return buildMeterNode (d, *ctx); }
+    BuiltNode operator() (const LabelDesc& d) const { return buildLabelNode (d, *ctx); }
+    BuiltNode operator() (const DividerDesc& d) const { return buildDividerNode (d, *ctx); }
+    BuiltNode operator() (const SectionDesc& d) const { return buildSectionNode (d, *ctx, *reg); }
+    BuiltNode operator() (const CustomDesc& d) const { return buildCustomNode (d, *ctx, reg->getCustomFactories()); }
 
     BuiltNode operator() (const HBoxDesc& d) const
     {
-        return buildFlexNode (d.children, d.props, ctx, reg, DirektFlexContainer::Direction::Row);
+        return buildFlexNode (d.children, d.props, *ctx, *reg, DirektFlexContainer::Direction::Row);
     }
 
     BuiltNode operator() (const VBoxDesc& d) const
     {
-        return buildFlexNode (d.children, d.props, ctx, reg, DirektFlexContainer::Direction::Column);
+        return buildFlexNode (d.children, d.props, *ctx, *reg, DirektFlexContainer::Direction::Column);
     }
 
-    BuiltNode operator() (const TabPanelDesc& d) const { return buildTabPanelNode (d, ctx, reg); }
+    BuiltNode operator() (const TabPanelDesc& d) const { return buildTabPanelNode (d, *ctx, *reg); }
 
     BuiltNode operator() (const XYPadDesc& d) const
     {
@@ -298,7 +298,7 @@ struct NodeBuilder
 
 BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, BuildContext& ctx) const
 {
-    return std::visit (NodeBuilder{ctx, *this}, descriptor);
+    return std::visit (NodeBuilder{&ctx, this}, descriptor);
 }
 
 } // namespace DirektDSP
