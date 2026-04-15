@@ -77,7 +77,7 @@ jobs:
           sudo apt-get install -y \
             clang clang-tidy cmake ninja-build pkg-config \
             libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
-            libxcursor-dev libfreetype-dev libfontconfig1-dev libglu1-mesa-dev libgl1-mesa-dev
+            libxcursor-dev libfreetype-dev libfreetype6-dev libfontconfig1-dev libglu1-mesa-dev libgl1-mesa-dev
 
       - name: Cache JUCE
         id: cache-juce
@@ -94,10 +94,12 @@ jobs:
 
       - name: Configure (generate compile_commands.json)
         run: |
-          cmake -S . -B build \
+          CPLUS_INCLUDE_PATH="/usr/include/freetype2:${CPLUS_INCLUDE_PATH:-}" cmake -S . -B build \
             -G Ninja \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DJUCE_USE_FREETYPE=0 \
+            -DJUCE_USE_HARFBUZZ=0 \
             -DJUCE_DIR=/tmp/JUCE
 
       - name: Run clang-tidy

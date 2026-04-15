@@ -38,6 +38,23 @@ void DirektBaseEditor::initCommon (const juce::String& /*pluginName*/, juce::Col
     if (showFooter)
     {
         addAndMakeVisible (footer);
+        footer.onCaptureSnapshotA = [this]
+        {
+            snapshotA = captureCurrentSnapshot();
+            updateSnapshotControls();
+        };
+        footer.onCaptureSnapshotB = [this]
+        {
+            snapshotB = captureCurrentSnapshot();
+            updateSnapshotControls();
+            applyMorph (morphPosition);
+        };
+        footer.onMorphChanged = [this] (float morphValue)
+        {
+            morphPosition = juce::jlimit (0.0F, 1.0F, morphValue);
+            applyMorph (morphPosition);
+        };
+        updateSnapshotControls();
     }
     else
     {
@@ -281,38 +298,67 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
 {
     buildContext.meterSources[sourceID] = source;
 
-    // If the tree is already built, find any meters with matching sourceID and connect them
-    std::function<void (juce::Component*)> connectMeters;
-    connectMeters = [&] (juce::Component* parent)
+    // For meters that need post-build connection, search by component ID
+    if (auto* comp = findComponentByID (sourceID))
     {
+        
         if (parent == nullptr)
         {
             return;
         }
 
-        if (auto* meter = dynamic_cast<DirektMeter*> (parent))
-        {
-            // Meters don't expose their sourceID, but we can use component ID
-            // In practice, meters should be rebuilt or we store the mapping
-            meter->setSource (source);
-        }
-        for (auto* child : parent->getChildren())
-        {
-            if (child != nullptr)
-            {
-                connectMeters (child);
-            }
-        }
-    };
-
-    // For meters that need post-build connection, search by component ID
-    if (auto* comp = findComponentByID (sourceID))
-    {
         if (auto* meter = dynamic_cast<DirektMeter*> (comp))
         {
             meter->setSource (source);
         }
     }
+}
+
+DirektBaseEditor::SnapshotState DirektBaseEditor::captureCurrentSnapshot() const
+{
+    SnapshotState snapshot;
+    auto const& parameters = apvts.processor.getParameters();
+    for (auto* parameter : parameters)
+    {
+        if (auto* parameterWithID = dynamic_cast<juce::AudioProcessorParameterWithID*> (parameter))
+        {
+            snapshot.normalizedValues[parameterWithID->paramID] = parameterWithID->getValue();
+        }
+    }
+
+    return snapshot;
+}
+
+void DirektBaseEditor::applyMorph (float morphValue)
+{
+    if (!snapshotA.has_value() || !snapshotB.has_value())
+    {
+        return;
+    }
+
+    auto const clampedMorph = juce::jlimit (0.0F, 1.0F, morphValue);
+    for (auto const& [paramID, valueA] : snapshotA->normalizedValues)
+    {
+        auto const iterB = snapshotB->normalizedValues.find (paramID);
+        if (iterB == snapshotB->normalizedValues.end())
+        {
+            continue;
+        }
+
+        auto* parameter = apvts.getParameter (paramID);
+        if (parameter == nullptr)
+        {
+            continue;
+        }
+
+        auto const targetValue = juce::jmap (clampedMorph, valueA, iterB->second);
+        parameter->setValueNotifyingHost (juce::jlimit (0.0F, 1.0F, targetValue));
+    }
+}
+
+void DirektBaseEditor::updateSnapshotControls()
+{
+    footer.setSnapshotAvailability (snapshotA.has_value(), snapshotB.has_value());
 }
 
 } // namespace DirektDSP
