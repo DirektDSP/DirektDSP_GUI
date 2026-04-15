@@ -31,6 +31,15 @@ struct SectionDescriptor
     juce::String title;
     std::vector<ParamSlot> params;
     int columns = 0; // 0 = auto (one row)
+
+    /** @brief Optional bypass parameter for this module section (legacy layout path). */
+    juce::String bypassParamID;
+    /** @brief Optional solo parameter for this module section (legacy layout path). */
+    juce::String soloParamID;
+    juce::String bypassLabel{"Bypass"};
+    juce::String soloLabel{"Solo"};
+    juce::String bypassTooltip;
+    juce::String soloTooltip;
 };
 
 struct BuiltSection

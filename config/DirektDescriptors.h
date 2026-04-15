@@ -65,6 +65,39 @@ struct ComboBoxDesc
     juce::String tooltip;
 };
 
+/**
+ * @brief Shaping for macro position before mapping into each target’s normalized range.
+ */
+enum class MacroCurve
+{
+    Linear,    ///< Uniform sweep from @ref MacroTarget::normMin to @ref MacroTarget::normMax.
+    Quadratic, ///< Ease-in along the macro travel (slower change when macro is low).
+    SquareRoot ///< Ease-out (stronger response when macro is low).
+};
+
+/**
+ * @brief One APVTS parameter written by a @ref MacroKnobDesc knob.
+ */
+struct MacroTarget
+{
+    juce::String paramID;                  ///< Destination parameter ID in @c AudioProcessorValueTreeState.
+    float normMin = 0.0f;                  ///< Normalized destination value when shaped macro position is 0.
+    float normMax = 1.0f;                  ///< Normalized destination value when shaped macro position is 1.
+    MacroCurve curve = MacroCurve::Linear; ///< Curve from macro 0..1 before min/max mapping.
+};
+
+/**
+ * @brief One rotary macro control that drives multiple parameters with independent ranges/curves.
+ */
+struct MacroKnobDesc
+{
+    NodeProps props;
+    juce::String paramID; ///< Macro parameter ID (automation and preset state for the knob).
+    juce::String label;
+    juce::String tooltip;
+    std::vector<MacroTarget> targets;
+};
+
 struct SliderDesc
 {
     NodeProps props;
@@ -155,6 +188,19 @@ struct SectionDesc
     juce::String title;
     int columns = 0;
     std::vector<Node> children;
+
+    /** @brief APVTS bool parameter ID for module bypass; empty omits the control. */
+    juce::String bypassParamID;
+    /** @brief APVTS bool parameter ID for module solo; empty omits the control. */
+    juce::String soloParamID;
+    /** @brief Label on the bypass toggle (short text recommended). */
+    juce::String bypassLabel{"Bypass"};
+    /** @brief Label on the solo toggle (short text recommended). */
+    juce::String soloLabel{"Solo"};
+    /** @brief Optional tooltip on the bypass toggle. */
+    juce::String bypassTooltip;
+    /** @brief Optional tooltip on the solo toggle. */
+    juce::String soloTooltip;
 };
 
 struct HBoxDesc
@@ -196,9 +242,9 @@ struct CustomDesc
 // NodeDescriptor — variant of all descriptor types
 // ============================================================================
 
-struct NodeDescriptor
-    : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc, MeterDesc,
-                   LabelDesc, SpacerDesc, DividerDesc, SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, SliderDesc, ButtonDesc,
+                                     RadioGroupDesc, XYPadDesc, MeterDesc, LabelDesc, SpacerDesc, DividerDesc,
+                                     SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };
