@@ -1,0 +1,161 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────────
+  # 1. clang-format – verify all C++ sources are formatted correctly
+  # ──────────────────────────────────────────────────────────────────────────
+  format-check:
+    name: "Format Check (clang-format)"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Run clang-format check
+        run: |
+          echo "Collecting C++ source files…"
+          FILES=$(find . \( -name "*.cpp" -o -name "*.h" \) \
+                    ! -path "./.git/*" \
+                    ! -path "./build/*" | sort)
+
+          FAILED=0
+          VIOLATION_COUNT=0
+
+          for f in $FILES; do
+            # Produce a unified diff between the file and the formatted version.
+            DIFF=$(clang-format "$f" | diff -u --label "$f (original)" --label "$f (formatted)" "$f" - || true)
+            if [ -n "$DIFF" ]; then
+              echo "::error file=${f}::clang-format violation – see diff below"
+              echo "────────────────────────────────────────────────────────────"
+              echo "FILE: $f"
+              echo "$DIFF"
+              echo "────────────────────────────────────────────────────────────"
+              VIOLATION_COUNT=$((VIOLATION_COUNT + 1))
+              FAILED=1
+            fi
+          done
+
+          if [ "$FAILED" -ne 0 ]; then
+            echo ""
+            echo "::error::clang-format found $VIOLATION_COUNT file(s) with style violations."
+            echo ""
+            echo "Fix locally by running:"
+            echo "  find . \\( -name '*.cpp' -o -name '*.h' \\) ! -path './.git/*' | xargs clang-format -i"
+            exit 1
+          fi
+          echo "All files are correctly formatted."
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 2. clang-tidy – static analysis / lint
+  #    Requires a compile_commands.json, generated via CMake.
+  #    JUCE itself is not compiled here – we use a stub so clang-tidy
+  #    can still analyse DirektDSP_GUI headers for project-level checks.
+  # ──────────────────────────────────────────────────────────────────────────
+  lint:
+    name: "Lint (clang-tidy)"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y \
+            clang clang-tidy cmake ninja-build \
+            libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
+            libxcursor-dev libfreetype-dev libglu1-mesa-dev libgl1-mesa-dev
+
+      - name: Cache JUCE
+        id: cache-juce
+        uses: actions/cache@v4
+        with:
+          path: /tmp/JUCE
+          key: juce-8-${{ runner.os }}
+
+      - name: Fetch JUCE
+        if: steps.cache-juce.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 --branch 8.0.7 \
+            https://github.com/juce-framework/JUCE.git /tmp/JUCE
+
+      - name: Configure (generate compile_commands.json)
+        run: |
+          cmake -S . -B build \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DJUCE_DIR=/tmp/JUCE
+
+      - name: Run clang-tidy
+        run: |
+          echo "Collecting C++ translation units…"
+          FILES=$(find . \( -name "*.cpp" \) \
+                    ! -path "./.git/*" \
+                    ! -path "./build/*" | sort)
+
+          FAILED=0
+          WARNING_COUNT=0
+          ERROR_COUNT=0
+
+          for f in $FILES; do
+            echo "──── Checking: $f"
+            # Run clang-tidy; capture output so we can summarise counts.
+            OUTPUT=$(clang-tidy \
+              -p build/compile_commands.json \
+              --format-style=file \
+              "$f" 2>&1 || true)
+            if [ -n "$OUTPUT" ]; then
+              echo "$OUTPUT"
+              FILE_ERRORS=$(echo "$OUTPUT" | grep -c " error:" || true)
+              FILE_WARNINGS=$(echo "$OUTPUT" | grep -c " warning:" || true)
+              ERROR_COUNT=$((ERROR_COUNT + FILE_ERRORS))
+              WARNING_COUNT=$((WARNING_COUNT + FILE_WARNINGS))
+              if [ "$FILE_ERRORS" -gt 0 ]; then
+                echo "::error file=${f}::clang-tidy reported $FILE_ERRORS error(s) in $f"
+                FAILED=1
+              elif [ "$FILE_WARNINGS" -gt 0 ]; then
+                echo "::warning file=${f}::clang-tidy reported $FILE_WARNINGS warning(s) in $f"
+              fi
+            else
+              echo "  ✓ clean"
+            fi
+          done
+
+          echo ""
+          echo "══════════════════════════════════════════════════════════════"
+          echo "clang-tidy summary: $ERROR_COUNT error(s), $WARNING_COUNT warning(s)"
+          echo "══════════════════════════════════════════════════════════════"
+
+          exit $FAILED
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 3. labels – keep repository labels in sync with .github/labels.yml
+  # ──────────────────────────────────────────────────────────────────────────
+  sync-labels:
+    name: "Sync Labels"
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.yml
+          token: ${{ secrets.GITHUB_TOKEN }}

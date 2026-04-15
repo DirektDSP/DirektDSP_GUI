@@ -1,0 +1,66 @@
+---
+# DirektDSP_GUI — clang-tidy configuration
+# Targeting a modern C++17 JUCE codebase.
+#
+# JUCE-specific suppressions are grouped at the end of the Checks list.
+# Each suppression is annotated with the reason it must be disabled for JUCE.
+
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  bugprone-*,
+  misc-*,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -misc-non-private-member-variables-in-classes,
+  -readability-identifier-length,
+  -cppcoreguidelines-special-member-functions,
+  -hicpp-special-member-functions,
+  -modernize-use-nodiscard,
+  -readability-convert-member-functions-to-static,
+  -cppcoreguidelines-pro-type-reinterpret-cast,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-type-vararg,
+  -cppcoreguidelines-pro-type-cstyle-cast,
+  -clang-analyzer-optin.cplusplus.VirtualCall,
+  -bugprone-easily-swappable-parameters,
+  -misc-include-cleaner
+
+# Promote all enabled warnings to errors so CI is blocking.
+WarningsAsErrors: "*"
+
+# Only analyse DirektDSP_GUI project headers, not JUCE or system headers.
+HeaderFilterRegex: ".*DirektDSP_GUI/(?!build/).*"
+
+CheckOptions:
+  # ── Naming conventions (mirrors JUCE coding standards) ────────────────────
+  - key:   readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key:   readability-identifier-naming.StructCase
+    value: CamelCase
+  - key:   readability-identifier-naming.FunctionCase
+    value: camelBack
+  - key:   readability-identifier-naming.VariableCase
+    value: camelBack
+  - key:   readability-identifier-naming.MemberCase
+    value: camelBack
+  - key:   readability-identifier-naming.ParameterCase
+    value: camelBack
+  - key:   readability-identifier-naming.ConstantCase
+    value: UPPER_CASE
+  - key:   readability-identifier-naming.EnumConstantCase
+    value: CamelCase
+  # ── Modernise options ─────────────────────────────────────────────────────
+  - key:   modernize-use-default-member-init.UseAssignment
+    value: "1"
+  # ── Performance options ───────────────────────────────────────────────────
+  # juce::String has an optimised value type; do not warn when passed by value.
+  - key:   performance-unnecessary-value-param.AllowedTypes
+    value: "juce::String"
