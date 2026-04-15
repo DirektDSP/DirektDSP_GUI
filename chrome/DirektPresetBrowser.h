@@ -112,8 +112,7 @@ private:
 
         int getNumRows() override { return static_cast<int> (presets.size()); }
         void paintListBoxItem (int row, juce::Graphics& g, int width, int height, bool isSelected) override;
-        void listBoxItemClicked (int row, const juce::MouseEvent&) override
-        ;
+        void listBoxItemClicked (int row, const juce::MouseEvent&) override;
     };
 
     PresetListModel presetModel;

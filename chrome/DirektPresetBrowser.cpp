@@ -1,9 +1,9 @@
 #include "chrome/DirektPresetBrowser.h"
 
-#include "Service/PresetManager.h"
-
 #include <algorithm>
 #include <utility>
+
+#include "Service/PresetManager.h"
 
 namespace DirektDSP
 {
@@ -243,22 +243,23 @@ void DirektPresetBrowser::refreshPresets()
 
     auto searchPasses = [&searchText, useSearch] (const Service::PresetMetadata& item)
     {
-        if (! useSearch)
+        if (!useSearch)
             return true;
-        auto haystack = (item.name + " " + item.artist + " " + item.category + " " + item.tags.joinIntoString (" "))
-                            .toLowerCase();
+        auto haystack =
+            (item.name + " " + item.artist + " " + item.category + " " + item.tags.joinIntoString (" ")).toLowerCase();
         return haystack.contains (searchText);
     };
 
     for (auto const& item : metadata)
     {
-        if (! tagPasses (item) || ! searchPasses (item))
+        if (!tagPasses (item) || !searchPasses (item))
             continue;
 
         presetModel.presets.push_back ({item.name, item.artist, item.category});
     }
 
-    std::sort (presetModel.presets.begin(), presetModel.presets.end(), [] (const PresetEntry& lhs, const PresetEntry& rhs)
+    std::sort (presetModel.presets.begin(), presetModel.presets.end(),
+               [] (const PresetEntry& lhs, const PresetEntry& rhs)
                { return lhs.name.compareIgnoreCase (rhs.name) < 0; });
 
     presetModel.selectedRow = -1;
@@ -321,8 +322,8 @@ void DirektPresetBrowser::onFavoriteToggleRequested (int row)
     saveFavorites();
     presetList.repaint();
     refreshTags();
-    if (categoryModel.selectedRow >= 0 && categoryModel.selectedRow < categoryModel.categories.size()
-        && categoryModel.categories[categoryModel.selectedRow] == "Favorites")
+    if (categoryModel.selectedRow >= 0 && categoryModel.selectedRow < categoryModel.categories.size() &&
+        categoryModel.categories[categoryModel.selectedRow] == "Favorites")
     {
         refreshPresets();
     }
@@ -387,8 +388,9 @@ void DirektPresetBrowser::doDelete()
                                  if (result == 1)
                                  {
                                      presetManager.deletePreset (nameToDelete, catToDelete);
-                                    favoritePresetKeys.erase (makeFavoriteKey (nameToDelete, catToDelete).toStdString());
-                                    saveFavorites();
+                                     favoritePresetKeys.erase (
+                                         makeFavoriteKey (nameToDelete, catToDelete).toStdString());
+                                     saveFavorites();
                                      refreshCategories();
                                      refreshPresets();
                                      if (onPresetLoaded)
@@ -429,13 +431,14 @@ void DirektPresetBrowser::doMove()
                                      if (toCat.isNotEmpty() && toCat != fromCat)
                                      {
                                          presetManager.movePresetToCategory (presetName, fromCat, toCat);
-                                        auto const oldKey = makeFavoriteKey (presetName, fromCat).toStdString();
-                                        if (favoritePresetKeys.find (oldKey) != favoritePresetKeys.end())
-                                        {
-                                            favoritePresetKeys.erase (oldKey);
-                                            favoritePresetKeys.insert (makeFavoriteKey (presetName, toCat).toStdString());
-                                            saveFavorites();
-                                        }
+                                         auto const oldKey = makeFavoriteKey (presetName, fromCat).toStdString();
+                                         if (favoritePresetKeys.find (oldKey) != favoritePresetKeys.end())
+                                         {
+                                             favoritePresetKeys.erase (oldKey);
+                                             favoritePresetKeys.insert (
+                                                 makeFavoriteKey (presetName, toCat).toStdString());
+                                             saveFavorites();
+                                         }
                                          refreshCategories();
                                          refreshPresets();
                                      }
@@ -477,19 +480,19 @@ juce::String DirektPresetBrowser::makeFavoriteKey (const juce::String& name, con
 
 bool DirektPresetBrowser::isFavorite (const PresetEntry& entry) const
 {
-    return favoritePresetKeys.find (makeFavoriteKey (entry.name, entry.category).toStdString()) != favoritePresetKeys.end();
+    return favoritePresetKeys.find (makeFavoriteKey (entry.name, entry.category).toStdString()) !=
+           favoritePresetKeys.end();
 }
 
 void DirektPresetBrowser::loadFavorites()
 {
     favoritePresetKeys.clear();
 
-    auto favoritesFile =
-        juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
-            .getChildFile ("DirektDSP")
-            .getChildFile ("preset-browser-favorites.json");
+    auto favoritesFile = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+                             .getChildFile ("DirektDSP")
+                             .getChildFile ("preset-browser-favorites.json");
 
-    if (! favoritesFile.existsAsFile())
+    if (!favoritesFile.existsAsFile())
     {
         return;
     }
@@ -519,12 +522,11 @@ void DirektPresetBrowser::saveFavorites() const
         data.add (juce::String (key));
     }
 
-    auto favoritesFile =
-        juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
-            .getChildFile ("DirektDSP")
-            .getChildFile ("preset-browser-favorites.json");
+    auto favoritesFile = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+                             .getChildFile ("DirektDSP")
+                             .getChildFile ("preset-browser-favorites.json");
     auto const directory = favoritesFile.getParentDirectory();
-    if (! directory.exists())
+    if (!directory.exists())
     {
         directory.createDirectory();
     }
