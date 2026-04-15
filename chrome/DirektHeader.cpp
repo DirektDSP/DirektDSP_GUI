@@ -15,7 +15,7 @@ DirektHeader::DirektHeader (juce::String pluginName, juce::Colour accentColour, 
     prevBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
     prevBtn.onClick = [this]
     {
-        presetManager.loadPreviousPreset();
+        this->presetManager.loadPreviousPreset();
         updatePresetName();
     };
     addAndMakeVisible (prevBtn);
@@ -24,7 +24,7 @@ DirektHeader::DirektHeader (juce::String pluginName, juce::Colour accentColour, 
     nextBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
     nextBtn.onClick = [this]
     {
-        presetManager.loadNextPreset();
+        this->presetManager.loadNextPreset();
         updatePresetName();
     };
     addAndMakeVisible (nextBtn);
