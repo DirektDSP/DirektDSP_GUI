@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektKnob.html','')
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classDirektDSP_1_1DirektKnob-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DirektDSP::DirektKnob Class Reference</div></div>
@@ -111,17 +112,23 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektKnob.html','')
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektKnob__coll__graph.svg" width="535" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektKnob__coll__graph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa08e1db472d0125e42d66db176e35845" id="r_aa08e1db472d0125e42d66db176e35845"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#aa08e1db472d0125e42d66db176e35845">DirektKnob</a> (juce::AudioProcessorValueTreeState &amp;apvts, const juce::String &amp;paramID, const juce::String &amp;labelText)</td></tr>
-<tr class="separator:aa08e1db472d0125e42d66db176e35845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12415de2d9c527afffe68bb9aad675b5" id="r_a12415de2d9c527afffe68bb9aad675b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#a12415de2d9c527afffe68bb9aad675b5">DirektKnob</a> (juce::AudioProcessorValueTreeState &amp;apvts, const juce::String &amp;paramID, const juce::String &amp;labelText, <a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *<a class="el" href="classDirektDSP_1_1DirektKnob.html#af07775ca23ca000936df3ed945a1e122">parameterHistory</a>=nullptr)</td></tr>
+<tr class="memdesc:a12415de2d9c527afffe68bb9aad675b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates rotary parameter control with optional undo tracking.  <br /></td></tr>
+<tr class="separator:a12415de2d9c527afffe68bb9aad675b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bf30706aa427090f0e294fc0edbf2e7" id="r_a3bf30706aa427090f0e294fc0edbf2e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#a3bf30706aa427090f0e294fc0edbf2e7">resized</a> () override</td></tr>
 <tr class="separator:a3bf30706aa427090f0e294fc0edbf2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30b934cf8931f764bdd5f14f05d7f77c" id="r_a30b934cf8931f764bdd5f14f05d7f77c"><td class="memItemLeft" align="right" valign="top">juce::Slider &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#a30b934cf8931f764bdd5f14f05d7f77c">getSlider</a> ()</td></tr>
 <tr class="separator:a30b934cf8931f764bdd5f14f05d7f77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae027cace8e01ee948810972a34ee6c2c" id="r_ae027cace8e01ee948810972a34ee6c2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#ae027cace8e01ee948810972a34ee6c2c">commitChange</a> (float oldValue, float newValue) const</td></tr>
+<tr class="separator:ae027cace8e01ee948810972a34ee6c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -131,13 +138,19 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aa76ea8c82ca09c4555f8f1bc663c758f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5119ef5f309b737340273215bcec871" id="r_ae5119ef5f309b737340273215bcec871"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; juce::AudioProcessorValueTreeState::SliderAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#ae5119ef5f309b737340273215bcec871">attachment</a></td></tr>
 <tr class="separator:ae5119ef5f309b737340273215bcec871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8acd086d14b62ff7268142d05afe71" id="r_a8a8acd086d14b62ff7268142d05afe71"><td class="memItemLeft" align="right" valign="top">juce::RangedAudioParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#a8a8acd086d14b62ff7268142d05afe71">parameter</a> = nullptr</td></tr>
+<tr class="separator:a8a8acd086d14b62ff7268142d05afe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07775ca23ca000936df3ed945a1e122" id="r_af07775ca23ca000936df3ed945a1e122"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#af07775ca23ca000936df3ed945a1e122">parameterHistory</a> = nullptr</td></tr>
+<tr class="separator:af07775ca23ca000936df3ed945a1e122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a9f1bfc4cd339c771ce1e2a0ed06211" id="r_a2a9f1bfc4cd339c771ce1e2a0ed06211"><td class="memItemLeft" align="right" valign="top">std::optional&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektKnob.html#a2a9f1bfc4cd339c771ce1e2a0ed06211">dragStartValue</a></td></tr>
+<tr class="separator:a2a9f1bfc4cd339c771ce1e2a0ed06211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00008">8</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00012">12</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa08e1db472d0125e42d66db176e35845" name="aa08e1db472d0125e42d66db176e35845"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa08e1db472d0125e42d66db176e35845">&#9670;&#160;</a></span>DirektKnob()</h2>
+<a id="a12415de2d9c527afffe68bb9aad675b5" name="a12415de2d9c527afffe68bb9aad675b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12415de2d9c527afffe68bb9aad675b5">&#9670;&#160;</a></span>DirektKnob()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +171,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const juce::String &amp;&#160;</td>
-          <td class="paramname"><em>labelText</em>&#160;</td>
+          <td class="paramname"><em>labelText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *&#160;</td>
+          <td class="paramname"><em>parameterHistory</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,13 +187,66 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8cpp_source.html#l00008">8</a> of file <a class="el" href="DirektKnob_8cpp_source.html">DirektKnob.cpp</a>.</p>
+<p>Creates rotary parameter control with optional undo tracking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apvts</td><td>Processor parameter state. </td></tr>
+    <tr><td class="paramname">paramID</td><td>Target parameter identifier. </td></tr>
+    <tr><td class="paramname">labelText</td><td>Caption shown below knob. </td></tr>
+    <tr><td class="paramname">parameterHistory</td><td>Optional edit history sink for undo/redo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00020">attachment</a>, <a class="el" href="DirektKnob_8h_source.html#l00019">label</a>, <a class="el" href="DirektKnob_8h_source.html#l00018">slider</a>, <a class="el" href="DirektColours_8h_source.html#l00016">DirektDSP::Colours::textBright</a>, and <a class="el" href="DirektColours_8h_source.html#l00017">DirektDSP::Colours::textDim</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8cpp_source.html#l00009">9</a> of file <a class="el" href="DirektKnob_8cpp_source.html">DirektKnob.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00035">attachment</a>, <a class="el" href="DirektKnob_8cpp_source.html#l00057">commitChange()</a>, <a class="el" href="DirektKnob_8h_source.html#l00038">dragStartValue</a>, <a class="el" href="DirektKnob_8h_source.html#l00034">label</a>, <a class="el" href="DirektKnob_8h_source.html#l00036">parameter</a>, <a class="el" href="DirektKnob_8h_source.html#l00033">slider</a>, <a class="el" href="DirektColours_8h_source.html#l00016">DirektDSP::Colours::textBright</a>, and <a class="el" href="DirektColours_8h_source.html#l00017">DirektDSP::Colours::textDim</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae027cace8e01ee948810972a34ee6c2c" name="ae027cace8e01ee948810972a34ee6c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae027cace8e01ee948810972a34ee6c2c">&#9670;&#160;</a></span>commitChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektKnob::commitChange </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>oldValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>newValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8cpp_source.html#l00057">57</a> of file <a class="el" href="DirektKnob_8cpp_source.html">DirektKnob.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00036">parameter</a>, <a class="el" href="DirektKnob_8h_source.html#l00037">parameterHistory</a>, and <a class="el" href="DirektParameterHistory_8cpp_source.html#l00006">DirektDSP::DirektParameterHistory::pushChange()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>.</p>
+
+</div>
+</div>
 <a id="a30b934cf8931f764bdd5f14f05d7f77c" name="a30b934cf8931f764bdd5f14f05d7f77c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30b934cf8931f764bdd5f14f05d7f77c">&#9670;&#160;</a></span>getSlider()</h2>
 
@@ -198,9 +270,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00015">15</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00028">28</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00018">slider</a>.</p>
+<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00033">slider</a>.</p>
 
 </div>
 </div>
@@ -227,9 +299,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8cpp_source.html#l00028">28</a> of file <a class="el" href="DirektKnob_8cpp_source.html">DirektKnob.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8cpp_source.html#l00049">49</a> of file <a class="el" href="DirektKnob_8cpp_source.html">DirektKnob.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00019">label</a>, and <a class="el" href="DirektKnob_8h_source.html#l00018">slider</a>.</p>
+<p class="reference">References <a class="el" href="DirektKnob_8h_source.html#l00034">label</a>, and <a class="el" href="DirektKnob_8h_source.html#l00033">slider</a>.</p>
 
 </div>
 </div>
@@ -254,9 +326,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00020">20</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00035">35</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00008">DirektKnob()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>.</p>
+
+</div>
+</div>
+<a id="a2a9f1bfc4cd339c771ce1e2a0ed06211" name="a2a9f1bfc4cd339c771ce1e2a0ed06211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a9f1bfc4cd339c771ce1e2a0ed06211">&#9670;&#160;</a></span>dragStartValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;float&gt; DirektDSP::DirektKnob::dragStartValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00038">38</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>.</p>
 
 </div>
 </div>
@@ -280,9 +378,61 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00019">19</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00034">34</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00008">DirektKnob()</a>, and <a class="el" href="DirektKnob_8cpp_source.html#l00028">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>, and <a class="el" href="DirektKnob_8cpp_source.html#l00049">resized()</a>.</p>
+
+</div>
+</div>
+<a id="a8a8acd086d14b62ff7268142d05afe71" name="a8a8acd086d14b62ff7268142d05afe71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8acd086d14b62ff7268142d05afe71">&#9670;&#160;</a></span>parameter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::RangedAudioParameter* DirektDSP::DirektKnob::parameter = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00036">36</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00057">commitChange()</a>, and <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>.</p>
+
+</div>
+</div>
+<a id="af07775ca23ca000936df3ed945a1e122" name="af07775ca23ca000936df3ed945a1e122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07775ca23ca000936df3ed945a1e122">&#9670;&#160;</a></span>parameterHistory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a>* DirektDSP::DirektKnob::parameterHistory = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00037">37</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00057">commitChange()</a>.</p>
 
 </div>
 </div>
@@ -306,9 +456,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00018">18</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektKnob_8h_source.html#l00033">33</a> of file <a class="el" href="DirektKnob_8h_source.html">DirektKnob.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00008">DirektKnob()</a>, <a class="el" href="DirektKnob_8h_source.html#l00015">getSlider()</a>, and <a class="el" href="DirektKnob_8cpp_source.html#l00028">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektKnob_8cpp_source.html#l00009">DirektKnob()</a>, <a class="el" href="DirektKnob_8h_source.html#l00028">getSlider()</a>, and <a class="el" href="DirektKnob_8cpp_source.html#l00049">resized()</a>.</p>
 
 </div>
 </div>

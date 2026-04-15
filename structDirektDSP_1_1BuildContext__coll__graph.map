@@ -1,11 +1,17 @@
 <map id="DirektDSP::BuildContext" name="DirektDSP::BuildContext">
-<area shape="rect" id="Node000001" title=" " alt="" coords="648,35,828,60"/>
-<area shape="rect" id="Node000002" href="$classDirektDSP_1_1DirektLookAndFeel.html" title=" " alt="" coords="285,5,503,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="518,26,648,37,648,42,517,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,169,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,15,284,15,284,21,183,21"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="283,55,505,95"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="519,70,624,63,668,57,669,63,624,69,519,76"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="10,63,165,88"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="179,73,282,73,282,78,179,78"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1009,69,1189,95"/>
+<area shape="rect" id="Node000002" href="$classDirektDSP_1_1DirektLookAndFeel.html" title=" " alt="" coords="621,8,839,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="825,33,986,59,1028,67,1027,72,985,65,824,38"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="331,5,495,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="509,16,620,17,620,22,509,21"/>
+<area shape="rect" id="Node000004" href="$classDirektDSP_1_1DirektParameterHistory.html" title="Maintains undo/redo history for APVTS parameter edits." alt="" coords="629,62,831,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="845,79,1009,79,1009,85,845,85"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="321,55,505,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="519,79,628,79,628,85,519,85"/>
+<area shape="rect" id="Node000006" href="$structDirektDSP_1_1DirektParameterHistory_1_1ParameterChange.html" title=" " alt="" coords="5,62,208,102"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="222,79,321,79,321,85,222,85"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="619,126,841,166"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="854,122,985,99,1026,92,1027,97,986,105,855,127"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="336,133,491,159"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="504,143,618,143,618,149,504,149"/>
 </map>

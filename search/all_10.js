@@ -30,5 +30,5 @@ var searchData=
   ['source_27',['source',['../classDirektDSP_1_1DirektMeter.html#a5ad87dd1c5227b4553b4497502be9c5e',1,'DirektDSP::DirektMeter']]],
   ['sourceid_28',['sourceID',['../structDirektDSP_1_1MeterDesc.html#aae830528a8f32c780466c32035a2bdd6',1,'DirektDSP::MeterDesc']]],
   ['spacerdesc_29',['SpacerDesc',['../structDirektDSP_1_1SpacerDesc.html',1,'DirektDSP']]],
-  ['style_30',['style',['../classDirektDSP_1_1DirektLabel.html#a7db1718c4d9235db01ed30f62e55101e',1,'DirektDSP::DirektLabel::Style'],['../structDirektDSP_1_1LabelDesc.html#ade2129e8f20e742559064f16034d5272',1,'DirektDSP::LabelDesc::style']]]
+  ['style_30',['style',['../structDirektDSP_1_1LabelDesc.html#ade2129e8f20e742559064f16034d5272',1,'DirektDSP::LabelDesc::style'],['../classDirektDSP_1_1DirektLabel.html#a7db1718c4d9235db01ed30f62e55101e',1,'DirektDSP::DirektLabel::Style']]]
 ];

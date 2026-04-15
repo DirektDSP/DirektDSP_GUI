@@ -19,6 +19,7 @@ var annotated_dup =
       [ "DirektLookAndFeel", "classDirektDSP_1_1DirektLookAndFeel.html", "classDirektDSP_1_1DirektLookAndFeel" ],
       [ "DirektMacroControl", "classDirektDSP_1_1DirektMacroControl.html", "classDirektDSP_1_1DirektMacroControl" ],
       [ "DirektMeter", "classDirektDSP_1_1DirektMeter.html", "classDirektDSP_1_1DirektMeter" ],
+      [ "DirektParameterHistory", "classDirektDSP_1_1DirektParameterHistory.html", "classDirektDSP_1_1DirektParameterHistory" ],
       [ "DirektPopupPanel", "classDirektDSP_1_1DirektPopupPanel.html", "classDirektDSP_1_1DirektPopupPanel" ],
       [ "DirektPresetBrowser", "classDirektDSP_1_1DirektPresetBrowser.html", "classDirektDSP_1_1DirektPresetBrowser" ],
       [ "DirektSection", "classDirektDSP_1_1DirektSection.html", "classDirektDSP_1_1DirektSection" ],

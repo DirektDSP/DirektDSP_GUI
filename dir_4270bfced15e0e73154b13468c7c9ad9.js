@@ -6,5 +6,7 @@ var dir_4270bfced15e0e73154b13468c7c9ad9 =
     [ "DirektBaseEditor.h", "DirektBaseEditor_8h.html", "DirektBaseEditor_8h" ],
     [ "DirektBuildContext.h", "DirektBuildContext_8h.html", "DirektBuildContext_8h" ],
     [ "DirektComponentRegistry.cpp", "DirektComponentRegistry_8cpp.html", null ],
-    [ "DirektComponentRegistry.h", "DirektComponentRegistry_8h.html", "DirektComponentRegistry_8h" ]
+    [ "DirektComponentRegistry.h", "DirektComponentRegistry_8h.html", "DirektComponentRegistry_8h" ],
+    [ "DirektParameterHistory.cpp", "DirektParameterHistory_8cpp.html", null ],
+    [ "DirektParameterHistory.h", "DirektParameterHistory_8h.html", "DirektParameterHistory_8h" ]
 ];

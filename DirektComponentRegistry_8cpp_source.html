@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('DirektComponentRegistry_8cpp_source.ht
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>BuiltNode buildKnobNode (<span class="keyword">const</span> KnobDesc&amp; desc, BuildContext&amp; ctx)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span> knob = std::make_unique&lt;DirektKnob&gt; (ctx.apvts, desc.paramID, desc.label);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span> knob = std::make_unique&lt;DirektKnob&gt; (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (desc.tooltip.isNotEmpty())</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        knob-&gt;getSlider().setTooltip (desc.tooltip);</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('DirektComponentRegistry_8cpp_source.ht
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>BuiltNode buildToggleNode (<span class="keyword">const</span> ToggleDesc&amp; desc, BuildContext&amp; ctx)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">auto</span> toggle = std::make_unique&lt;DirektToggle&gt; (ctx.apvts, desc.paramID, desc.label);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">auto</span> toggle = std::make_unique&lt;DirektToggle&gt; (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (desc.tooltip.isNotEmpty())</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        toggle-&gt;getButton().setTooltip (desc.tooltip);</div>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('DirektComponentRegistry_8cpp_source.ht
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>BuiltNode buildComboBoxNode (<span class="keyword">const</span> ComboBoxDesc&amp; desc, BuildContext&amp; ctx)</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">auto</span> combo = std::make_unique&lt;DirektComboBox&gt; (ctx.apvts, desc.paramID, desc.label);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">auto</span> combo = std::make_unique&lt;DirektComboBox&gt; (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (desc.tooltip.isNotEmpty())</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        combo-&gt;getComboBox().setTooltip (desc.tooltip);</div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('DirektComponentRegistry_8cpp_source.ht
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>BuiltNode buildSliderNode (<span class="keyword">const</span> SliderDesc&amp; desc, BuildContext&amp; ctx)</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> knob = std::make_unique&lt;DirektKnob&gt; (ctx.apvts, desc.paramID, desc.label);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> knob = std::make_unique&lt;DirektKnob&gt; (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (desc.tooltip.isNotEmpty())</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        knob-&gt;getSlider().setTooltip (desc.tooltip);</div>
@@ -501,7 +501,7 @@ $(document).ready(function(){initNavTree('DirektComponentRegistry_8cpp_source.ht
 <div class="ttc" id="anamespaceDirektDSP_html_a2186e96b485cdb559fcdc65b3a6146eea960b44c579bc2f6818d2daaf9e4c16f0"><div class="ttname"><a href="namespaceDirektDSP.html#a2186e96b485cdb559fcdc65b3a6146eea960b44c579bc2f6818d2daaf9e4c16f0">DirektDSP::MeterMode::Normal</a></div><div class="ttdeci">@ Normal</div></div>
 <div class="ttc" id="anamespaceDirektDSP_html_a34607bb645036f6ce8766deedae165e4a06ce2a25e5d12c166a36f654dbea6012"><div class="ttname"><a href="namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4a06ce2a25e5d12c166a36f654dbea6012">DirektDSP::MeterOrientation::Vertical</a></div><div class="ttdeci">@ Vertical</div></div>
 <div class="ttc" id="anamespaceDirektDSP_html_a34607bb645036f6ce8766deedae165e4ac1b5fa03ecdb95d4a45dd1c40b02527f"><div class="ttname"><a href="namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4ac1b5fa03ecdb95d4a45dd1c40b02527f">DirektDSP::MeterOrientation::Horizontal</a></div><div class="ttdeci">@ Horizontal</div></div>
-<div class="ttc" id="astructDirektDSP_1_1BuildContext_html"><div class="ttname"><a href="structDirektDSP_1_1BuildContext.html">DirektDSP::BuildContext</a></div><div class="ttdef"><b>Definition</b> <a href="DirektBuildContext_8h_source.html#l00012">DirektBuildContext.h:13</a></div></div>
+<div class="ttc" id="astructDirektDSP_1_1BuildContext_html"><div class="ttname"><a href="structDirektDSP_1_1BuildContext.html">DirektDSP::BuildContext</a></div><div class="ttdef"><b>Definition</b> <a href="DirektBuildContext_8h_source.html#l00013">DirektBuildContext.h:14</a></div></div>
 <div class="ttc" id="astructDirektDSP_1_1BuiltNode_html"><div class="ttname"><a href="structDirektDSP_1_1BuiltNode.html">DirektDSP::BuiltNode</a></div><div class="ttdef"><b>Definition</b> <a href="DirektComponentRegistry_8h_source.html#l00016">DirektComponentRegistry.h:17</a></div></div>
 <div class="ttc" id="astructDirektDSP_1_1NodeDescriptor_html"><div class="ttname"><a href="structDirektDSP_1_1NodeDescriptor.html">DirektDSP::NodeDescriptor</a></div><div class="ttdef"><b>Definition</b> <a href="DirektDescriptors_8h_source.html#l00221">DirektDescriptors.h:224</a></div></div>
 <div class="ttc" id="astructDirektDSP_1_1NodeProps_html"><div class="ttname"><a href="structDirektDSP_1_1NodeProps.html">DirektDSP::NodeProps</a></div><div class="ttdef"><b>Definition</b> <a href="DirektDescriptors_8h_source.html#l00025">DirektDescriptors.h:26</a></div></div>

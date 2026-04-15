@@ -101,17 +101,17 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektAutoLayout.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af60802dfbd1b3cd079cc429e1e2bd67f" id="r_af60802dfbd1b3cd079cc429e1e2bd67f"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="structDirektDSP_1_1BuiltSection.html">BuiltSection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektAutoLayout.html#af60802dfbd1b3cd079cc429e1e2bd67f">buildSections</a> (juce::AudioProcessorValueTreeState &amp;apvts, const std::vector&lt; <a class="el" href="structDirektDSP_1_1SectionDescriptor.html">SectionDescriptor</a> &gt; &amp;descriptors)</td></tr>
-<tr class="separator:af60802dfbd1b3cd079cc429e1e2bd67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e86eccabf25823117282f560486e269" id="r_a2e86eccabf25823117282f560486e269"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="structDirektDSP_1_1BuiltSection.html">BuiltSection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektAutoLayout.html#a2e86eccabf25823117282f560486e269">buildSections</a> (juce::AudioProcessorValueTreeState &amp;apvts, const std::vector&lt; <a class="el" href="structDirektDSP_1_1SectionDescriptor.html">SectionDescriptor</a> &gt; &amp;descriptors, <a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *parameterHistory=nullptr)</td></tr>
+<tr class="separator:a2e86eccabf25823117282f560486e269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1620b7f205964ef7c822973dc1b41cf" id="r_ac1620b7f205964ef7c822973dc1b41cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structDirektDSP_1_1NodeDescriptor.html">NodeDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektAutoLayout.html#ac1620b7f205964ef7c822973dc1b41cf">convertLegacySections</a> (const std::vector&lt; <a class="el" href="structDirektDSP_1_1SectionDescriptor.html">SectionDescriptor</a> &gt; &amp;descriptors)</td></tr>
 <tr class="separator:ac1620b7f205964ef7c822973dc1b41cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DirektAutoLayout_8h_source.html#l00042">42</a> of file <a class="el" href="DirektAutoLayout_8h_source.html">DirektAutoLayout.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektAutoLayout_8h_source.html#l00044">44</a> of file <a class="el" href="DirektAutoLayout_8h_source.html">DirektAutoLayout.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af60802dfbd1b3cd079cc429e1e2bd67f" name="af60802dfbd1b3cd079cc429e1e2bd67f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af60802dfbd1b3cd079cc429e1e2bd67f">&#9670;&#160;</a></span>buildSections()</h2>
+<a id="a2e86eccabf25823117282f560486e269" name="a2e86eccabf25823117282f560486e269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e86eccabf25823117282f560486e269">&#9670;&#160;</a></span>buildSections()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,7 +129,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="structDirektDSP_1_1SectionDescriptor.html">SectionDescriptor</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>descriptors</em>&#160;</td>
+          <td class="paramname"><em>descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *&#160;</td>
+          <td class="paramname"><em>parameterHistory</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -146,7 +152,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektAutoLayout_8cpp_source.html#l00008">8</a> of file <a class="el" href="DirektAutoLayout_8cpp_source.html">DirektAutoLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8afd249a0c28275ebf9d4c8464ca2225cf">DirektDSP::ComboBox</a>, <a class="el" href="DirektAutoLayout_8h_source.html#l00039">DirektDSP::BuiltSection::controls</a>, <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8a848c38c91fcb0189d65c35746c884e36">DirektDSP::Knob</a>, <a class="el" href="DirektAutoLayout_8h_source.html#l00038">DirektDSP::BuiltSection::section</a>, and <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921">DirektDSP::Toggle</a>.</p>
+<p class="reference">References <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8afd249a0c28275ebf9d4c8464ca2225cf">DirektDSP::ComboBox</a>, <a class="el" href="DirektAutoLayout_8h_source.html#l00041">DirektDSP::BuiltSection::controls</a>, <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8a848c38c91fcb0189d65c35746c884e36">DirektDSP::Knob</a>, <a class="el" href="DirektAutoLayout_8h_source.html#l00040">DirektDSP::BuiltSection::section</a>, and <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921">DirektDSP::Toggle</a>.</p>
 
 </div>
 </div>
@@ -174,7 +180,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektAutoLayout_8cpp_source.html#l00061">61</a> of file <a class="el" href="DirektAutoLayout_8cpp_source.html">DirektAutoLayout.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektAutoLayout_8cpp_source.html#l00062">62</a> of file <a class="el" href="DirektAutoLayout_8cpp_source.html">DirektAutoLayout.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8afd249a0c28275ebf9d4c8464ca2225cf">DirektDSP::ComboBox</a>, <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8a848c38c91fcb0189d65c35746c884e36">DirektDSP::Knob</a>, <a class="el" href="DirektDescriptorHelpers_8h_source.html#l00008">DirektDSP::node()</a>, <a class="el" href="DirektDescriptors_8h_source.html#l00047">DirektDSP::KnobDesc::paramID</a>, <a class="el" href="DirektDescriptors_8h_source.html#l00055">DirektDSP::ToggleDesc::paramID</a>, <a class="el" href="DirektDescriptors_8h_source.html#l00063">DirektDSP::ComboBoxDesc::paramID</a>, <a class="el" href="DirektDescriptors_8h_source.html#l00177">DirektDSP::SectionDesc::title</a>, and <a class="el" href="namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921">DirektDSP::Toggle</a>.</p>
 

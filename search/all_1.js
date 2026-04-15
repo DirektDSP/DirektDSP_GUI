@@ -9,7 +9,7 @@ var searchData=
   ['body_6',['Body',['../classDirektDSP_1_1DirektLabel.html#a7db1718c4d9235db01ed30f62e55101ea2d312a2dc4bc199a72fc8f1bb77ee69d',1,'DirektDSP::DirektLabel']]],
   ['build_7',['build',['../classDirektDSP_1_1DirektComponentRegistry.html#ae6fabede2c504410c782fb49c6da384e',1,'DirektDSP::DirektComponentRegistry']]],
   ['buildcontext_8',['buildcontext',['../structDirektDSP_1_1BuildContext.html',1,'DirektDSP::BuildContext'],['../classDirektDSP_1_1DirektBaseEditor.html#a8458670e34c9622a4bb1a26f16e8f149',1,'DirektDSP::DirektBaseEditor::buildContext']]],
-  ['buildsections_9',['buildSections',['../classDirektDSP_1_1DirektAutoLayout.html#af60802dfbd1b3cd079cc429e1e2bd67f',1,'DirektDSP::DirektAutoLayout']]],
+  ['buildsections_9',['buildSections',['../classDirektDSP_1_1DirektAutoLayout.html#a2e86eccabf25823117282f560486e269',1,'DirektDSP::DirektAutoLayout']]],
   ['builtnode_10',['BuiltNode',['../structDirektDSP_1_1BuiltNode.html',1,'DirektDSP']]],
   ['builtsection_11',['BuiltSection',['../structDirektDSP_1_1BuiltSection.html',1,'DirektDSP']]],
   ['builtsections_12',['builtSections',['../classDirektDSP_1_1DirektBaseEditor.html#a5041d956def7cea16a4ddcc75138ec0f',1,'DirektDSP::DirektBaseEditor']]],

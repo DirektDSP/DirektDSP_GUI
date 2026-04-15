@@ -111,13 +111,14 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektToggle.html','
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektToggle__coll__graph.svg" width="544" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektToggle__coll__graph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d61c95931be355166de297c2446d32b" id="r_a8d61c95931be355166de297c2446d32b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#a8d61c95931be355166de297c2446d32b">DirektToggle</a> (juce::AudioProcessorValueTreeState &amp;apvts, const juce::String &amp;paramID, const juce::String &amp;labelText)</td></tr>
-<tr class="separator:a8d61c95931be355166de297c2446d32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7123d032b92d9ee5178bfc6cec7319" id="r_aeb7123d032b92d9ee5178bfc6cec7319"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#aeb7123d032b92d9ee5178bfc6cec7319">DirektToggle</a> (juce::AudioProcessorValueTreeState &amp;apvts, const juce::String &amp;paramID, const juce::String &amp;labelText, <a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *<a class="el" href="classDirektDSP_1_1DirektToggle.html#a75b4dc293111bdaa4302784dcfa04905">parameterHistory</a>=nullptr)</td></tr>
+<tr class="memdesc:aeb7123d032b92d9ee5178bfc6cec7319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates toggle parameter control with optional undo tracking.  <br /></td></tr>
+<tr class="separator:aeb7123d032b92d9ee5178bfc6cec7319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cd9ba78050de459d14c8990ea982136" id="r_a8cd9ba78050de459d14c8990ea982136"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#a8cd9ba78050de459d14c8990ea982136">resized</a> () override</td></tr>
 <tr class="separator:a8cd9ba78050de459d14c8990ea982136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6252b0a49d4b2bbd0b038cf96e5f9245" id="r_a6252b0a49d4b2bbd0b038cf96e5f9245"><td class="memItemLeft" align="right" valign="top">juce::ToggleButton &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#a6252b0a49d4b2bbd0b038cf96e5f9245">getButton</a> ()</td></tr>
@@ -129,13 +130,19 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aaefb0bedf0a6f6f1db58c3d442e057fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98087041d05220cde59ab5848643730" id="r_af98087041d05220cde59ab5848643730"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; juce::AudioProcessorValueTreeState::ButtonAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#af98087041d05220cde59ab5848643730">attachment</a></td></tr>
 <tr class="separator:af98087041d05220cde59ab5848643730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87e9b1314927c691a47f522bbde7a33" id="r_aa87e9b1314927c691a47f522bbde7a33"><td class="memItemLeft" align="right" valign="top">juce::RangedAudioParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#aa87e9b1314927c691a47f522bbde7a33">parameter</a> = nullptr</td></tr>
+<tr class="separator:aa87e9b1314927c691a47f522bbde7a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b4dc293111bdaa4302784dcfa04905" id="r_a75b4dc293111bdaa4302784dcfa04905"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#a75b4dc293111bdaa4302784dcfa04905">parameterHistory</a> = nullptr</td></tr>
+<tr class="separator:a75b4dc293111bdaa4302784dcfa04905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e02fa21a6790c3fd94a3dc89bc5887" id="r_ab8e02fa21a6790c3fd94a3dc89bc5887"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektToggle.html#ab8e02fa21a6790c3fd94a3dc89bc5887">lastValue</a> = 0.0F</td></tr>
+<tr class="separator:ab8e02fa21a6790c3fd94a3dc89bc5887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00008">8</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00010">10</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8d61c95931be355166de297c2446d32b" name="a8d61c95931be355166de297c2446d32b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d61c95931be355166de297c2446d32b">&#9670;&#160;</a></span>DirektToggle()</h2>
+<a id="aeb7123d032b92d9ee5178bfc6cec7319" name="aeb7123d032b92d9ee5178bfc6cec7319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb7123d032b92d9ee5178bfc6cec7319">&#9670;&#160;</a></span>DirektToggle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +163,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const juce::String &amp;&#160;</td>
-          <td class="paramname"><em>labelText</em>&#160;</td>
+          <td class="paramname"><em>labelText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a> *&#160;</td>
+          <td class="paramname"><em>parameterHistory</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,9 +179,20 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8cpp_source.html#l00006">6</a> of file <a class="el" href="DirektToggle_8cpp_source.html">DirektToggle.cpp</a>.</p>
+<p>Creates toggle parameter control with optional undo tracking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apvts</td><td>Processor parameter state. </td></tr>
+    <tr><td class="paramname">paramID</td><td>Target parameter identifier. </td></tr>
+    <tr><td class="paramname">labelText</td><td>Button label. </td></tr>
+    <tr><td class="paramname">parameterHistory</td><td>Optional edit history sink for undo/redo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00020">attachment</a>, and <a class="el" href="DirektToggle_8h_source.html#l00019">button</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8cpp_source.html#l00008">8</a> of file <a class="el" href="DirektToggle_8cpp_source.html">DirektToggle.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00030">attachment</a>, <a class="el" href="DirektToggle_8h_source.html#l00029">button</a>, <a class="el" href="DirektToggle_8h_source.html#l00033">lastValue</a>, <a class="el" href="DirektToggle_8h_source.html#l00031">parameter</a>, <a class="el" href="DirektToggle_8h_source.html#l00032">parameterHistory</a>, and <a class="el" href="DirektParameterHistory_8cpp_source.html#l00006">DirektDSP::DirektParameterHistory::pushChange()</a>.</p>
 
 </div>
 </div>
@@ -196,9 +220,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00016">16</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00026">26</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00019">button</a>.</p>
+<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00029">button</a>.</p>
 
 </div>
 </div>
@@ -225,9 +249,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8cpp_source.html#l00015">15</a> of file <a class="el" href="DirektToggle_8cpp_source.html">DirektToggle.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8cpp_source.html#l00038">38</a> of file <a class="el" href="DirektToggle_8cpp_source.html">DirektToggle.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00019">button</a>.</p>
+<p class="reference">References <a class="el" href="DirektToggle_8h_source.html#l00029">button</a>.</p>
 
 </div>
 </div>
@@ -252,9 +276,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00020">20</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00030">30</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00006">DirektToggle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00008">DirektToggle()</a>.</p>
 
 </div>
 </div>
@@ -278,9 +302,87 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00019">19</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00029">29</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00006">DirektToggle()</a>, <a class="el" href="DirektToggle_8h_source.html#l00016">getButton()</a>, and <a class="el" href="DirektToggle_8cpp_source.html#l00015">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00008">DirektToggle()</a>, <a class="el" href="DirektToggle_8h_source.html#l00026">getButton()</a>, and <a class="el" href="DirektToggle_8cpp_source.html#l00038">resized()</a>.</p>
+
+</div>
+</div>
+<a id="ab8e02fa21a6790c3fd94a3dc89bc5887" name="ab8e02fa21a6790c3fd94a3dc89bc5887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e02fa21a6790c3fd94a3dc89bc5887">&#9670;&#160;</a></span>lastValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DirektDSP::DirektToggle::lastValue = 0.0F</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00033">33</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00008">DirektToggle()</a>.</p>
+
+</div>
+</div>
+<a id="aa87e9b1314927c691a47f522bbde7a33" name="aa87e9b1314927c691a47f522bbde7a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87e9b1314927c691a47f522bbde7a33">&#9670;&#160;</a></span>parameter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::RangedAudioParameter* DirektDSP::DirektToggle::parameter = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00031">31</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00008">DirektToggle()</a>.</p>
+
+</div>
+</div>
+<a id="a75b4dc293111bdaa4302784dcfa04905" name="a75b4dc293111bdaa4302784dcfa04905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b4dc293111bdaa4302784dcfa04905">&#9670;&#160;</a></span>parameterHistory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a>* DirektDSP::DirektToggle::parameterHistory = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektToggle_8h_source.html#l00032">32</a> of file <a class="el" href="DirektToggle_8h_source.html">DirektToggle.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektToggle_8cpp_source.html#l00008">DirektToggle()</a>.</p>
 
 </div>
 </div>

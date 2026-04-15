@@ -1,7 +1,13 @@
 <map id="DirektDSP::DirektKnob" name="DirektDSP::DirektKnob">
-<area shape="rect" id="Node000001" title=" " alt="" coords="360,37,529,63"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="53,5,185,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,23,360,39,360,44,198,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,55,232,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,67,360,56,360,61,246,72"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="997,69,1167,95"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="650,5,782,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="796,28,974,59,1014,67,1013,72,973,65,795,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="603,55,829,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="843,79,997,79,997,85,843,85"/>
+<area shape="rect" id="Node000004" href="$classDirektDSP_1_1DirektParameterHistory.html" title="Maintains undo/redo history for APVTS parameter edits." alt="" coords="615,134,817,174"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="830,129,1016,92,1017,97,831,134"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="321,127,505,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="519,151,614,151,614,157,519,157"/>
+<area shape="rect" id="Node000006" href="$structDirektDSP_1_1DirektParameterHistory_1_1ParameterChange.html" title=" " alt="" coords="5,134,208,174"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="222,151,321,151,321,157,222,157"/>
 </map>

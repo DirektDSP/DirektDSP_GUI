@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['savefavorites_0',['saveFavorites',['../classDirektDSP_1_1DirektPresetBrowser.html#a596bb7746d202aa3ea4e4d3cc8158d07',1,'DirektDSP::DirektPresetBrowser']]],
-  ['savepreset_1',['savePreset',['../classService_1_1PresetManager.html#a568c746e7eceb00f9462462b30dc2ac3',1,'Service::PresetManager']]],
-  ['selectedrowschanged_2',['selectedRowsChanged',['../classDirektDSP_1_1DirektPresetBrowser_1_1CategoryListModel.html#a3c439a8eababc55f89e9b96c7c245a01',1,'DirektDSP::DirektPresetBrowser::CategoryListModel']]],
-  ['setaccentcolour_3',['setAccentColour',['../classDirektDSP_1_1DirektLookAndFeel.html#a72395822b7169bc68cd66df376203ad1',1,'DirektDSP::DirektLookAndFeel']]],
-  ['setactivetab_4',['setActiveTab',['../classDirektDSP_1_1DirektTabPanel.html#af925966774444db857c09b7a5c3b247e',1,'DirektDSP::DirektTabPanel']]],
-  ['setcolour_5',['setColour',['../classDirektDSP_1_1DirektMeter.html#acc284b10d795db2674a91e0e68a324fc',1,'DirektDSP::DirektMeter']]],
-  ['setcolumns_6',['setColumns',['../classDirektDSP_1_1DirektSection.html#a46729ce4229f610f5f01e82192bbc2a9',1,'DirektDSP::DirektSection']]],
-  ['setsource_7',['setSource',['../classDirektDSP_1_1DirektMeter.html#a28450004ae4a9c9aaf4ebe0ed87d612d',1,'DirektDSP::DirektMeter']]],
-  ['show_8',['show',['../classDirektDSP_1_1DirektPopupPanel.html#a16631e7319f0446824363862beaad617',1,'DirektDSP::DirektPopupPanel']]],
-  ['showpopup_9',['showPopup',['../classDirektDSP_1_1DirektBaseEditor.html#aa945ed272221ee189b0b14c0dd8772dd',1,'DirektDSP::DirektBaseEditor']]]
+  ['redo_0',['redo',['../classDirektDSP_1_1DirektParameterHistory.html#a07a38c429aacdee4972cb671b375775c',1,'DirektDSP::DirektParameterHistory']]],
+  ['refreshcategories_1',['refreshCategories',['../classDirektDSP_1_1DirektPresetBrowser.html#a15023b9b5438c4d71b4943767e5903fe',1,'DirektDSP::DirektPresetBrowser']]],
+  ['refreshpresets_2',['refreshPresets',['../classDirektDSP_1_1DirektPresetBrowser.html#a6b589ec6ead7f2aa8acd40be3b68b357',1,'DirektDSP::DirektPresetBrowser']]],
+  ['refreshtags_3',['refreshTags',['../classDirektDSP_1_1DirektPresetBrowser.html#acf2fac5f222d06d2279f3d1a5333f550',1,'DirektDSP::DirektPresetBrowser']]],
+  ['registercustom_4',['registerCustom',['../classDirektDSP_1_1DirektComponentRegistry.html#a0d5b609f4c54febd1d6916d6430d7336',1,'DirektDSP::DirektComponentRegistry']]],
+  ['resized_5',['resized',['../classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc',1,'DirektDSP::DirektHeader::resized()'],['../classDirektDSP_1_1DirektPopupPanel.html#a90209ca78c9ba11ea931314cc4b6395c',1,'DirektDSP::DirektPopupPanel::resized()'],['../classDirektDSP_1_1DirektPresetBrowser.html#a18505280320d089f73a82cbb24578d79',1,'DirektDSP::DirektPresetBrowser::resized()'],['../classDirektDSP_1_1DirektComboBox.html#a619be37a7d5d26c72f707218308985e7',1,'DirektDSP::DirektComboBox::resized()'],['../classDirektDSP_1_1DirektKnob.html#a3bf30706aa427090f0e294fc0edbf2e7',1,'DirektDSP::DirektKnob::resized()'],['../classDirektDSP_1_1DirektMacroControl.html#afc76ff4a47595813a5d81e977b88c676',1,'DirektDSP::DirektMacroControl::resized()'],['../classDirektDSP_1_1DirektToggle.html#a8cd9ba78050de459d14c8990ea982136',1,'DirektDSP::DirektToggle::resized()'],['../classDirektDSP_1_1DirektBaseEditor.html#a97993e78fc27cd04f0f7c23a2431b63e',1,'DirektDSP::DirektBaseEditor::resized()'],['../classDirektDSP_1_1DirektFlexContainer.html#a46c77a6c4149650ba54c50b8dcf1b146',1,'DirektDSP::DirektFlexContainer::resized()'],['../classDirektDSP_1_1DirektSection.html#a531f058089ef4db4bd8382f936ac2fb7',1,'DirektDSP::DirektSection::resized()'],['../classDirektDSP_1_1DirektTabPanel.html#a926d2a21544d76a3ac1866632b7c4167',1,'DirektDSP::DirektTabPanel::resized()']]]
 ];
