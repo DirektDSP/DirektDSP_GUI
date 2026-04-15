@@ -1,7 +1,9 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "config/DirektDescriptors.h"
+
 #include <vector>
+
+#include "config/DirektDescriptors.h"
 
 namespace DirektDSP
 {
@@ -9,7 +11,11 @@ namespace DirektDSP
 class DirektFlexContainer : public juce::Component
 {
 public:
-    enum class Direction { Row, Column };
+    enum class Direction
+    {
+        Row,
+        Column
+    };
 
     explicit DirektFlexContainer (Direction dir);
 
@@ -22,7 +28,7 @@ private:
     struct ChildEntry
     {
         juce::Component* component = nullptr;
-        SizeHint         hint;
+        SizeHint hint;
     };
 
     std::vector<ChildEntry> entries;

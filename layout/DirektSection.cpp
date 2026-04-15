@@ -1,12 +1,11 @@
 #include "layout/DirektSection.h"
 
+#include <utility>
+
 namespace DirektDSP
 {
 
-DirektSection::DirektSection (const juce::String& t, int columns)
-    : title (t), numColumns (columns)
-{
-}
+DirektSection::DirektSection (juce::String t, int columns) : title (std::move (t)), numColumns (columns) {}
 
 void DirektSection::paint (juce::Graphics& g)
 {
@@ -14,19 +13,19 @@ void DirektSection::paint (juce::Graphics& g)
 
     // Rounded rect background
     g.setColour (Colours::bgSection);
-    g.fillRoundedRectangle (bounds, 6.0f);
+    g.fillRoundedRectangle (bounds, 6.0F);
 
     // Border
     g.setColour (Colours::divider);
-    g.drawRoundedRectangle (bounds.reduced (0.5f), 6.0f, 1.0f);
+    g.drawRoundedRectangle (bounds.reduced (0.5F), 6.0F, 1.0F);
 
     // Title
     if (title.isNotEmpty())
     {
-        auto titleArea = bounds.removeFromTop (static_cast<float>(titleHeight));
+        auto titleArea = bounds.removeFromTop (static_cast<float> (titleHeight));
         g.setColour (Colours::textLabel);
-        g.setFont (juce::Font (juce::FontOptions (12.0f).withStyle ("Bold")));
-        g.drawText (title, titleArea.reduced (static_cast<float>(padding), 0.0f).toNearestInt(),
+        g.setFont (juce::Font (juce::FontOptions (12.0F).withStyle ("Bold")));
+        g.drawText (title, titleArea.reduced (static_cast<float> (padding), 0.0F).toNearestInt(),
                     juce::Justification::centredLeft);
     }
 }
@@ -34,25 +33,27 @@ void DirektSection::paint (juce::Graphics& g)
 void DirektSection::resized()
 {
     if (controls.empty())
+    {
         return;
+    }
 
     auto bounds = getLocalBounds().reduced (padding);
     if (title.isNotEmpty())
+    {
         bounds.removeFromTop (titleHeight);
+    }
 
-    int cols = numColumns > 0 ? numColumns : static_cast<int>(controls.size());
-    int rows = (static_cast<int>(controls.size()) + cols - 1) / cols;
+    int const cols = numColumns > 0 ? numColumns : static_cast<int> (controls.size());
+    int const rows = (static_cast<int> (controls.size()) + cols - 1) / cols;
     auto cellW = bounds.getWidth() / cols;
     auto cellH = bounds.getHeight() / rows;
 
-    for (int i = 0; i < static_cast<int>(controls.size()); ++i)
+    for (int i = 0; i < static_cast<int> (controls.size()); ++i)
     {
-        int col = i % cols;
-        int row = i / cols;
-        auto cell = juce::Rectangle<int> (bounds.getX() + col * cellW,
-                                           bounds.getY() + row * cellH,
-                                           cellW, cellH);
-        controls[static_cast<size_t>(i)]->setBounds (cell.reduced (2));
+        int const col = i % cols;
+        int const row = i / cols;
+        auto cell = juce::Rectangle<int> (bounds.getX() + col * cellW, bounds.getY() + row * cellH, cellW, cellH);
+        controls[static_cast<size_t> (i)]->setBounds (cell.reduced (2));
     }
 }
 

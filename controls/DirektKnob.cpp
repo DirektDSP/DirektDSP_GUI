@@ -1,12 +1,12 @@
 #include "controls/DirektKnob.h"
+
 #include "theme/DirektColours.h"
 
 namespace DirektDSP
 {
 
-DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts,
-                         const juce::String& paramID,
-                         const juce::String& labelText)
+DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
+                        const juce::String& labelText)
 {
     slider.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);
     slider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 60, 16);
@@ -19,7 +19,7 @@ DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts,
     label.setText (labelText, juce::dontSendNotification);
     label.setJustificationType (juce::Justification::centred);
     label.setColour (juce::Label::textColourId, Colours::textDim);
-    label.setFont (juce::Font (juce::FontOptions (11.0f)));
+    label.setFont (juce::Font (juce::FontOptions (11.0F)));
     addAndMakeVisible (label);
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (apvts, paramID, slider);

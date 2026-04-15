@@ -1,9 +1,15 @@
 #pragma once
-#include <functional>
 #include <juce_gui_basics/juce_gui_basics.h>
+
+#include <functional>
+
 #include "theme/DirektColours.h"
 
-namespace Service { class PresetManager; struct PresetMetadata; }
+namespace Service
+{
+class PresetManager;
+struct PresetMetadata;
+} // namespace Service
 
 namespace DirektDSP
 {
@@ -44,17 +50,17 @@ private:
         std::function<void()> onSelectionChanged;
 
         int getNumRows() override { return categories.size(); }
-        void paintListBoxItem (int row, juce::Graphics& g,
-                               int width, int height, bool isSelected) override;
+        void paintListBoxItem (int row, juce::Graphics& g, int width, int height, bool isSelected) override;
         void selectedRowsChanged (int lastRowSelected) override
         {
             selectedRow = lastRowSelected;
-            if (onSelectionChanged) onSelectionChanged();
+            if (onSelectionChanged)
+                onSelectionChanged();
         }
     };
 
     CategoryListModel categoryModel;
-    juce::ListBox categoryList { "Categories", &categoryModel };
+    juce::ListBox categoryList{"Categories", &categoryModel};
 
     // --- Preset list ---
     struct PresetEntry
@@ -74,23 +80,23 @@ private:
         std::function<void()> onSelectionChanged;
 
         int getNumRows() override { return static_cast<int> (presets.size()); }
-        void paintListBoxItem (int row, juce::Graphics& g,
-                               int width, int height, bool isSelected) override;
+        void paintListBoxItem (int row, juce::Graphics& g, int width, int height, bool isSelected) override;
         void listBoxItemClicked (int row, const juce::MouseEvent&) override
         {
             selectedRow = row;
-            if (onSelectionChanged) onSelectionChanged();
+            if (onSelectionChanged)
+                onSelectionChanged();
         }
     };
 
     PresetListModel presetModel;
-    juce::ListBox presetList { "Presets", &presetModel };
+    juce::ListBox presetList{"Presets", &presetModel};
 
     // --- Action buttons ---
-    juce::TextButton saveBtn    { "Save" };
-    juce::TextButton deleteBtn  { "Delete" };
-    juce::TextButton moveBtn    { "Move" };
-    juce::TextButton newCatBtn  { "New Category" };
+    juce::TextButton saveBtn{"Save"};
+    juce::TextButton deleteBtn{"Delete"};
+    juce::TextButton moveBtn{"Move"};
+    juce::TextButton newCatBtn{"New Category"};
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektPresetBrowser)
 };

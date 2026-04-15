@@ -1,7 +1,9 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "theme/DirektColours.h"
+
 #include <vector>
+
+#include "theme/DirektColours.h"
 
 namespace DirektDSP
 {
@@ -20,7 +22,7 @@ public:
 private:
     struct TabEntry
     {
-        juce::String     label;
+        juce::String label;
         juce::Component* content = nullptr;
     };
 

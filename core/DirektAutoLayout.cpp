@@ -1,21 +1,21 @@
 #include "core/DirektAutoLayout.h"
+
 #include "config/DirektDescriptorHelpers.h"
 
 namespace DirektDSP
 {
 
-std::vector<BuiltSection> DirektAutoLayout::buildSections (
-    juce::AudioProcessorValueTreeState& apvts,
-    const std::vector<SectionDescriptor>& descriptors)
+std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorValueTreeState& apvts,
+                                                           const std::vector<SectionDescriptor>& descriptors)
 {
     std::vector<BuiltSection> result;
 
-    for (auto& desc : descriptors)
+    for (const auto& desc : descriptors)
     {
         BuiltSection built;
         built.section = std::make_unique<DirektSection> (desc.title, desc.columns);
 
-        for (auto& slot : desc.params)
+        for (const auto& slot : desc.params)
         {
             std::unique_ptr<juce::Component> control;
 
@@ -35,11 +35,17 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (
             if (slot.tooltip.isNotEmpty())
             {
                 if (auto* knob = dynamic_cast<DirektKnob*> (control.get()))
+                {
                     knob->getSlider().setTooltip (slot.tooltip);
+                }
                 else if (auto* toggle = dynamic_cast<DirektToggle*> (control.get()))
+                {
                     toggle->getButton().setTooltip (slot.tooltip);
+                }
                 else if (auto* combo = dynamic_cast<DirektComboBox*> (control.get()))
+                {
                     combo->getComboBox().setTooltip (slot.tooltip);
+                }
             }
 
             built.section->addControl (control.get());
@@ -52,35 +58,34 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (
     return result;
 }
 
-NodeDescriptor DirektAutoLayout::convertLegacySections (
-    const std::vector<SectionDescriptor>& descriptors)
+NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<SectionDescriptor>& descriptors)
 {
     std::vector<Node> sectionNodes;
 
-    for (auto& desc : descriptors)
+    for (const auto& desc : descriptors)
     {
         std::vector<Node> childNodes;
 
-        for (auto& slot : desc.params)
+        for (const auto& slot : desc.params)
         {
             switch (slot.type)
             {
                 case ControlType::Knob:
-                    childNodes.push_back (node (KnobDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    childNodes.push_back (node (KnobDesc{{}, slot.paramID, slot.label, slot.tooltip}));
                     break;
                 case ControlType::Toggle:
-                    childNodes.push_back (node (ToggleDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    childNodes.push_back (node (ToggleDesc{{}, slot.paramID, slot.label, slot.tooltip}));
                     break;
                 case ControlType::ComboBox:
-                    childNodes.push_back (node (ComboBoxDesc { {}, slot.paramID, slot.label, slot.tooltip }));
+                    childNodes.push_back (node (ComboBoxDesc{{}, slot.paramID, slot.label, slot.tooltip}));
                     break;
             }
         }
 
-        sectionNodes.push_back (node (SectionDesc { {}, desc.title, desc.columns, std::move (childNodes) }));
+        sectionNodes.push_back (node (SectionDesc{{}, desc.title, desc.columns, std::move (childNodes)}));
     }
 
-    return VBoxDesc { {}, std::move (sectionNodes) };
+    return VBoxDesc{{}, std::move (sectionNodes)};
 }
 
 } // namespace DirektDSP
