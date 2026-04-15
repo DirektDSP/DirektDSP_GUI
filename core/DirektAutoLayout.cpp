@@ -36,8 +36,8 @@ std::unique_ptr<juce::Component> makeModuleToggleControl (juce::AudioProcessorVa
  * @param sectionDescriptor Section definition being converted.
  * @param builtSection Mutable section being populated with controls.
  */
-void appendModuleIsolationControls (juce::AudioProcessorValueTreeState& apvts, const SectionDescriptor& sectionDescriptor,
-                                    BuiltSection& builtSection)
+void appendModuleIsolationControls (juce::AudioProcessorValueTreeState& apvts,
+                                    const SectionDescriptor& sectionDescriptor, BuiltSection& builtSection)
 {
     if (sectionDescriptor.moduleControls.bypassParamID.isNotEmpty())
     {
@@ -68,14 +68,16 @@ void appendModuleIsolationNodes (const SectionDescriptor& sectionDescriptor, std
 {
     if (sectionDescriptor.moduleControls.bypassParamID.isNotEmpty())
     {
-        childNodes.push_back (node (ToggleDesc{{}, sectionDescriptor.moduleControls.bypassParamID,
+        childNodes.push_back (node (ToggleDesc{{},
+                                               sectionDescriptor.moduleControls.bypassParamID,
                                                sectionDescriptor.moduleControls.bypassLabel,
                                                sectionDescriptor.moduleControls.bypassTooltip}));
     }
 
     if (sectionDescriptor.moduleControls.soloParamID.isNotEmpty())
     {
-        childNodes.push_back (node (ToggleDesc{{}, sectionDescriptor.moduleControls.soloParamID,
+        childNodes.push_back (node (ToggleDesc{{},
+                                               sectionDescriptor.moduleControls.soloParamID,
                                                sectionDescriptor.moduleControls.soloLabel,
                                                sectionDescriptor.moduleControls.soloTooltip}));
     }
