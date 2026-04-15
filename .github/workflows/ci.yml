@@ -143,7 +143,40 @@ jobs:
           exit $FAILED
 
   # ──────────────────────────────────────────────────────────────────────────
-  # 3. labels – keep repository labels in sync with .github/labels.yml
+  # 3. Doxygen – generate HTML API documentation
+  #    On every push/PR: build docs and upload as a workflow artefact.
+  #    On push to main: also deploy to GitHub Pages.
+  # ──────────────────────────────────────────────────────────────────────────
+  docs:
+    name: "Docs (Doxygen)"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write   # required for gh-pages deployment
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Doxygen and Graphviz
+        run: sudo apt-get install -y doxygen graphviz
+
+      - name: Generate documentation
+        run: doxygen Doxyfile
+
+      - name: Upload HTML docs as artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: doxygen-html
+          path: docs/html/
+          retention-days: 30
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 4. labels – keep repository labels in sync with .github/labels.yml
   # ──────────────────────────────────────────────────────────────────────────
   sync-labels:
     name: "Sync Labels"
