@@ -2,6 +2,9 @@
 
 #include "Service/PresetManager.h"
 
+#include <algorithm>
+#include <utility>
+
 namespace DirektDSP
 {
 
@@ -54,7 +57,31 @@ void DirektPresetBrowser::PresetListModel::paintListBoxItem (int row, juce::Grap
 
     g.setColour (Colours::textDim);
     g.setFont (juce::Font (juce::FontOptions (11.0F)));
-    g.drawText (entry.artist, width / 2, 0, width / 2 - 8, height, juce::Justification::centredRight);
+    g.drawText (entry.artist, width / 2, 0, width / 2 - 30, height, juce::Justification::centredRight);
+
+    auto const favorite = isFavorite && isFavorite (entry);
+    g.setColour (favorite ? Colours::textBright : Colours::textDim);
+    g.setFont (juce::Font (juce::FontOptions (14.0F)));
+    g.drawText (favorite ? "★" : "☆", width - 24, 0, 16, height, juce::Justification::centred);
+}
+
+void DirektPresetBrowser::PresetListModel::listBoxItemClicked (int row, const juce::MouseEvent& event)
+{
+    if (row < 0 || row >= static_cast<int> (presets.size()))
+    {
+        return;
+    }
+
+    selectedRow = row;
+    auto const clickedFavoriteGlyph = event.x >= (event.eventComponent->getWidth() - 28);
+    if (clickedFavoriteGlyph && onFavoriteToggle)
+    {
+        onFavoriteToggle (row);
+    }
+    else if (onSelectionChanged)
+    {
+        onSelectionChanged();
+    }
 }
 
 // ============================================================================
@@ -64,8 +91,19 @@ void DirektPresetBrowser::PresetListModel::paintListBoxItem (int row, juce::Grap
 DirektPresetBrowser::DirektPresetBrowser (Service::PresetManager& pm, juce::Colour accentColour)
     : presetManager (pm), accent (accentColour)
 {
+    loadFavorites();
+
     categoryModel.accent = accent;
     presetModel.accent = accent;
+    presetModel.isFavorite = [this] (const PresetEntry& entry) { return isFavorite (entry); };
+    presetModel.onFavoriteToggle = [this] (int row) { onFavoriteToggleRequested (row); };
+
+    searchEditor.setTextToShowWhenEmpty ("Search presets, artists, tags...", Colours::textDim);
+    searchEditor.setColour (juce::TextEditor::backgroundColourId, Colours::bgSection);
+    searchEditor.setColour (juce::TextEditor::textColourId, Colours::textBright);
+    searchEditor.setColour (juce::TextEditor::outlineColourId, accent.withAlpha (0.6F));
+    searchEditor.onTextChange = [this] { onSearchTextChanged(); };
+    addAndMakeVisible (searchEditor);
 
     categoryList.setColour (juce::ListBox::backgroundColourId, Colours::bgPanel);
     categoryList.setRowHeight (24);
@@ -114,6 +152,8 @@ void DirektPresetBrowser::paint (juce::Graphics& g)
 void DirektPresetBrowser::resized()
 {
     auto bounds = getLocalBounds().reduced (4);
+    auto searchArea = bounds.removeFromTop (28);
+    bounds.removeFromTop (4);
     auto buttonStrip = bounds.removeFromBottom (32);
     bounds.removeFromBottom (4);
 
@@ -121,6 +161,7 @@ void DirektPresetBrowser::resized()
     auto catArea = bounds.removeFromLeft (bounds.getWidth() * 3 / 10);
     bounds.removeFromLeft (4);
 
+    searchEditor.setBounds (searchArea);
     categoryList.setBounds (catArea);
     presetList.setBounds (bounds);
 
@@ -134,13 +175,36 @@ void DirektPresetBrowser::resized()
 
 void DirektPresetBrowser::refreshCategories()
 {
+    refreshTags();
+}
+
+void DirektPresetBrowser::refreshTags()
+{
     categoryModel.categories.clear();
     categoryModel.categories.add ("All");
+    categoryModel.categories.add ("Favorites");
 
-    auto cats = presetManager.getAllCategories();
-    categoryModel.categories.addArray (cats);
+    auto metadata = presetManager.getAllPresetMetadata();
+    juce::StringArray tags;
+
+    for (auto const& item : metadata)
+    {
+        if (item.category.isNotEmpty())
+        {
+            tags.addIfNotAlreadyThere ("#" + item.category);
+        }
+        if (item.artist.isNotEmpty())
+        {
+            tags.addIfNotAlreadyThere ("@" + item.artist);
+        }
+    }
+    tags.sort (true);
+    categoryModel.categories.addArray (tags);
 
     categoryList.updateContent();
+    auto selected = juce::jlimit (0, categoryModel.categories.size() - 1, categoryModel.selectedRow);
+    categoryModel.selectedRow = selected;
+    categoryList.selectRow (selected);
     categoryList.repaint();
 }
 
@@ -148,30 +212,54 @@ void DirektPresetBrowser::refreshPresets()
 {
     presetModel.presets.clear();
 
-    juce::String selectedCategory;
+    juce::String selectedCategoryOrTag;
     int const catRow = categoryList.getSelectedRow();
     if (catRow > 0 && catRow < categoryModel.categories.size())
     {
-        selectedCategory = categoryModel.categories[catRow];
+        selectedCategoryOrTag = categoryModel.categories[catRow];
     }
 
-    if (selectedCategory.isEmpty())
+    auto metadata = presetManager.getAllPresetMetadata();
+    auto const searchText = searchEditor.getText().toLowerCase().trim();
+    auto const useSearch = searchText.isNotEmpty();
+
+    auto tagPasses = [this, &selectedCategoryOrTag] (const Service::PresetMetadata& item)
     {
-        // "All" — show everything
-        auto metadata = presetManager.getAllPresetMetadata();
-        for (auto& m : metadata)
+        if (selectedCategoryOrTag.isEmpty() || selectedCategoryOrTag == "All")
         {
-            presetModel.presets.push_back ({m.name, m.artist, m.category});
+            return true;
         }
-    }
-    else
+        if (selectedCategoryOrTag == "Favorites")
+        {
+            auto const key = makeFavoriteKey (item.name, item.category).toStdString();
+            return favoritePresetKeys.find (key) != favoritePresetKeys.end();
+        }
+        if (selectedCategoryOrTag.startsWithChar ('#'))
+            return item.category == selectedCategoryOrTag.substring (1);
+        if (selectedCategoryOrTag.startsWithChar ('@'))
+            return item.artist == selectedCategoryOrTag.substring (1);
+        return false;
+    };
+
+    auto searchPasses = [&searchText, useSearch] (const Service::PresetMetadata& item)
     {
-        auto metadata = presetManager.getPresetMetadataInCategory (selectedCategory);
-        for (auto& m : metadata)
-        {
-            presetModel.presets.push_back ({m.name, m.artist, m.category});
-        }
+        if (! useSearch)
+            return true;
+        auto haystack = (item.name + " " + item.artist + " " + item.category + " " + item.tags.joinIntoString (" "))
+                            .toLowerCase();
+        return haystack.contains (searchText);
+    };
+
+    for (auto const& item : metadata)
+    {
+        if (! tagPasses (item) || ! searchPasses (item))
+            continue;
+
+        presetModel.presets.push_back ({item.name, item.artist, item.category});
     }
+
+    std::sort (presetModel.presets.begin(), presetModel.presets.end(), [] (const PresetEntry& lhs, const PresetEntry& rhs)
+               { return lhs.name.compareIgnoreCase (rhs.name) < 0; });
 
     presetModel.selectedRow = -1;
     presetList.updateContent();
@@ -204,6 +292,39 @@ void DirektPresetBrowser::onPresetSelected()
     if (onPresetLoaded)
     {
         onPresetLoaded();
+    }
+}
+
+void DirektPresetBrowser::onSearchTextChanged()
+{
+    refreshPresets();
+}
+
+void DirektPresetBrowser::onFavoriteToggleRequested (int row)
+{
+    if (row < 0 || row >= static_cast<int> (presetModel.presets.size()))
+    {
+        return;
+    }
+
+    auto const& entry = presetModel.presets[static_cast<size_t> (row)];
+    auto const key = makeFavoriteKey (entry.name, entry.category).toStdString();
+    if (favoritePresetKeys.find (key) != favoritePresetKeys.end())
+    {
+        favoritePresetKeys.erase (key);
+    }
+    else
+    {
+        favoritePresetKeys.insert (key);
+    }
+
+    saveFavorites();
+    presetList.repaint();
+    refreshTags();
+    if (categoryModel.selectedRow >= 0 && categoryModel.selectedRow < categoryModel.categories.size()
+        && categoryModel.categories[categoryModel.selectedRow] == "Favorites")
+    {
+        refreshPresets();
     }
 }
 
@@ -266,6 +387,8 @@ void DirektPresetBrowser::doDelete()
                                  if (result == 1)
                                  {
                                      presetManager.deletePreset (nameToDelete, catToDelete);
+                                    favoritePresetKeys.erase (makeFavoriteKey (nameToDelete, catToDelete).toStdString());
+                                    saveFavorites();
                                      refreshCategories();
                                      refreshPresets();
                                      if (onPresetLoaded)
@@ -306,6 +429,13 @@ void DirektPresetBrowser::doMove()
                                      if (toCat.isNotEmpty() && toCat != fromCat)
                                      {
                                          presetManager.movePresetToCategory (presetName, fromCat, toCat);
+                                        auto const oldKey = makeFavoriteKey (presetName, fromCat).toStdString();
+                                        if (favoritePresetKeys.find (oldKey) != favoritePresetKeys.end())
+                                        {
+                                            favoritePresetKeys.erase (oldKey);
+                                            favoritePresetKeys.insert (makeFavoriteKey (presetName, toCat).toStdString());
+                                            saveFavorites();
+                                        }
                                          refreshCategories();
                                          refreshPresets();
                                      }
@@ -338,6 +468,68 @@ void DirektPresetBrowser::doNewCategory()
                                  delete aw;
                              }),
                          true);
+}
+
+juce::String DirektPresetBrowser::makeFavoriteKey (const juce::String& name, const juce::String& category)
+{
+    return category.trim() + "::" + name.trim();
+}
+
+bool DirektPresetBrowser::isFavorite (const PresetEntry& entry) const
+{
+    return favoritePresetKeys.find (makeFavoriteKey (entry.name, entry.category).toStdString()) != favoritePresetKeys.end();
+}
+
+void DirektPresetBrowser::loadFavorites()
+{
+    favoritePresetKeys.clear();
+
+    auto favoritesFile =
+        juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+            .getChildFile ("DirektDSP")
+            .getChildFile ("preset-browser-favorites.json");
+
+    if (! favoritesFile.existsAsFile())
+    {
+        return;
+    }
+
+    auto parsed = juce::JSON::parse (favoritesFile);
+    auto* list = parsed.getArray();
+    if (list == nullptr)
+    {
+        return;
+    }
+
+    for (auto const& value : *list)
+    {
+        auto key = value.toString().trim();
+        if (key.isNotEmpty())
+        {
+            favoritePresetKeys.insert (key.toStdString());
+        }
+    }
+}
+
+void DirektPresetBrowser::saveFavorites() const
+{
+    juce::Array<juce::var> data;
+    for (auto const& key : favoritePresetKeys)
+    {
+        data.add (juce::String (key));
+    }
+
+    auto favoritesFile =
+        juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+            .getChildFile ("DirektDSP")
+            .getChildFile ("preset-browser-favorites.json");
+    auto const directory = favoritesFile.getParentDirectory();
+    if (! directory.exists())
+    {
+        directory.createDirectory();
+    }
+
+    favoritesFile.replaceWithText (juce::JSON::toString (juce::var (data), true));
 }
 
 } // namespace DirektDSP
