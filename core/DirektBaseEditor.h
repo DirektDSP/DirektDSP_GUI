@@ -58,8 +58,8 @@ protected:
     std::vector<BuiltSection> builtSections; // legacy mode
 
 private:
-    void initCommon (const juce::String&, juce::Colour accentColour, float ratio, int,
-                     int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
+    void initCommon (const juce::String&, juce::Colour accentColour, float ratio, int, int minWidth, int maxWidth,
+                     bool showHeader, bool showFooter, bool resizable, bool showTooltips);
 
     DirektLookAndFeel lookAndFeel;
     DirektHeader header;
