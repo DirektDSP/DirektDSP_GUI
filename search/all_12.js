@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['undo_0',['undo',['../classDirektDSP_1_1DirektParameterHistory.html#abf8497d72813fb54a02dfc47e4a5e17c',1,'DirektDSP::DirektParameterHistory']]],
-  ['updatepresetname_1',['updatePresetName',['../classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0',1,'DirektDSP::DirektHeader']]],
-  ['updatevisibility_2',['updateVisibility',['../classDirektDSP_1_1DirektTabPanel.html#af4d8514c640ac65bf18f6532d9496e2e',1,'DirektDSP::DirektTabPanel']]]
+  ['tabbarheight_0',['tabBarHeight',['../classDirektDSP_1_1DirektTabPanel.html#a00128b1082058dcf4953483b912f009b',1,'DirektDSP::DirektTabPanel']]],
+  ['tabbuttons_1',['tabButtons',['../classDirektDSP_1_1DirektTabPanel.html#a85213c25e9e8bc3cc2fd67f57758b183',1,'DirektDSP::DirektTabPanel']]],
+  ['tabdesc_2',['TabDesc',['../structDirektDSP_1_1TabDesc.html',1,'DirektDSP']]],
+  ['tabentry_3',['TabEntry',['../structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html',1,'DirektDSP::DirektTabPanel']]],
+  ['tabpaneldesc_4',['TabPanelDesc',['../structDirektDSP_1_1TabPanelDesc.html',1,'DirektDSP']]],
+  ['tabs_5',['tabs',['../structDirektDSP_1_1TabPanelDesc.html#ab5062bfe936d6185d53f5c682329adb3',1,'DirektDSP::TabPanelDesc::tabs'],['../classDirektDSP_1_1DirektTabPanel.html#a3e5e06fb4762abda30c4b207a661deea',1,'DirektDSP::DirektTabPanel::tabs']]],
+  ['tags_6',['tags',['../structService_1_1PresetMetadata.html#ad5e71bfa7006831901f8492b7d21cc0a',1,'Service::PresetMetadata']]],
+  ['targets_7',['targets',['../classDirektDSP_1_1DirektMacroControl.html#a941e30990e43799f72a9d7351bd8b6a1',1,'DirektDSP::DirektMacroControl::targets'],['../structDirektDSP_1_1MacroDesc.html#a885aea0f94f714ce7da95951aa867ffe',1,'DirektDSP::MacroDesc::targets'],['../structDirektDSP_1_1MacroKnobDesc.html#a8149d9d5d52b3715d4b654e276c2293f',1,'DirektDSP::MacroKnobDesc::targets']]],
+  ['text_8',['text',['../structDirektDSP_1_1LabelDesc.html#a7b110c606959fb59fbdfd6367bf49491',1,'DirektDSP::LabelDesc']]],
+  ['textbright_9',['textBright',['../namespaceDirektDSP_1_1Colours.html#ac0058d5279227ba76fe363eb3e34ed82',1,'DirektDSP::Colours']]],
+  ['textdim_10',['textDim',['../namespaceDirektDSP_1_1Colours.html#a83058fee648167fda2a41fd7bfb31be1',1,'DirektDSP::Colours']]],
+  ['textlabel_11',['textLabel',['../namespaceDirektDSP_1_1Colours.html#a1b7a2ba6a619a3530983497ea453292a',1,'DirektDSP::Colours']]],
+  ['timercallback_12',['timerCallback',['../classDirektDSP_1_1DirektMeter.html#ab50d69223096052da5c40408abce690b',1,'DirektDSP::DirektMeter']]],
+  ['title_13',['title',['../classDirektDSP_1_1DirektLabel.html#a7db1718c4d9235db01ed30f62e55101ea86ca428e6f24ffde91d2f008557ec3ab',1,'DirektDSP::DirektLabel::Title'],['../structDirektDSP_1_1SectionDesc.html#a6377fb0d83c246db739ebe51a0a6782b',1,'DirektDSP::SectionDesc::title'],['../structDirektDSP_1_1SectionDescriptor.html#ac21f8d48dda82f0fb79da22315f40ece',1,'DirektDSP::SectionDescriptor::title'],['../classDirektDSP_1_1DirektSection.html#ad0035c7a6b1e18bc7091b20512152cdc',1,'DirektDSP::DirektSection::title']]],
+  ['titlebaraccessory_14',['titleBarAccessory',['../classDirektDSP_1_1DirektSection.html#ad47ba8fecf50a830c2c347164d397e7c',1,'DirektDSP::DirektSection']]],
+  ['titlebaraccessorywidth_15',['titleBarAccessoryWidth',['../classDirektDSP_1_1DirektSection.html#a035577108803a8975d4aa4a67574f32e',1,'DirektDSP::DirektSection']]],
+  ['titleheight_16',['titleHeight',['../classDirektDSP_1_1DirektSection.html#adbcba18202946d4f801f98e49d23559e',1,'DirektDSP::DirektSection']]],
+  ['titletext_17',['titleText',['../classDirektDSP_1_1DirektPopupPanel.html#a1625ea0da02f6fb51b871d33926f6b43',1,'DirektDSP::DirektPopupPanel']]],
+  ['toggle_18',['Toggle',['../namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921',1,'DirektDSP']]],
+  ['toggledesc_19',['ToggleDesc',['../structDirektDSP_1_1ToggleDesc.html',1,'DirektDSP']]],
+  ['toggles_20',['toggles',['../classDirektDSP_1_1DirektModuleBypassSoloStrip.html#acc2ec4eb69b0332d13aeab9c1db1b77f',1,'DirektDSP::DirektModuleBypassSoloStrip']]],
+  ['tooltip_21',['tooltip',['../structDirektDSP_1_1ParamSlot.html#a49f5f8f81c3421ff76b6f445f7e97f04',1,'DirektDSP::ParamSlot::tooltip'],['../structDirektDSP_1_1KnobDesc.html#ae2c1fd74d6584654478736af4aacd252',1,'DirektDSP::KnobDesc::tooltip'],['../structDirektDSP_1_1MacroDesc.html#a54bedf66fbc58892617e3108e9e5740a',1,'DirektDSP::MacroDesc::tooltip'],['../structDirektDSP_1_1XYPadDesc.html#a2d4eb19143c7f20bfb6f6df076e24f1b',1,'DirektDSP::XYPadDesc::tooltip'],['../structDirektDSP_1_1RadioGroupDesc.html#ac58afd3446964fd3f5f01ef03f24cd73',1,'DirektDSP::RadioGroupDesc::tooltip'],['../structDirektDSP_1_1ButtonDesc.html#aec7bbd39d1ca504714be995158d5838e',1,'DirektDSP::ButtonDesc::tooltip'],['../structDirektDSP_1_1SliderDesc.html#ad451959b8f2b3e0680d7987dc294b9b2',1,'DirektDSP::SliderDesc::tooltip'],['../structDirektDSP_1_1MacroKnobDesc.html#a56b81cc4b5f5d8c1d07ca4ca69488ca8',1,'DirektDSP::MacroKnobDesc::tooltip'],['../structDirektDSP_1_1ComboBoxDesc.html#ada8a5604346f0ae4ada0948ece642dc7',1,'DirektDSP::ComboBoxDesc::tooltip'],['../structDirektDSP_1_1ToggleDesc.html#a892f9327aaf9cc9f2ce9359a2a477311',1,'DirektDSP::ToggleDesc::tooltip']]],
+  ['tooltipwindow_22',['tooltipWindow',['../classDirektDSP_1_1DirektBaseEditor.html#a5ab999f5fa37cdb5e404ab5804f1a895',1,'DirektDSP::DirektBaseEditor']]],
+  ['trycreate_23',['tryCreate',['../classDirektDSP_1_1DirektModuleBypassSoloStrip.html#af7cc38ff752df02bbfb6d567ee4b9d5b',1,'DirektDSP::DirektModuleBypassSoloStrip']]],
+  ['type_24',['type',['../structDirektDSP_1_1ParamSlot.html#a951eddbfe781c7e4ee95ccd3fc7b87ff',1,'DirektDSP::ParamSlot']]],
+  ['typekey_25',['typeKey',['../structDirektDSP_1_1CustomDesc.html#ad55d793036739354b9e00f45097b6f8d',1,'DirektDSP::CustomDesc']]]
 ];

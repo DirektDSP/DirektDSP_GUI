@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['title_0',['Title',['../classDirektDSP_1_1DirektLabel.html#a7db1718c4d9235db01ed30f62e55101ea86ca428e6f24ffde91d2f008557ec3ab',1,'DirektDSP::DirektLabel']]],
-  ['toggle_1',['Toggle',['../namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921',1,'DirektDSP']]]
+  ['row_0',['Row',['../classDirektDSP_1_1DirektFlexContainer.html#a54bb4ea6450e249a8c50e67f52a47fa2aa70367aa7cb74e510f4f9413ccf059d3',1,'DirektDSP::DirektFlexContainer']]]
 ];

@@ -37,6 +37,7 @@ var namespaceDirektDSP =
     [ "DirektLookAndFeel", "classDirektDSP_1_1DirektLookAndFeel.html", "classDirektDSP_1_1DirektLookAndFeel" ],
     [ "DirektMacroControl", "classDirektDSP_1_1DirektMacroControl.html", "classDirektDSP_1_1DirektMacroControl" ],
     [ "DirektMeter", "classDirektDSP_1_1DirektMeter.html", "classDirektDSP_1_1DirektMeter" ],
+    [ "DirektModuleBypassSoloStrip", "classDirektDSP_1_1DirektModuleBypassSoloStrip.html", "classDirektDSP_1_1DirektModuleBypassSoloStrip" ],
     [ "DirektParameterHistory", "classDirektDSP_1_1DirektParameterHistory.html", "classDirektDSP_1_1DirektParameterHistory" ],
     [ "DirektPopupPanel", "classDirektDSP_1_1DirektPopupPanel.html", "classDirektDSP_1_1DirektPopupPanel" ],
     [ "DirektPresetBrowser", "classDirektDSP_1_1DirektPresetBrowser.html", "classDirektDSP_1_1DirektPresetBrowser" ],
@@ -48,6 +49,7 @@ var namespaceDirektDSP =
     [ "KnobDesc", "structDirektDSP_1_1KnobDesc.html", "structDirektDSP_1_1KnobDesc" ],
     [ "LabelDesc", "structDirektDSP_1_1LabelDesc.html", "structDirektDSP_1_1LabelDesc" ],
     [ "MacroDesc", "structDirektDSP_1_1MacroDesc.html", "structDirektDSP_1_1MacroDesc" ],
+    [ "MacroKnobDesc", "structDirektDSP_1_1MacroKnobDesc.html", "structDirektDSP_1_1MacroKnobDesc" ],
     [ "MacroTarget", "structDirektDSP_1_1MacroTarget.html", "structDirektDSP_1_1MacroTarget" ],
     [ "MacroTargetDesc", "structDirektDSP_1_1MacroTargetDesc.html", "structDirektDSP_1_1MacroTargetDesc" ],
     [ "MeterDesc", "structDirektDSP_1_1MeterDesc.html", "structDirektDSP_1_1MeterDesc" ],
@@ -71,6 +73,11 @@ var namespaceDirektDSP =
       [ "Knob", "namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8a848c38c91fcb0189d65c35746c884e36", null ],
       [ "Toggle", "namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8aa8875bbe4272c0bdd786cfaaedf77921", null ],
       [ "ComboBox", "namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8afd249a0c28275ebf9d4c8464ca2225cf", null ]
+    ] ],
+    [ "MacroCurve", "namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489", [
+      [ "Linear", "namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Quadratic", "namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a8b2972385ed28d0e199ae2985d6fea4c", null ],
+      [ "SquareRoot", "namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489ae6c1b4ee758a2636a6eaf99105103c56", null ]
     ] ],
     [ "MeterMode", "namespaceDirektDSP.html#a2186e96b485cdb559fcdc65b3a6146ee", [
       [ "Normal", "namespaceDirektDSP.html#a2186e96b485cdb559fcdc65b3a6146eea960b44c579bc2f6818d2daaf9e4c16f0", null ],

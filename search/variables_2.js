@@ -9,7 +9,7 @@ var searchData=
   ['colour_6',['colour',['../structDirektDSP_1_1DirektMeter_1_1Config.html#aec4ded03990b768bbb0562a6133d801a',1,'DirektDSP::DirektMeter::Config']]],
   ['columns_7',['columns',['../structDirektDSP_1_1SectionDesc.html#a427bc690237ef67f3e5e0ec79d36aae0',1,'DirektDSP::SectionDesc::columns'],['../structDirektDSP_1_1SectionDescriptor.html#a4e92c720512c0ea2666e046f4987133c',1,'DirektDSP::SectionDescriptor::columns']]],
   ['combo_8',['combo',['../classDirektDSP_1_1DirektComboBox.html#abce0eb967e13370a730f5ef6420c15ba',1,'DirektDSP::DirektComboBox']]],
-  ['component_9',['component',['../structDirektDSP_1_1BuiltNode.html#aa7c20ed53c10339395d6d990fb72645f',1,'DirektDSP::BuiltNode::component'],['../structDirektDSP_1_1DirektFlexContainer_1_1ChildEntry.html#a2f6cbb6a16ca491adaa25d7b6d97df13',1,'DirektDSP::DirektFlexContainer::ChildEntry::component']]],
+  ['component_9',['component',['../structDirektDSP_1_1DirektFlexContainer_1_1ChildEntry.html#a2f6cbb6a16ca491adaa25d7b6d97df13',1,'DirektDSP::DirektFlexContainer::ChildEntry::component'],['../structDirektDSP_1_1BuiltNode.html#aa7c20ed53c10339395d6d990fb72645f',1,'DirektDSP::BuiltNode::component']]],
   ['config_10',['config',['../classDirektDSP_1_1DirektMeter.html#a6fe812e12032f5301629294b8b937c6f',1,'DirektDSP::DirektMeter']]],
   ['configdriven_11',['configDriven',['../classDirektDSP_1_1DirektBaseEditor.html#aeef403500af053e88cf4ddd97688f634',1,'DirektDSP::DirektBaseEditor']]],
   ['constrainer_12',['constrainer',['../classDirektDSP_1_1DirektBaseEditor.html#a1f6a40fb7402e658420d3dc14ac9361a',1,'DirektDSP::DirektBaseEditor']]],
@@ -17,6 +17,7 @@ var searchData=
   ['contentcomp_14',['contentComp',['../classDirektDSP_1_1DirektPopupPanel.html#a884e9f4da653832a50247e406620238f',1,'DirektDSP::DirektPopupPanel']]],
   ['controls_15',['controls',['../structDirektDSP_1_1BuiltSection.html#a36f70817ce0d5e8a4626139375210915',1,'DirektDSP::BuiltSection::controls'],['../classDirektDSP_1_1DirektSection.html#a96d12f825f1768f9e78ce49f6269832e',1,'DirektDSP::DirektSection::controls']]],
   ['cursor_16',['cursor',['../classDirektDSP_1_1DirektParameterHistory.html#a13a98abc35f228957fab738fc4d6bd1d',1,'DirektDSP::DirektParameterHistory']]],
-  ['curveexponent_17',['curveexponent',['../structDirektDSP_1_1MacroTargetDesc.html#a44866d610a400d3938d9f47feb3a4087',1,'DirektDSP::MacroTargetDesc::curveExponent'],['../structDirektDSP_1_1MacroTarget.html#a78608e2f33549b16e2a0788c6c3cd9f0',1,'DirektDSP::MacroTarget::curveExponent']]],
-  ['customfactories_18',['customFactories',['../classDirektDSP_1_1DirektComponentRegistry.html#a0a26b7f126f521674a63ee7a1b23e1f0',1,'DirektDSP::DirektComponentRegistry']]]
+  ['curve_17',['curve',['../structDirektDSP_1_1MacroTarget.html#adee67e45fac14f263bd380bd5ce2307a',1,'DirektDSP::MacroTarget']]],
+  ['curveexponent_18',['curveexponent',['../structDirektDSP_1_1MacroTargetDesc.html#a44866d610a400d3938d9f47feb3a4087',1,'DirektDSP::MacroTargetDesc::curveExponent'],['../structDirektDSP_1_1MacroTarget.html#a78608e2f33549b16e2a0788c6c3cd9f0',1,'DirektDSP::MacroTarget::curveExponent']]],
+  ['customfactories_19',['customFactories',['../classDirektDSP_1_1DirektComponentRegistry.html#a0a26b7f126f521674a63ee7a1b23e1f0',1,'DirektDSP::DirektComponentRegistry']]]
 ];

@@ -5,6 +5,8 @@ var DirektDescriptors_8h =
     [ "DirektDSP::KnobDesc", "structDirektDSP_1_1KnobDesc.html", "structDirektDSP_1_1KnobDesc" ],
     [ "DirektDSP::ToggleDesc", "structDirektDSP_1_1ToggleDesc.html", "structDirektDSP_1_1ToggleDesc" ],
     [ "DirektDSP::ComboBoxDesc", "structDirektDSP_1_1ComboBoxDesc.html", "structDirektDSP_1_1ComboBoxDesc" ],
+    [ "DirektDSP::MacroTarget", "structDirektDSP_1_1MacroTarget.html", "structDirektDSP_1_1MacroTarget" ],
+    [ "DirektDSP::MacroKnobDesc", "structDirektDSP_1_1MacroKnobDesc.html", "structDirektDSP_1_1MacroKnobDesc" ],
     [ "DirektDSP::SliderDesc", "structDirektDSP_1_1SliderDesc.html", "structDirektDSP_1_1SliderDesc" ],
     [ "DirektDSP::ButtonDesc", "structDirektDSP_1_1ButtonDesc.html", "structDirektDSP_1_1ButtonDesc" ],
     [ "DirektDSP::RadioGroupDesc", "structDirektDSP_1_1RadioGroupDesc.html", "structDirektDSP_1_1RadioGroupDesc" ],
@@ -23,6 +25,11 @@ var DirektDescriptors_8h =
     [ "DirektDSP::CustomDesc", "structDirektDSP_1_1CustomDesc.html", "structDirektDSP_1_1CustomDesc" ],
     [ "DirektDSP::NodeDescriptor", "structDirektDSP_1_1NodeDescriptor.html", null ],
     [ "Node", "DirektDescriptors_8h.html#a1ae84cbab0321345fa9ce02c2c5d37a0", null ],
+    [ "MacroCurve", "DirektDescriptors_8h.html#ac4422bc9c8225b42eb17d5d0c6543489", [
+      [ "Linear", "DirektDescriptors_8h.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Quadratic", "DirektDescriptors_8h.html#ac4422bc9c8225b42eb17d5d0c6543489a8b2972385ed28d0e199ae2985d6fea4c", null ],
+      [ "SquareRoot", "DirektDescriptors_8h.html#ac4422bc9c8225b42eb17d5d0c6543489ae6c1b4ee758a2636a6eaf99105103c56", null ]
+    ] ],
     [ "MeterMode", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146ee", [
       [ "Normal", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea960b44c579bc2f6818d2daaf9e4c16f0", null ],
       [ "GainReduction", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea301b5ee318f25aa3fc3773e07f3d6312", null ]

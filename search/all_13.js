@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['vboxdesc_0',['VBoxDesc',['../structDirektDSP_1_1VBoxDesc.html',1,'DirektDSP']]],
-  ['vertical_1',['vertical',['../classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3a06ce2a25e5d12c166a36f654dbea6012',1,'DirektDSP::DirektMeter::Vertical'],['../namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4a06ce2a25e5d12c166a36f654dbea6012',1,'DirektDSP::Vertical']]],
-  ['visibilitychanged_2',['visibilityChanged',['../classDirektDSP_1_1DirektPresetBrowser.html#ab26bbfde7e98516d8200cba795ca4a2f',1,'DirektDSP::DirektPresetBrowser']]],
-  ['visible_3',['visible',['../structDirektDSP_1_1NodeProps.html#a6f8fb3fd22a9f0a9c50e1b653b09e5ea',1,'DirektDSP::NodeProps']]]
+  ['undo_0',['undo',['../classDirektDSP_1_1DirektParameterHistory.html#abf8497d72813fb54a02dfc47e4a5e17c',1,'DirektDSP::DirektParameterHistory']]],
+  ['updatepresetname_1',['updatePresetName',['../classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0',1,'DirektDSP::DirektHeader']]],
+  ['updatevisibility_2',['updateVisibility',['../classDirektDSP_1_1DirektTabPanel.html#af4d8514c640ac65bf18f6532d9496e2e',1,'DirektDSP::DirektTabPanel']]]
 ];

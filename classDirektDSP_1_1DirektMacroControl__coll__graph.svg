@@ -68,7 +68,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="structDirektDSP_1_1MacroTarget.html" target="_top" xlink:title="Describes one mapped parameter target for a macro control.">
+<g id="a_Node000004"><a xlink:href="structDirektDSP_1_1MacroTarget.html" target="_top" xlink:title="One APVTS parameter written by a MacroKnobDesc knob.">
 <polygon fill="white" stroke="#666666" points="247.5,-162 115.5,-162 115.5,-143 247.5,-143 247.5,-162"/>
 <text text-anchor="middle" x="181.5" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">DirektDSP::MacroTarget</text>
 </a>

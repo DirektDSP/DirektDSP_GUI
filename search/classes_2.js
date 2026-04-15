@@ -12,11 +12,12 @@ var searchData=
   ['direktlookandfeel_9',['DirektLookAndFeel',['../classDirektDSP_1_1DirektLookAndFeel.html',1,'DirektDSP']]],
   ['direktmacrocontrol_10',['DirektMacroControl',['../classDirektDSP_1_1DirektMacroControl.html',1,'DirektDSP']]],
   ['direktmeter_11',['DirektMeter',['../classDirektDSP_1_1DirektMeter.html',1,'DirektDSP']]],
-  ['direktparameterhistory_12',['DirektParameterHistory',['../classDirektDSP_1_1DirektParameterHistory.html',1,'DirektDSP']]],
-  ['direktpopuppanel_13',['DirektPopupPanel',['../classDirektDSP_1_1DirektPopupPanel.html',1,'DirektDSP']]],
-  ['direktpresetbrowser_14',['DirektPresetBrowser',['../classDirektDSP_1_1DirektPresetBrowser.html',1,'DirektDSP']]],
-  ['direktsection_15',['DirektSection',['../classDirektDSP_1_1DirektSection.html',1,'DirektDSP']]],
-  ['direkttabpanel_16',['DirektTabPanel',['../classDirektDSP_1_1DirektTabPanel.html',1,'DirektDSP']]],
-  ['direkttoggle_17',['DirektToggle',['../classDirektDSP_1_1DirektToggle.html',1,'DirektDSP']]],
-  ['dividerdesc_18',['DividerDesc',['../structDirektDSP_1_1DividerDesc.html',1,'DirektDSP']]]
+  ['direktmodulebypasssolostrip_12',['DirektModuleBypassSoloStrip',['../classDirektDSP_1_1DirektModuleBypassSoloStrip.html',1,'DirektDSP']]],
+  ['direktparameterhistory_13',['DirektParameterHistory',['../classDirektDSP_1_1DirektParameterHistory.html',1,'DirektDSP']]],
+  ['direktpopuppanel_14',['DirektPopupPanel',['../classDirektDSP_1_1DirektPopupPanel.html',1,'DirektDSP']]],
+  ['direktpresetbrowser_15',['DirektPresetBrowser',['../classDirektDSP_1_1DirektPresetBrowser.html',1,'DirektDSP']]],
+  ['direktsection_16',['DirektSection',['../classDirektDSP_1_1DirektSection.html',1,'DirektDSP']]],
+  ['direkttabpanel_17',['DirektTabPanel',['../classDirektDSP_1_1DirektTabPanel.html',1,'DirektDSP']]],
+  ['direkttoggle_18',['DirektToggle',['../classDirektDSP_1_1DirektToggle.html',1,'DirektDSP']]],
+  ['dividerdesc_19',['DividerDesc',['../structDirektDSP_1_1DividerDesc.html',1,'DirektDSP']]]
 ];

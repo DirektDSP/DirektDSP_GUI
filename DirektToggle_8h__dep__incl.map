@@ -1,19 +1,28 @@
 <map id="controls/DirektToggle.h" name="controls/DirektToggle.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="139,5,311,31"/>
-<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="68,225,167,251"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,36,65,55,36,67,18,80,9,99,10,119,17,140,31,160,67,196,101,223,98,227,63,200,27,163,13,142,4,120,4,98,14,77,33,62,63,50,137,31"/>
-<area shape="rect" id="Node000003" href="$DirektToggle_8cpp.html" title=" " alt="" coords="28,79,215,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,41,140,81,137,76,196,36"/>
-<area shape="rect" id="Node000004" href="$DirektAutoLayout_8h.html" title=" " alt="" coords="239,79,419,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,36,314,76,311,81,252,41"/>
-<area shape="rect" id="Node000008" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="444,79,692,104"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="294,31,513,76,512,81,293,36"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="227,109,183,126,162,139,145,154,133,171,126,190,120,226,115,225,120,189,128,168,141,150,159,134,180,122,225,104"/>
-<area shape="rect" id="Node000005" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="155,152,349,177"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="309,115,266,154,263,150,305,111"/>
-<area shape="rect" id="Node000006" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="374,152,549,177"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="364,108,441,149,439,154,361,113"/>
-<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="393,183,167,229,166,224,392,177"/>
-<area shape="rect" id="Node000007" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="366,225,557,251"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="464,191,464,225,459,225,459,191"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="502,5,674,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="5,255,104,280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="488,27,353,45,279,60,207,81,119,109,86,130,57,168,49,190,48,214,54,254,49,255,42,214,44,189,52,165,83,126,117,105,206,76,278,55,352,39,488,22"/>
+<area shape="rect" id="Node000003" href="$DirektToggle_8cpp.html" title=" " alt="" coords="764,86,951,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="641,32,819,83,817,89,640,37"/>
+<area shape="rect" id="Node000004" href="$DirektAutoLayout_8h.html" title=" " alt="" coords="218,86,398,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="535,37,349,89,348,83,533,32"/>
+<area shape="rect" id="Node000008" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="996,174,1244,199"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="627,34,703,76,728,98,738,107,753,116,796,128,872,142,1047,171,1046,177,871,148,795,133,751,121,735,112,724,102,700,81,624,39"/>
+<area shape="rect" id="Node000009" href="$DirektModuleBypassSoloStrip_8h.html" title=" " alt="" coords="487,79,689,119"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="591,44,591,79,585,79,585,44"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="205,111,172,119,140,131,110,147,83,168,70,189,62,213,57,255,52,254,56,211,65,187,79,165,107,143,138,126,171,114,204,106"/>
+<area shape="rect" id="Node000005" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="292,174,487,199"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="330,120,380,172,376,175,326,123"/>
+<area shape="rect" id="Node000006" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="93,174,267,199"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="281,121,199,176,196,172,278,117"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="151,209,75,257,72,252,149,204"/>
+<area shape="rect" id="Node000007" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="129,255,319,280"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="196,210,220,253,215,256,191,213"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="573,132,543,173,523,193,500,209,447,234,400,248,357,254,315,254,227,250,176,251,118,257,105,259,104,254,117,252,176,246,227,245,315,249,356,248,399,242,445,229,497,204,520,189,539,170,569,129"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="533,127,417,176,415,172,531,122"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="704,116,1049,171,1049,177,703,121"/>
+<area shape="rect" id="Node000010" href="$DirektModuleBypassSoloStrip_8cpp.html" title=" " alt="" coords="769,167,972,207"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="664,120,810,164,808,169,662,125"/>
+<area shape="rect" id="Node000011" href="$DirektSection_8cpp.html" title=" " alt="" coords="562,174,745,199"/>
+<area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="613,128,646,172,642,175,609,131"/>
 </map>

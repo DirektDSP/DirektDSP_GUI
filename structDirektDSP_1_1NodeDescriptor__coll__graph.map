@@ -1,5 +1,5 @@
 <map id="DirektDSP::NodeDescriptor" name="DirektDSP::NodeDescriptor">
-<area shape="rect" id="Node000001" title=" " alt="" coords="335,57,532,82"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,287,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="300,67,335,67,335,72,300,72"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="423,49,620,75"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,375,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="389,59,422,59,422,65,389,65"/>
 </map>

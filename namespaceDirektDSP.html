@@ -144,6 +144,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html">DirektMeter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektModuleBypassSoloStrip.html">DirektModuleBypassSoloStrip</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compact bypass and solo toggles for a module section title bar.  <a href="classDirektDSP_1_1DirektModuleBypassSoloStrip.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektParameterHistory.html">DirektParameterHistory</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains undo/redo history for APVTS parameter edits.  <a href="classDirektDSP_1_1DirektParameterHistory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,8 +171,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroDesc.html">MacroDesc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for a macro control.  <a href="structDirektDSP_1_1MacroDesc.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroKnobDesc.html">MacroKnobDesc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One rotary macro control that drives multiple parameters with independent ranges/curves.  <a href="structDirektDSP_1_1MacroKnobDesc.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html">MacroTarget</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes one mapped parameter target for a macro control.  <a href="structDirektDSP_1_1MacroTarget.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One APVTS parameter written by a <a class="el" href="structDirektDSP_1_1MacroKnobDesc.html">MacroKnobDesc</a> knob.  <a href="structDirektDSP_1_1MacroTarget.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTargetDesc.html">MacroTargetDesc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One macro mapping target.  <a href="structDirektDSP_1_1MacroTargetDesc.html#details">More...</a><br /></td></tr>
@@ -214,6 +220,12 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ac4422bc9c8225b42eb17d5d0c6543489" id="r_ac4422bc9c8225b42eb17d5d0c6543489"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489">MacroCurve</a> { <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b">Linear</a>
+, <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a8b2972385ed28d0e199ae2985d6fea4c">Quadratic</a>
+, <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489ae6c1b4ee758a2636a6eaf99105103c56">SquareRoot</a>
+ }</td></tr>
+<tr class="memdesc:ac4422bc9c8225b42eb17d5d0c6543489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shaping for macro position before mapping into each target’s normalized range.  <a href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489">More...</a><br /></td></tr>
+<tr class="separator:ac4422bc9c8225b42eb17d5d0c6543489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34607bb645036f6ce8766deedae165e4" id="r_a34607bb645036f6ce8766deedae165e4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4">MeterOrientation</a> { <a class="el" href="namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4a06ce2a25e5d12c166a36f654dbea6012">Vertical</a>
 , <a class="el" href="namespaceDirektDSP.html#a34607bb645036f6ce8766deedae165e4ac1b5fa03ecdb95d4a45dd1c40b02527f">Horizontal</a>
  }</td></tr>
@@ -281,6 +293,40 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac4422bc9c8225b42eb17d5d0c6543489" name="ac4422bc9c8225b42eb17d5d0c6543489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4422bc9c8225b42eb17d5d0c6543489">&#9670;&#160;</a></span>MacroCurve</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489">DirektDSP::MacroCurve</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shaping for macro position before mapping into each target’s normalized range. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b" name="ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b"></a>Linear&#160;</td><td class="fielddoc"><p>Uniform sweep from <a class="el" href="structDirektDSP_1_1MacroTarget.html#a0439c77a6255fa34d07bfe6e6242345f">MacroTarget::normMin</a> to <a class="el" href="structDirektDSP_1_1MacroTarget.html#af548856b4737d065063d17ed8c73adfb">MacroTarget::normMax</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac4422bc9c8225b42eb17d5d0c6543489a8b2972385ed28d0e199ae2985d6fea4c" name="ac4422bc9c8225b42eb17d5d0c6543489a8b2972385ed28d0e199ae2985d6fea4c"></a>Quadratic&#160;</td><td class="fielddoc"><p>Ease-in along the macro travel (slower change when macro is low). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac4422bc9c8225b42eb17d5d0c6543489ae6c1b4ee758a2636a6eaf99105103c56" name="ac4422bc9c8225b42eb17d5d0c6543489ae6c1b4ee758a2636a6eaf99105103c56"></a>SquareRoot&#160;</td><td class="fielddoc"><p>Ease-out (stronger response when macro is low). </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00071">71</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+
+</div>
+</div>
 <a id="a2186e96b485cdb559fcdc65b3a6146ee" name="a2186e96b485cdb559fcdc65b3a6146ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2186e96b485cdb559fcdc65b3a6146ee">&#9670;&#160;</a></span>MeterMode</h2>
 
@@ -305,7 +351,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a2186e96b485cdb559fcdc65b3a6146eea301b5ee318f25aa3fc3773e07f3d6312" name="a2186e96b485cdb559fcdc65b3a6146eea301b5ee318f25aa3fc3773e07f3d6312"></a>GainReduction&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00132">132</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00165">165</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
 
 </div>
 </div>
@@ -333,7 +379,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a34607bb645036f6ce8766deedae165e4ac1b5fa03ecdb95d4a45dd1c40b02527f" name="a34607bb645036f6ce8766deedae165e4ac1b5fa03ecdb95d4a45dd1c40b02527f"></a>Horizontal&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00127">127</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00160">160</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
 
 </div>
 </div>
@@ -358,7 +404,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="DirektDescriptorHelpers_8h_source.html#l00008">8</a> of file <a class="el" href="DirektDescriptorHelpers_8h_source.html">DirektDescriptorHelpers.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektAutoLayout_8cpp_source.html#l00062">DirektDSP::DirektAutoLayout::convertLegacySections()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektAutoLayout_8cpp_source.html#l00070">DirektDSP::DirektAutoLayout::convertLegacySections()</a>.</p>
 
 </div>
 </div>

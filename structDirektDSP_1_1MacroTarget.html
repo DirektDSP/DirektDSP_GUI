@@ -97,13 +97,25 @@ $(document).ready(function(){initNavTree('structDirektDSP_1_1MacroTarget.html','
 </div><!--header-->
 <div class="contents">
 
-<p>Describes one mapped parameter target for a macro control.  
+<p>One APVTS parameter written by a <a class="el" href="structDirektDSP_1_1MacroKnobDesc.html">MacroKnobDesc</a> knob.  
  <a href="structDirektDSP_1_1MacroTarget.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="DirektMacroControl_8h_source.html">DirektMacroControl.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a3332a8138b9d341b23ab8f69ee9c7610" id="r_a3332a8138b9d341b23ab8f69ee9c7610"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#a3332a8138b9d341b23ab8f69ee9c7610">paramID</a></td></tr>
+<tr class="memdesc:a3332a8138b9d341b23ab8f69ee9c7610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination parameter ID in <code>AudioProcessorValueTreeState</code>.  <br /></td></tr>
+<tr class="separator:a3332a8138b9d341b23ab8f69ee9c7610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0439c77a6255fa34d07bfe6e6242345f" id="r_a0439c77a6255fa34d07bfe6e6242345f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#a0439c77a6255fa34d07bfe6e6242345f">normMin</a> = 0.0f</td></tr>
+<tr class="memdesc:a0439c77a6255fa34d07bfe6e6242345f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalized destination value when shaped macro position is 0.  <br /></td></tr>
+<tr class="separator:a0439c77a6255fa34d07bfe6e6242345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af548856b4737d065063d17ed8c73adfb" id="r_af548856b4737d065063d17ed8c73adfb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#af548856b4737d065063d17ed8c73adfb">normMax</a> = 1.0f</td></tr>
+<tr class="memdesc:af548856b4737d065063d17ed8c73adfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalized destination value when shaped macro position is 1.  <br /></td></tr>
+<tr class="separator:af548856b4737d065063d17ed8c73adfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee67e45fac14f263bd380bd5ce2307a" id="r_adee67e45fac14f263bd380bd5ce2307a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489">MacroCurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#adee67e45fac14f263bd380bd5ce2307a">curve</a> = <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b">MacroCurve::Linear</a></td></tr>
+<tr class="memdesc:adee67e45fac14f263bd380bd5ce2307a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Curve from macro 0..1 before min/max mapping.  <br /></td></tr>
+<tr class="separator:adee67e45fac14f263bd380bd5ce2307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e97dccd805ba3f483bbb32c550b379e" id="r_a4e97dccd805ba3f483bbb32c550b379e"><td class="memItemLeft" align="right" valign="top">juce::RangedAudioParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#a4e97dccd805ba3f483bbb32c550b379e">parameter</a> = nullptr</td></tr>
 <tr class="separator:a4e97dccd805ba3f483bbb32c550b379e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8963d89503b2eb9539601fdab4761a" id="r_abd8963d89503b2eb9539601fdab4761a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDirektDSP_1_1MacroTarget.html#abd8963d89503b2eb9539601fdab4761a">minNormalized</a> = 0.0f</td></tr>
@@ -114,10 +126,29 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a78608e2f33549b16e2a0788c6c3cd9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Describes one mapped parameter target for a macro control. </p>
+<div class="textblock"><p>One APVTS parameter written by a <a class="el" href="structDirektDSP_1_1MacroKnobDesc.html">MacroKnobDesc</a> knob. </p>
+<p>Describes one mapped parameter target for a macro control. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirektMacroControl_8h_source.html#l00013">13</a> of file <a class="el" href="DirektMacroControl_8h_source.html">DirektMacroControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00081">81</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="adee67e45fac14f263bd380bd5ce2307a" name="adee67e45fac14f263bd380bd5ce2307a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee67e45fac14f263bd380bd5ce2307a">&#9670;&#160;</a></span>curve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489">MacroCurve</a> DirektDSP::MacroTarget::curve = <a class="el" href="namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b">MacroCurve::Linear</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Curve from macro 0..1 before min/max mapping. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00086">86</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+
+</div>
+</div>
 <a id="a78608e2f33549b16e2a0788c6c3cd9f0" name="a78608e2f33549b16e2a0788c6c3cd9f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78608e2f33549b16e2a0788c6c3cd9f0">&#9670;&#160;</a></span>curveExponent</h2>
 
@@ -166,6 +197,42 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af548856b4737d065063d17ed8c73adfb" name="af548856b4737d065063d17ed8c73adfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af548856b4737d065063d17ed8c73adfb">&#9670;&#160;</a></span>normMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DirektDSP::MacroTarget::normMax = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normalized destination value when shaped macro position is 1. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00085">85</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+
+</div>
+</div>
+<a id="a0439c77a6255fa34d07bfe6e6242345f" name="a0439c77a6255fa34d07bfe6e6242345f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0439c77a6255fa34d07bfe6e6242345f">&#9670;&#160;</a></span>normMin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DirektDSP::MacroTarget::normMin = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normalized destination value when shaped macro position is 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00084">84</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+
+</div>
+</div>
 <a id="a4e97dccd805ba3f483bbb32c550b379e" name="a4e97dccd805ba3f483bbb32c550b379e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e97dccd805ba3f483bbb32c550b379e">&#9670;&#160;</a></span>parameter</h2>
 
@@ -182,7 +249,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a id="a3332a8138b9d341b23ab8f69ee9c7610" name="a3332a8138b9d341b23ab8f69ee9c7610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3332a8138b9d341b23ab8f69ee9c7610">&#9670;&#160;</a></span>paramID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String DirektDSP::MacroTarget::paramID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination parameter ID in <code>AudioProcessorValueTreeState</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektDescriptors_8h_source.html#l00083">83</a> of file <a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>config/<a class="el" href="DirektDescriptors_8h_source.html">DirektDescriptors.h</a></li>
 <li>controls/<a class="el" href="DirektMacroControl_8h_source.html">DirektMacroControl.h</a></li>
 </ul>
 </div><!-- contents -->

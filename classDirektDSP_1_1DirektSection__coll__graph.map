@@ -1,7 +1,9 @@
 <map id="DirektDSP::DirektSection" name="DirektDSP::DirektSection">
-<area shape="rect" id="Node000001" title=" " alt="" coords="59,108,243,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,137,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,47,143,106,139,110,88,50"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="162,5,303,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,57,164,109,160,106,205,54"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="333,63,517,88"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,5,152,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,28,310,53,352,60,351,65,309,58,165,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,55,157,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,73,333,73,333,78,170,78"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,119,167,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,119,357,85,358,91,180,124"/>
 </map>
