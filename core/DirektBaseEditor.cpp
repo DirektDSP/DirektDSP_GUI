@@ -261,6 +261,11 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
     std::function<void (juce::Component*)> connectMeters;
     connectMeters = [&] (juce::Component* parent)
     {
+        if (parent == nullptr)
+        {
+            return;
+        }
+
         if (auto* meter = dynamic_cast<DirektMeter*> (parent))
         {
             // Meters don't expose their sourceID, but we can use component ID

@@ -85,7 +85,7 @@ BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
     return {std::move (knob), {}};
 }
 
-BuiltNode buildButtonNode (const ButtonDesc& desc, BuildContext& ctx)
+BuiltNode buildButtonNode (const ButtonDesc& desc, BuildContext& /*ctx*/)
 {
     auto btn = std::make_unique<juce::TextButton> (desc.label);
     if (desc.tooltip.isNotEmpty())
