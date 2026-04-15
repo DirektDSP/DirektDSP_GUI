@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektPresetBrowser.
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classDirektDSP_1_1DirektPresetBrowser-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DirektDSP::DirektPresetBrowser Class Reference</div></div>
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektPresetBrowser.
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektPresetBrowser__coll__graph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDirektDSP_1_1DirektPresetBrowser__coll__graph.svg" width="100%" height="511"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -129,6 +130,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a977905d3b667e84b697f7f6b9189a0c8" id="r_a977905d3b667e84b697f7f6b9189a0c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a977905d3b667e84b697f7f6b9189a0c8">DirektPresetBrowser</a> (<a class="el" href="classService_1_1PresetManager.html">Service::PresetManager</a> &amp;pm, juce::Colour accentColour)</td></tr>
+<tr class="memdesc:a977905d3b667e84b697f7f6b9189a0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates preset browser bound to preset manager.  <br /></td></tr>
 <tr class="separator:a977905d3b667e84b697f7f6b9189a0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18505280320d089f73a82cbb24578d79" id="r_a18505280320d089f73a82cbb24578d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a18505280320d089f73a82cbb24578d79">resized</a> () override</td></tr>
 <tr class="separator:a18505280320d089f73a82cbb24578d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,22 +146,53 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:acf2fac5f222d06d2279f3d1a5333f550" id="r_acf2fac5f222d06d2279f3d1a5333f550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#acf2fac5f222d06d2279f3d1a5333f550">refreshTags</a> ()</td></tr>
+<tr class="memdesc:acf2fac5f222d06d2279f3d1a5333f550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds visible filter tags from preset metadata and favorites state.  <br /></td></tr>
+<tr class="separator:acf2fac5f222d06d2279f3d1a5333f550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15023b9b5438c4d71b4943767e5903fe" id="r_a15023b9b5438c4d71b4943767e5903fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a15023b9b5438c4d71b4943767e5903fe">refreshCategories</a> ()</td></tr>
+<tr class="memdesc:a15023b9b5438c4d71b4943767e5903fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds preset list using active tag and full-text query filters.  <br /></td></tr>
 <tr class="separator:a15023b9b5438c4d71b4943767e5903fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b589ec6ead7f2aa8acd40be3b68b357" id="r_a6b589ec6ead7f2aa8acd40be3b68b357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a6b589ec6ead7f2aa8acd40be3b68b357">refreshPresets</a> ()</td></tr>
 <tr class="separator:a6b589ec6ead7f2aa8acd40be3b68b357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a678f59e5c4104dd05e1334fc7f14697a" id="r_a678f59e5c4104dd05e1334fc7f14697a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a678f59e5c4104dd05e1334fc7f14697a">onCategorySelected</a> ()</td></tr>
+<tr class="memdesc:a678f59e5c4104dd05e1334fc7f14697a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles user selecting a tag/category row in sidebar.  <br /></td></tr>
 <tr class="separator:a678f59e5c4104dd05e1334fc7f14697a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39870747e3894227f2111d208a4b0ded" id="r_a39870747e3894227f2111d208a4b0ded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a39870747e3894227f2111d208a4b0ded">onPresetSelected</a> ()</td></tr>
+<tr class="memdesc:a39870747e3894227f2111d208a4b0ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles user selecting preset row and loads it.  <br /></td></tr>
 <tr class="separator:a39870747e3894227f2111d208a4b0ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88aa2f0deaa8e80cda7440167d85d7d9" id="r_a88aa2f0deaa8e80cda7440167d85d7d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a88aa2f0deaa8e80cda7440167d85d7d9">onSearchTextChanged</a> ()</td></tr>
+<tr class="memdesc:a88aa2f0deaa8e80cda7440167d85d7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates full-text search filter and refreshes results.  <br /></td></tr>
+<tr class="separator:a88aa2f0deaa8e80cda7440167d85d7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7976d5700adfb91ab2481b3147f896c4" id="r_a7976d5700adfb91ab2481b3147f896c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a7976d5700adfb91ab2481b3147f896c4">onFavoriteToggleRequested</a> (int row)</td></tr>
+<tr class="memdesc:a7976d5700adfb91ab2481b3147f896c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles favorite state for selected preset row.  <br /></td></tr>
+<tr class="separator:a7976d5700adfb91ab2481b3147f896c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af111a35b1c903c356b486ac8b80a1cce" id="r_af111a35b1c903c356b486ac8b80a1cce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#af111a35b1c903c356b486ac8b80a1cce">doSave</a> ()</td></tr>
+<tr class="memdesc:af111a35b1c903c356b486ac8b80a1cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens modal flow for saving current state as new preset.  <br /></td></tr>
 <tr class="separator:af111a35b1c903c356b486ac8b80a1cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a138b4df7c29d9065150728a344618398" id="r_a138b4df7c29d9065150728a344618398"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a138b4df7c29d9065150728a344618398">doDelete</a> ()</td></tr>
+<tr class="memdesc:a138b4df7c29d9065150728a344618398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens modal flow for deleting selected preset.  <br /></td></tr>
 <tr class="separator:a138b4df7c29d9065150728a344618398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9ca02eaa58144fcc0a93d414611a2b" id="r_a2d9ca02eaa58144fcc0a93d414611a2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a2d9ca02eaa58144fcc0a93d414611a2b">doMove</a> ()</td></tr>
+<tr class="memdesc:a2d9ca02eaa58144fcc0a93d414611a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens modal flow for moving selected preset to other category.  <br /></td></tr>
 <tr class="separator:a2d9ca02eaa58144fcc0a93d414611a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8b0181928b212a990722bcf4a5fc6ec" id="r_ad8b0181928b212a990722bcf4a5fc6ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#ad8b0181928b212a990722bcf4a5fc6ec">doNewCategory</a> ()</td></tr>
+<tr class="memdesc:ad8b0181928b212a990722bcf4a5fc6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens modal flow for creating new category/tag bucket.  <br /></td></tr>
 <tr class="separator:ad8b0181928b212a990722bcf4a5fc6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7381866d78f1fb339a4afe64037f84" id="r_a8c7381866d78f1fb339a4afe64037f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a8c7381866d78f1fb339a4afe64037f84">loadFavorites</a> ()</td></tr>
+<tr class="memdesc:a8c7381866d78f1fb339a4afe64037f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads persisted favorites from user settings storage.  <br /></td></tr>
+<tr class="separator:a8c7381866d78f1fb339a4afe64037f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596bb7746d202aa3ea4e4d3cc8158d07" id="r_a596bb7746d202aa3ea4e4d3cc8158d07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a596bb7746d202aa3ea4e4d3cc8158d07">saveFavorites</a> () const</td></tr>
+<tr class="memdesc:a596bb7746d202aa3ea4e4d3cc8158d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves current favorites set to user settings storage.  <br /></td></tr>
+<tr class="separator:a596bb7746d202aa3ea4e4d3cc8158d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb18f64a9cc11b53a933cc3fa9cc6ea" id="r_adbb18f64a9cc11b53a933cc3fa9cc6ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#adbb18f64a9cc11b53a933cc3fa9cc6ea">isFavorite</a> (const <a class="el" href="structDirektDSP_1_1DirektPresetBrowser_1_1PresetEntry.html">PresetEntry</a> &amp;entry) const</td></tr>
+<tr class="memdesc:adbb18f64a9cc11b53a933cc3fa9cc6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if preset currently marked as favorite.  <br /></td></tr>
+<tr class="separator:adbb18f64a9cc11b53a933cc3fa9cc6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aff226d86c977d89a107957b9a6976bfc" id="r_aff226d86c977d89a107957b9a6976bfc"><td class="memItemLeft" align="right" valign="top">static juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#aff226d86c977d89a107957b9a6976bfc">makeFavoriteKey</a> (const juce::String &amp;name, const juce::String &amp;category)</td></tr>
+<tr class="memdesc:aff226d86c977d89a107957b9a6976bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds stable key for favorite persistence lookups.  <br /></td></tr>
+<tr class="separator:aff226d86c977d89a107957b9a6976bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -175,6 +208,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a54ca86d53846653528b9ed7474d6e030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19c9557954e87af715de75d081d76ac1" id="r_a19c9557954e87af715de75d081d76ac1"><td class="memItemLeft" align="right" valign="top">juce::ListBox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a19c9557954e87af715de75d081d76ac1">presetList</a> {&quot;Presets&quot;, &amp;<a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a54ca86d53846653528b9ed7474d6e030">presetModel</a>}</td></tr>
 <tr class="separator:a19c9557954e87af715de75d081d76ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b2246d651839b031b44af5df768471" id="r_a66b2246d651839b031b44af5df768471"><td class="memItemLeft" align="right" valign="top">juce::TextEditor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a66b2246d651839b031b44af5df768471">searchEditor</a></td></tr>
+<tr class="separator:a66b2246d651839b031b44af5df768471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925c6164ceb866a2774589ca4ca46c50" id="r_a925c6164ceb866a2774589ca4ca46c50"><td class="memItemLeft" align="right" valign="top">juce::TextButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#a925c6164ceb866a2774589ca4ca46c50">saveBtn</a> {&quot;Save&quot;}</td></tr>
 <tr class="separator:a925c6164ceb866a2774589ca4ca46c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad46b7f8c9c02f47c12c979ab34d396e8" id="r_ad46b7f8c9c02f47c12c979ab34d396e8"><td class="memItemLeft" align="right" valign="top">juce::TextButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#ad46b7f8c9c02f47c12c979ab34d396e8">deleteBtn</a> {&quot;Delete&quot;}</td></tr>
@@ -183,10 +218,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af0f6ee1b391c1c21982f658dfb522f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f1f9a3c2e6520f5b77430bafc47b58" id="r_ac6f1f9a3c2e6520f5b77430bafc47b58"><td class="memItemLeft" align="right" valign="top">juce::TextButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#ac6f1f9a3c2e6520f5b77430bafc47b58">newCatBtn</a> {&quot;New Category&quot;}</td></tr>
 <tr class="separator:ac6f1f9a3c2e6520f5b77430bafc47b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f460d035103663af04edbc7b264483" id="r_ab1f460d035103663af04edbc7b264483"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektPresetBrowser.html#ab1f460d035103663af04edbc7b264483">favoritePresetKeys</a></td></tr>
+<tr class="separator:ab1f460d035103663af04edbc7b264483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00017">17</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00018">18</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a977905d3b667e84b697f7f6b9189a0c8" name="a977905d3b667e84b697f7f6b9189a0c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a977905d3b667e84b697f7f6b9189a0c8">&#9670;&#160;</a></span>DirektPresetBrowser()</h2>
@@ -214,9 +251,18 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">64</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Creates preset browser bound to preset manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pm</td><td>Preset service used for list/load/save operations. </td></tr>
+    <tr><td class="paramname">accentColour</td><td>Accent colour used for highlighted controls. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00040">accent</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00048">DirektDSP::DirektPresetBrowser::CategoryListModel::accent</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00078">DirektDSP::DirektPresetBrowser::PresetListModel::accent</a>, <a class="el" href="DirektColours_8h_source.html#l00010">DirektDSP::Colours::bgPanel</a>, <a class="el" href="DirektColours_8h_source.html#l00013">DirektDSP::Colours::bgSection</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00062">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00097">deleteBtn</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00245">doDelete()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00281">doMove()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00318">doNewCategory()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00210">doSave()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00098">moveBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00099">newCatBtn</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00182">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00050">DirektDSP::DirektPresetBrowser::CategoryListModel::onSelectionChanged</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00080">DirektDSP::DirektPresetBrowser::PresetListModel::onSelectionChanged</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00093">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00096">saveBtn</a>, and <a class="el" href="DirektColours_8h_source.html#l00016">DirektDSP::Colours::textBright</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">91</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00069">accent</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00077">DirektDSP::DirektPresetBrowser::CategoryListModel::accent</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00107">DirektDSP::DirektPresetBrowser::PresetListModel::accent</a>, <a class="el" href="DirektColours_8h_source.html#l00010">DirektDSP::Colours::bgPanel</a>, <a class="el" href="DirektColours_8h_source.html#l00013">DirektDSP::Colours::bgSection</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00124">deleteBtn</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00367">doDelete()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00406">doMove()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00451">doNewCategory()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00332">doSave()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00481">isFavorite()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00108">DirektDSP::DirektPresetBrowser::PresetListModel::isFavorite</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00487">loadFavorites()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00125">moveBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00126">newCatBtn</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00271">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00109">DirektDSP::DirektPresetBrowser::PresetListModel::onFavoriteToggle</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00299">onSearchTextChanged()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00079">DirektDSP::DirektPresetBrowser::CategoryListModel::onSelectionChanged</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00111">DirektDSP::DirektPresetBrowser::PresetListModel::onSelectionChanged</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00118">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00123">saveBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00120">searchEditor</a>, <a class="el" href="DirektColours_8h_source.html#l00016">DirektDSP::Colours::textBright</a>, and <a class="el" href="DirektColours_8h_source.html#l00017">DirektDSP::Colours::textDim</a>.</p>
 
 </div>
 </div>
@@ -244,9 +290,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00245">245</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Opens modal flow for deleting selected preset. </p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00367">367</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
 
 </div>
 </div>
@@ -273,9 +321,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00281">281</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Opens modal flow for moving selected preset to other category. </p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00406">406</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
 
 </div>
 </div>
@@ -302,9 +352,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00318">318</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Opens modal flow for creating new category/tag bucket. </p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00451">451</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
 
 </div>
 </div>
@@ -331,11 +383,120 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00210">210</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Opens modal flow for saving current state as new preset. </p>
 
-<p class="reference">References <a class="el" href="classService_1_1PresetManager.html#a37f814d3e0f34f611b6527ce9f7a2786">Service::PresetManager::getCurrentCategory()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00039">presetManager</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00332">332</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="reference">References <a class="el" href="classService_1_1PresetManager.html#a37f814d3e0f34f611b6527ce9f7a2786">Service::PresetManager::getCurrentCategory()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00068">presetManager</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
+
+</div>
+</div>
+<a id="adbb18f64a9cc11b53a933cc3fa9cc6ea" name="adbb18f64a9cc11b53a933cc3fa9cc6ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb18f64a9cc11b53a933cc3fa9cc6ea">&#9670;&#160;</a></span>isFavorite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektPresetBrowser::isFavorite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structDirektDSP_1_1DirektPresetBrowser_1_1PresetEntry.html">PresetEntry</a> &amp;&#160;</td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if preset currently marked as favorite. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00481">481</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00099">DirektDSP::DirektPresetBrowser::PresetEntry::category</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00097">DirektDSP::DirektPresetBrowser::PresetEntry::name</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00038">DirektDSP::DirektPresetBrowser::PresetListModel::paintListBoxItem()</a>.</p>
+
+</div>
+</div>
+<a id="a8c7381866d78f1fb339a4afe64037f84" name="a8c7381866d78f1fb339a4afe64037f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7381866d78f1fb339a4afe64037f84">&#9670;&#160;</a></span>loadFavorites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektPresetBrowser::loadFavorites </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads persisted favorites from user settings storage. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00487">487</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
+
+</div>
+</div>
+<a id="aff226d86c977d89a107957b9a6976bfc" name="aff226d86c977d89a107957b9a6976bfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff226d86c977d89a107957b9a6976bfc">&#9670;&#160;</a></span>makeFavoriteKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String DirektDSP::DirektPresetBrowser::makeFavoriteKey </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>category</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Builds stable key for favorite persistence lookups. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00476">476</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>.</p>
 
 </div>
 </div>
@@ -362,11 +523,47 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00182">182</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Handles user selecting a tag/category row in sidebar. </p>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00062">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00047">DirektDSP::DirektPresetBrowser::CategoryListModel::selectedRow</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00271">271</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00076">DirektDSP::DirektPresetBrowser::CategoryListModel::selectedRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
+
+</div>
+</div>
+<a id="a7976d5700adfb91ab2481b3147f896c4" name="a7976d5700adfb91ab2481b3147f896c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7976d5700adfb91ab2481b3147f896c4">&#9670;&#160;</a></span>onFavoriteToggleRequested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektPresetBrowser::onFavoriteToggleRequested </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggles favorite state for selected preset row. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">304</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00075">DirektDSP::DirektPresetBrowser::CategoryListModel::categories</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00127">favoritePresetKeys</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00476">makeFavoriteKey()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00118">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00105">DirektDSP::DirektPresetBrowser::PresetListModel::presets</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">refreshTags()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00517">saveFavorites()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00076">DirektDSP::DirektPresetBrowser::CategoryListModel::selectedRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
 
 </div>
 </div>
@@ -393,11 +590,46 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">190</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Handles user selecting preset row and loads it. </p>
 
-<p class="reference">References <a class="el" href="classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c">Service::PresetManager::loadPreset()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00026">onPresetLoaded</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00093">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00039">presetManager</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00076">DirektDSP::DirektPresetBrowser::PresetListModel::presets</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00077">DirektDSP::DirektPresetBrowser::PresetListModel::selectedRow</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">279</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>.</p>
+<p class="reference">References <a class="el" href="classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c">Service::PresetManager::loadPreset()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00032">onPresetLoaded</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00068">presetManager</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00118">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00105">DirektDSP::DirektPresetBrowser::PresetListModel::presets</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00106">DirektDSP::DirektPresetBrowser::PresetListModel::selectedRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
+
+</div>
+</div>
+<a id="a88aa2f0deaa8e80cda7440167d85d7d9" name="a88aa2f0deaa8e80cda7440167d85d7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88aa2f0deaa8e80cda7440167d85d7d9">&#9670;&#160;</a></span>onSearchTextChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektPresetBrowser::onSearchTextChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates full-text search filter and refreshes results. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00299">299</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +657,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00109">109</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">147</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="DirektColours_8h_source.html#l00010">DirektDSP::Colours::bgPanel</a>.</p>
 
@@ -454,11 +686,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00135">135</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p>Rebuilds preset list using active tag and full-text query filters. </p>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00046">DirektDSP::DirektPresetBrowser::CategoryListModel::categories</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00062">categoryModel</a>, <a class="el" href="classService_1_1PresetManager.html#a96499752890cb89193e015ea0b637d98">Service::PresetManager::getAllCategories()</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00039">presetManager</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00176">176</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00100">visibilityChanged()</a>.</p>
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">refreshTags()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00138">visibilityChanged()</a>.</p>
 
 </div>
 </div>
@@ -485,11 +719,44 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">147</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">211</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00046">DirektDSP::DirektPresetBrowser::CategoryListModel::categories</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00062">categoryModel</a>, <a class="el" href="classService_1_1PresetManager.html#a524b248aa46d45204cdeb17fdfaf1027">Service::PresetManager::getAllPresetMetadata()</a>, <a class="el" href="classService_1_1PresetManager.html#a8bc76aae2dc035c67c16edbc9041ea84">Service::PresetManager::getPresetMetadataInCategory()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00093">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00039">presetManager</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00076">DirektDSP::DirektPresetBrowser::PresetListModel::presets</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00077">DirektDSP::DirektPresetBrowser::PresetListModel::selectedRow</a>.</p>
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00075">DirektDSP::DirektPresetBrowser::CategoryListModel::categories</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">categoryModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00127">favoritePresetKeys</a>, <a class="el" href="classService_1_1PresetManager.html#a524b248aa46d45204cdeb17fdfaf1027">Service::PresetManager::getAllPresetMetadata()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00476">makeFavoriteKey()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00068">presetManager</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00118">presetModel</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00105">DirektDSP::DirektPresetBrowser::PresetListModel::presets</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00120">searchEditor</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00106">DirektDSP::DirektPresetBrowser::PresetListModel::selectedRow</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00182">onCategorySelected()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00100">visibilityChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00271">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00299">onSearchTextChanged()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00138">visibilityChanged()</a>.</p>
+
+</div>
+</div>
+<a id="acf2fac5f222d06d2279f3d1a5333f550" name="acf2fac5f222d06d2279f3d1a5333f550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2fac5f222d06d2279f3d1a5333f550">&#9670;&#160;</a></span>refreshTags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektPresetBrowser::refreshTags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rebuilds visible filter tags from preset metadata and favorites state. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">181</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00075">DirektDSP::DirektPresetBrowser::CategoryListModel::categories</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">categoryModel</a>, <a class="el" href="classService_1_1PresetManager.html#a524b248aa46d45204cdeb17fdfaf1027">Service::PresetManager::getAllPresetMetadata()</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00068">presetManager</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00076">DirektDSP::DirektPresetBrowser::CategoryListModel::selectedRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00176">refreshCategories()</a>.</p>
 
 </div>
 </div>
@@ -516,9 +783,40 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">114</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">152</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00097">deleteBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00098">moveBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00099">newCatBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00093">presetList</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00096">saveBtn</a>.</p>
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">categoryList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00124">deleteBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00125">moveBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00126">newCatBtn</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">presetList</a>, <a class="el" href="DirektPresetBrowser_8h_source.html#l00123">saveBtn</a>, and <a class="el" href="DirektPresetBrowser_8h_source.html#l00120">searchEditor</a>.</p>
+
+</div>
+</div>
+<a id="a596bb7746d202aa3ea4e4d3cc8158d07" name="a596bb7746d202aa3ea4e4d3cc8158d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596bb7746d202aa3ea4e4d3cc8158d07">&#9670;&#160;</a></span>saveFavorites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektPresetBrowser::saveFavorites </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Saves current favorites set to user settings storage. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00517">517</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>.</p>
 
 </div>
 </div>
@@ -545,9 +843,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00100">100</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00138">138</a> of file <a class="el" href="DirektPresetBrowser_8cpp_source.html">DirektPresetBrowser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00135">refreshCategories()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>.</p>
+<p class="reference">References <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00176">refreshCategories()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>.</p>
 
 </div>
 </div>
@@ -572,9 +870,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00040">40</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00069">69</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00035">DirektDSP::DirektPresetBrowser::PresetListModel::paintListBoxItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00038">DirektDSP::DirektPresetBrowser::PresetListModel::paintListBoxItem()</a>.</p>
 
 </div>
 </div>
@@ -598,9 +896,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00063">63</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">92</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00182">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00135">refreshCategories()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00271">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">refreshTags()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
 
 </div>
 </div>
@@ -624,9 +922,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00062">62</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00091">91</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00182">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00135">refreshCategories()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00271">onCategorySelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">refreshTags()</a>.</p>
 
 </div>
 </div>
@@ -650,9 +948,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00097">97</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00124">124</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
+
+</div>
+</div>
+<a id="ab1f460d035103663af04edbc7b264483" name="ab1f460d035103663af04edbc7b264483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f460d035103663af04edbc7b264483">&#9670;&#160;</a></span>favoritePresetKeys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_set&lt;std::string&gt; DirektDSP::DirektPresetBrowser::favoritePresetKeys</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00127">127</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>.</p>
 
 </div>
 </div>
@@ -676,9 +1000,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00098">98</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00125">125</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
 
 </div>
 </div>
@@ -702,9 +1026,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00099">99</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00126">126</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
 
 </div>
 </div>
@@ -720,9 +1044,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00026">26</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00032">32</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">onPresetSelected()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">onPresetSelected()</a>.</p>
 
 </div>
 </div>
@@ -746,9 +1070,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00093">93</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00119">119</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
 
 </div>
 </div>
@@ -772,9 +1096,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00039">39</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00068">68</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00210">doSave()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00135">refreshCategories()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00332">doSave()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">onPresetSelected()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00181">refreshTags()</a>.</p>
 
 </div>
 </div>
@@ -798,9 +1122,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00092">92</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00118">118</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00190">onPresetSelected()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00147">refreshPresets()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00304">onFavoriteToggleRequested()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00279">onPresetSelected()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>.</p>
 
 </div>
 </div>
@@ -824,9 +1148,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00096">96</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00123">123</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00064">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00114">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
+
+</div>
+</div>
+<a id="a66b2246d651839b031b44af5df768471" name="a66b2246d651839b031b44af5df768471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b2246d651839b031b44af5df768471">&#9670;&#160;</a></span>searchEditor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::TextEditor DirektDSP::DirektPresetBrowser::searchEditor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektPresetBrowser_8h_source.html#l00120">120</a> of file <a class="el" href="DirektPresetBrowser_8h_source.html">DirektPresetBrowser.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00091">DirektPresetBrowser()</a>, <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00211">refreshPresets()</a>, and <a class="el" href="DirektPresetBrowser_8cpp_source.html#l00152">resized()</a>.</p>
 
 </div>
 </div>

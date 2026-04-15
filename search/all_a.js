@@ -4,8 +4,9 @@ var searchData=
   ['labeldesc_1',['LabelDesc',['../structDirektDSP_1_1LabelDesc.html',1,'DirektDSP']]],
   ['layoutcustomsections_2',['layoutCustomSections',['../classDirektDSP_1_1DirektBaseEditor.html#a8201791d43aebcc8f6e903eede8668da',1,'DirektDSP::DirektBaseEditor']]],
   ['listboxitemclicked_3',['listBoxItemClicked',['../classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html#a23b7cfa949500301a72451c01ef4bda6',1,'DirektDSP::DirektPresetBrowser::PresetListModel']]],
-  ['loadnextpreset_4',['loadNextPreset',['../classService_1_1PresetManager.html#a956364e2a1b557b71140db6510a640fb',1,'Service::PresetManager']]],
-  ['loadpreset_5',['loadPreset',['../classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c',1,'Service::PresetManager']]],
-  ['loadpreviouspreset_6',['loadPreviousPreset',['../classService_1_1PresetManager.html#af6d35acc18992c0a44f3f63e2ced2772',1,'Service::PresetManager']]],
-  ['lookandfeel_7',['lookandfeel',['../classDirektDSP_1_1DirektBaseEditor.html#aa19241541587384392f01f0c7afdf7e5',1,'DirektDSP::DirektBaseEditor::lookAndFeel'],['../structDirektDSP_1_1BuildContext.html#a3e4ed45a7656cc877370e226dc8c02f5',1,'DirektDSP::BuildContext::lookAndFeel']]]
+  ['loadfavorites_4',['loadFavorites',['../classDirektDSP_1_1DirektPresetBrowser.html#a8c7381866d78f1fb339a4afe64037f84',1,'DirektDSP::DirektPresetBrowser']]],
+  ['loadnextpreset_5',['loadNextPreset',['../classService_1_1PresetManager.html#a956364e2a1b557b71140db6510a640fb',1,'Service::PresetManager']]],
+  ['loadpreset_6',['loadPreset',['../classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c',1,'Service::PresetManager']]],
+  ['loadpreviouspreset_7',['loadPreviousPreset',['../classService_1_1PresetManager.html#af6d35acc18992c0a44f3f63e2ced2772',1,'Service::PresetManager']]],
+  ['lookandfeel_8',['lookandfeel',['../classDirektDSP_1_1DirektBaseEditor.html#aa19241541587384392f01f0c7afdf7e5',1,'DirektDSP::DirektBaseEditor::lookAndFeel'],['../structDirektDSP_1_1BuildContext.html#a3e4ed45a7656cc877370e226dc8c02f5',1,'DirektDSP::BuildContext::lookAndFeel']]]
 ];
