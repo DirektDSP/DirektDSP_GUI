@@ -2,6 +2,9 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_gui_basics/juce_gui_basics.h>
 
+#include <map>
+#include <optional>
+
 #include "chrome/DirektFooter.h"
 #include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
@@ -58,6 +61,29 @@ protected:
     std::vector<BuiltSection> builtSections; // legacy mode
 
 private:
+    /**
+     * @brief Stores normalized values for each automatable parameter.
+     */
+    struct SnapshotState
+    {
+        std::map<juce::String, float> normalizedValues;
+    };
+
+    /**
+     * @brief Captures current APVTS parameter values as normalized snapshot.
+     * @return Snapshot of current normalized parameter values.
+     */
+    SnapshotState captureCurrentSnapshot() const;
+    /**
+     * @brief Applies interpolated values between two snapshots.
+     * @param morphValue Normalized interpolation factor in range [0.0, 1.0].
+     */
+    void applyMorph (float morphValue);
+    /**
+     * @brief Updates footer button/slider enabled state from snapshot presence.
+     */
+    void updateSnapshotControls();
+
     void initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio, int defaultWidth,
                      int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
 
@@ -82,6 +108,9 @@ private:
     BuildContext buildContext;
     bool showHeaderFlag = true;
     bool showFooterFlag = true;
+    std::optional<SnapshotState> snapshotA;
+    std::optional<SnapshotState> snapshotB;
+    float morphPosition = 0.0F;
 
     static constexpr int headerHeight = 36;
     static constexpr int footerHeight = 22;
