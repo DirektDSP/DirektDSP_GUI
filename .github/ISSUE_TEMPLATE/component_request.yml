@@ -1,0 +1,60 @@
+name: "🧩 New Component Request"
+description: Request a new UI component to be added to the DirektDSP_GUI library
+title: "[Component]: "
+labels: ["new-component", "enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requesting a new component? Great! Please describe the component in detail so
+        we can evaluate and prioritise it appropriately.
+
+  - type: input
+    id: component_name
+    attributes:
+      label: Proposed Component Name
+      placeholder: e.g. DirektSlider, DirektXYPad
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Controls (interactive input)
+        - Display (read-only visualisation)
+        - Layout (container / arrangement)
+        - Chrome (structural UI chrome)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Component Description
+      description: |
+        Describe what the component does, its visual appearance, and how a plugin
+        developer would use it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_sketch
+    attributes:
+      label: Proposed API Sketch
+      description: |
+        Optional — sketch out the descriptor struct, constructor signature, or
+        usage example you have in mind.
+      render: cpp
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Inspiration
+      description: Links to similar components in other frameworks, screenshots, etc.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context

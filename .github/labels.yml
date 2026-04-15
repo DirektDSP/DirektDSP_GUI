@@ -1,0 +1,144 @@
+# DirektDSP_GUI — GitHub Labels
+# Used by the `sync-labels` CI job (EndBug/label-sync).
+# Edit this file and merge to `main` to update labels on the repository.
+
+# ── Status labels ────────────────────────────────────────────────────────────
+- name: "needs-triage"
+  color: "ededed"
+  description: "Newly opened – not yet triaged"
+
+- name: "in-progress"
+  color: "0075ca"
+  description: "Actively being worked on"
+
+- name: "blocked"
+  color: "e4e669"
+  description: "Blocked on an external dependency or decision"
+
+- name: "on-hold"
+  color: "d4c5f9"
+  description: "Intentionally deferred"
+
+- name: "ready-for-review"
+  color: "0e8a16"
+  description: "PR is ready for review"
+
+- name: "needs-changes"
+  color: "e11d48"
+  description: "Changes requested during review"
+
+- name: "approved"
+  color: "2da44e"
+  description: "PR approved and ready to merge"
+
+# ── Type labels ──────────────────────────────────────────────────────────────
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or improvement"
+
+- name: "new-component"
+  color: "7057ff"
+  description: "Request or addition of a new UI component"
+
+- name: "refactor"
+  color: "fbca04"
+  description: "Code restructuring without functional change"
+
+- name: "performance"
+  color: "f4a261"
+  description: "Performance improvement"
+
+- name: "breaking-change"
+  color: "b60205"
+  description: "Introduces a breaking API or behaviour change"
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+- name: "tests"
+  color: "bfd4f2"
+  description: "Adding or improving tests"
+
+- name: "build"
+  color: "e4e669"
+  description: "Build system, CMake, or CI changes"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Dependency updates"
+
+# ── Area labels ───────────────────────────────────────────────────────────────
+- name: "area: core"
+  color: "f9d0c4"
+  description: "BaseEditor, AutoLayout, ComponentRegistry, BuildContext"
+
+- name: "area: controls"
+  color: "f9d0c4"
+  description: "Knob, Toggle, ComboBox"
+
+- name: "area: display"
+  color: "f9d0c4"
+  description: "Meter, Label"
+
+- name: "area: layout"
+  color: "f9d0c4"
+  description: "Section, FlexContainer, TabPanel"
+
+- name: "area: chrome"
+  color: "f9d0c4"
+  description: "Header, Footer, PopupPanel, PresetBrowser"
+
+- name: "area: theme"
+  color: "f9d0c4"
+  description: "LookAndFeel, Colours"
+
+- name: "area: config"
+  color: "f9d0c4"
+  description: "Config, Descriptors, DescriptorHelpers"
+
+# ── Priority labels ───────────────────────────────────────────────────────────
+- name: "priority: critical"
+  color: "b60205"
+  description: "Must be fixed immediately"
+
+- name: "priority: high"
+  color: "e4534a"
+  description: "High priority"
+
+- name: "priority: medium"
+  color: "fbca04"
+  description: "Medium priority"
+
+- name: "priority: low"
+  color: "c2e0c6"
+  description: "Low priority – nice to have"
+
+# ── Workflow / meta labels ────────────────────────────────────────────────────
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"
+
+- name: "invalid"
+  color: "e4e669"
+  description: "This doesn't seem right"
+
+- name: "question"
+  color: "d876e3"
+  description: "Further information is requested"

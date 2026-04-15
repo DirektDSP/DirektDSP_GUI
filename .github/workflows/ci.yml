@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────────
+  # 1. clang-format – verify all C++ sources are formatted correctly
+  # ──────────────────────────────────────────────────────────────────────────
+  format-check:
+    name: "Format Check (clang-format)"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Run clang-format check
+        run: |
+          FILES=$(find . \( -name "*.cpp" -o -name "*.h" \) \
+                    ! -path "./.git/*" \
+                    ! -path "./build/*")
+          FAILED=0
+          for f in $FILES; do
+            if ! clang-format --dry-run --Werror "$f" 2>/dev/null; then
+              echo "::error file=$f::clang-format violation"
+              FAILED=1
+            fi
+          done
+          exit $FAILED
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 2. clang-tidy – static analysis / lint
+  #    Requires a compile_commands.json, generated via CMake.
+  #    JUCE itself is not compiled here – we use a stub so clang-tidy
+  #    can still analyse DirektDSP_GUI headers for project-level checks.
+  # ──────────────────────────────────────────────────────────────────────────
+  lint:
+    name: "Lint (clang-tidy)"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y \
+            clang clang-tidy cmake ninja-build \
+            libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
+            libxcursor-dev libfreetype-dev libglu1-mesa-dev libgl1-mesa-dev
+
+      - name: Cache JUCE
+        id: cache-juce
+        uses: actions/cache@v4
+        with:
+          path: /tmp/JUCE
+          key: juce-8-${{ runner.os }}
+
+      - name: Fetch JUCE
+        if: steps.cache-juce.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 --branch 8.0.7 \
+            https://github.com/juce-framework/JUCE.git /tmp/JUCE
+
+      - name: Configure (generate compile_commands.json)
+        run: |
+          cmake -S . -B build \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DJUCE_DIR=/tmp/JUCE
+
+      - name: Run clang-tidy
+        run: |
+          FILES=$(find . \( -name "*.cpp" \) \
+                    ! -path "./.git/*" \
+                    ! -path "./build/*")
+          clang-tidy \
+            --quiet \
+            -p build/compile_commands.json \
+            $FILES
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 3. labels – keep repository labels in sync with .github/labels.yml
+  # ──────────────────────────────────────────────────────────────────────────
+  sync-labels:
+    name: "Sync Labels"
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.yml
+          token: ${{ secrets.GITHUB_TOKEN }}

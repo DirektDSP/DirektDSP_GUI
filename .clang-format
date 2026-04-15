@@ -1,0 +1,61 @@
+# DirektDSP_GUI — clang-format style
+# Based on LLVM with project-specific overrides
+---
+Language:        Cpp
+BasedOnStyle:    LLVM
+
+# Indentation
+IndentWidth:             4
+TabWidth:                4
+UseTab:                  Never
+ContinuationIndentWidth: 4
+IndentCaseLabels:        true
+IndentPPDirectives:      BeforeHash
+
+# Column limit
+ColumnLimit:             100
+
+# Braces
+BreakBeforeBraces:       Allman
+
+# Namespaces
+NamespaceIndentation:    None
+CompactNamespaces:       false
+
+# Includes
+SortIncludes:            CaseSensitive
+IncludeBlocks:           Regroup
+IncludeCategories:
+  # JUCE headers first
+  - Regex:    '^<juce_'
+    Priority: 1
+  # System / standard library
+  - Regex:    '^<'
+    Priority: 2
+  # Project headers
+  - Regex:    '.*'
+    Priority: 3
+
+# Alignment
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignTrailingComments:       true
+
+# Line breaks
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+BreakConstructorInitializers: BeforeColon
+ConstructorInitializerIndentWidth: 4
+
+# Pointer / reference alignment
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Access modifiers
+AccessModifierOffset: -4
+
+# Penalty tweaks (discourage wrapping in most cases)
+PenaltyBreakBeforeFirstCallParameter: 100
+PenaltyReturnTypeOnItsOwnLine:        200
