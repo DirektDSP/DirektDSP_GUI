@@ -37,7 +37,10 @@ void DirektBaseEditor::initCommon (const juce::String& pluginName, juce::Colour 
 
     // Preset browser (owned, shown via popup)
     presetBrowser = std::make_unique<DirektPresetBrowser> (presetManager, accentColour);
-    presetBrowser->onPresetLoaded = [this] { header.updatePresetName(); };
+    presetBrowser->onPresetLoaded = [this] {
+        header.updatePresetName();
+        header.syncABSnapshotsAfterPresetLoad();
+    };
     header.onPresetLabelClicked = [this] {
         showPopup ("Presets", presetBrowser.get(), 500, 400);
     };

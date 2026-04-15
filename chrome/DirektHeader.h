@@ -23,12 +23,28 @@ public:
 
     void updatePresetName();
 
+    /** After host/preset replaces APVTS, reset A/B memory so both match new preset. */
+    void syncABSnapshotsAfterPresetLoad();
+
     std::function<void()> onPresetLabelClicked;
 
 private:
+    enum class ABSlot { A, B };
+
+    void switchToSlot (ABSlot slot);
+    void styleABButtons();
+
     juce::String pluginName;
     juce::Colour accent;
 
+    juce::AudioProcessorValueTreeState& apvts;
+
+    juce::ValueTree snapshotA;
+    juce::ValueTree snapshotB;
+    ABSlot activeSlot { ABSlot::A };
+
+    juce::TextButton abBtnA { "A" };
+    juce::TextButton abBtnB { "B" };
     juce::TextButton prevBtn { "<" };
     juce::TextButton nextBtn { ">" };
     juce::Label      presetLabel;

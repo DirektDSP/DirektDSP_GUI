@@ -7,17 +7,44 @@ namespace DirektDSP
 DirektHeader::DirektHeader (const juce::String& name,
                              juce::Colour accentCol,
                              Service::PresetManager& pm,
-                             juce::AudioProcessorValueTreeState& /*apvts*/)
-    : pluginName (name), accent (accentCol), presetManager (pm)
+                             juce::AudioProcessorValueTreeState& apvtsRef)
+    : pluginName (name), accent (accentCol), apvts (apvtsRef), presetManager (pm)
 {
+    snapshotA = apvts.copyState();
+    snapshotB = apvts.copyState();
+
+    auto wireChromeButton = [] (juce::TextButton& b)
+    {
+        b.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
+        b.setColour (juce::TextButton::textColourOffId, Colours::textDim);
+    };
+
+    abBtnA.setTooltip ("Compare A: recall slot A (current edits saved to other slot).");
+    abBtnB.setTooltip ("Compare B: recall slot B (current edits saved to other slot).");
+    wireChromeButton (abBtnA);
+    wireChromeButton (abBtnB);
+    abBtnA.onClick = [this] { switchToSlot (ABSlot::A); };
+    abBtnB.onClick = [this] { switchToSlot (ABSlot::B); };
+    addAndMakeVisible (abBtnA);
+    addAndMakeVisible (abBtnB);
+    styleABButtons();
+
     prevBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     prevBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
-    prevBtn.onClick = [this] { presetManager.loadPreviousPreset(); updatePresetName(); };
+    prevBtn.onClick = [this] {
+        presetManager.loadPreviousPreset();
+        updatePresetName();
+        syncABSnapshotsAfterPresetLoad();
+    };
     addAndMakeVisible (prevBtn);
 
     nextBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     nextBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
-    nextBtn.onClick = [this] { presetManager.loadNextPreset(); updatePresetName(); };
+    nextBtn.onClick = [this] {
+        presetManager.loadNextPreset();
+        updatePresetName();
+        syncABSnapshotsAfterPresetLoad();
+    };
     addAndMakeVisible (nextBtn);
 
     presetLabel.setJustificationType (juce::Justification::centred);
@@ -58,10 +85,14 @@ void DirektHeader::resized()
     auto bounds = getLocalBounds();
     auto rightArea = bounds.removeFromRight (bounds.getWidth() / 2);
 
-    auto presetArea = rightArea.reduced (4, 4);
-    prevBtn.setBounds (presetArea.removeFromLeft (28));
-    nextBtn.setBounds (presetArea.removeFromRight (28));
-    presetLabel.setBounds (presetArea);
+    auto row = rightArea.reduced (4, 4);
+    abBtnA.setBounds (row.removeFromLeft (22));
+    row.removeFromLeft (2);
+    abBtnB.setBounds (row.removeFromLeft (22));
+    row.removeFromLeft (6);
+    prevBtn.setBounds (row.removeFromLeft (28));
+    nextBtn.setBounds (row.removeFromRight (28));
+    presetLabel.setBounds (row);
 }
 
 void DirektHeader::mouseDown (const juce::MouseEvent& e)
@@ -74,6 +105,41 @@ void DirektHeader::updatePresetName()
 {
     auto name = presetManager.getCurrentPreset();
     presetLabel.setText (name.isEmpty() ? "Init" : name, juce::dontSendNotification);
+}
+
+void DirektHeader::syncABSnapshotsAfterPresetLoad()
+{
+    snapshotA = apvts.copyState();
+    snapshotB = apvts.copyState();
+    activeSlot = ABSlot::A;
+    styleABButtons();
+}
+
+void DirektHeader::switchToSlot (ABSlot slot)
+{
+    if (slot == activeSlot)
+        return;
+
+    if (activeSlot == ABSlot::A)
+        snapshotA = apvts.copyState();
+    else
+        snapshotB = apvts.copyState();
+
+    apvts.replaceState (slot == ABSlot::A ? snapshotA : snapshotB);
+    activeSlot = slot;
+    styleABButtons();
+}
+
+void DirektHeader::styleABButtons()
+{
+    auto styleOne = [this] (juce::TextButton& b, bool isActive)
+    {
+        b.setColour (juce::TextButton::buttonColourId, isActive ? accent.withAlpha (0.35f) : Colours::bgHeader);
+        b.setColour (juce::TextButton::textColourOffId, isActive ? Colours::textBright : Colours::textDim);
+    };
+
+    styleOne (abBtnA, activeSlot == ABSlot::A);
+    styleOne (abBtnB, activeSlot == ABSlot::B);
 }
 
 } // namespace DirektDSP
