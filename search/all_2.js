@@ -18,13 +18,14 @@ var searchData=
   ['config_15',['config',['../structDirektDSP_1_1DirektMeter_1_1Config.html',1,'DirektDSP::DirektMeter::Config'],['../classDirektDSP_1_1DirektMeter.html#a6fe812e12032f5301629294b8b937c6f',1,'DirektDSP::DirektMeter::config']]],
   ['configdriven_16',['configDriven',['../classDirektDSP_1_1DirektBaseEditor.html#aeef403500af053e88cf4ddd97688f634',1,'DirektDSP::DirektBaseEditor']]],
   ['constrainer_17',['constrainer',['../classDirektDSP_1_1DirektBaseEditor.html#a1f6a40fb7402e658420d3dc14ac9361a',1,'DirektDSP::DirektBaseEditor']]],
-  ['content_18',['content',['../structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html#ab3acce172293a89d2f591b0df6d3ebf8',1,'DirektDSP::DirektTabPanel::TabEntry::content'],['../structDirektDSP_1_1TabDesc.html#a13c0343ef33a96656119f5bb3ca27659',1,'DirektDSP::TabDesc::content']]],
+  ['content_18',['content',['../structDirektDSP_1_1TabDesc.html#a13c0343ef33a96656119f5bb3ca27659',1,'DirektDSP::TabDesc::content'],['../structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html#ab3acce172293a89d2f591b0df6d3ebf8',1,'DirektDSP::DirektTabPanel::TabEntry::content']]],
   ['contentcomp_19',['contentComp',['../classDirektDSP_1_1DirektPopupPanel.html#a884e9f4da653832a50247e406620238f',1,'DirektDSP::DirektPopupPanel']]],
   ['controls_20',['controls',['../structDirektDSP_1_1BuiltSection.html#a36f70817ce0d5e8a4626139375210915',1,'DirektDSP::BuiltSection::controls'],['../classDirektDSP_1_1DirektSection.html#a96d12f825f1768f9e78ce49f6269832e',1,'DirektDSP::DirektSection::controls']]],
   ['controltype_21',['ControlType',['../namespaceDirektDSP.html#a479caaab5348eba09f3e0b3206a222f8',1,'DirektDSP']]],
   ['convertlegacysections_22',['convertLegacySections',['../classDirektDSP_1_1DirektAutoLayout.html#ac1620b7f205964ef7c822973dc1b41cf',1,'DirektDSP::DirektAutoLayout']]],
   ['createcategory_23',['createCategory',['../classService_1_1PresetManager.html#a94d1b4b2db5a16f122419ed905fcf4f7',1,'Service::PresetManager']]],
-  ['customdesc_24',['CustomDesc',['../structDirektDSP_1_1CustomDesc.html',1,'DirektDSP']]],
-  ['customfactories_25',['customFactories',['../classDirektDSP_1_1DirektComponentRegistry.html#a0a26b7f126f521674a63ee7a1b23e1f0',1,'DirektDSP::DirektComponentRegistry']]],
-  ['customfactory_26',['CustomFactory',['../classDirektDSP_1_1DirektComponentRegistry.html#ab5b178fa1c02ed0edd112e73d898c15c',1,'DirektDSP::DirektComponentRegistry']]]
+  ['curveexponent_24',['curveexponent',['../structDirektDSP_1_1MacroTargetDesc.html#a44866d610a400d3938d9f47feb3a4087',1,'DirektDSP::MacroTargetDesc::curveExponent'],['../structDirektDSP_1_1MacroTarget.html#a78608e2f33549b16e2a0788c6c3cd9f0',1,'DirektDSP::MacroTarget::curveExponent']]],
+  ['customdesc_25',['CustomDesc',['../structDirektDSP_1_1CustomDesc.html',1,'DirektDSP']]],
+  ['customfactories_26',['customFactories',['../classDirektDSP_1_1DirektComponentRegistry.html#a0a26b7f126f521674a63ee7a1b23e1f0',1,'DirektDSP::DirektComponentRegistry']]],
+  ['customfactory_27',['CustomFactory',['../classDirektDSP_1_1DirektComponentRegistry.html#ab5b178fa1c02ed0edd112e73d898c15c',1,'DirektDSP::DirektComponentRegistry']]]
 ];

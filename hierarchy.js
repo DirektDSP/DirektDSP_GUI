@@ -15,6 +15,7 @@ var hierarchy =
       [ "DirektDSP::DirektFooter", "classDirektDSP_1_1DirektFooter.html", null ],
       [ "DirektDSP::DirektHeader", "classDirektDSP_1_1DirektHeader.html", null ],
       [ "DirektDSP::DirektKnob", "classDirektDSP_1_1DirektKnob.html", null ],
+      [ "DirektDSP::DirektMacroControl", "classDirektDSP_1_1DirektMacroControl.html", null ],
       [ "DirektDSP::DirektMeter", "classDirektDSP_1_1DirektMeter.html", null ],
       [ "DirektDSP::DirektPopupPanel", "classDirektDSP_1_1DirektPopupPanel.html", null ],
       [ "DirektDSP::DirektPresetBrowser", "classDirektDSP_1_1DirektPresetBrowser.html", null ],
@@ -40,6 +41,9 @@ var hierarchy =
     [ "juce::LookAndFeel_V4", null, [
       [ "DirektDSP::DirektLookAndFeel", "classDirektDSP_1_1DirektLookAndFeel.html", null ]
     ] ],
+    [ "DirektDSP::MacroDesc", "structDirektDSP_1_1MacroDesc.html", null ],
+    [ "DirektDSP::MacroTarget", "structDirektDSP_1_1MacroTarget.html", null ],
+    [ "DirektDSP::MacroTargetDesc", "structDirektDSP_1_1MacroTargetDesc.html", null ],
     [ "DirektDSP::MeterDesc", "structDirektDSP_1_1MeterDesc.html", null ],
     [ "DirektDSP::NodeProps", "structDirektDSP_1_1NodeProps.html", null ],
     [ "DirektDSP::ParamSlot", "structDirektDSP_1_1ParamSlot.html", null ],

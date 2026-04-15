@@ -1,9 +1,9 @@
 <map id="DirektDSP::TabDesc" name="DirektDSP::TabDesc">
-<area shape="rect" id="Node000001" title=" " alt="" coords="969,49,1120,75"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="617,49,868,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="882,59,969,59,969,65,882,65"/>
-<area shape="rect" id="Node000003" href="$structDirektDSP_1_1NodeDescriptor.html" title=" " alt="" coords="349,49,547,75"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="560,59,617,59,617,65,560,65"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,300,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="314,59,349,59,349,65,314,65"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="956,57,1107,82"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="604,57,855,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="869,67,956,67,956,72,869,72"/>
+<area shape="rect" id="Node000003" href="$structDirektDSP_1_1NodeDescriptor.html" title=" " alt="" coords="336,57,533,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="547,67,604,67,604,72,547,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,287,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,67,336,67,336,72,300,72"/>
 </map>

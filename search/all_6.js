@@ -10,6 +10,6 @@ var searchData=
   ['getcurrentpreset_7',['getCurrentPreset',['../classService_1_1PresetManager.html#a93529821551dc70be909433a2f7bb627',1,'Service::PresetManager']]],
   ['getnumrows_8',['getnumrows',['../classDirektDSP_1_1DirektPresetBrowser_1_1CategoryListModel.html#a005cb82dd1958f022e54a4e3f5bdac36',1,'DirektDSP::DirektPresetBrowser::CategoryListModel::getNumRows()'],['../classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html#a531afed08167578c674e5023d2c478fd',1,'DirektDSP::DirektPresetBrowser::PresetListModel::getNumRows()']]],
   ['getpresetmetadataincategory_9',['getPresetMetadataInCategory',['../classService_1_1PresetManager.html#a8bc76aae2dc035c67c16edbc9041ea84',1,'Service::PresetManager']]],
-  ['getslider_10',['getSlider',['../classDirektDSP_1_1DirektKnob.html#a30b934cf8931f764bdd5f14f05d7f77c',1,'DirektDSP::DirektKnob']]],
+  ['getslider_10',['getslider',['../classDirektDSP_1_1DirektKnob.html#a30b934cf8931f764bdd5f14f05d7f77c',1,'DirektDSP::DirektKnob::getSlider()'],['../classDirektDSP_1_1DirektMacroControl.html#ad796309bbd77d37e247da9c02338afcc',1,'DirektDSP::DirektMacroControl::getSlider()']]],
   ['gettitle_11',['getTitle',['../classDirektDSP_1_1DirektSection.html#a1f9e8717b4c2ebf2922b8f346f4c087b',1,'DirektDSP::DirektSection']]]
 ];
