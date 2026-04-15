@@ -13,7 +13,9 @@ DirektComboBox::DirektComboBox (juce::AudioProcessorValueTreeState& apvts, const
     {
         auto choices = param->choices;
         for (int i = 0; i < choices.size(); ++i)
+        {
             combo.addItem (choices[i], i + 1);
+        }
     }
 
     addAndMakeVisible (combo);
@@ -21,7 +23,7 @@ DirektComboBox::DirektComboBox (juce::AudioProcessorValueTreeState& apvts, const
     label.setText (labelText, juce::dontSendNotification);
     label.setJustificationType (juce::Justification::centred);
     label.setColour (juce::Label::textColourId, Colours::textDim);
-    label.setFont (juce::Font (juce::FontOptions (11.0f)));
+    label.setFont (juce::Font (juce::FontOptions (11.0F)));
     addAndMakeVisible (label);
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment> (apvts, paramID, combo);

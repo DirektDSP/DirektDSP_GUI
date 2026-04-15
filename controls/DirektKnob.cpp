@@ -19,7 +19,7 @@ DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts, const juce::S
     label.setText (labelText, juce::dontSendNotification);
     label.setJustificationType (juce::Justification::centred);
     label.setColour (juce::Label::textColourId, Colours::textDim);
-    label.setFont (juce::Font (juce::FontOptions (11.0f)));
+    label.setFont (juce::Font (juce::FontOptions (11.0F)));
     addAndMakeVisible (label);
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (apvts, paramID, slider);

@@ -10,12 +10,12 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
 {
     std::vector<BuiltSection> result;
 
-    for (auto& desc : descriptors)
+    for (const auto& desc : descriptors)
     {
         BuiltSection built;
         built.section = std::make_unique<DirektSection> (desc.title, desc.columns);
 
-        for (auto& slot : desc.params)
+        for (const auto& slot : desc.params)
         {
             std::unique_ptr<juce::Component> control;
 
@@ -35,11 +35,17 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
             if (slot.tooltip.isNotEmpty())
             {
                 if (auto* knob = dynamic_cast<DirektKnob*> (control.get()))
+                {
                     knob->getSlider().setTooltip (slot.tooltip);
+                }
                 else if (auto* toggle = dynamic_cast<DirektToggle*> (control.get()))
+                {
                     toggle->getButton().setTooltip (slot.tooltip);
+                }
                 else if (auto* combo = dynamic_cast<DirektComboBox*> (control.get()))
+                {
                     combo->getComboBox().setTooltip (slot.tooltip);
+                }
             }
 
             built.section->addControl (control.get());
@@ -56,11 +62,11 @@ NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<Sectio
 {
     std::vector<Node> sectionNodes;
 
-    for (auto& desc : descriptors)
+    for (const auto& desc : descriptors)
     {
         std::vector<Node> childNodes;
 
-        for (auto& slot : desc.params)
+        for (const auto& slot : desc.params)
         {
             switch (slot.type)
             {

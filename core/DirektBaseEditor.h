@@ -28,7 +28,8 @@ class DirektBaseEditor : public juce::AudioProcessorEditor
 public:
     // NEW — config-driven, no subclassing needed
     DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvts,
-                      Service::PresetManager& presetManager, const PluginConfig& config, NodeDescriptor rootDescriptor);
+                      Service::PresetManager& presetManager, const PluginConfig& config,
+                      const NodeDescriptor& rootDescriptor);
 
     // LEGACY — preserved, internally bridges to new system
     DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvts,
@@ -70,7 +71,7 @@ private:
     juce::ComponentBoundsConstrainer constrainer;
     std::unique_ptr<juce::ResizableCornerComponent> resizer;
 
-    float aspectRatio;
+    float aspectRatio{};
     Service::PresetManager& presetManager;
     std::unique_ptr<DirektPresetBrowser> presetBrowser;
 

@@ -13,16 +13,18 @@ void DirektPresetBrowser::CategoryListModel::paintListBoxItem (int row, juce::Gr
                                                                bool isSelected)
 {
     if (row < 0 || row >= categories.size())
+    {
         return;
+    }
 
     if (isSelected || row == selectedRow)
     {
-        g.setColour (accent.withAlpha (0.25f));
+        g.setColour (accent.withAlpha (0.25F));
         g.fillRect (0, 0, width, height);
     }
 
     g.setColour (row == selectedRow ? Colours::textBright : Colours::textDim);
-    g.setFont (juce::Font (juce::FontOptions (13.0f)));
+    g.setFont (juce::Font (juce::FontOptions (13.0F)));
     g.drawText (categories[row], 8, 0, width - 16, height, juce::Justification::centredLeft);
 }
 
@@ -34,22 +36,24 @@ void DirektPresetBrowser::PresetListModel::paintListBoxItem (int row, juce::Grap
                                                              bool isSelected)
 {
     if (row < 0 || row >= static_cast<int> (presets.size()))
+    {
         return;
+    }
 
     if (isSelected || row == selectedRow)
     {
-        g.setColour (accent.withAlpha (0.25f));
+        g.setColour (accent.withAlpha (0.25F));
         g.fillRect (0, 0, width, height);
     }
 
     auto& entry = presets[static_cast<size_t> (row)];
 
     g.setColour (row == selectedRow ? Colours::textBright : Colours::textLabel);
-    g.setFont (juce::Font (juce::FontOptions (13.0f)));
+    g.setFont (juce::Font (juce::FontOptions (13.0F)));
     g.drawText (entry.name, 8, 0, width / 2, height, juce::Justification::centredLeft);
 
     g.setColour (Colours::textDim);
-    g.setFont (juce::Font (juce::FontOptions (11.0f)));
+    g.setFont (juce::Font (juce::FontOptions (11.0F)));
     g.drawText (entry.artist, width / 2, 0, width / 2 - 8, height, juce::Justification::centredRight);
 }
 
@@ -121,7 +125,7 @@ void DirektPresetBrowser::resized()
     presetList.setBounds (bounds);
 
     // Button strip — equally spaced
-    int btnW = buttonStrip.getWidth() / 4;
+    int const btnW = buttonStrip.getWidth() / 4;
     saveBtn.setBounds (buttonStrip.removeFromLeft (btnW).reduced (2, 2));
     deleteBtn.setBounds (buttonStrip.removeFromLeft (btnW).reduced (2, 2));
     moveBtn.setBounds (buttonStrip.removeFromLeft (btnW).reduced (2, 2));
@@ -145,22 +149,28 @@ void DirektPresetBrowser::refreshPresets()
     presetModel.presets.clear();
 
     juce::String selectedCategory;
-    int catRow = categoryList.getSelectedRow();
+    int const catRow = categoryList.getSelectedRow();
     if (catRow > 0 && catRow < categoryModel.categories.size())
+    {
         selectedCategory = categoryModel.categories[catRow];
+    }
 
     if (selectedCategory.isEmpty())
     {
         // "All" — show everything
         auto metadata = presetManager.getAllPresetMetadata();
         for (auto& m : metadata)
+        {
             presetModel.presets.push_back ({m.name, m.artist, m.category});
+        }
     }
     else
     {
         auto metadata = presetManager.getPresetMetadataInCategory (selectedCategory);
         for (auto& m : metadata)
+        {
             presetModel.presets.push_back ({m.name, m.artist, m.category});
+        }
     }
 
     presetModel.selectedRow = -1;
@@ -171,7 +181,7 @@ void DirektPresetBrowser::refreshPresets()
 
 void DirektPresetBrowser::onCategorySelected()
 {
-    int row = categoryList.getSelectedRow();
+    int const row = categoryList.getSelectedRow();
     categoryModel.selectedRow = row;
     categoryList.repaint();
     refreshPresets();
@@ -179,9 +189,11 @@ void DirektPresetBrowser::onCategorySelected()
 
 void DirektPresetBrowser::onPresetSelected()
 {
-    int row = presetList.getSelectedRow();
+    int const row = presetList.getSelectedRow();
     if (row < 0 || row >= static_cast<int> (presetModel.presets.size()))
+    {
         return;
+    }
 
     presetModel.selectedRow = row;
     presetList.repaint();
@@ -190,7 +202,9 @@ void DirektPresetBrowser::onPresetSelected()
     presetManager.loadPreset (entry.name, entry.category);
 
     if (onPresetLoaded)
+    {
         onPresetLoaded();
+    }
 }
 
 void DirektPresetBrowser::doSave()
@@ -218,7 +232,9 @@ void DirektPresetBrowser::doSave()
                                          refreshCategories();
                                          refreshPresets();
                                          if (onPresetLoaded)
+                                         {
                                              onPresetLoaded();
+                                         }
                                      }
                                  }
                                  delete aw;
@@ -228,9 +244,11 @@ void DirektPresetBrowser::doSave()
 
 void DirektPresetBrowser::doDelete()
 {
-    int row = presetList.getSelectedRow();
+    int const row = presetList.getSelectedRow();
     if (row < 0 || row >= static_cast<int> (presetModel.presets.size()))
+    {
         return;
+    }
 
     auto& entry = presetModel.presets[static_cast<size_t> (row)];
     auto nameToDelete = entry.name;
@@ -251,7 +269,9 @@ void DirektPresetBrowser::doDelete()
                                      refreshCategories();
                                      refreshPresets();
                                      if (onPresetLoaded)
+                                     {
                                          onPresetLoaded();
+                                     }
                                  }
                                  delete aw;
                              }),
@@ -260,9 +280,11 @@ void DirektPresetBrowser::doDelete()
 
 void DirektPresetBrowser::doMove()
 {
-    int row = presetList.getSelectedRow();
+    int const row = presetList.getSelectedRow();
     if (row < 0 || row >= static_cast<int> (presetModel.presets.size()))
+    {
         return;
+    }
 
     auto& entry = presetModel.presets[static_cast<size_t> (row)];
     auto presetName = entry.name;

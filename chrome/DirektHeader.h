@@ -17,7 +17,7 @@ namespace DirektDSP
 class DirektHeader : public juce::Component
 {
 public:
-    DirektHeader (const juce::String& pluginName, juce::Colour accentColour, Service::PresetManager& presetManager,
+    DirektHeader (juce::String pluginName, juce::Colour accentColour, Service::PresetManager& presetManager,
                   juce::AudioProcessorValueTreeState& apvts);
 
     void paint (juce::Graphics& g) override;

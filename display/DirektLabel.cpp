@@ -11,16 +11,16 @@ DirektLabel::DirektLabel (const juce::String& text, Style style)
     switch (style)
     {
         case Title:
-            setFont (juce::Font (juce::FontOptions (18.0f).withStyle ("Bold")));
+            setFont (juce::Font (juce::FontOptions (18.0F).withStyle ("Bold")));
             setColour (textColourId, Colours::textBright);
             break;
         case Section:
-            setFont (juce::Font (juce::FontOptions (13.0f).withStyle ("Bold")));
+            setFont (juce::Font (juce::FontOptions (13.0F).withStyle ("Bold")));
             setColour (textColourId, Colours::textLabel);
             break;
         case Body:
         default:
-            setFont (juce::Font (juce::FontOptions (12.0f)));
+            setFont (juce::Font (juce::FontOptions (12.0F)));
             setColour (textColourId, Colours::textDim);
             break;
     }

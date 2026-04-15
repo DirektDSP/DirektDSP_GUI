@@ -1,13 +1,15 @@
 #include "chrome/DirektHeader.h"
 
+#include <utility>
+
 #include "Service/PresetManager.h"
 
 namespace DirektDSP
 {
 
-DirektHeader::DirektHeader (const juce::String& name, juce::Colour accentCol, Service::PresetManager& pm,
+DirektHeader::DirektHeader (juce::String name, juce::Colour accentCol, Service::PresetManager& pm,
                             juce::AudioProcessorValueTreeState& /*apvts*/)
-    : pluginName (name), accent (accentCol), presetManager (pm)
+    : pluginName (std::move (name)), accent (accentCol), presetManager (pm)
 {
     prevBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     prevBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
@@ -29,7 +31,7 @@ DirektHeader::DirektHeader (const juce::String& name, juce::Colour accentCol, Se
 
     presetLabel.setJustificationType (juce::Justification::centred);
     presetLabel.setColour (juce::Label::textColourId, Colours::textBright);
-    presetLabel.setFont (juce::Font (juce::FontOptions (13.0f)));
+    presetLabel.setFont (juce::Font (juce::FontOptions (13.0F)));
     presetLabel.setInterceptsMouseClicks (true, false);
     presetLabel.addMouseListener (this, false);
     addAndMakeVisible (presetLabel);
@@ -45,12 +47,12 @@ void DirektHeader::paint (juce::Graphics& g)
 
     // Brand name
     g.setColour (Colours::textDim);
-    g.setFont (juce::Font (juce::FontOptions (11.0f).withStyle ("Bold")));
-    g.drawText ("DirektDSP", bounds.removeFromLeft (80.0f).toNearestInt(), juce::Justification::centred);
+    g.setFont (juce::Font (juce::FontOptions (11.0F).withStyle ("Bold")));
+    g.drawText ("DirektDSP", bounds.removeFromLeft (80.0F).toNearestInt(), juce::Justification::centred);
 
     // Plugin name
     g.setColour (accent);
-    g.setFont (juce::Font (juce::FontOptions (15.0f).withStyle ("Bold")));
+    g.setFont (juce::Font (juce::FontOptions (15.0F).withStyle ("Bold")));
     auto nameArea = getLocalBounds().withWidth (160).withX (80);
     g.drawText (pluginName.toUpperCase(), nameArea, juce::Justification::centredLeft);
 
@@ -73,7 +75,9 @@ void DirektHeader::resized()
 void DirektHeader::mouseDown (const juce::MouseEvent& e)
 {
     if (e.eventComponent == &presetLabel && onPresetLabelClicked)
+    {
         onPresetLabelClicked();
+    }
 }
 
 void DirektHeader::updatePresetName()

@@ -22,16 +22,24 @@ void DirektFlexContainer::resized()
     {
         juce::FlexItem item (*entry.component);
         item.flexGrow = entry.hint.flex;
-        item.flexShrink = 1.0f;
+        item.flexShrink = 1.0F;
 
         if (entry.hint.minW > 0)
+        {
             item.minWidth = static_cast<float> (entry.hint.minW);
+        }
         if (entry.hint.minH > 0)
+        {
             item.minHeight = static_cast<float> (entry.hint.minH);
+        }
         if (entry.hint.prefW > 0)
+        {
             item.width = static_cast<float> (entry.hint.prefW);
+        }
         if (entry.hint.prefH > 0)
+        {
             item.height = static_cast<float> (entry.hint.prefH);
+        }
 
         fb.items.add (item);
     }

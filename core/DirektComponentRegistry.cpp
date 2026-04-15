@@ -25,21 +25,30 @@ void DirektComponentRegistry::registerCustom (const juce::String& typeKey, Custo
     customFactories[typeKey] = std::move (factory);
 }
 
+namespace
+{
 // Helper to apply common NodeProps to a built component
-static void applyNodeProps (juce::Component& comp, const NodeProps& props)
+void applyNodeProps (juce::Component& comp, const NodeProps& props)
 {
     if (props.id.isNotEmpty())
+    {
         comp.setComponentID (props.id);
+    }
     comp.setVisible (props.visible);
 }
 
 // Helper to set tooltip on a component if it supports it
-static void applyTooltip (juce::Component& comp, const juce::String& tooltip)
+void applyTooltip (juce::Component& comp, const juce::String& tooltip)
 {
     if (tooltip.isNotEmpty())
+    {
         if (auto* ttc = dynamic_cast<juce::TooltipClient*> (&comp))
+        {
             juce::ignoreUnused (ttc); // Tooltips set on sub-components directly
+        }
+    }
 }
+} // namespace
 
 BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, BuildContext& ctx) const
 {
@@ -52,7 +61,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
                 if (desc.tooltip.isNotEmpty())
+                {
                     knob->getSlider().setTooltip (desc.tooltip);
+                }
                 applyNodeProps (*knob, desc.props);
                 return {std::move (knob), {}};
             }
@@ -60,7 +71,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label);
                 if (desc.tooltip.isNotEmpty())
+                {
                     toggle->getButton().setTooltip (desc.tooltip);
+                }
                 applyNodeProps (*toggle, desc.props);
                 return {std::move (toggle), {}};
             }
@@ -68,7 +81,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label);
                 if (desc.tooltip.isNotEmpty())
+                {
                     combo->getComboBox().setTooltip (desc.tooltip);
+                }
                 applyNodeProps (*combo, desc.props);
                 return {std::move (combo), {}};
             }
@@ -77,9 +92,13 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 // SliderDesc: reuse DirektKnob for now (future: dedicated slider component)
                 auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
                 if (desc.tooltip.isNotEmpty())
+                {
                     knob->getSlider().setTooltip (desc.tooltip);
+                }
                 if (desc.horizontal)
+                {
                     knob->getSlider().setSliderStyle (juce::Slider::LinearHorizontal);
+                }
                 applyNodeProps (*knob, desc.props);
                 return {std::move (knob), {}};
             }
@@ -87,7 +106,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 auto btn = std::make_unique<juce::TextButton> (desc.label);
                 if (desc.tooltip.isNotEmpty())
+                {
                     btn->setTooltip (desc.tooltip);
+                }
                 applyNodeProps (*btn, desc.props);
                 return {std::move (btn), {}};
             }
@@ -128,7 +149,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 // Connect to source if available
                 auto it = ctx.meterSources.find (desc.sourceID);
                 if (it != ctx.meterSources.end())
+                {
                     meter->setSource (it->second);
+                }
 
                 applyNodeProps (*meter, desc.props);
                 return {std::move (meter), {}};
@@ -137,9 +160,13 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 DirektLabel::Style labelStyle = DirektLabel::Body;
                 if (desc.style == "title")
+                {
                     labelStyle = DirektLabel::Title;
+                }
                 else if (desc.style == "section")
+                {
                     labelStyle = DirektLabel::Section;
+                }
 
                 auto lbl = std::make_unique<DirektLabel> (desc.text, labelStyle);
                 applyNodeProps (*lbl, desc.props);
@@ -164,9 +191,13 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 };
                 auto div = std::make_unique<DividerComp>();
                 if (desc.horizontal)
+                {
                     div->setSize (0, 1);
+                }
                 else
+                {
                     div->setSize (1, 0);
+                }
                 applyNodeProps (*div, desc.props);
                 return {std::move (div), {}};
             }
@@ -184,7 +215,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                         section->addControl (built.component.get());
                         owned.push_back (std::move (built.component));
                         for (auto& oc : built.ownedChildren)
+                        {
                             owned.push_back (std::move (oc));
+                        }
                     }
                 }
                 return {std::move (section), std::move (owned)};
@@ -205,7 +238,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                         container->addFlexChild (built.component.get(), childSize);
                         owned.push_back (std::move (built.component));
                         for (auto& oc : built.ownedChildren)
+                        {
                             owned.push_back (std::move (oc));
+                        }
                     }
                 }
                 return {std::move (container), std::move (owned)};
@@ -225,7 +260,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                         container->addFlexChild (built.component.get(), childSize);
                         owned.push_back (std::move (built.component));
                         for (auto& oc : built.ownedChildren)
+                        {
                             owned.push_back (std::move (oc));
+                        }
                     }
                 }
                 return {std::move (container), std::move (owned)};
@@ -244,7 +281,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                         tabPanel->addTab (tab.label, built.component.get());
                         owned.push_back (std::move (built.component));
                         for (auto& oc : built.ownedChildren)
+                        {
                             owned.push_back (std::move (oc));
+                        }
                     }
                 }
                 return {std::move (tabPanel), std::move (owned)};
@@ -253,7 +292,9 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
             {
                 auto it = customFactories.find (desc.typeKey);
                 if (it != customFactories.end())
+                {
                     return it->second (desc, ctx);
+                }
 
                 // Unknown custom type — render as empty placeholder
                 auto comp = std::make_unique<juce::Component>();

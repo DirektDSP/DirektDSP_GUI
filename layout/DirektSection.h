@@ -9,7 +9,7 @@ namespace DirektDSP
 class DirektSection : public juce::Component
 {
 public:
-    explicit DirektSection (const juce::String& title, int columns = 0);
+    explicit DirektSection (juce::String title, int columns = 0);
 
     void paint (juce::Graphics& g) override;
     void resized() override;
