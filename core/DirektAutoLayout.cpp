@@ -1,6 +1,7 @@
 #include "core/DirektAutoLayout.h"
 
 #include "config/DirektDescriptorHelpers.h"
+#include "layout/DirektModuleBypassSoloStrip.h"
 
 namespace DirektDSP
 {
@@ -85,7 +86,8 @@ void appendModuleIsolationNodes (const SectionDescriptor& sectionDescriptor, std
 } // namespace
 
 std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorValueTreeState& apvts,
-                                                           const std::vector<SectionDescriptor>& descriptors)
+                                                           const std::vector<SectionDescriptor>& descriptors,
+                                                           DirektParameterHistory* parameterHistory)
 {
     std::vector<BuiltSection> result;
 
@@ -102,13 +104,13 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
             switch (slot.type)
             {
                 case ControlType::Knob:
-                    control = std::make_unique<DirektKnob> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektKnob> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
                 case ControlType::Toggle:
-                    control = std::make_unique<DirektToggle> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektToggle> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
                 case ControlType::ComboBox:
-                    control = std::make_unique<DirektComboBox> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektComboBox> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
             }
 
@@ -130,6 +132,13 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
 
             built.section->addControl (control.get());
             built.controls.push_back (std::move (control));
+        }
+
+        if (auto strip =
+                DirektModuleBypassSoloStrip::tryCreate (apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
+                                                        desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
+        {
+            built.section->setTitleBarAccessory (std::move (strip));
         }
 
         result.push_back (std::move (built));
@@ -163,7 +172,16 @@ NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<Sectio
             }
         }
 
-        sectionNodes.push_back (node (SectionDesc{{}, desc.title, desc.columns, std::move (childNodes)}));
+        sectionNodes.push_back (node (SectionDesc{{},
+                                                  desc.title,
+                                                  desc.columns,
+                                                  std::move (childNodes),
+                                                  desc.bypassParamID,
+                                                  desc.soloParamID,
+                                                  desc.bypassLabel,
+                                                  desc.soloLabel,
+                                                  desc.bypassTooltip,
+                                                  desc.soloTooltip}));
     }
 
     return VBoxDesc{{}, std::move (sectionNodes)};
