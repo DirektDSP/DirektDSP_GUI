@@ -178,10 +178,7 @@ BuiltNode buildStereoMeterNode (const StereoMeterDesc& desc, BuildContext& ctx)
 BuiltNode buildClipIndicatorNode (const ClipIndicatorDesc& desc, BuildContext& ctx)
 {
     auto indicator = std::make_unique<DirektClipIndicator>();
-    if (desc.tooltip.isNotEmpty())
-    {
-        indicator->setTooltip (desc.tooltip);
-    }
+    indicator->setTooltip (desc.tooltip.isNotEmpty() ? desc.tooltip : juce::String ("Clip indicator — click to reset"));
 
     auto it = ctx.meterSources.find (desc.sourceID);
     if (it != ctx.meterSources.end())

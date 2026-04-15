@@ -10,7 +10,7 @@ namespace DirektDSP
 
 /** A small LED indicator that lights red when the signal has clipped (>= 0 dBFS).
  *  Click to reset the clip latch. */
-class DirektClipIndicator : public juce::Component, private juce::Timer
+class DirektClipIndicator : public juce::Component, public juce::SettableTooltipClient, private juce::Timer
 {
 public:
     explicit DirektClipIndicator (int refreshHz = 30);
