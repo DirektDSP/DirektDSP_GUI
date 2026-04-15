@@ -18,8 +18,8 @@ public:
      * @param labelText Button label.
      * @param parameterHistory Optional edit history sink for undo/redo.
      */
-    DirektToggle (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
-                  const juce::String& labelText, DirektParameterHistory* parameterHistory = nullptr);
+    DirektToggle (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID, const juce::String& labelText,
+                  DirektParameterHistory* parameterHistory = nullptr);
 
     void resized() override;
 

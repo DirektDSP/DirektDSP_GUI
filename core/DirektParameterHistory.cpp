@@ -3,7 +3,8 @@
 namespace DirektDSP
 {
 
-void DirektParameterHistory::pushChange (const juce::String& paramID, float oldValueNormalized, float newValueNormalized)
+void DirektParameterHistory::pushChange (const juce::String& paramID, float oldValueNormalized,
+                                         float newValueNormalized)
 {
     if (paramID.isEmpty() || juce::approximatelyEqual (oldValueNormalized, newValueNormalized))
     {
