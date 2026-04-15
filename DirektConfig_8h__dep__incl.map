@@ -1,0 +1,10 @@
+<map id="config/DirektConfig.h" name="config/DirektConfig.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="38,5,197,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="5,152,104,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,43,84,80,69,119,60,152,55,151,64,117,79,78,99,41"/>
+<area shape="rect" id="Node000003" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="93,79,267,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,39,172,77,168,80,135,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="149,113,76,154,74,149,147,108"/>
+<area shape="rect" id="Node000004" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="129,152,319,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="197,114,219,150,215,153,192,117"/>
+</map>

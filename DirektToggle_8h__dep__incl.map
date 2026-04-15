@@ -1,0 +1,19 @@
+<map id="controls/DirektToggle.h" name="controls/DirektToggle.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="139,5,311,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="68,225,167,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,36,65,55,36,67,18,80,9,99,10,119,17,140,31,160,67,196,101,223,98,227,63,200,27,163,13,142,4,120,4,98,14,77,33,62,63,50,137,31"/>
+<area shape="rect" id="Node000003" href="$DirektToggle_8cpp.html" title=" " alt="" coords="28,79,215,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,41,140,81,137,76,196,36"/>
+<area shape="rect" id="Node000004" href="$DirektAutoLayout_8h.html" title=" " alt="" coords="239,79,419,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,36,314,76,311,81,252,41"/>
+<area shape="rect" id="Node000008" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="444,79,692,104"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="294,31,513,76,512,81,293,36"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="227,109,183,126,162,139,145,154,133,171,126,190,120,226,115,225,120,189,128,168,141,150,159,134,180,122,225,104"/>
+<area shape="rect" id="Node000005" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="155,152,349,177"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="309,115,266,154,263,150,305,111"/>
+<area shape="rect" id="Node000006" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="374,152,549,177"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="364,108,441,149,439,154,361,113"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="393,183,167,229,166,224,392,177"/>
+<area shape="rect" id="Node000007" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="366,225,557,251"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="464,191,464,225,459,225,459,191"/>
+</map>

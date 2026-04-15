@@ -1,0 +1,11 @@
+<map id="DirektDSP::DirektFlexContainer" name="DirektDSP::DirektFlexContainer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="13,313,239,339"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,211,137,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,247,122,312,117,315,82,249"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="161,196,333,251"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,262,142,315,138,311,203,258"/>
+<area shape="rect" id="Node000004" href="$structDirektDSP_1_1DirektFlexContainer_1_1ChildEntry.html" title=" " alt="" coords="134,93,361,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,147,250,196,245,196,245,147"/>
+<area shape="rect" id="Node000005" href="$structDirektDSP_1_1SizeHint.html" title=" " alt="" coords="172,5,323,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="250,44,250,93,245,93,245,44"/>
+</map>

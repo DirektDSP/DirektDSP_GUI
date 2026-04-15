@@ -1,0 +1,10 @@
+<map id="display/DirektLabel.cpp" name="display/DirektLabel.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$DirektLabel_8h.html" title=" " alt="" coords="13,79,173,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,31,95,65,90,65,90,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,225,170,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,106,71,127,59,153,57,168,60,183,73,213,68,215,55,185,52,168,54,151,66,124,81,103"/>
+<area shape="rect" id="Node000004" href="$DirektColours_8h.html" title=" " alt="" coords="69,152,239,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="105,103,137,140,133,143,101,106"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="147,179,118,216,114,213,143,176"/>
+</map>

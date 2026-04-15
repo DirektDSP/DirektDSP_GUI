@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,252,137,277"/>
+<area shape="rect" id="Node000001" href="$classDirektDSP_1_1DirektComboBox.html" title=" " alt="" coords="197,5,404,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="76,237,88,194,109,140,140,86,160,61,184,40,203,29,206,33,187,44,164,65,145,89,114,142,93,196,81,239"/>
+<area shape="rect" id="Node000002" href="$classDirektDSP_1_1DirektFlexContainer.html" title=" " alt="" coords="187,55,414,80"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="79,238,94,204,117,163,147,123,184,89,205,78,208,83,187,94,150,126,121,166,99,206,84,240"/>
+<area shape="rect" id="Node000003" href="$classDirektDSP_1_1DirektFooter.html" title=" " alt="" coords="212,104,389,129"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="86,239,126,187,153,161,184,138,211,127,213,132,187,143,156,165,130,191,90,242"/>
+<area shape="rect" id="Node000004" href="$classDirektDSP_1_1DirektHeader.html" title=" " alt="" coords="209,153,392,179"/>
+<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="97,241,137,213,184,188,219,176,220,181,186,192,140,217,100,245"/>
+<area shape="rect" id="Node000005" href="$classDirektDSP_1_1DirektKnob.html" title=" " alt="" coords="216,203,385,228"/>
+<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="142,246,185,237,238,225,239,231,186,242,143,251"/>
+<area shape="rect" id="Node000006" href="$classDirektDSP_1_1DirektMeter.html" title=" " alt="" coords="213,499,388,524"/>
+<area shape="poly" id="edge7_Node000000_Node000006" title=" " alt="" coords="81,290,93,333,114,386,145,439,165,463,187,484,214,498,212,503,184,488,161,467,141,442,109,388,88,335,76,292"/>
+<area shape="rect" id="Node000008" href="$classDirektDSP_1_1DirektPopupPanel.html" title=" " alt="" coords="195,252,406,277"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="151,262,195,262,195,267,151,267"/>
+<area shape="rect" id="Node000009" href="$classDirektDSP_1_1DirektPresetBrowser.html" title=" " alt="" coords="185,301,416,327"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="145,278,241,299,240,304,144,283"/>
+<area shape="rect" id="Node000010" href="$classDirektDSP_1_1DirektSection.html" title=" " alt="" coords="209,351,393,376"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="101,284,140,311,186,336,225,348,223,353,184,340,137,316,98,288"/>
+<area shape="rect" id="Node000011" href="$classDirektDSP_1_1DirektTabPanel.html" title=" " alt="" coords="204,400,397,425"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="90,287,130,338,157,363,187,385,215,397,213,402,184,390,153,368,126,341,86,290"/>
+<area shape="rect" id="Node000012" href="$classDirektDSP_1_1DirektToggle.html" title=" " alt="" coords="211,449,390,475"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="85,289,100,323,122,363,151,402,187,434,212,447,210,452,184,439,147,405,117,365,95,325,80,291"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="24,499,119,524"/>
+<area shape="poly" id="edge13_Node000007_Node000006" title=" " alt="" coords="133,509,213,509,213,514,133,514"/>
+</map>

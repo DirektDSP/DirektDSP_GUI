@@ -1,0 +1,7 @@
+<map id="DirektDSP::RadioGroupDesc" name="DirektDSP::RadioGroupDesc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,209,207"/>
+<area shape="rect" id="Node000002" href="$structDirektDSP_1_1NodeProps.html" title=" " alt="" coords="24,93,191,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,133,110,181,105,181,105,133"/>
+<area shape="rect" id="Node000003" href="$structDirektDSP_1_1SizeHint.html" title=" " alt="" coords="32,5,183,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,45,110,93,105,93,105,45"/>
+</map>

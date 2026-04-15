@@ -1,0 +1,7 @@
+<map id="controls/DirektKnob.h" name="controls/DirektKnob.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="114,5,277,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,191,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,33,134,72,130,68,179,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="215,79,370,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,29,260,68,257,72,208,33"/>
+</map>

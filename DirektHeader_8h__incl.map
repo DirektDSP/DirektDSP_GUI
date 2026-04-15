@@ -1,0 +1,12 @@
+<map id="chrome/DirektHeader.h" name="chrome/DirektHeader.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="182,5,355,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,191,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,33,153,75,151,70,243,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="267,167,422,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,32,253,72,252,95,258,118,274,139,295,157,291,161,270,143,253,120,247,96,248,71,260,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="267,86,353,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,30,300,73,295,75,272,32"/>
+<area shape="rect" id="Node000005" href="$DirektColours_8h.html" title=" " alt="" coords="377,86,547,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="298,28,422,78,420,83,296,33"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="448,114,383,161,380,156,445,109"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="chrome/DirektPopupPanel.h" name="chrome/DirektPopupPanel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="30,5,233,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="34,152,133,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,38,37,55,12,80,9,90,9,99,20,119,40,136,62,150,59,154,37,140,16,122,4,101,3,89,8,77,34,51,66,33"/>
+<area shape="rect" id="Node000003" href="$DirektPopupPanel_8cpp.html" title=" " alt="" coords="23,79,240,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,44,134,79,129,79,129,44"/>
+<area shape="rect" id="Node000004" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="264,79,439,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,32,317,76,315,81,179,37"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="295,110,127,154,126,149,294,105"/>
+<area shape="rect" id="Node000005" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="256,152,447,177"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="354,118,354,152,349,152,349,118"/>
+</map>

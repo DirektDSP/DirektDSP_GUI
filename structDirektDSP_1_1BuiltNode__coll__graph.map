@@ -1,0 +1,8 @@
+<map id="DirektDSP::BuiltNode" name="DirektDSP::BuiltNode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="632,14,792,39"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,15,167,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,26,191,25,399,17,608,19,632,19,632,25,608,24,399,23,191,31,180,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="280,49,483,89"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="181,43,280,55,279,60,180,48"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="496,52,632,34,632,40,497,57"/>
+</map>

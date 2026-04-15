@@ -1,0 +1,17 @@
+<map id="chrome/DirektPresetBrowser.cpp" name="chrome/DirektPresetBrowser.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,345,31"/>
+<area shape="rect" id="Node000002" href="$DirektPresetBrowser_8h.html" title=" " alt="" coords="5,79,225,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,33,147,73,144,69,208,28"/>
+<area shape="rect" id="Node000006" href="$PresetManager_8h.html" title=" " alt="" coords="273,79,456,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="251,28,331,70,329,75,248,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="165,240,319,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,106,60,125,47,138,36,153,30,173,36,191,59,214,87,231,119,243,151,251,150,256,117,248,85,236,56,218,32,193,24,173,32,151,43,135,57,121,87,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="47,159,133,185"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="114,105,100,147,95,146,109,103"/>
+<area shape="rect" id="Node000005" href="$DirektColours_8h.html" title=" " alt="" coords="157,159,327,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="135,102,213,150,210,154,133,106"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="245,185,245,226,239,226,239,185"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="367,105,360,146,352,170,340,194,319,217,295,235,291,231,316,213,336,190,348,168,355,145,361,104"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="403,152,588,192"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="385,102,454,143,451,147,383,106"/>
+</map>

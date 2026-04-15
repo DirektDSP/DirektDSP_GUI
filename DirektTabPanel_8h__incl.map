@@ -1,0 +1,10 @@
+<map id="layout/DirektTabPanel.h" name="layout/DirektTabPanel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,181,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,152,205,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,32,56,65,49,84,52,103,66,124,85,142,82,146,62,128,47,105,44,83,51,62,78,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="62,79,125,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,31,96,65,91,65,91,31"/>
+<area shape="rect" id="Node000004" href="$DirektColours_8h.html" title=" " alt="" coords="149,79,318,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="117,28,200,70,197,75,115,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="219,106,166,146,163,142,216,102"/>
+</map>

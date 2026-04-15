@@ -1,0 +1,9 @@
+<map id="DirektDSP::DirektPresetBrowser::PresetListModel" name="DirektDSP::DirektPresetBrowser::PresetListModel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="19,225,249,265"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,123,151,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,159,126,224,122,226,88,161"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="175,108,347,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,174,158,227,154,223,217,170"/>
+<area shape="rect" id="Node000004" href="$structDirektDSP_1_1DirektPresetBrowser_1_1PresetEntry.html" title=" " alt="" coords="145,5,376,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="263,59,263,108,258,108,258,59"/>
+</map>

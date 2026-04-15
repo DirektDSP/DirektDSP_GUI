@@ -1,0 +1,9 @@
+<map id="DirektDSP::CustomDesc" name="DirektDSP::CustomDesc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,196,275,221"/>
+<area shape="rect" id="Node000002" href="$structDirektDSP_1_1NodeProps.html" title=" " alt="" coords="5,101,172,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,134,176,194,172,198,109,137"/>
+<area shape="rect" id="Node000003" href="$structDirektDSP_1_1SizeHint.html" title=" " alt="" coords="13,5,164,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,44,91,101,86,101,86,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="197,93,367,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,145,200,198,196,194,251,141"/>
+</map>

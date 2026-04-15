@@ -1,0 +1,20 @@
+<map id="chrome/DirektHeader.cpp" name="chrome/DirektHeader.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="226,5,414,31"/>
+<area shape="rect" id="Node000002" href="$DirektHeader_8h.html" title=" " alt="" coords="92,79,265,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="298,33,215,75,212,70,296,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="290,79,350,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="322,31,322,65,317,65,317,31"/>
+<area shape="rect" id="Node000008" href="$PresetManager_8h.html" title=" " alt="" coords="374,79,556,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="344,28,431,70,428,75,342,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="330,152,515,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,101,352,145,350,150,213,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="144,240,298,280"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="93,106,49,123,31,137,15,153,8,172,15,191,38,214,67,231,98,243,130,251,129,256,96,248,64,236,35,218,11,193,3,172,11,151,27,133,47,119,91,101"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="26,159,112,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="164,106,98,153,95,149,161,102"/>
+<area shape="rect" id="Node000006" href="$DirektColours_8h.html" title=" " alt="" coords="136,159,306,185"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="187,103,211,146,206,149,182,105"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="224,185,224,226,218,226,218,185"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="461,105,442,141,437,139,456,103"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="484,102,505,120,526,143,537,168,536,181,530,194,516,206,495,216,441,233,377,246,313,254,312,249,376,240,440,228,493,212,513,201,526,190,531,180,532,169,521,146,501,124,480,106"/>
+</map>

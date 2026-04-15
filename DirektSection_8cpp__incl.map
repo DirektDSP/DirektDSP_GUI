@@ -1,0 +1,12 @@
+<map id="layout/DirektSection.cpp" name="layout/DirektSection.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="65,5,248,31"/>
+<area shape="rect" id="Node000002" href="$DirektSection_8h.html" title=" " alt="" coords="5,79,172,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,33,111,70,107,67,144,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="196,79,256,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="170,29,207,67,203,71,166,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="11,225,166,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,106,67,127,55,153,53,168,56,183,69,213,64,215,51,185,48,168,50,151,62,124,77,103"/>
+<area shape="rect" id="Node000004" href="$DirektColours_8h.html" title=" " alt="" coords="65,152,235,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="101,103,133,140,129,143,97,106"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="143,179,114,216,110,213,139,176"/>
+</map>

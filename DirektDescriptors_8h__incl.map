@@ -1,0 +1,13 @@
+<map id="config/DirektDescriptors.h" name="config/DirektDescriptors.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="202,5,393,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,160,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,33,148,76,146,71,265,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="184,86,235,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,33,234,79,231,75,283,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="259,86,336,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="300,31,300,72,295,72,295,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="361,86,429,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="313,29,371,75,368,79,310,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="453,86,515,111"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="327,28,442,76,447,78,445,83,440,81,325,33"/>
+</map>

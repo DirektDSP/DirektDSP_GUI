@@ -1,0 +1,12 @@
+<map id="core/DirektAutoLayout.h" name="core/DirektAutoLayout.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="29,5,209,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="23,152,122,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,38,35,55,12,80,9,90,9,99,18,118,36,136,55,150,51,154,32,140,14,121,4,100,3,89,7,77,32,51,62,34"/>
+<area shape="rect" id="Node000003" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="22,79,216,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,44,122,79,116,79,116,44"/>
+<area shape="rect" id="Node000004" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="241,79,416,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,33,295,76,294,81,165,38"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="275,110,115,154,113,149,274,105"/>
+<area shape="rect" id="Node000005" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="233,152,424,177"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="331,118,331,152,326,152,326,118"/>
+</map>
