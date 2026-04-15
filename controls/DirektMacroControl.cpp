@@ -11,11 +11,11 @@ namespace
 {
 float mapMacroValue (const MacroTarget& target, float normalizedMacroValue)
 {
-    auto const clampedMacro = juce::jlimit (0.0f, 1.0f, normalizedMacroValue);
-    auto const clampedExponent = juce::jmax (0.01f, target.curveExponent);
+    auto const clampedMacro = juce::jlimit (0.0F, 1.0F, normalizedMacroValue);
+    auto const clampedExponent = juce::jmax (0.01F, target.curveExponent);
     auto const curved = std::pow (clampedMacro, clampedExponent);
-    auto const minNorm = juce::jlimit (0.0f, 1.0f, target.minNormalized);
-    auto const maxNorm = juce::jlimit (0.0f, 1.0f, target.maxNormalized);
+    auto const minNorm = juce::jlimit (0.0F, 1.0F, target.minNormalized);
+    auto const maxNorm = juce::jlimit (0.0F, 1.0F, target.maxNormalized);
     return juce::jmap (curved, minNorm, maxNorm);
 }
 } // namespace

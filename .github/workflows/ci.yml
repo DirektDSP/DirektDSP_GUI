@@ -103,9 +103,19 @@ jobs:
       - name: Run clang-tidy
         run: |
           echo "Collecting C++ translation units…"
-          FILES=$(find . \( -name "*.cpp" \) \
-                    ! -path "./.git/*" \
-                    ! -path "./build/*" | sort)
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+            FILES=$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD | grep -E '\.cpp$' | sort || true)
+          else
+            FILES=$(find . \( -name "*.cpp" \) \
+                      ! -path "./.git/*" \
+                      ! -path "./build/*" | sort)
+          fi
+
+          if [ -z "$FILES" ]; then
+            echo "No C++ translation units to lint for this change set."
+            exit 0
+          fi
 
           FAILED=0
           WARNING_COUNT=0
