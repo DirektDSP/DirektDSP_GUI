@@ -98,6 +98,7 @@ jobs:
             -G Ninja \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DCMAKE_CXX_FLAGS="-I/usr/include/freetype2" \
             -DJUCE_DIR=/tmp/JUCE
 
       - name: Run clang-tidy
