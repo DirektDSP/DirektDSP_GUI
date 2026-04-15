@@ -1,4 +1,5 @@
 #include "controls/DirektMacroControl.h"
+
 #include <cmath>
 
 #include "theme/DirektColours.h"
