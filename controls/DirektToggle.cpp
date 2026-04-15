@@ -3,9 +3,8 @@
 namespace DirektDSP
 {
 
-DirektToggle::DirektToggle (juce::AudioProcessorValueTreeState& apvts,
-                             const juce::String& paramID,
-                             const juce::String& labelText)
+DirektToggle::DirektToggle (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
+                            const juce::String& labelText)
 {
     button.setButtonText (labelText);
     addAndMakeVisible (button);

@@ -1,4 +1,5 @@
 #include "core/DirektBaseEditor.h"
+
 #include "display/DirektMeter.h"
 
 namespace DirektDSP
@@ -8,9 +9,9 @@ namespace DirektDSP
 // Common init — shared by both constructors
 // ============================================================================
 
-void DirektBaseEditor::initCommon (const juce::String& pluginName, juce::Colour accentColour,
-                                    float ratio, int defaultWidth, int minWidth, int maxWidth,
-                                    bool showHeader, bool showFooter, bool resizable, bool showTooltips)
+void DirektBaseEditor::initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio,
+                                   int defaultWidth, int minWidth, int maxWidth, bool showHeader, bool showFooter,
+                                   bool resizable, bool showTooltips)
 {
     aspectRatio = ratio;
     showHeaderFlag = showHeader;
@@ -38,14 +39,12 @@ void DirektBaseEditor::initCommon (const juce::String& pluginName, juce::Colour 
     // Preset browser (owned, shown via popup)
     presetBrowser = std::make_unique<DirektPresetBrowser> (presetManager, accentColour);
     presetBrowser->onPresetLoaded = [this] { header.updatePresetName(); };
-    header.onPresetLabelClicked = [this] {
-        showPopup ("Presets", presetBrowser.get(), 500, 400);
-    };
+    header.onPresetLabelClicked = [this] { showPopup ("Presets", presetBrowser.get(), 500, 400); };
 
     // Resizable with fixed aspect ratio
     constrainer.setFixedAspectRatio (static_cast<double> (ratio));
-    constrainer.setSizeLimits (minWidth, static_cast<int> (static_cast<float> (minWidth) / ratio),
-                               maxWidth, static_cast<int> (static_cast<float> (maxWidth) / ratio));
+    constrainer.setSizeLimits (minWidth, static_cast<int> (static_cast<float> (minWidth) / ratio), maxWidth,
+                               static_cast<int> (static_cast<float> (maxWidth) / ratio));
 
     if (resizable)
     {
@@ -58,21 +57,14 @@ void DirektBaseEditor::initCommon (const juce::String& pluginName, juce::Colour 
 // NEW — config-driven constructor
 // ============================================================================
 
-DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
-                                     juce::AudioProcessorValueTreeState& apvtsRef,
-                                     Service::PresetManager& pm,
-                                     const PluginConfig& config,
-                                     NodeDescriptor rootDescriptor)
-    : AudioProcessorEditor (processor),
-      apvts (apvtsRef),
-      header (config.pluginName, config.accentColour, pm, apvtsRef),
-      presetManager (pm),
-      configDriven (true),
-      buildContext { apvtsRef, lookAndFeel, {} }
+DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvtsRef,
+                                    Service::PresetManager& pm, const PluginConfig& config,
+                                    NodeDescriptor rootDescriptor)
+    : AudioProcessorEditor (processor), apvts (apvtsRef), header (config.pluginName, config.accentColour, pm, apvtsRef),
+      presetManager (pm), configDriven (true), buildContext{apvtsRef, lookAndFeel, {}}
 {
-    initCommon (config.pluginName, config.accentColour, config.aspectRatio,
-                config.defaultWidth, config.minWidth, config.maxWidth,
-                config.showHeader, config.showFooter, config.resizable, config.showTooltips);
+    initCommon (config.pluginName, config.accentColour, config.aspectRatio, config.defaultWidth, config.minWidth,
+                config.maxWidth, config.showHeader, config.showFooter, config.resizable, config.showTooltips);
 
     // Build the UI tree from the descriptor
     auto& registry = DirektComponentRegistry::instance();
@@ -94,22 +86,14 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
 // LEGACY — preserved constructor
 // ============================================================================
 
-DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor,
-                                     juce::AudioProcessorValueTreeState& apvtsRef,
-                                     Service::PresetManager& pm,
-                                     const juce::String& pluginName,
-                                     juce::Colour accentColour,
-                                     float ratio,
-                                     int defaultWidth,
-                                     const std::vector<SectionDescriptor>& sectionDescriptors)
-    : AudioProcessorEditor (processor),
-      apvts (apvtsRef),
-      header (pluginName, accentColour, pm, apvtsRef),
-      presetManager (pm),
-      buildContext { apvtsRef, lookAndFeel, {} }
+DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvtsRef,
+                                    Service::PresetManager& pm, const juce::String& pluginName,
+                                    juce::Colour accentColour, float ratio, int defaultWidth,
+                                    const std::vector<SectionDescriptor>& sectionDescriptors)
+    : AudioProcessorEditor (processor), apvts (apvtsRef), header (pluginName, accentColour, pm, apvtsRef),
+      presetManager (pm), buildContext{apvtsRef, lookAndFeel, {}}
 {
-    initCommon (pluginName, accentColour, ratio, defaultWidth, 400, 1600,
-                true, true, true, true);
+    initCommon (pluginName, accentColour, ratio, defaultWidth, 400, 1600, true, true, true, true);
 
     // Build sections from descriptors (legacy path)
     builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors);
@@ -133,8 +117,10 @@ void DirektBaseEditor::paint (juce::Graphics& g)
     g.fillAll (Colours::bgDark);
 
     auto bounds = getLocalBounds();
-    if (showHeaderFlag) bounds.removeFromTop (headerHeight);
-    if (showFooterFlag) bounds.removeFromBottom (footerHeight);
+    if (showHeaderFlag)
+        bounds.removeFromTop (headerHeight);
+    if (showFooterFlag)
+        bounds.removeFromBottom (footerHeight);
 
     paintCustomBackground (g, bounds);
 }
@@ -212,7 +198,7 @@ void DirektBaseEditor::hidePopup()
 juce::Component* DirektBaseEditor::findComponentByID (const juce::String& id) const
 {
     // Search recursively through all children
-    std::function<juce::Component* (juce::Component*)> search;
+    std::function<juce::Component*(juce::Component*)> search;
     search = [&] (juce::Component* parent) -> juce::Component*
     {
         if (parent->getComponentID() == id)

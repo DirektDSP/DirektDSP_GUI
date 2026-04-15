@@ -2,32 +2,32 @@
 
 // Config
 #include "config/DirektConfig.h"
-#include "config/DirektDescriptors.h"
 #include "config/DirektDescriptorHelpers.h"
+#include "config/DirektDescriptors.h"
 
 // Core
-#include "core/DirektBaseEditor.h"
 #include "core/DirektAutoLayout.h"
-#include "core/DirektComponentRegistry.h"
+#include "core/DirektBaseEditor.h"
 #include "core/DirektBuildContext.h"
+#include "core/DirektComponentRegistry.h"
 
 // Layout
-#include "layout/DirektSection.h"
 #include "layout/DirektFlexContainer.h"
+#include "layout/DirektSection.h"
 #include "layout/DirektTabPanel.h"
 
 // Controls
+#include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
 #include "controls/DirektToggle.h"
-#include "controls/DirektComboBox.h"
 
 // Display
-#include "display/DirektMeter.h"
 #include "display/DirektLabel.h"
+#include "display/DirektMeter.h"
 
 // Chrome
-#include "chrome/DirektHeader.h"
 #include "chrome/DirektFooter.h"
+#include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
 #include "chrome/DirektPresetBrowser.h"
 

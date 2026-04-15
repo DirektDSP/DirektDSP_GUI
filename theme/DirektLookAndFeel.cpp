@@ -17,11 +17,8 @@ DirektLookAndFeel::DirektLookAndFeel()
     setColour (juce::PopupMenu::highlightedTextColourId, Colours::textBright);
 }
 
-void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g,
-                                           int x, int y, int width, int height,
-                                           float sliderPos,
-                                           float rotaryStartAngle, float rotaryEndAngle,
-                                           juce::Slider& slider)
+void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int width, int height, float sliderPos,
+                                          float rotaryStartAngle, float rotaryEndAngle, juce::Slider& slider)
 {
     juce::ignoreUnused (slider);
 
@@ -42,21 +39,18 @@ void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g,
 
     // Track arc (full range)
     juce::Path bgArc;
-    bgArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f,
-                          rotaryStartAngle, rotaryEndAngle, true);
+    bgArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f, rotaryStartAngle, rotaryEndAngle, true);
     g.setColour (Colours::knobTrack);
-    g.strokePath (bgArc, juce::PathStrokeType (lineW, juce::PathStrokeType::curved,
-                                                juce::PathStrokeType::rounded));
+    g.strokePath (bgArc, juce::PathStrokeType (lineW, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
 
     // Value arc
     if (sliderPos > 0.0f)
     {
         juce::Path valueArc;
-        valueArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f,
-                                 rotaryStartAngle, toAngle, true);
+        valueArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f, rotaryStartAngle, toAngle, true);
         g.setColour (accentColour);
-        g.strokePath (valueArc, juce::PathStrokeType (lineW, juce::PathStrokeType::curved,
-                                                       juce::PathStrokeType::rounded));
+        g.strokePath (valueArc,
+                      juce::PathStrokeType (lineW, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
     }
 
     // Glow behind value arc
@@ -64,11 +58,10 @@ void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g,
     {
         auto glowColour = accentColour.withAlpha (0.15f);
         juce::Path glowArc;
-        glowArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f,
-                                rotaryStartAngle, toAngle, true);
+        glowArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0f, rotaryStartAngle, toAngle, true);
         g.setColour (glowColour);
-        g.strokePath (glowArc, juce::PathStrokeType (lineW * 3.0f, juce::PathStrokeType::curved,
-                                                      juce::PathStrokeType::rounded));
+        g.strokePath (glowArc,
+                      juce::PathStrokeType (lineW * 3.0f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
     }
 
     // Pointer line
@@ -87,15 +80,13 @@ void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g,
 }
 
 void DirektLookAndFeel::drawToggleButton (juce::Graphics& g, juce::ToggleButton& button,
-                                           bool shouldDrawButtonAsHighlighted,
-                                           bool /*shouldDrawButtonAsDown*/)
+                                          bool shouldDrawButtonAsHighlighted, bool /*shouldDrawButtonAsDown*/)
 {
     auto bounds = button.getLocalBounds().toFloat();
     auto h = bounds.getHeight();
     auto indicatorSize = juce::jmin (h - 4.0f, 18.0f);
-    auto indicatorBounds = juce::Rectangle<float> (bounds.getX() + 2.0f,
-                                                    bounds.getCentreY() - indicatorSize * 0.5f,
-                                                    indicatorSize, indicatorSize);
+    auto indicatorBounds = juce::Rectangle<float> (bounds.getX() + 2.0f, bounds.getCentreY() - indicatorSize * 0.5f,
+                                                   indicatorSize, indicatorSize);
 
     // Indicator background
     g.setColour (Colours::knobBg);
@@ -123,9 +114,8 @@ void DirektLookAndFeel::drawToggleButton (juce::Graphics& g, juce::ToggleButton&
     g.drawText (button.getButtonText(), textBounds.toNearestInt(), juce::Justification::centredLeft);
 }
 
-void DirektLookAndFeel::drawComboBox (juce::Graphics& g, int width, int height, bool /*isButtonDown*/,
-                                       int /*buttonX*/, int /*buttonY*/, int /*buttonW*/, int /*buttonH*/,
-                                       juce::ComboBox& box)
+void DirektLookAndFeel::drawComboBox (juce::Graphics& g, int width, int height, bool /*isButtonDown*/, int /*buttonX*/,
+                                      int /*buttonY*/, int /*buttonW*/, int /*buttonH*/, juce::ComboBox& box)
 {
     auto bounds = juce::Rectangle<int> (0, 0, width, height).toFloat();
     g.setColour (Colours::bgSection);
@@ -134,11 +124,11 @@ void DirektLookAndFeel::drawComboBox (juce::Graphics& g, int width, int height, 
     g.drawRoundedRectangle (bounds.reduced (0.5f), 4.0f, 1.0f);
 
     // Arrow
-    auto arrowZone = juce::Rectangle<float> (static_cast<float>(width) - 20.0f, 0.0f, 16.0f, static_cast<float>(height));
+    auto arrowZone =
+        juce::Rectangle<float> (static_cast<float> (width) - 20.0f, 0.0f, 16.0f, static_cast<float> (height));
     juce::Path arrow;
-    arrow.addTriangle (arrowZone.getCentreX() - 4.0f, arrowZone.getCentreY() - 2.0f,
-                       arrowZone.getCentreX() + 4.0f, arrowZone.getCentreY() - 2.0f,
-                       arrowZone.getCentreX(), arrowZone.getCentreY() + 3.0f);
+    arrow.addTriangle (arrowZone.getCentreX() - 4.0f, arrowZone.getCentreY() - 2.0f, arrowZone.getCentreX() + 4.0f,
+                       arrowZone.getCentreY() - 2.0f, arrowZone.getCentreX(), arrowZone.getCentreY() + 3.0f);
     g.setColour (Colours::textDim);
     g.fillPath (arrow);
 }
@@ -147,13 +137,13 @@ void DirektLookAndFeel::drawLabel (juce::Graphics& g, juce::Label& label)
 {
     g.fillAll (label.findColour (juce::Label::backgroundColourId));
 
-    if (! label.isBeingEdited())
+    if (!label.isBeingEdited())
     {
         auto textArea = label.getBorderSize().subtractedFrom (label.getLocalBounds());
         g.setColour (label.findColour (juce::Label::textColourId, true));
         g.setFont (label.getFont());
         g.drawFittedText (label.getText(), textArea, label.getJustificationType(),
-                          juce::jmax (1, (int) ((float) textArea.getHeight() / label.getFont().getHeight())),
+                          juce::jmax (1, (int)((float)textArea.getHeight() / label.getFont().getHeight())),
                           label.getMinimumHorizontalScale());
     }
 }
@@ -165,11 +155,10 @@ void DirektLookAndFeel::drawPopupMenuBackground (juce::Graphics& g, int width, i
     g.drawRect (0, 0, width, height);
 }
 
-void DirektLookAndFeel::drawPopupMenuItem (juce::Graphics& g, const juce::Rectangle<int>& area,
-                                            bool isSeparator, bool isActive, bool isHighlighted,
-                                            bool isTicked, bool /*hasSubMenu*/,
-                                            const juce::String& text, const juce::String& /*shortcutKeyText*/,
-                                            const juce::Drawable* /*icon*/, const juce::Colour* /*textColour*/)
+void DirektLookAndFeel::drawPopupMenuItem (juce::Graphics& g, const juce::Rectangle<int>& area, bool isSeparator,
+                                           bool isActive, bool isHighlighted, bool isTicked, bool /*hasSubMenu*/,
+                                           const juce::String& text, const juce::String& /*shortcutKeyText*/,
+                                           const juce::Drawable* /*icon*/, const juce::Colour* /*textColour*/)
 {
     if (isSeparator)
     {
@@ -191,7 +180,7 @@ void DirektLookAndFeel::drawPopupMenuItem (juce::Graphics& g, const juce::Rectan
         textColourToUse = accentColour;
 
     g.setColour (textColourToUse);
-    g.setFont (juce::Font (juce::FontOptions (juce::jmin (static_cast<float>(area.getHeight()) * 0.6f, 14.0f))));
+    g.setFont (juce::Font (juce::FontOptions (juce::jmin (static_cast<float> (area.getHeight()) * 0.6f, 14.0f))));
     g.drawFittedText (text, area.reduced (10, 0), juce::Justification::centredLeft, 1);
 }
 

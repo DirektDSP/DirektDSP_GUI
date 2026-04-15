@@ -14,8 +14,7 @@ DirektPopupPanel::DirektPopupPanel()
     addAndMakeVisible (closeBtn);
 }
 
-void DirektPopupPanel::show (const juce::String& title, juce::Component* content,
-                              int contentW, int contentH)
+void DirektPopupPanel::show (const juce::String& title, juce::Component* content, int contentW, int contentH)
 {
     titleText = title;
     contentComp = content;
@@ -47,10 +46,9 @@ void DirektPopupPanel::paint (juce::Graphics& g)
 
     // Panel
     auto panelBounds = getLocalBounds().toFloat();
-    auto pw = static_cast<float>(juce::jmin (requestedW, getWidth() - 40));
-    auto ph = static_cast<float>(juce::jmin (requestedH + 32, getHeight() - 40));
-    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph)
-                    .withCentre (panelBounds.getCentre());
+    auto pw = static_cast<float> (juce::jmin (requestedW, getWidth() - 40));
+    auto ph = static_cast<float> (juce::jmin (requestedH + 32, getHeight() - 40));
+    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph).withCentre (panelBounds.getCentre());
 
     g.setColour (Colours::bgPanel);
     g.fillRoundedRectangle (panel, 8.0f);
@@ -60,11 +58,9 @@ void DirektPopupPanel::paint (juce::Graphics& g)
     // Title bar
     auto titleBar = panel.removeFromTop (32.0f);
     g.setColour (Colours::bgHeader);
-    g.fillRoundedRectangle (titleBar.getX(), titleBar.getY(),
-                             titleBar.getWidth(), titleBar.getHeight(), 8.0f);
+    g.fillRoundedRectangle (titleBar.getX(), titleBar.getY(), titleBar.getWidth(), titleBar.getHeight(), 8.0f);
     // Cover bottom corners of title
-    g.fillRect (titleBar.getX(), titleBar.getY() + titleBar.getHeight() - 8.0f,
-                titleBar.getWidth(), 8.0f);
+    g.fillRect (titleBar.getX(), titleBar.getY() + titleBar.getHeight() - 8.0f, titleBar.getWidth(), 8.0f);
 
     g.setColour (Colours::textBright);
     g.setFont (juce::Font (juce::FontOptions (13.0f).withStyle ("Bold")));
@@ -74,14 +70,12 @@ void DirektPopupPanel::paint (juce::Graphics& g)
 void DirektPopupPanel::resized()
 {
     auto panelBounds = getLocalBounds().toFloat();
-    auto pw = static_cast<float>(juce::jmin (requestedW, getWidth() - 40));
-    auto ph = static_cast<float>(juce::jmin (requestedH + 32, getHeight() - 40));
-    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph)
-                    .withCentre (panelBounds.getCentre());
+    auto pw = static_cast<float> (juce::jmin (requestedW, getWidth() - 40));
+    auto ph = static_cast<float> (juce::jmin (requestedH + 32, getHeight() - 40));
+    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph).withCentre (panelBounds.getCentre());
 
     auto titleBar = panel.removeFromTop (32.0f);
-    closeBtn.setBounds (static_cast<int>(titleBar.getRight()) - 30,
-                        static_cast<int>(titleBar.getY()) + 4, 26, 24);
+    closeBtn.setBounds (static_cast<int> (titleBar.getRight()) - 30, static_cast<int> (titleBar.getY()) + 4, 26, 24);
 
     if (contentComp != nullptr)
         contentComp->setBounds (panel.reduced (8.0f).toNearestInt());
@@ -91,12 +85,11 @@ void DirektPopupPanel::mouseDown (const juce::MouseEvent& e)
 {
     // Dismiss if clicking on dimmed area (outside panel)
     auto panelBounds = getLocalBounds().toFloat();
-    auto pw = static_cast<float>(juce::jmin (requestedW, getWidth() - 40));
-    auto ph = static_cast<float>(juce::jmin (requestedH + 32, getHeight() - 40));
-    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph)
-                    .withCentre (panelBounds.getCentre());
+    auto pw = static_cast<float> (juce::jmin (requestedW, getWidth() - 40));
+    auto ph = static_cast<float> (juce::jmin (requestedH + 32, getHeight() - 40));
+    auto panel = juce::Rectangle<float> (0.0f, 0.0f, pw, ph).withCentre (panelBounds.getCentre());
 
-    if (! panel.contains (e.position))
+    if (!panel.contains (e.position))
         hide();
 }
 

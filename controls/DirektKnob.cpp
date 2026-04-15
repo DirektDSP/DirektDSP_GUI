@@ -1,12 +1,12 @@
 #include "controls/DirektKnob.h"
+
 #include "theme/DirektColours.h"
 
 namespace DirektDSP
 {
 
-DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts,
-                         const juce::String& paramID,
-                         const juce::String& labelText)
+DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
+                        const juce::String& labelText)
 {
     slider.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);
     slider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 60, 16);

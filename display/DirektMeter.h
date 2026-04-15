@@ -1,6 +1,8 @@
 #pragma once
-#include <atomic>
 #include <juce_gui_basics/juce_gui_basics.h>
+
+#include <atomic>
+
 #include "theme/DirektColours.h"
 
 namespace DirektDSP
@@ -9,8 +11,16 @@ namespace DirektDSP
 class DirektMeter : public juce::Component, private juce::Timer
 {
 public:
-    enum class Orientation { Vertical, Horizontal };
-    enum class Mode { Normal, GainReduction };
+    enum class Orientation
+    {
+        Vertical,
+        Horizontal
+    };
+    enum class Mode
+    {
+        Normal,
+        GainReduction
+    };
 
     struct Config
     {
@@ -24,14 +34,10 @@ public:
         int refreshHz = 30;
     };
 
-    explicit DirektMeter (const Config& cfg)
-        : config (cfg)
-    {
-        startTimerHz (config.refreshHz);
-    }
+    explicit DirektMeter (const Config& cfg) : config (cfg) { startTimerHz (config.refreshHz); }
 
-    void setSource (const std::atomic<float>* src)  { source = src; }
-    void setColour (juce::Colour c)                 { config.colour = c; }
+    void setSource (const std::atomic<float>* src) { source = src; }
+    void setColour (juce::Colour c) { config.colour = c; }
 
     void paint (juce::Graphics& g) override
     {
@@ -46,10 +52,11 @@ public:
         g.drawRoundedRectangle (bounds.reduced (0.5f), 2.0f, 1.0f);
 
         float range = config.rangeMaxDb - config.rangeMinDb;
-        if (range <= 0.0f) return;
+        if (range <= 0.0f)
+            return;
 
         float normLevel = juce::jlimit (0.0f, 1.0f, (smoothedDb - config.rangeMinDb) / range);
-        float normPeak  = juce::jlimit (0.0f, 1.0f, (peakDb - config.rangeMinDb) / range);
+        float normPeak = juce::jlimit (0.0f, 1.0f, (peakDb - config.rangeMinDb) / range);
 
         auto inner = bounds.reduced (1.0f);
 
@@ -77,9 +84,8 @@ public:
             // Peak hold line
             if (config.peakHold && peakDb > config.rangeMinDb)
             {
-                float peakY = (config.mode == Mode::GainReduction)
-                    ? inner.getY() + inner.getHeight() * normPeak
-                    : inner.getBottom() - inner.getHeight() * normPeak;
+                float peakY = (config.mode == Mode::GainReduction) ? inner.getY() + inner.getHeight() * normPeak
+                                                                   : inner.getBottom() - inner.getHeight() * normPeak;
 
                 g.setColour (config.colour.brighter (0.4f));
                 g.fillRect (inner.getX(), peakY - 1.0f, inner.getWidth(), 2.0f);
@@ -106,9 +112,8 @@ public:
 
             if (config.peakHold && peakDb > config.rangeMinDb)
             {
-                float peakX = (config.mode == Mode::GainReduction)
-                    ? inner.getRight() - inner.getWidth() * normPeak
-                    : inner.getX() + inner.getWidth() * normPeak;
+                float peakX = (config.mode == Mode::GainReduction) ? inner.getRight() - inner.getWidth() * normPeak
+                                                                   : inner.getX() + inner.getWidth() * normPeak;
 
                 g.setColour (config.colour.brighter (0.4f));
                 g.fillRect (peakX - 1.0f, inner.getY(), 2.0f, inner.getHeight());

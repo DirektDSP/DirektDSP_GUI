@@ -1,6 +1,6 @@
 #pragma once
-#include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <juce_gui_basics/juce_gui_basics.h>
 
 namespace DirektDSP
 {
@@ -8,8 +8,7 @@ namespace DirektDSP
 class DirektToggle : public juce::Component
 {
 public:
-    DirektToggle (juce::AudioProcessorValueTreeState& apvts,
-                  const juce::String& paramID,
+    DirektToggle (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
                   const juce::String& labelText);
 
     void resized() override;

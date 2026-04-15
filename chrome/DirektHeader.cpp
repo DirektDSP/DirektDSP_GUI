@@ -1,23 +1,30 @@
 #include "chrome/DirektHeader.h"
+
 #include "Service/PresetManager.h"
 
 namespace DirektDSP
 {
 
-DirektHeader::DirektHeader (const juce::String& name,
-                             juce::Colour accentCol,
-                             Service::PresetManager& pm,
-                             juce::AudioProcessorValueTreeState& /*apvts*/)
+DirektHeader::DirektHeader (const juce::String& name, juce::Colour accentCol, Service::PresetManager& pm,
+                            juce::AudioProcessorValueTreeState& /*apvts*/)
     : pluginName (name), accent (accentCol), presetManager (pm)
 {
     prevBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     prevBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
-    prevBtn.onClick = [this] { presetManager.loadPreviousPreset(); updatePresetName(); };
+    prevBtn.onClick = [this]
+    {
+        presetManager.loadPreviousPreset();
+        updatePresetName();
+    };
     addAndMakeVisible (prevBtn);
 
     nextBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     nextBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);
-    nextBtn.onClick = [this] { presetManager.loadNextPreset(); updatePresetName(); };
+    nextBtn.onClick = [this]
+    {
+        presetManager.loadNextPreset();
+        updatePresetName();
+    };
     addAndMakeVisible (nextBtn);
 
     presetLabel.setJustificationType (juce::Justification::centred);
@@ -39,8 +46,7 @@ void DirektHeader::paint (juce::Graphics& g)
     // Brand name
     g.setColour (Colours::textDim);
     g.setFont (juce::Font (juce::FontOptions (11.0f).withStyle ("Bold")));
-    g.drawText ("DirektDSP", bounds.removeFromLeft (80.0f).toNearestInt(),
-                juce::Justification::centred);
+    g.drawText ("DirektDSP", bounds.removeFromLeft (80.0f).toNearestInt(), juce::Justification::centred);
 
     // Plugin name
     g.setColour (accent);

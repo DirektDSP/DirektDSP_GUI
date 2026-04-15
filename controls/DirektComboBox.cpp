@@ -1,12 +1,12 @@
 #include "controls/DirektComboBox.h"
+
 #include "theme/DirektColours.h"
 
 namespace DirektDSP
 {
 
-DirektComboBox::DirektComboBox (juce::AudioProcessorValueTreeState& apvts,
-                                 const juce::String& paramID,
-                                 const juce::String& labelText)
+DirektComboBox::DirektComboBox (juce::AudioProcessorValueTreeState& apvts, const juce::String& paramID,
+                                const juce::String& labelText)
 {
     // Auto-populate choices from AudioParameterChoice
     if (auto* param = dynamic_cast<juce::AudioParameterChoice*> (apvts.getParameter (paramID)))

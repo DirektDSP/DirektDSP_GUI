@@ -3,15 +3,12 @@
 namespace DirektDSP
 {
 
-DirektTabPanel::DirektTabPanel (juce::Colour accentColour)
-    : accent (accentColour)
-{
-}
+DirektTabPanel::DirektTabPanel (juce::Colour accentColour) : accent (accentColour) {}
 
 void DirektTabPanel::addTab (const juce::String& label, juce::Component* content)
 {
     int idx = static_cast<int> (tabs.size());
-    tabs.push_back ({ label, content });
+    tabs.push_back ({label, content});
 
     auto btn = std::make_unique<juce::TextButton> (label);
     btn->setColour (juce::TextButton::buttonColourId, Colours::bgSection);
@@ -56,13 +53,12 @@ void DirektTabPanel::paint (juce::Graphics& g)
     g.fillRect (barArea);
 
     // Active tab indicator
-    if (! tabButtons.empty() && activeIndex < static_cast<int> (tabButtons.size()))
+    if (!tabButtons.empty() && activeIndex < static_cast<int> (tabButtons.size()))
     {
         auto& btn = tabButtons[static_cast<size_t> (activeIndex)];
         auto indicatorArea = btn->getBounds().toFloat();
         g.setColour (accent);
-        g.fillRect (indicatorArea.getX(), indicatorArea.getBottom() - 2.0f,
-                     indicatorArea.getWidth(), 2.0f);
+        g.fillRect (indicatorArea.getX(), indicatorArea.getBottom() - 2.0f, indicatorArea.getWidth(), 2.0f);
     }
 }
 
@@ -71,7 +67,7 @@ void DirektTabPanel::resized()
     auto bounds = getLocalBounds();
     auto tabBar = bounds.removeFromTop (tabBarHeight);
 
-    if (! tabButtons.empty())
+    if (!tabButtons.empty())
     {
         int btnW = tabBar.getWidth() / static_cast<int> (tabButtons.size());
         for (auto& btn : tabButtons)

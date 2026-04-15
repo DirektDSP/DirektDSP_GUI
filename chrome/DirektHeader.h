@@ -1,10 +1,15 @@
 #pragma once
-#include <functional>
-#include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <juce_gui_basics/juce_gui_basics.h>
+
+#include <functional>
+
 #include "theme/DirektColours.h"
 
-namespace Service { class PresetManager; }
+namespace Service
+{
+class PresetManager;
+}
 
 namespace DirektDSP
 {
@@ -12,9 +17,7 @@ namespace DirektDSP
 class DirektHeader : public juce::Component
 {
 public:
-    DirektHeader (const juce::String& pluginName,
-                  juce::Colour accentColour,
-                  Service::PresetManager& presetManager,
+    DirektHeader (const juce::String& pluginName, juce::Colour accentColour, Service::PresetManager& presetManager,
                   juce::AudioProcessorValueTreeState& apvts);
 
     void paint (juce::Graphics& g) override;
@@ -29,9 +32,9 @@ private:
     juce::String pluginName;
     juce::Colour accent;
 
-    juce::TextButton prevBtn { "<" };
-    juce::TextButton nextBtn { ">" };
-    juce::Label      presetLabel;
+    juce::TextButton prevBtn{"<"};
+    juce::TextButton nextBtn{">"};
+    juce::Label presetLabel;
 
     Service::PresetManager& presetManager;
 

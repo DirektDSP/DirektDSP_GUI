@@ -1,4 +1,5 @@
 #include "chrome/DirektPresetBrowser.h"
+
 #include "Service/PresetManager.h"
 
 namespace DirektDSP
@@ -8,10 +9,11 @@ namespace DirektDSP
 // CategoryListModel
 // ============================================================================
 
-void DirektPresetBrowser::CategoryListModel::paintListBoxItem (
-    int row, juce::Graphics& g, int width, int height, bool isSelected)
+void DirektPresetBrowser::CategoryListModel::paintListBoxItem (int row, juce::Graphics& g, int width, int height,
+                                                               bool isSelected)
 {
-    if (row < 0 || row >= categories.size()) return;
+    if (row < 0 || row >= categories.size())
+        return;
 
     if (isSelected || row == selectedRow)
     {
@@ -28,10 +30,11 @@ void DirektPresetBrowser::CategoryListModel::paintListBoxItem (
 // PresetListModel
 // ============================================================================
 
-void DirektPresetBrowser::PresetListModel::paintListBoxItem (
-    int row, juce::Graphics& g, int width, int height, bool isSelected)
+void DirektPresetBrowser::PresetListModel::paintListBoxItem (int row, juce::Graphics& g, int width, int height,
+                                                             bool isSelected)
 {
-    if (row < 0 || row >= static_cast<int> (presets.size())) return;
+    if (row < 0 || row >= static_cast<int> (presets.size()))
+        return;
 
     if (isSelected || row == selectedRow)
     {
@@ -84,10 +87,10 @@ DirektPresetBrowser::DirektPresetBrowser (Service::PresetManager& pm, juce::Colo
     styleButton (moveBtn);
     styleButton (newCatBtn);
 
-    saveBtn.onClick    = [this] { doSave(); };
-    deleteBtn.onClick  = [this] { doDelete(); };
-    moveBtn.onClick    = [this] { doMove(); };
-    newCatBtn.onClick  = [this] { doNewCategory(); };
+    saveBtn.onClick = [this] { doSave(); };
+    deleteBtn.onClick = [this] { doDelete(); };
+    moveBtn.onClick = [this] { doMove(); };
+    newCatBtn.onClick = [this] { doNewCategory(); };
 }
 
 void DirektPresetBrowser::visibilityChanged()
@@ -151,13 +154,13 @@ void DirektPresetBrowser::refreshPresets()
         // "All" — show everything
         auto metadata = presetManager.getAllPresetMetadata();
         for (auto& m : metadata)
-            presetModel.presets.push_back ({ m.name, m.artist, m.category });
+            presetModel.presets.push_back ({m.name, m.artist, m.category});
     }
     else
     {
         auto metadata = presetManager.getPresetMetadataInCategory (selectedCategory);
         for (auto& m : metadata)
-            presetModel.presets.push_back ({ m.name, m.artist, m.category });
+            presetModel.presets.push_back ({m.name, m.artist, m.category});
     }
 
     presetModel.selectedRow = -1;
@@ -199,26 +202,28 @@ void DirektPresetBrowser::doSave()
     aw->addButton ("Save", 1);
     aw->addButton ("Cancel", 0);
 
-    aw->enterModalState (true, juce::ModalCallbackFunction::create (
-        [this, aw] (int result)
-        {
-            if (result == 1)
-            {
-                auto name = aw->getTextEditorContents ("name");
-                auto artist = aw->getTextEditorContents ("artist");
-                auto category = aw->getTextEditorContents ("category");
+    aw->enterModalState (true,
+                         juce::ModalCallbackFunction::create (
+                             [this, aw] (int result)
+                             {
+                                 if (result == 1)
+                                 {
+                                     auto name = aw->getTextEditorContents ("name");
+                                     auto artist = aw->getTextEditorContents ("artist");
+                                     auto category = aw->getTextEditorContents ("category");
 
-                if (name.isNotEmpty())
-                {
-                    presetManager.savePreset (name, artist, category);
-                    refreshCategories();
-                    refreshPresets();
-                    if (onPresetLoaded)
-                        onPresetLoaded();
-                }
-            }
-            delete aw;
-        }), true);
+                                     if (name.isNotEmpty())
+                                     {
+                                         presetManager.savePreset (name, artist, category);
+                                         refreshCategories();
+                                         refreshPresets();
+                                         if (onPresetLoaded)
+                                             onPresetLoaded();
+                                     }
+                                 }
+                                 delete aw;
+                             }),
+                         true);
 }
 
 void DirektPresetBrowser::doDelete()
@@ -231,24 +236,26 @@ void DirektPresetBrowser::doDelete()
     auto nameToDelete = entry.name;
     auto catToDelete = entry.category;
 
-    auto* aw = new juce::AlertWindow ("Delete Preset",
-        "Delete \"" + nameToDelete + "\"?", juce::MessageBoxIconType::WarningIcon);
+    auto* aw = new juce::AlertWindow ("Delete Preset", "Delete \"" + nameToDelete + "\"?",
+                                      juce::MessageBoxIconType::WarningIcon);
     aw->addButton ("Delete", 1);
     aw->addButton ("Cancel", 0);
 
-    aw->enterModalState (true, juce::ModalCallbackFunction::create (
-        [this, aw, nameToDelete, catToDelete] (int result)
-        {
-            if (result == 1)
-            {
-                presetManager.deletePreset (nameToDelete, catToDelete);
-                refreshCategories();
-                refreshPresets();
-                if (onPresetLoaded)
-                    onPresetLoaded();
-            }
-            delete aw;
-        }), true);
+    aw->enterModalState (true,
+                         juce::ModalCallbackFunction::create (
+                             [this, aw, nameToDelete, catToDelete] (int result)
+                             {
+                                 if (result == 1)
+                                 {
+                                     presetManager.deletePreset (nameToDelete, catToDelete);
+                                     refreshCategories();
+                                     refreshPresets();
+                                     if (onPresetLoaded)
+                                         onPresetLoaded();
+                                 }
+                                 delete aw;
+                             }),
+                         true);
 }
 
 void DirektPresetBrowser::doMove()
@@ -261,27 +268,29 @@ void DirektPresetBrowser::doMove()
     auto presetName = entry.name;
     auto fromCat = entry.category;
 
-    auto* aw = new juce::AlertWindow ("Move Preset", "Move \"" + presetName + "\" to category:",
-                                       juce::MessageBoxIconType::NoIcon);
+    auto* aw = new juce::AlertWindow ("Move Preset",
+                                      "Move \"" + presetName + "\" to category:", juce::MessageBoxIconType::NoIcon);
     aw->addComboBox ("category", presetManager.getAllCategories(), "Category");
     aw->addButton ("Move", 1);
     aw->addButton ("Cancel", 0);
 
-    aw->enterModalState (true, juce::ModalCallbackFunction::create (
-        [this, aw, presetName, fromCat] (int result)
-        {
-            if (result == 1)
-            {
-                auto toCat = aw->getComboBoxComponent ("category")->getText();
-                if (toCat.isNotEmpty() && toCat != fromCat)
-                {
-                    presetManager.movePresetToCategory (presetName, fromCat, toCat);
-                    refreshCategories();
-                    refreshPresets();
-                }
-            }
-            delete aw;
-        }), true);
+    aw->enterModalState (true,
+                         juce::ModalCallbackFunction::create (
+                             [this, aw, presetName, fromCat] (int result)
+                             {
+                                 if (result == 1)
+                                 {
+                                     auto toCat = aw->getComboBoxComponent ("category")->getText();
+                                     if (toCat.isNotEmpty() && toCat != fromCat)
+                                     {
+                                         presetManager.movePresetToCategory (presetName, fromCat, toCat);
+                                         refreshCategories();
+                                         refreshPresets();
+                                     }
+                                 }
+                                 delete aw;
+                             }),
+                         true);
 }
 
 void DirektPresetBrowser::doNewCategory()
@@ -291,20 +300,22 @@ void DirektPresetBrowser::doNewCategory()
     aw->addButton ("Create", 1);
     aw->addButton ("Cancel", 0);
 
-    aw->enterModalState (true, juce::ModalCallbackFunction::create (
-        [this, aw] (int result)
-        {
-            if (result == 1)
-            {
-                auto name = aw->getTextEditorContents ("name");
-                if (name.isNotEmpty())
-                {
-                    presetManager.createCategory (name);
-                    refreshCategories();
-                }
-            }
-            delete aw;
-        }), true);
+    aw->enterModalState (true,
+                         juce::ModalCallbackFunction::create (
+                             [this, aw] (int result)
+                             {
+                                 if (result == 1)
+                                 {
+                                     auto name = aw->getTextEditorContents ("name");
+                                     if (name.isNotEmpty())
+                                     {
+                                         presetManager.createCategory (name);
+                                         refreshCategories();
+                                     }
+                                 }
+                                 delete aw;
+                             }),
+                         true);
 }
 
 } // namespace DirektDSP
