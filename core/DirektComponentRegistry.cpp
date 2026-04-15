@@ -2,6 +2,7 @@
 
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
+#include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
@@ -130,6 +131,33 @@ BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
 
     applyNodeProps (*meter, desc.props);
     return {std::move (meter), {}};
+}
+
+BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
+{
+    std::vector<MacroTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.minNormalized;
+            target.maxNormalized = targetDesc.maxNormalized;
+            target.curveExponent = targetDesc.curveExponent;
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
+    if (desc.tooltip.isNotEmpty())
+    {
+        macro->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
 }
 
 BuiltNode buildLabelNode (const LabelDesc& desc, BuildContext& /*ctx*/)
@@ -282,6 +310,10 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 auto comp = std::make_unique<juce::Component>();
                 applyNodeProps (*comp, desc.props);
                 return {std::move (comp), {}};
+            }
+            else if constexpr (std::is_same_v<T, MacroDesc>)
+            {
+                return buildMacroNode (desc, ctx);
             }
             else if constexpr (std::is_same_v<T, MeterDesc>)
             {

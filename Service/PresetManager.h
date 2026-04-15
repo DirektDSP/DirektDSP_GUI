@@ -15,9 +15,14 @@ namespace Service
 
 struct PresetMetadata
 {
+    /** Human-readable preset display name. */
     juce::String name;
+    /** Preset author label shown in browser list. */
     juce::String artist;
+    /** Category/group used by preset organization. */
     juce::String category;
+    /** Optional free-form tags for text search and filtering. */
+    juce::StringArray tags;
 };
 
 class PresetManager
