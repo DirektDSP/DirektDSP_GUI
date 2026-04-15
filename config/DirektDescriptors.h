@@ -110,7 +110,9 @@ enum class MeterOrientation
 enum class MeterMode
 {
     Normal,
-    GainReduction
+    GainReduction,
+    Rms,
+    Lufs
 };
 
 struct MeterDesc
@@ -120,6 +122,23 @@ struct MeterDesc
     MeterOrientation orientation = MeterOrientation::Vertical;
     MeterMode mode = MeterMode::Normal;
     juce::String label;
+};
+
+struct StereoMeterDesc
+{
+    NodeProps props;
+    juce::String sourceIDLeft;
+    juce::String sourceIDRight;
+    MeterOrientation orientation = MeterOrientation::Vertical;
+    MeterMode mode = MeterMode::Normal;
+    juce::String label;
+};
+
+struct ClipIndicatorDesc
+{
+    NodeProps props;
+    juce::String sourceID;
+    juce::String tooltip;
 };
 
 struct LabelDesc
@@ -198,7 +217,8 @@ struct CustomDesc
 
 struct NodeDescriptor
     : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc, MeterDesc,
-                   LabelDesc, SpacerDesc, DividerDesc, SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+                   StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc, SectionDesc, HBoxDesc,
+                   VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };

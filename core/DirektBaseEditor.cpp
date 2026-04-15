@@ -1,6 +1,8 @@
 #include "core/DirektBaseEditor.h"
 
+#include "display/DirektClipIndicator.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 
 namespace DirektDSP
 {
@@ -262,12 +264,16 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
 
     buildContext.meterSources[sourceID] = source;
 
-    // For meters that need post-build connection, search by component ID
+    // For meters/indicators that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))
     {
         if (auto* meter = dynamic_cast<DirektMeter*> (comp))
         {
             meter->setSource (source);
+        }
+        else if (auto* indicator = dynamic_cast<DirektClipIndicator*> (comp))
+        {
+            indicator->setSource (source);
         }
     }
 }

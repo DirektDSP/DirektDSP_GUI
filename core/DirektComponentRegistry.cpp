@@ -3,8 +3,10 @@
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
 #include "controls/DirektToggle.h"
+#include "display/DirektClipIndicator.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 #include "layout/DirektFlexContainer.h"
 #include "layout/DirektSection.h"
 #include "layout/DirektTabPanel.h"
@@ -110,13 +112,27 @@ BuiltNode buildRadioGroupNode (const RadioGroupDesc& desc, BuildContext& /*ctx*/
     return {std::move (container), std::move (owned)};
 }
 
+DirektMeter::Mode toMeterMode (MeterMode m)
+{
+    switch (m)
+    {
+        case MeterMode::GainReduction:
+            return DirektMeter::Mode::GainReduction;
+        case MeterMode::Rms:
+            return DirektMeter::Mode::Rms;
+        case MeterMode::Lufs:
+            return DirektMeter::Mode::Lufs;
+        default:
+            return DirektMeter::Mode::Normal;
+    }
+}
+
 BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
 {
     DirektMeter::Config meterCfg;
     meterCfg.orientation = (desc.orientation == MeterOrientation::Horizontal) ? DirektMeter::Orientation::Horizontal
                                                                               : DirektMeter::Orientation::Vertical;
-    meterCfg.mode =
-        (desc.mode == MeterMode::GainReduction) ? DirektMeter::Mode::GainReduction : DirektMeter::Mode::Normal;
+    meterCfg.mode = toMeterMode (desc.mode);
     meterCfg.label = desc.label;
     meterCfg.colour = ctx.lookAndFeel.getAccentColour();
 
@@ -130,6 +146,51 @@ BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
 
     applyNodeProps (*meter, desc.props);
     return {std::move (meter), {}};
+}
+
+BuiltNode buildStereoMeterNode (const StereoMeterDesc& desc, BuildContext& ctx)
+{
+    DirektStereoMeter::Config cfg;
+    cfg.orientation = (desc.orientation == MeterOrientation::Horizontal) ? DirektMeter::Orientation::Horizontal
+                                                                         : DirektMeter::Orientation::Vertical;
+    cfg.mode = toMeterMode (desc.mode);
+    cfg.label = desc.label;
+    cfg.colour = ctx.lookAndFeel.getAccentColour();
+
+    auto stereoMeter = std::make_unique<DirektStereoMeter> (cfg);
+
+    auto itL = ctx.meterSources.find (desc.sourceIDLeft);
+    if (itL != ctx.meterSources.end())
+    {
+        stereoMeter->setSourceLeft (itL->second);
+    }
+
+    auto itR = ctx.meterSources.find (desc.sourceIDRight);
+    if (itR != ctx.meterSources.end())
+    {
+        stereoMeter->setSourceRight (itR->second);
+    }
+
+    applyNodeProps (*stereoMeter, desc.props);
+    return {std::move (stereoMeter), {}};
+}
+
+BuiltNode buildClipIndicatorNode (const ClipIndicatorDesc& desc, BuildContext& ctx)
+{
+    auto indicator = std::make_unique<DirektClipIndicator>();
+    if (desc.tooltip.isNotEmpty())
+    {
+        indicator->setTooltip (desc.tooltip);
+    }
+
+    auto it = ctx.meterSources.find (desc.sourceID);
+    if (it != ctx.meterSources.end())
+    {
+        indicator->setSource (it->second);
+    }
+
+    applyNodeProps (*indicator, desc.props);
+    return {std::move (indicator), {}};
 }
 
 BuiltNode buildLabelNode (const LabelDesc& desc, BuildContext& /*ctx*/)
@@ -263,6 +324,8 @@ struct NodeBuilder
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
     BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
     BuiltNode operator() (const MeterDesc& d) const { return buildMeterNode (d, *ctx); }
+    BuiltNode operator() (const StereoMeterDesc& d) const { return buildStereoMeterNode (d, *ctx); }
+    BuiltNode operator() (const ClipIndicatorDesc& d) const { return buildClipIndicatorNode (d, *ctx); }
     BuiltNode operator() (const LabelDesc& d) const { return buildLabelNode (d, *ctx); }
     BuiltNode operator() (const DividerDesc& d) const { return buildDividerNode (d, *ctx); }
     BuiltNode operator() (const SectionDesc& d) const { return buildSectionNode (d, *ctx, *reg); }

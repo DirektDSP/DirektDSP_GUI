@@ -22,8 +22,10 @@
 #include "controls/DirektToggle.h"
 
 // Display
+#include "display/DirektClipIndicator.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 
 // Chrome
 #include "chrome/DirektFooter.h"
