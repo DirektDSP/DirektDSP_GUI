@@ -255,26 +255,12 @@ juce::Component* DirektBaseEditor::findComponentByID (const juce::String& id) co
 
 void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source)
 {
-    buildContext.meterSources[sourceID] = source;
-
-    // If the tree is already built, find any meters with matching sourceID and connect them
-    std::function<void (juce::Component*)> connectMeters;
-    connectMeters = [&] (juce::Component* parent)
+    if (source == nullptr)
     {
-        if (auto* meter = dynamic_cast<DirektMeter*> (parent))
-        {
-            // Meters don't expose their sourceID, but we can use component ID
-            // In practice, meters should be rebuilt or we store the mapping
-            meter->setSource (source);
-        }
-        for (auto* child : parent->getChildren())
-        {
-            if (child != nullptr)
-            {
-                connectMeters (child);
-            }
-        }
-    };
+        return;
+    }
+
+    buildContext.meterSources[sourceID] = source;
 
     // For meters that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))

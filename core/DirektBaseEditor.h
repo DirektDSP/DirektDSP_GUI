@@ -58,7 +58,7 @@ protected:
     std::vector<BuiltSection> builtSections; // legacy mode
 
 private:
-    void initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio, int defaultWidth,
+    void initCommon (const juce::String&, juce::Colour accentColour, float ratio, int,
                      int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
 
     DirektLookAndFeel lookAndFeel;
