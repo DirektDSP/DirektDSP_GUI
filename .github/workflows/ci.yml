@@ -26,17 +26,37 @@ jobs:
 
       - name: Run clang-format check
         run: |
+          echo "Collecting C++ source files…"
           FILES=$(find . \( -name "*.cpp" -o -name "*.h" \) \
                     ! -path "./.git/*" \
-                    ! -path "./build/*")
+                    ! -path "./build/*" | sort)
+
           FAILED=0
+          VIOLATION_COUNT=0
+
           for f in $FILES; do
-            if ! clang-format --dry-run --Werror "$f" 2>/dev/null; then
-              echo "::error file=$f::clang-format violation"
+            # Produce a unified diff between the file and the formatted version.
+            DIFF=$(clang-format "$f" | diff -u --label "$f (original)" --label "$f (formatted)" "$f" - || true)
+            if [ -n "$DIFF" ]; then
+              echo "::error file=${f}::clang-format violation – see diff below"
+              echo "────────────────────────────────────────────────────────────"
+              echo "FILE: $f"
+              echo "$DIFF"
+              echo "────────────────────────────────────────────────────────────"
+              VIOLATION_COUNT=$((VIOLATION_COUNT + 1))
               FAILED=1
             fi
           done
-          exit $FAILED
+
+          if [ "$FAILED" -ne 0 ]; then
+            echo ""
+            echo "::error::clang-format found $VIOLATION_COUNT file(s) with style violations."
+            echo ""
+            echo "Fix locally by running:"
+            echo "  find . \\( -name '*.cpp' -o -name '*.h' \\) ! -path './.git/*' | xargs clang-format -i"
+            exit 1
+          fi
+          echo "All files are correctly formatted."
 
   # ──────────────────────────────────────────────────────────────────────────
   # 2. clang-tidy – static analysis / lint
@@ -82,13 +102,45 @@ jobs:
 
       - name: Run clang-tidy
         run: |
+          echo "Collecting C++ translation units…"
           FILES=$(find . \( -name "*.cpp" \) \
                     ! -path "./.git/*" \
-                    ! -path "./build/*")
-          clang-tidy \
-            --quiet \
-            -p build/compile_commands.json \
-            $FILES
+                    ! -path "./build/*" | sort)
+
+          FAILED=0
+          WARNING_COUNT=0
+          ERROR_COUNT=0
+
+          for f in $FILES; do
+            echo "──── Checking: $f"
+            # Run clang-tidy; capture output so we can summarise counts.
+            OUTPUT=$(clang-tidy \
+              -p build/compile_commands.json \
+              --format-style=file \
+              "$f" 2>&1 || true)
+            if [ -n "$OUTPUT" ]; then
+              echo "$OUTPUT"
+              FILE_ERRORS=$(echo "$OUTPUT" | grep -c " error:" || true)
+              FILE_WARNINGS=$(echo "$OUTPUT" | grep -c " warning:" || true)
+              ERROR_COUNT=$((ERROR_COUNT + FILE_ERRORS))
+              WARNING_COUNT=$((WARNING_COUNT + FILE_WARNINGS))
+              if [ "$FILE_ERRORS" -gt 0 ]; then
+                echo "::error file=${f}::clang-tidy reported $FILE_ERRORS error(s) in $f"
+                FAILED=1
+              elif [ "$FILE_WARNINGS" -gt 0 ]; then
+                echo "::warning file=${f}::clang-tidy reported $FILE_WARNINGS warning(s) in $f"
+              fi
+            else
+              echo "  ✓ clean"
+            fi
+          done
+
+          echo ""
+          echo "══════════════════════════════════════════════════════════════"
+          echo "clang-tidy summary: $ERROR_COUNT error(s), $WARNING_COUNT warning(s)"
+          echo "══════════════════════════════════════════════════════════════"
+
+          exit $FAILED
 
   # ──────────────────────────────────────────────────────────────────────────
   # 3. labels – keep repository labels in sync with .github/labels.yml
