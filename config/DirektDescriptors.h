@@ -218,10 +218,9 @@ struct CustomDesc
 // NodeDescriptor — variant of all descriptor types
 // ============================================================================
 
-struct NodeDescriptor
-    : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc, MacroDesc,
-                   MeterDesc, LabelDesc, SpacerDesc, DividerDesc, SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc,
-                   CustomDesc>
+struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, SliderDesc, ButtonDesc, RadioGroupDesc,
+                                     XYPadDesc, MacroDesc, MeterDesc, LabelDesc, SpacerDesc, DividerDesc, SectionDesc,
+                                     HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };

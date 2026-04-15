@@ -1,8 +1,7 @@
 #include "controls/DirektMacroControl.h"
+#include <cmath>
 
 #include "theme/DirektColours.h"
-
-#include <cmath>
 
 namespace DirektDSP
 {
