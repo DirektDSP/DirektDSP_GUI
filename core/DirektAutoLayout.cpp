@@ -6,7 +6,8 @@ namespace DirektDSP
 {
 
 std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorValueTreeState& apvts,
-                                                           const std::vector<SectionDescriptor>& descriptors)
+                                                           const std::vector<SectionDescriptor>& descriptors,
+                                                           DirektParameterHistory* parameterHistory)
 {
     std::vector<BuiltSection> result;
 
@@ -22,13 +23,13 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
             switch (slot.type)
             {
                 case ControlType::Knob:
-                    control = std::make_unique<DirektKnob> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektKnob> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
                 case ControlType::Toggle:
-                    control = std::make_unique<DirektToggle> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektToggle> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
                 case ControlType::ComboBox:
-                    control = std::make_unique<DirektComboBox> (apvts, slot.paramID, slot.label);
+                    control = std::make_unique<DirektComboBox> (apvts, slot.paramID, slot.label, parameterHistory);
                     break;
             }
 

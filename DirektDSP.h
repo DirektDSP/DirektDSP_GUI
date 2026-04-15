@@ -10,6 +10,7 @@
 #include "core/DirektBaseEditor.h"
 #include "core/DirektBuildContext.h"
 #include "core/DirektComponentRegistry.h"
+#include "core/DirektParameterHistory.h"
 
 // Layout
 #include "layout/DirektFlexContainer.h"

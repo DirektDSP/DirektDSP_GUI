@@ -11,6 +11,8 @@
 namespace DirektDSP
 {
 
+class DirektParameterHistory;
+
 enum class ControlType
 {
     Knob,
@@ -44,7 +46,8 @@ class DirektAutoLayout
 public:
     // Legacy: build JUCE components from SectionDescriptors
     static std::vector<BuiltSection> buildSections (juce::AudioProcessorValueTreeState& apvts,
-                                                    const std::vector<SectionDescriptor>& descriptors);
+                                                    const std::vector<SectionDescriptor>& descriptors,
+                                                    DirektParameterHistory* parameterHistory = nullptr);
 
     // Bridge: convert legacy SectionDescriptors to a NodeDescriptor tree
     static NodeDescriptor convertLegacySections (const std::vector<SectionDescriptor>& descriptors);
