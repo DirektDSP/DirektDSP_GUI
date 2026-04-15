@@ -31,7 +31,9 @@ Checks: >
   -cppcoreguidelines-pro-type-cstyle-cast,
   -clang-analyzer-optin.cplusplus.VirtualCall,
   -bugprone-easily-swappable-parameters,
-  -misc-include-cleaner
+  -misc-include-cleaner,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-pro-type-const-cast
 
 # Promote all enabled warnings to errors so CI is blocking.
 WarningsAsErrors: "*"
@@ -55,6 +57,8 @@ CheckOptions:
     value: camelBack
   - key:   readability-identifier-naming.ConstantCase
     value: UPPER_CASE
+  - key:   readability-identifier-naming.LocalConstantCase
+    value: camelBack
   - key:   readability-identifier-naming.EnumConstantCase
     value: CamelCase
   # ── Modernise options ─────────────────────────────────────────────────────

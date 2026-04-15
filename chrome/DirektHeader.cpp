@@ -7,9 +7,9 @@
 namespace DirektDSP
 {
 
-DirektHeader::DirektHeader (juce::String name, juce::Colour accentCol, Service::PresetManager& pm,
+DirektHeader::DirektHeader (juce::String pluginName, juce::Colour accentColour, Service::PresetManager& presetManager,
                             juce::AudioProcessorValueTreeState& /*apvts*/)
-    : pluginName (std::move (name)), accent (accentCol), presetManager (pm)
+    : pluginName (std::move (pluginName)), accent (accentColour), presetManager (presetManager)
 {
     prevBtn.setColour (juce::TextButton::buttonColourId, Colours::bgHeader);
     prevBtn.setColour (juce::TextButton::textColourOffId, Colours::textDim);

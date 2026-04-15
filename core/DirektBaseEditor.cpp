@@ -67,16 +67,15 @@ void DirektBaseEditor::initCommon (const juce::String& /*pluginName*/, juce::Col
 // NEW — config-driven constructor
 // ============================================================================
 
-DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvtsRef,
-                                    Service::PresetManager& pm, const PluginConfig& config,
+DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvts,
+                                    Service::PresetManager& presetManager, const PluginConfig& config,
                                     const NodeDescriptor& rootDescriptor)
-    : AudioProcessorEditor (processor), apvts (apvtsRef), header (config.pluginName, config.accentColour, pm, apvtsRef),
-      presetManager (pm), configDriven (true), buildContext{apvtsRef, lookAndFeel, {}}
+    : AudioProcessorEditor (processor), apvts (apvts),
+      header (config.pluginName, config.accentColour, presetManager, apvts), presetManager (presetManager),
+      configDriven (true), buildContext{apvts, lookAndFeel, {}}
 {
     initCommon (config.pluginName, config.accentColour, config.aspectRatio, config.defaultWidth, config.minWidth,
                 config.maxWidth, config.showHeader, config.showFooter, config.resizable, config.showTooltips);
-
-    // Build the UI tree from the descriptor
     auto& registry = DirektComponentRegistry::instance();
     rootBuiltNode = registry.build (rootDescriptor, buildContext);
 
@@ -100,14 +99,14 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::Audio
 // LEGACY — preserved constructor
 // ============================================================================
 
-DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvtsRef,
-                                    Service::PresetManager& pm, const juce::String& pluginName,
-                                    juce::Colour accentColour, float ratio, int defaultWidth,
+DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::AudioProcessorValueTreeState& apvts,
+                                    Service::PresetManager& presetManager, const juce::String& pluginName,
+                                    juce::Colour accentColour, float aspectRatio, int defaultWidth,
                                     const std::vector<SectionDescriptor>& sectionDescriptors)
-    : AudioProcessorEditor (processor), apvts (apvtsRef), header (pluginName, accentColour, pm, apvtsRef),
-      presetManager (pm), buildContext{apvtsRef, lookAndFeel, {}}
+    : AudioProcessorEditor (processor), apvts (apvts), header (pluginName, accentColour, presetManager, apvts),
+      presetManager (presetManager), buildContext{apvts, lookAndFeel, {}}
 {
-    initCommon (pluginName, accentColour, ratio, defaultWidth, 400, 1600, true, true, true, true);
+    initCommon (pluginName, accentColour, aspectRatio, defaultWidth, 400, 1600, true, true, true, true);
 
     // Build sections from descriptors (legacy path)
     builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors);
@@ -270,7 +269,10 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
         }
         for (auto* child : parent->getChildren())
         {
-            connectMeters (child);
+            if (child != nullptr)
+            {
+                connectMeters (child);
+            }
         }
     };
 
