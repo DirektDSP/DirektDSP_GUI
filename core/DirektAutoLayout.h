@@ -28,9 +28,32 @@ struct ParamSlot
 
 struct SectionDescriptor
 {
+    /**
+     * @brief Optional module controls rendered before regular parameter controls.
+     *
+     * Use these bindings for per-module isolation controls. When param IDs are set,
+     * the layout builder injects matching toggle controls into the section.
+     */
+    struct ModuleControlBinding
+    {
+        /** @brief Parameter ID for module bypass toggle. Empty string disables bypass control. */
+        juce::String bypassParamID;
+        /** @brief Parameter ID for module solo toggle. Empty string disables solo control. */
+        juce::String soloParamID;
+        /** @brief Label text shown on module bypass toggle. */
+        juce::String bypassLabel = "Bypass";
+        /** @brief Label text shown on module solo toggle. */
+        juce::String soloLabel = "Solo";
+        /** @brief Optional tooltip text for module bypass toggle. */
+        juce::String bypassTooltip;
+        /** @brief Optional tooltip text for module solo toggle. */
+        juce::String soloTooltip;
+    };
+
     juce::String title;
     std::vector<ParamSlot> params;
     int columns = 0; // 0 = auto (one row)
+    ModuleControlBinding moduleControls;
 };
 
 struct BuiltSection
