@@ -131,6 +131,28 @@ struct XYPadDesc
     juce::String tooltip;
 };
 
+/**
+ * @brief One macro mapping target.
+ */
+struct MacroTargetDesc
+{
+    juce::String paramID;
+    float minNormalized = 0.0f;
+    float maxNormalized = 1.0f;
+    float curveExponent = 1.0f;
+};
+
+/**
+ * @brief Descriptor for a macro control.
+ */
+struct MacroDesc
+{
+    NodeProps props;
+    juce::String label;
+    juce::String tooltip;
+    std::vector<MacroTargetDesc> targets;
+};
+
 // ============================================================================
 // Display descriptors
 // ============================================================================
@@ -242,7 +264,7 @@ struct CustomDesc
 // NodeDescriptor — variant of all descriptor types
 // ============================================================================
 
-struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, SliderDesc, ButtonDesc,
+struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, MacroDesc, SliderDesc, ButtonDesc,
                                      RadioGroupDesc, XYPadDesc, MeterDesc, LabelDesc, SpacerDesc, DividerDesc,
                                      SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
