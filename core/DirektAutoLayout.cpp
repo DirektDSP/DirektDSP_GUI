@@ -1,6 +1,7 @@
 #include "core/DirektAutoLayout.h"
 
 #include "config/DirektDescriptorHelpers.h"
+#include "layout/DirektModuleBypassSoloStrip.h"
 
 namespace DirektDSP
 {
@@ -53,6 +54,13 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
             built.controls.push_back (std::move (control));
         }
 
+        if (auto strip =
+                DirektModuleBypassSoloStrip::tryCreate (apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
+                                                        desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
+        {
+            built.section->setTitleBarAccessory (std::move (strip));
+        }
+
         result.push_back (std::move (built));
     }
 
@@ -83,7 +91,16 @@ NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<Sectio
             }
         }
 
-        sectionNodes.push_back (node (SectionDesc{{}, desc.title, desc.columns, std::move (childNodes)}));
+        sectionNodes.push_back (node (SectionDesc{{},
+                                                  desc.title,
+                                                  desc.columns,
+                                                  std::move (childNodes),
+                                                  desc.bypassParamID,
+                                                  desc.soloParamID,
+                                                  desc.bypassLabel,
+                                                  desc.soloLabel,
+                                                  desc.bypassTooltip,
+                                                  desc.soloTooltip}));
     }
 
     return VBoxDesc{{}, std::move (sectionNodes)};

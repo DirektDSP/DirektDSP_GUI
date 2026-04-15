@@ -14,12 +14,14 @@
 
 // Layout
 #include "layout/DirektFlexContainer.h"
+#include "layout/DirektModuleBypassSoloStrip.h"
 #include "layout/DirektSection.h"
 #include "layout/DirektTabPanel.h"
 
 // Controls
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
+#include "controls/DirektMacroKnob.h"
 #include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 
