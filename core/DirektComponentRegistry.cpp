@@ -254,17 +254,29 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
         {
             using T = std::decay_t<decltype (desc)>;
             if constexpr (std::is_same_v<T, KnobDesc>)
+            {
                 return buildKnobNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, ToggleDesc>)
+            {
                 return buildToggleNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, ComboBoxDesc>)
+            {
                 return buildComboBoxNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, SliderDesc>)
+            {
                 return buildSliderNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, ButtonDesc>)
+            {
                 return buildButtonNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, RadioGroupDesc>)
+            {
                 return buildRadioGroupNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, XYPadDesc>)
             {
                 auto comp = std::make_unique<juce::Component>();
@@ -272,9 +284,13 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 return {std::move (comp), {}};
             }
             else if constexpr (std::is_same_v<T, MeterDesc>)
+            {
                 return buildMeterNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, LabelDesc>)
+            {
                 return buildLabelNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, SpacerDesc>)
             {
                 auto spacer = std::make_unique<juce::Component>();
@@ -282,17 +298,29 @@ BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, Buil
                 return {std::move (spacer), {}};
             }
             else if constexpr (std::is_same_v<T, DividerDesc>)
+            {
                 return buildDividerNode (desc, ctx);
+            }
             else if constexpr (std::is_same_v<T, SectionDesc>)
+            {
                 return buildSectionNode (desc, ctx, *this);
+            }
             else if constexpr (std::is_same_v<T, HBoxDesc>)
+            {
                 return buildFlexNode (desc.children, desc.props, ctx, *this, DirektFlexContainer::Direction::Row);
+            }
             else if constexpr (std::is_same_v<T, VBoxDesc>)
+            {
                 return buildFlexNode (desc.children, desc.props, ctx, *this, DirektFlexContainer::Direction::Column);
+            }
             else if constexpr (std::is_same_v<T, TabPanelDesc>)
+            {
                 return buildTabPanelNode (desc, ctx, *this);
+            }
             else if constexpr (std::is_same_v<T, CustomDesc>)
+            {
                 return buildCustomNode (desc, ctx, customFactories);
+            }
             else
             {
                 auto comp = std::make_unique<juce::Component>();
