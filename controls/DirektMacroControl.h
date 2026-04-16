@@ -10,7 +10,7 @@ namespace DirektDSP
 /**
  * @brief Describes one mapped parameter target for a macro control.
  */
-struct MacroTarget
+struct MacroControlTarget
 {
     juce::RangedAudioParameter* parameter = nullptr;
     float minNormalized = 0.0f;
@@ -34,7 +34,7 @@ public:
      * @param labelText Visible label shown under macro knob.
      * @param targets Target parameter mappings to drive.
      */
-    DirektMacroControl (const juce::String& labelText, std::vector<MacroTarget> targets);
+    DirektMacroControl (const juce::String& labelText, std::vector<MacroControlTarget> targets);
 
     void resized() override;
 
@@ -48,7 +48,7 @@ private:
 
     juce::Slider slider;
     juce::Label label;
-    std::vector<MacroTarget> targets;
+    std::vector<MacroControlTarget> targets;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektMacroControl)
 };

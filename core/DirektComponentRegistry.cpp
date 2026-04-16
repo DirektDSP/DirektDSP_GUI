@@ -3,7 +3,6 @@
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
 #include "controls/DirektMacroControl.h"
-#include "controls/DirektMacroKnob.h"
 #include "controls/DirektToggle.h"
 #include "display/DirektClipIndicator.h"
 #include "display/DirektLabel.h"
@@ -73,17 +72,6 @@ BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
     }
     applyNodeProps (*combo, desc.props);
     return {std::move (combo), {}};
-}
-
-BuiltNode buildMacroKnobNode (const MacroKnobDesc& desc, BuildContext& ctx)
-{
-    auto macroKnob = std::make_unique<DirektMacroKnob> (ctx.apvts, desc.paramID, desc.label, desc.targets);
-    if (desc.tooltip.isNotEmpty())
-    {
-        macroKnob->getSlider().setTooltip (desc.tooltip);
-    }
-    applyNodeProps (*macroKnob, desc.props);
-    return {std::move (macroKnob), {}};
 }
 
 BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
@@ -206,14 +194,14 @@ BuiltNode buildClipIndicatorNode (const ClipIndicatorDesc& desc, BuildContext& c
 
 BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
 {
-    std::vector<MacroTarget> targets;
+    std::vector<MacroControlTarget> targets;
     targets.reserve (desc.targets.size());
 
     for (const auto& targetDesc : desc.targets)
     {
         if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
         {
-            MacroTarget target;
+            MacroControlTarget target;
             target.parameter = parameter;
             target.minNormalized = targetDesc.minNormalized;
             target.maxNormalized = targetDesc.maxNormalized;
@@ -364,7 +352,6 @@ struct NodeBuilder
     BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
     BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
     BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
-    BuiltNode operator() (const MacroKnobDesc& d) const { return buildMacroKnobNode (d, *ctx); }
     BuiltNode operator() (const MacroDesc& d) const { return buildMacroNode (d, *ctx); }
     BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }

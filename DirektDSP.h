@@ -22,7 +22,6 @@
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
 #include "controls/DirektMacroControl.h"
-#include "controls/DirektMacroKnob.h"
 #include "controls/DirektToggle.h"
 
 // Display

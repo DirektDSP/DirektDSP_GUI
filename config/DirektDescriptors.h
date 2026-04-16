@@ -284,9 +284,9 @@ struct CustomDesc
 // ============================================================================
 
 struct NodeDescriptor
-    : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, MacroDesc, SliderDesc, ButtonDesc, RadioGroupDesc,
-                   XYPadDesc, MeterDesc, StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc,
-                   SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+    : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc,
+                   MeterDesc, StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc, SectionDesc,
+                   HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };
