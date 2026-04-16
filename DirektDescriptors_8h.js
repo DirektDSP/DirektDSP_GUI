@@ -14,6 +14,8 @@ var DirektDescriptors_8h =
     [ "DirektDSP::MacroTargetDesc", "structDirektDSP_1_1MacroTargetDesc.html", "structDirektDSP_1_1MacroTargetDesc" ],
     [ "DirektDSP::MacroDesc", "structDirektDSP_1_1MacroDesc.html", "structDirektDSP_1_1MacroDesc" ],
     [ "DirektDSP::MeterDesc", "structDirektDSP_1_1MeterDesc.html", "structDirektDSP_1_1MeterDesc" ],
+    [ "DirektDSP::StereoMeterDesc", "structDirektDSP_1_1StereoMeterDesc.html", "structDirektDSP_1_1StereoMeterDesc" ],
+    [ "DirektDSP::ClipIndicatorDesc", "structDirektDSP_1_1ClipIndicatorDesc.html", "structDirektDSP_1_1ClipIndicatorDesc" ],
     [ "DirektDSP::LabelDesc", "structDirektDSP_1_1LabelDesc.html", "structDirektDSP_1_1LabelDesc" ],
     [ "DirektDSP::SpacerDesc", "structDirektDSP_1_1SpacerDesc.html", "structDirektDSP_1_1SpacerDesc" ],
     [ "DirektDSP::DividerDesc", "structDirektDSP_1_1DividerDesc.html", "structDirektDSP_1_1DividerDesc" ],
@@ -32,7 +34,9 @@ var DirektDescriptors_8h =
     ] ],
     [ "MeterMode", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146ee", [
       [ "Normal", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea960b44c579bc2f6818d2daaf9e4c16f0", null ],
-      [ "GainReduction", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea301b5ee318f25aa3fc3773e07f3d6312", null ]
+      [ "GainReduction", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea301b5ee318f25aa3fc3773e07f3d6312", null ],
+      [ "Rms", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eea9be8c035c1c87ad77c9b9bd6d994909f", null ],
+      [ "Lufs", "DirektDescriptors_8h.html#a2186e96b485cdb559fcdc65b3a6146eeae352d283b3a0d1617ae2f5b79be4adb2", null ]
     ] ],
     [ "MeterOrientation", "DirektDescriptors_8h.html#a34607bb645036f6ce8766deedae165e4", [
       [ "Vertical", "DirektDescriptors_8h.html#a34607bb645036f6ce8766deedae165e4a06ce2a25e5d12c166a36f654dbea6012", null ],

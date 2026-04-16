@@ -1,0 +1,7 @@
+<map id="DirektDSP::StereoMeterDesc" name="DirektDSP::StereoMeterDesc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,213,207"/>
+<area shape="rect" id="Node000002" href="$structDirektDSP_1_1NodeProps.html" title=" " alt="" coords="26,93,193,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,133,112,181,107,181,107,133"/>
+<area shape="rect" id="Node000003" href="$structDirektDSP_1_1SizeHint.html" title=" " alt="" coords="34,5,185,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,45,112,93,107,93,107,45"/>
+</map>

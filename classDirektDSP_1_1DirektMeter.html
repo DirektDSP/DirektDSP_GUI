@@ -130,6 +130,8 @@ Public Types</h2></td></tr>
 <tr class="separator:ad52560d3ca2e7256ea89dd97d3d14ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef49f6cf3e46992c1f42f1df891bca9a" id="r_aef49f6cf3e46992c1f42f1df891bca9a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9a">Mode</a> { <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa960b44c579bc2f6818d2daaf9e4c16f0">Normal</a>
 , <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312">GainReduction</a>
+, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa9be8c035c1c87ad77c9b9bd6d994909f">Rms</a>
+, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2">Lufs</a>
  }</td></tr>
 <tr class="separator:aef49f6cf3e46992c1f42f1df891bca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -141,6 +143,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a28450004ae4a9c9aaf4ebe0ed87d612d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc284b10d795db2674a91e0e68a324fc" id="r_acc284b10d795db2674a91e0e68a324fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#acc284b10d795db2674a91e0e68a324fc">setColour</a> (juce::Colour c)</td></tr>
 <tr class="separator:acc284b10d795db2674a91e0e68a324fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5baf052704317c6823ac683b8ae2d062" id="r_a5baf052704317c6823ac683b8ae2d062"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#a5baf052704317c6823ac683b8ae2d062">hasClipped</a> () const</td></tr>
+<tr class="memdesc:a5baf052704317c6823ac683b8ae2d062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the meter has clipped (peak &gt;= 0 dBFS) since last reset.  <br /></td></tr>
+<tr class="separator:a5baf052704317c6823ac683b8ae2d062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82588e76cf17f97c87f314cc0fb845d6" id="r_a82588e76cf17f97c87f314cc0fb845d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#a82588e76cf17f97c87f314cc0fb845d6">resetClip</a> ()</td></tr>
+<tr class="separator:a82588e76cf17f97c87f314cc0fb845d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51855e370e6bcb35cf60029893bbbd51" id="r_a51855e370e6bcb35cf60029893bbbd51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#a51855e370e6bcb35cf60029893bbbd51">paint</a> (juce::Graphics &amp;g) override</td></tr>
 <tr class="separator:a51855e370e6bcb35cf60029893bbbd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -161,6 +168,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6a72787c8222a3696dfbb283ffdfff1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70594af810b994bff2394b50472a2706" id="r_a70594af810b994bff2394b50472a2706"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#a70594af810b994bff2394b50472a2706">peakHoldCounter</a> = 0</td></tr>
 <tr class="separator:a70594af810b994bff2394b50472a2706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986f6f8f2dbe6357ea70aa921522eb34" id="r_a986f6f8f2dbe6357ea70aa921522eb34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektMeter.html#a986f6f8f2dbe6357ea70aa921522eb34">clipped</a> = false</td></tr>
+<tr class="separator:a986f6f8f2dbe6357ea70aa921522eb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -188,6 +197,8 @@ Private Attributes</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aef49f6cf3e46992c1f42f1df891bca9aa960b44c579bc2f6818d2daaf9e4c16f0" name="aef49f6cf3e46992c1f42f1df891bca9aa960b44c579bc2f6818d2daaf9e4c16f0"></a>Normal&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312" name="aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312"></a>GainReduction&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aef49f6cf3e46992c1f42f1df891bca9aa9be8c035c1c87ad77c9b9bd6d994909f" name="aef49f6cf3e46992c1f42f1df891bca9aa9be8c035c1c87ad77c9b9bd6d994909f"></a>Rms&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2" name="aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2"></a>Lufs&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00019">19</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
@@ -247,13 +258,44 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00037">37</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00039">39</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00166">config</a>, and <a class="el" href="DirektMeter_8h_source.html#l00034">DirektDSP::DirektMeter::Config::refreshHz</a>.</p>
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00199">config</a>, and <a class="el" href="DirektMeter_8h_source.html#l00036">DirektDSP::DirektMeter::Config::refreshHz</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5baf052704317c6823ac683b8ae2d062" name="a5baf052704317c6823ac683b8ae2d062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5baf052704317c6823ac683b8ae2d062">&#9670;&#160;</a></span>hasClipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektMeter::hasClipped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the meter has clipped (peak &gt;= 0 dBFS) since last reset. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00045">45</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00204">clipped</a>.</p>
+
+</div>
+</div>
 <a id="a51855e370e6bcb35cf60029893bbbd51" name="a51855e370e6bcb35cf60029893bbbd51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51855e370e6bcb35cf60029893bbbd51">&#9670;&#160;</a></span>paint()</h2>
 
@@ -278,9 +320,38 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00042">42</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00048">48</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00031">DirektDSP::DirektMeter::Config::colour</a>, <a class="el" href="DirektMeter_8h_source.html#l00166">config</a>, <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312">GainReduction</a>, <a class="el" href="DirektColours_8h_source.html#l00021">DirektDSP::Colours::knobBg</a>, <a class="el" href="DirektMeter_8h_source.html#l00032">DirektDSP::DirektMeter::Config::label</a>, <a class="el" href="DirektMeter_8h_source.html#l00030">DirektDSP::DirektMeter::Config::mode</a>, <a class="el" href="DirektMeter_8h_source.html#l00029">DirektDSP::DirektMeter::Config::orientation</a>, <a class="el" href="DirektMeter_8h_source.html#l00169">peakDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00033">DirektDSP::DirektMeter::Config::peakHold</a>, <a class="el" href="DirektMeter_8h_source.html#l00028">DirektDSP::DirektMeter::Config::rangeMaxDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00027">DirektDSP::DirektMeter::Config::rangeMinDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00168">smoothedDb</a>, <a class="el" href="DirektColours_8h_source.html#l00017">DirektDSP::Colours::textDim</a>, and <a class="el" href="classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3a06ce2a25e5d12c166a36f654dbea6012">Vertical</a>.</p>
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00033">DirektDSP::DirektMeter::Config::colour</a>, <a class="el" href="DirektMeter_8h_source.html#l00199">config</a>, <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312">GainReduction</a>, <a class="el" href="DirektColours_8h_source.html#l00021">DirektDSP::Colours::knobBg</a>, <a class="el" href="DirektMeter_8h_source.html#l00034">DirektDSP::DirektMeter::Config::label</a>, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2">Lufs</a>, <a class="el" href="DirektMeter_8h_source.html#l00032">DirektDSP::DirektMeter::Config::mode</a>, <a class="el" href="DirektMeter_8h_source.html#l00031">DirektDSP::DirektMeter::Config::orientation</a>, <a class="el" href="DirektMeter_8h_source.html#l00202">peakDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00035">DirektDSP::DirektMeter::Config::peakHold</a>, <a class="el" href="DirektMeter_8h_source.html#l00030">DirektDSP::DirektMeter::Config::rangeMaxDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00029">DirektDSP::DirektMeter::Config::rangeMinDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00201">smoothedDb</a>, <a class="el" href="DirektColours_8h_source.html#l00017">DirektDSP::Colours::textDim</a>, and <a class="el" href="classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3a06ce2a25e5d12c166a36f654dbea6012">Vertical</a>.</p>
+
+</div>
+</div>
+<a id="a82588e76cf17f97c87f314cc0fb845d6" name="a82588e76cf17f97c87f314cc0fb845d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82588e76cf17f97c87f314cc0fb845d6">&#9670;&#160;</a></span>resetClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektMeter::resetClip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00046">46</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00204">clipped</a>.</p>
 
 </div>
 </div>
@@ -308,9 +379,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00040">40</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00042">42</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00031">DirektDSP::DirektMeter::Config::colour</a>, and <a class="el" href="DirektMeter_8h_source.html#l00166">config</a>.</p>
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00033">DirektDSP::DirektMeter::Config::colour</a>, and <a class="el" href="DirektMeter_8h_source.html#l00199">config</a>.</p>
 
 </div>
 </div>
@@ -338,9 +409,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00039">39</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00041">41</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00167">source</a>.</p>
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00200">source</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00016">DirektDSP::DirektStereoMeter::setSourceLeft()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00021">DirektDSP::DirektStereoMeter::setSourceRight()</a>.</p>
 
 </div>
 </div>
@@ -367,13 +440,39 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00133">133</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00157">157</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00166">config</a>, <a class="el" href="DirektMeter_8h_source.html#l00169">peakDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00170">peakHoldCounter</a>, <a class="el" href="DirektMeter_8h_source.html#l00028">DirektDSP::DirektMeter::Config::rangeMaxDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00027">DirektDSP::DirektMeter::Config::rangeMinDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00034">DirektDSP::DirektMeter::Config::refreshHz</a>, <a class="el" href="DirektMeter_8h_source.html#l00168">smoothedDb</a>, and <a class="el" href="DirektMeter_8h_source.html#l00167">source</a>.</p>
+<p class="reference">References <a class="el" href="DirektMeter_8h_source.html#l00204">clipped</a>, <a class="el" href="DirektMeter_8h_source.html#l00199">config</a>, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2">Lufs</a>, <a class="el" href="DirektMeter_8h_source.html#l00032">DirektDSP::DirektMeter::Config::mode</a>, <a class="el" href="DirektMeter_8h_source.html#l00202">peakDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00203">peakHoldCounter</a>, <a class="el" href="DirektMeter_8h_source.html#l00030">DirektDSP::DirektMeter::Config::rangeMaxDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00029">DirektDSP::DirektMeter::Config::rangeMinDb</a>, <a class="el" href="DirektMeter_8h_source.html#l00036">DirektDSP::DirektMeter::Config::refreshHz</a>, <a class="el" href="classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa9be8c035c1c87ad77c9b9bd6d994909f">Rms</a>, <a class="el" href="DirektMeter_8h_source.html#l00201">smoothedDb</a>, and <a class="el" href="DirektMeter_8h_source.html#l00200">source</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a986f6f8f2dbe6357ea70aa921522eb34" name="a986f6f8f2dbe6357ea70aa921522eb34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986f6f8f2dbe6357ea70aa921522eb34">&#9670;&#160;</a></span>clipped</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektMeter::clipped = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00204">204</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00045">hasClipped()</a>, <a class="el" href="DirektMeter_8h_source.html#l00046">resetClip()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
+
+</div>
+</div>
 <a id="a6fe812e12032f5301629294b8b937c6f" name="a6fe812e12032f5301629294b8b937c6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fe812e12032f5301629294b8b937c6f">&#9670;&#160;</a></span>config</h2>
 
@@ -394,9 +493,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00166">166</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00199">199</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00037">DirektMeter()</a>, <a class="el" href="DirektMeter_8h_source.html#l00042">paint()</a>, <a class="el" href="DirektMeter_8h_source.html#l00040">setColour()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00133">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00039">DirektMeter()</a>, <a class="el" href="DirektMeter_8h_source.html#l00048">paint()</a>, <a class="el" href="DirektMeter_8h_source.html#l00042">setColour()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
 
 </div>
 </div>
@@ -420,9 +519,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00169">169</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00202">202</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00042">paint()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00133">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00048">paint()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
 
 </div>
 </div>
@@ -446,9 +545,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00170">170</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00203">203</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00133">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
 
 </div>
 </div>
@@ -472,9 +571,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00168">168</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00201">201</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00042">paint()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00133">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00048">paint()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
 
 </div>
 </div>
@@ -498,9 +597,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00167">167</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektMeter_8h_source.html#l00200">200</a> of file <a class="el" href="DirektMeter_8h_source.html">DirektMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00039">setSource()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00133">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektMeter_8h_source.html#l00041">setSource()</a>, and <a class="el" href="DirektMeter_8h_source.html#l00157">timerCallback()</a>.</p>
 
 </div>
 </div>

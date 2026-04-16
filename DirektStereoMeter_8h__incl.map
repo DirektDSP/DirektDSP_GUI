@@ -1,0 +1,15 @@
+<map id="display/DirektStereoMeter.h" name="display/DirektStereoMeter.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="79,225,234,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,33,71,59,45,96,36,116,30,137,30,157,38,176,58,199,84,217,81,221,54,203,33,179,25,158,25,136,31,114,41,93,67,56,93,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="47,152,114,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,32,87,53,77,79,74,109,77,138,72,139,68,110,71,78,83,51,96,29"/>
+<area shape="rect" id="Node000004" href="$DirektMeter_8h.html" title=" " alt="" coords="86,79,249,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="119,29,151,66,147,70,115,33"/>
+<area shape="rect" id="Node000005" href="$DirektColours_8h.html" title=" " alt="" coords="195,152,364,177"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="177,28,223,46,244,60,263,77,278,107,282,138,277,139,273,108,259,80,241,64,220,51,175,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="169,104,162,212,156,211,164,104"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="155,106,107,145,104,141,152,102"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="187,102,251,142,248,147,184,106"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="263,180,199,220,196,216,260,175"/>
+</map>

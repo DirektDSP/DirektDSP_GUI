@@ -7,8 +7,10 @@ var searchData=
   ['setactivetab_4',['setActiveTab',['../classDirektDSP_1_1DirektTabPanel.html#af925966774444db857c09b7a5c3b247e',1,'DirektDSP::DirektTabPanel']]],
   ['setcolour_5',['setColour',['../classDirektDSP_1_1DirektMeter.html#acc284b10d795db2674a91e0e68a324fc',1,'DirektDSP::DirektMeter']]],
   ['setcolumns_6',['setColumns',['../classDirektDSP_1_1DirektSection.html#a46729ce4229f610f5f01e82192bbc2a9',1,'DirektDSP::DirektSection']]],
-  ['setsource_7',['setSource',['../classDirektDSP_1_1DirektMeter.html#a28450004ae4a9c9aaf4ebe0ed87d612d',1,'DirektDSP::DirektMeter']]],
-  ['settitlebaraccessory_8',['setTitleBarAccessory',['../classDirektDSP_1_1DirektSection.html#afc4b3a4f65c2eaf527e851bfa897673f',1,'DirektDSP::DirektSection']]],
-  ['show_9',['show',['../classDirektDSP_1_1DirektPopupPanel.html#a16631e7319f0446824363862beaad617',1,'DirektDSP::DirektPopupPanel']]],
-  ['showpopup_10',['showPopup',['../classDirektDSP_1_1DirektBaseEditor.html#aa945ed272221ee189b0b14c0dd8772dd',1,'DirektDSP::DirektBaseEditor']]]
+  ['setsource_7',['setsource',['../classDirektDSP_1_1DirektClipIndicator.html#a7b0b14b77db140b099cfe309ee40362e',1,'DirektDSP::DirektClipIndicator::setSource()'],['../classDirektDSP_1_1DirektMeter.html#a28450004ae4a9c9aaf4ebe0ed87d612d',1,'DirektDSP::DirektMeter::setSource()']]],
+  ['setsourceleft_8',['setSourceLeft',['../classDirektDSP_1_1DirektStereoMeter.html#a26562cd8e30feb337deca24290b4cd16',1,'DirektDSP::DirektStereoMeter']]],
+  ['setsourceright_9',['setSourceRight',['../classDirektDSP_1_1DirektStereoMeter.html#ade1c8accbbde9afd2254a0aee00a9f8b',1,'DirektDSP::DirektStereoMeter']]],
+  ['settitlebaraccessory_10',['setTitleBarAccessory',['../classDirektDSP_1_1DirektSection.html#afc4b3a4f65c2eaf527e851bfa897673f',1,'DirektDSP::DirektSection']]],
+  ['show_11',['show',['../classDirektDSP_1_1DirektPopupPanel.html#a16631e7319f0446824363862beaad617',1,'DirektDSP::DirektPopupPanel']]],
+  ['showpopup_12',['showPopup',['../classDirektDSP_1_1DirektBaseEditor.html#aa945ed272221ee189b0b14c0dd8772dd',1,'DirektDSP::DirektBaseEditor']]]
 ];

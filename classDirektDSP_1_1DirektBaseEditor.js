@@ -7,7 +7,7 @@ var classDirektDSP_1_1DirektBaseEditor =
     [ "findComponentByID", "classDirektDSP_1_1DirektBaseEditor.html#a2e3ee3c20a28282dc7fa567fcc23acf0", null ],
     [ "findSection", "classDirektDSP_1_1DirektBaseEditor.html#a23667c00ee170dfc17aa836207f58f5d", null ],
     [ "hidePopup", "classDirektDSP_1_1DirektBaseEditor.html#a8d67280ce53bff8ea2a496be62c08dc3", null ],
-    [ "initCommon", "classDirektDSP_1_1DirektBaseEditor.html#af3b195913499161df74b1a45d2738f4f", null ],
+    [ "initCommon", "classDirektDSP_1_1DirektBaseEditor.html#aa6a208ba5e8a842412d371d29b41c972", null ],
     [ "keyPressed", "classDirektDSP_1_1DirektBaseEditor.html#a28d21ecc7dd3391be00ecc3e88851d54", null ],
     [ "layoutCustomSections", "classDirektDSP_1_1DirektBaseEditor.html#a8201791d43aebcc8f6e903eede8668da", null ],
     [ "paint", "classDirektDSP_1_1DirektBaseEditor.html#aec2a7f13813ff1ee3978bd61f612c323", null ],

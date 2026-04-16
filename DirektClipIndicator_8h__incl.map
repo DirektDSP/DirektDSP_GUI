@@ -1,0 +1,10 @@
+<map id="display/DirektClipIndicator.h" name="display/DirektClipIndicator.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,212,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="67,152,222,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,33,82,47,70,65,63,84,66,103,80,124,100,142,97,146,76,128,61,105,58,83,65,62,78,44,93,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="75,79,142,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,31,111,65,106,65,106,31"/>
+<area shape="rect" id="Node000004" href="$DirektColours_8h.html" title=" " alt="" coords="167,79,336,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,28,217,70,215,75,130,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="237,106,183,146,180,142,234,102"/>
+</map>

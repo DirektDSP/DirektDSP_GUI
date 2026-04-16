@@ -119,8 +119,10 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d5b609f4c54febd1d6916d6430d7336" id="r_a0d5b609f4c54febd1d6916d6430d7336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#a0d5b609f4c54febd1d6916d6430d7336">registerCustom</a> (const juce::String &amp;typeKey, <a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#ab5b178fa1c02ed0edd112e73d898c15c">CustomFactory</a> factory)</td></tr>
 <tr class="separator:a0d5b609f4c54febd1d6916d6430d7336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6fabede2c504410c782fb49c6da384e" id="r_ae6fabede2c504410c782fb49c6da384e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDirektDSP_1_1BuiltNode.html">BuiltNode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#ae6fabede2c504410c782fb49c6da384e">build</a> (const <a class="el" href="structDirektDSP_1_1NodeDescriptor.html">NodeDescriptor</a> &amp;descriptor, <a class="el" href="structDirektDSP_1_1BuildContext.html">BuildContext</a> &amp;ctx) const</td></tr>
+<tr class="memitem:ae6fabede2c504410c782fb49c6da384e" id="r_ae6fabede2c504410c782fb49c6da384e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDirektDSP_1_1BuiltNode.html">BuiltNode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#ae6fabede2c504410c782fb49c6da384e">build</a> (const <a class="el" href="structDirektDSP_1_1NodeDescriptor.html">NodeDescriptor</a> &amp;descriptor, <a class="el" href="structDirektDSP_1_1BuildContext.html">BuildContext</a> &amp;<a class="el" href="DirektComponentRegistry_8cpp.html#a8465558fa0f02d0790b6bd36b94e341b">ctx</a>) const</td></tr>
 <tr class="separator:ae6fabede2c504410c782fb49c6da384e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02f79de0ad0c4e1a0cc52684c30411f" id="r_aa02f79de0ad0c4e1a0cc52684c30411f"><td class="memItemLeft" align="right" valign="top">const std::map&lt; juce::String, <a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#ab5b178fa1c02ed0edd112e73d898c15c">CustomFactory</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#aa02f79de0ad0c4e1a0cc52684c30411f">getCustomFactories</a> () const</td></tr>
+<tr class="separator:aa02f79de0ad0c4e1a0cc52684c30411f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -210,9 +212,38 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00297">297</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00395">395</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classDirektDSP_1_1DirektFlexContainer.html#a54bb4ea6450e249a8c50e67f52a47fa2a1976d7f704de389d9fe064e08ea35b2d">DirektDSP::DirektFlexContainer::Column</a>, <a class="el" href="DirektComponentRegistry_8h_source.html#l00036">customFactories</a>, and <a class="el" href="classDirektDSP_1_1DirektFlexContainer.html#a54bb4ea6450e249a8c50e67f52a47fa2aa70367aa7cb74e510f4f9413ccf059d3">DirektDSP::DirektFlexContainer::Row</a>.</p>
+<p class="reference">References <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00349">ctx</a>.</p>
+
+</div>
+</div>
+<a id="aa02f79de0ad0c4e1a0cc52684c30411f" name="aa02f79de0ad0c4e1a0cc52684c30411f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02f79de0ad0c4e1a0cc52684c30411f">&#9670;&#160;</a></span>getCustomFactories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; juce::String, <a class="el" href="classDirektDSP_1_1DirektComponentRegistry.html#ab5b178fa1c02ed0edd112e73d898c15c">CustomFactory</a> &gt; &amp; DirektDSP::DirektComponentRegistry::getCustomFactories </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8h_source.html#l00033">33</a> of file <a class="el" href="DirektComponentRegistry_8h_source.html">DirektComponentRegistry.h</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektComponentRegistry_8h_source.html#l00038">customFactories</a>.</p>
 
 </div>
 </div>
@@ -239,7 +270,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00020">20</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00021">21</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00350">reg</a>.</p>
 
 </div>
 </div>
@@ -269,9 +302,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00026">26</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00027">27</a> of file <a class="el" href="DirektComponentRegistry_8cpp_source.html">DirektComponentRegistry.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektComponentRegistry_8h_source.html#l00036">customFactories</a>.</p>
+<p class="reference">References <a class="el" href="DirektComponentRegistry_8h_source.html#l00038">customFactories</a>.</p>
 
 </div>
 </div>
@@ -296,9 +329,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8h_source.html#l00036">36</a> of file <a class="el" href="DirektComponentRegistry_8h_source.html">DirektComponentRegistry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektComponentRegistry_8h_source.html#l00038">38</a> of file <a class="el" href="DirektComponentRegistry_8h_source.html">DirektComponentRegistry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00297">build()</a>, and <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00026">registerCustom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektComponentRegistry_8h_source.html#l00033">getCustomFactories()</a>, and <a class="el" href="DirektComponentRegistry_8cpp_source.html#l00027">registerCustom()</a>.</p>
 
 </div>
 </div>

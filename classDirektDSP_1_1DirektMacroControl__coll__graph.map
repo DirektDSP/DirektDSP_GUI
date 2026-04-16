@@ -4,6 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,136,122,195,117,197,83,139"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="161,93,333,133"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,144,143,198,139,194,210,140"/>
-<area shape="rect" id="Node000004" href="$structDirektDSP_1_1MacroTarget.html" title="One APVTS parameter written by a MacroKnobDesc knob." alt="" coords="159,5,335,31"/>
+<area shape="rect" id="Node000004" href="$structDirektDSP_1_1MacroControlTarget.html" title="Describes one mapped parameter target for a macro control." alt="" coords="136,5,359,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,44,250,93,245,93,245,44"/>
 </map>

@@ -8,8 +8,10 @@ var hierarchy =
     [ "DirektDSP::BuiltSection", "structDirektDSP_1_1BuiltSection.html", null ],
     [ "DirektDSP::ButtonDesc", "structDirektDSP_1_1ButtonDesc.html", null ],
     [ "DirektDSP::DirektFlexContainer::ChildEntry", "structDirektDSP_1_1DirektFlexContainer_1_1ChildEntry.html", null ],
+    [ "DirektDSP::ClipIndicatorDesc", "structDirektDSP_1_1ClipIndicatorDesc.html", null ],
     [ "DirektDSP::ComboBoxDesc", "structDirektDSP_1_1ComboBoxDesc.html", null ],
     [ "juce::Component", null, [
+      [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ],
       [ "DirektDSP::DirektComboBox", "classDirektDSP_1_1DirektComboBox.html", null ],
       [ "DirektDSP::DirektFlexContainer", "classDirektDSP_1_1DirektFlexContainer.html", null ],
       [ "DirektDSP::DirektFooter", "classDirektDSP_1_1DirektFooter.html", null ],
@@ -21,10 +23,12 @@ var hierarchy =
       [ "DirektDSP::DirektPopupPanel", "classDirektDSP_1_1DirektPopupPanel.html", null ],
       [ "DirektDSP::DirektPresetBrowser", "classDirektDSP_1_1DirektPresetBrowser.html", null ],
       [ "DirektDSP::DirektSection", "classDirektDSP_1_1DirektSection.html", null ],
+      [ "DirektDSP::DirektStereoMeter", "classDirektDSP_1_1DirektStereoMeter.html", null ],
       [ "DirektDSP::DirektTabPanel", "classDirektDSP_1_1DirektTabPanel.html", null ],
       [ "DirektDSP::DirektToggle", "classDirektDSP_1_1DirektToggle.html", null ]
     ] ],
     [ "DirektDSP::DirektMeter::Config", "structDirektDSP_1_1DirektMeter_1_1Config.html", null ],
+    [ "DirektDSP::DirektStereoMeter::Config", "structDirektDSP_1_1DirektStereoMeter_1_1Config.html", null ],
     [ "DirektDSP::CustomDesc", "structDirektDSP_1_1CustomDesc.html", null ],
     [ "DirektDSP::DirektAutoLayout", "classDirektDSP_1_1DirektAutoLayout.html", null ],
     [ "DirektDSP::DirektComponentRegistry", "classDirektDSP_1_1DirektComponentRegistry.html", null ],
@@ -43,6 +47,7 @@ var hierarchy =
     [ "juce::LookAndFeel_V4", null, [
       [ "DirektDSP::DirektLookAndFeel", "classDirektDSP_1_1DirektLookAndFeel.html", null ]
     ] ],
+    [ "DirektDSP::MacroControlTarget", "structDirektDSP_1_1MacroControlTarget.html", null ],
     [ "DirektDSP::MacroDesc", "structDirektDSP_1_1MacroDesc.html", null ],
     [ "DirektDSP::MacroKnobDesc", "structDirektDSP_1_1MacroKnobDesc.html", null ],
     [ "DirektDSP::MacroTarget", "structDirektDSP_1_1MacroTarget.html", null ],
@@ -58,13 +63,18 @@ var hierarchy =
     [ "DirektDSP::RadioGroupDesc", "structDirektDSP_1_1RadioGroupDesc.html", null ],
     [ "DirektDSP::SectionDesc", "structDirektDSP_1_1SectionDesc.html", null ],
     [ "DirektDSP::SectionDescriptor", "structDirektDSP_1_1SectionDescriptor.html", null ],
+    [ "juce::SettableTooltipClient", null, [
+      [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ]
+    ] ],
     [ "DirektDSP::SizeHint", "structDirektDSP_1_1SizeHint.html", null ],
     [ "DirektDSP::SliderDesc", "structDirektDSP_1_1SliderDesc.html", null ],
     [ "DirektDSP::SpacerDesc", "structDirektDSP_1_1SpacerDesc.html", null ],
+    [ "DirektDSP::StereoMeterDesc", "structDirektDSP_1_1StereoMeterDesc.html", null ],
     [ "DirektDSP::TabDesc", "structDirektDSP_1_1TabDesc.html", null ],
     [ "DirektDSP::DirektTabPanel::TabEntry", "structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html", null ],
     [ "DirektDSP::TabPanelDesc", "structDirektDSP_1_1TabPanelDesc.html", null ],
     [ "juce::Timer", null, [
+      [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ],
       [ "DirektDSP::DirektMeter", "classDirektDSP_1_1DirektMeter.html", null ]
     ] ],
     [ "DirektDSP::ToggleDesc", "structDirektDSP_1_1ToggleDesc.html", null ],

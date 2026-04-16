@@ -1,6 +1,6 @@
 var classDirektDSP_1_1DirektHeader =
 [
-    [ "DirektHeader", "classDirektDSP_1_1DirektHeader.html#a622ff7bd12b68452c871fe476e9b2e66", null ],
+    [ "DirektHeader", "classDirektDSP_1_1DirektHeader.html#a61a234a7996bdad0c5a17f21bdaad030", null ],
     [ "mouseDown", "classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed", null ],
     [ "paint", "classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc", null ],
     [ "resized", "classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc", null ],

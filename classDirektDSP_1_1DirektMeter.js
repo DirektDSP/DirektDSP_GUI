@@ -3,17 +3,22 @@ var classDirektDSP_1_1DirektMeter =
     [ "Config", "structDirektDSP_1_1DirektMeter_1_1Config.html", "structDirektDSP_1_1DirektMeter_1_1Config" ],
     [ "Mode", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9a", [
       [ "Normal", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa960b44c579bc2f6818d2daaf9e4c16f0", null ],
-      [ "GainReduction", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312", null ]
+      [ "GainReduction", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa301b5ee318f25aa3fc3773e07f3d6312", null ],
+      [ "Rms", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa9be8c035c1c87ad77c9b9bd6d994909f", null ],
+      [ "Lufs", "classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2", null ]
     ] ],
     [ "Orientation", "classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3", [
       [ "Vertical", "classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3a06ce2a25e5d12c166a36f654dbea6012", null ],
       [ "Horizontal", "classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3ac1b5fa03ecdb95d4a45dd1c40b02527f", null ]
     ] ],
     [ "DirektMeter", "classDirektDSP_1_1DirektMeter.html#ad817cee6ed20f0996bd11f9a0baacbd3", null ],
+    [ "hasClipped", "classDirektDSP_1_1DirektMeter.html#a5baf052704317c6823ac683b8ae2d062", null ],
     [ "paint", "classDirektDSP_1_1DirektMeter.html#a51855e370e6bcb35cf60029893bbbd51", null ],
+    [ "resetClip", "classDirektDSP_1_1DirektMeter.html#a82588e76cf17f97c87f314cc0fb845d6", null ],
     [ "setColour", "classDirektDSP_1_1DirektMeter.html#acc284b10d795db2674a91e0e68a324fc", null ],
     [ "setSource", "classDirektDSP_1_1DirektMeter.html#a28450004ae4a9c9aaf4ebe0ed87d612d", null ],
     [ "timerCallback", "classDirektDSP_1_1DirektMeter.html#ab50d69223096052da5c40408abce690b", null ],
+    [ "clipped", "classDirektDSP_1_1DirektMeter.html#a986f6f8f2dbe6357ea70aa921522eb34", null ],
     [ "config", "classDirektDSP_1_1DirektMeter.html#a6fe812e12032f5301629294b8b937c6f", null ],
     [ "peakDb", "classDirektDSP_1_1DirektMeter.html#a6a72787c8222a3696dfbb283ffdfff1c", null ],
     [ "peakHoldCounter", "classDirektDSP_1_1DirektMeter.html#a70594af810b994bff2394b50472a2706", null ],
