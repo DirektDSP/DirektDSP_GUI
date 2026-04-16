@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classDirektDSP_1_1DirektSection.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classDirektDSP_1_1DirektSection-members.html">List of all members</a>  </div>
@@ -132,6 +133,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc4b3a4f65c2eaf527e851bfa897673f" id="r_afc4b3a4f65c2eaf527e851bfa897673f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#afc4b3a4f65c2eaf527e851bfa897673f">setTitleBarAccessory</a> (std::unique_ptr&lt; juce::Component &gt; accessory)</td></tr>
 <tr class="memdesc:afc4b3a4f65c2eaf527e851bfa897673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional right-aligned controls in the title row (e.g.  <br /></td></tr>
 <tr class="separator:afc4b3a4f65c2eaf527e851bfa897673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4985cb080da87aadc9baf011179915" id="r_abc4985cb080da87aadc9baf011179915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#abc4985cb080da87aadc9baf011179915">setDraggable</a> (bool enable)</td></tr>
+<tr class="memdesc:abc4985cb080da87aadc9baf011179915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the drag handle in the title bar.  <br /></td></tr>
+<tr class="separator:abc4985cb080da87aadc9baf011179915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fbe18a18077625bc95807ebf30a0275" id="r_a1fbe18a18077625bc95807ebf30a0275"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a1fbe18a18077625bc95807ebf30a0275">mouseMove</a> (const juce::MouseEvent &amp;e) override</td></tr>
+<tr class="separator:a1fbe18a18077625bc95807ebf30a0275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc41848ac51cacd156fc12dc3dc7330" id="r_a2bc41848ac51cacd156fc12dc3dc7330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a2bc41848ac51cacd156fc12dc3dc7330">mouseDown</a> (const juce::MouseEvent &amp;e) override</td></tr>
+<tr class="separator:a2bc41848ac51cacd156fc12dc3dc7330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45904e97129a1e23a4abd1934f80109d" id="r_a45904e97129a1e23a4abd1934f80109d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a45904e97129a1e23a4abd1934f80109d">mouseDrag</a> (const juce::MouseEvent &amp;e) override</td></tr>
+<tr class="separator:a45904e97129a1e23a4abd1934f80109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1660e22f01019393a8cb3451e3edaa" id="r_a2c1660e22f01019393a8cb3451e3edaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a2c1660e22f01019393a8cb3451e3edaa">mouseUp</a> (const juce::MouseEvent &amp;e) override</td></tr>
+<tr class="separator:a2c1660e22f01019393a8cb3451e3edaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a29292b5b0b860185c32af1999d00172b" id="r_a29292b5b0b860185c32af1999d00172b"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::Point&lt; int &gt;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a29292b5b0b860185c32af1999d00172b">onDragMoved</a></td></tr>
+<tr class="memdesc:a29292b5b0b860185c32af1999d00172b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fired continuously while the section is being dragged; receives current screen position.  <br /></td></tr>
+<tr class="separator:a29292b5b0b860185c32af1999d00172b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e717a0d947c3868cb51938283b75991" id="r_a1e717a0d947c3868cb51938283b75991"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a1e717a0d947c3868cb51938283b75991">onDragEnded</a></td></tr>
+<tr class="memdesc:a1e717a0d947c3868cb51938283b75991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fired when the drag gesture ends (mouse released).  <br /></td></tr>
+<tr class="separator:a1e717a0d947c3868cb51938283b75991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -147,6 +168,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad47ba8fecf50a830c2c347164d397e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a035577108803a8975d4aa4a67574f32e" id="r_a035577108803a8975d4aa4a67574f32e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#a035577108803a8975d4aa4a67574f32e">titleBarAccessoryWidth</a> = 0</td></tr>
 <tr class="separator:a035577108803a8975d4aa4a67574f32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f6fcb34c6404cbfb8a15db6dc2c552" id="r_ab2f6fcb34c6404cbfb8a15db6dc2c552"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#ab2f6fcb34c6404cbfb8a15db6dc2c552">draggable</a> = false</td></tr>
+<tr class="separator:ab2f6fcb34c6404cbfb8a15db6dc2c552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d13ae1b1465108bca5aaa240c04fbf" id="r_ab2d13ae1b1465108bca5aaa240c04fbf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektSection.html#ab2d13ae1b1465108bca5aaa240c04fbf">dragging</a> = false</td></tr>
+<tr class="separator:ab2d13ae1b1465108bca5aaa240c04fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -157,7 +182,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00011">11</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00012">12</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae292c99cd71bf67e7ca0f1aeb391aca0" name="ae292c99cd71bf67e7ca0f1aeb391aca0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae292c99cd71bf67e7ca0f1aeb391aca0">&#9670;&#160;</a></span>DirektSection()</h2>
@@ -214,9 +239,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00098">98</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00186">186</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00034">controls</a>.</p>
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00057">controls</a>.</p>
 
 </div>
 </div>
@@ -243,9 +268,129 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00021">21</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00022">22</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00031">title</a>.</p>
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00054">title</a>.</p>
+
+</div>
+</div>
+<a id="a2bc41848ac51cacd156fc12dc3dc7330" name="a2bc41848ac51cacd156fc12dc3dc7330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc41848ac51cacd156fc12dc3dc7330">&#9670;&#160;</a></span>mouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektSection::mouseDown </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MouseEvent &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00044">44</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00061">draggable</a>, <a class="el" href="DirektSection_8h_source.html#l00062">dragging</a>, <a class="el" href="DirektSection_8h_source.html#l00065">padding</a>, and <a class="el" href="DirektSection_8h_source.html#l00064">titleHeight</a>.</p>
+
+</div>
+</div>
+<a id="a45904e97129a1e23a4abd1934f80109d" name="a45904e97129a1e23a4abd1934f80109d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45904e97129a1e23a4abd1934f80109d">&#9670;&#160;</a></span>mouseDrag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektSection::mouseDrag </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MouseEvent &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00058">58</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00062">dragging</a>, and <a class="el" href="DirektSection_8h_source.html#l00043">onDragMoved</a>.</p>
+
+</div>
+</div>
+<a id="a1fbe18a18077625bc95807ebf30a0275" name="a1fbe18a18077625bc95807ebf30a0275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fbe18a18077625bc95807ebf30a0275">&#9670;&#160;</a></span>mouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektSection::mouseMove </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MouseEvent &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00027">27</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00061">draggable</a>, <a class="el" href="DirektSection_8h_source.html#l00065">padding</a>, and <a class="el" href="DirektSection_8h_source.html#l00064">titleHeight</a>.</p>
+
+</div>
+</div>
+<a id="a2c1660e22f01019393a8cb3451e3edaa" name="a2c1660e22f01019393a8cb3451e3edaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1660e22f01019393a8cb3451e3edaa">&#9670;&#160;</a></span>mouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektSection::mouseUp </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MouseEvent &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00071">71</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00062">dragging</a>, and <a class="el" href="DirektSection_8h_source.html#l00046">onDragEnded</a>.</p>
 
 </div>
 </div>
@@ -273,9 +418,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00021">21</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00088">88</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektColours_8h_source.html#l00013">DirektDSP::Colours::bgSection</a>, <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>, <a class="el" href="DirektSection_8h_source.html#l00039">padding</a>, <a class="el" href="DirektColours_8h_source.html#l00018">DirektDSP::Colours::textLabel</a>, <a class="el" href="DirektSection_8h_source.html#l00031">title</a>, <a class="el" href="DirektSection_8h_source.html#l00035">titleBarAccessory</a>, <a class="el" href="DirektSection_8h_source.html#l00036">titleBarAccessoryWidth</a>, and <a class="el" href="DirektSection_8h_source.html#l00038">titleHeight</a>.</p>
+<p class="reference">References <a class="el" href="DirektColours_8h_source.html#l00013">DirektDSP::Colours::bgSection</a>, <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>, <a class="el" href="DirektSection_8h_source.html#l00061">draggable</a>, <a class="el" href="DirektSection_8h_source.html#l00062">dragging</a>, <a class="el" href="DirektSection_8h_source.html#l00065">padding</a>, <a class="el" href="DirektColours_8h_source.html#l00018">DirektDSP::Colours::textLabel</a>, <a class="el" href="DirektSection_8h_source.html#l00054">title</a>, <a class="el" href="DirektSection_8h_source.html#l00058">titleBarAccessory</a>, <a class="el" href="DirektSection_8h_source.html#l00059">titleBarAccessoryWidth</a>, and <a class="el" href="DirektSection_8h_source.html#l00064">titleHeight</a>.</p>
 
 </div>
 </div>
@@ -302,9 +447,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00048">48</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00136">136</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00034">controls</a>, <a class="el" href="DirektSection_8h_source.html#l00032">numColumns</a>, <a class="el" href="DirektSection_8h_source.html#l00039">padding</a>, <a class="el" href="DirektSection_8h_source.html#l00031">title</a>, <a class="el" href="DirektSection_8h_source.html#l00035">titleBarAccessory</a>, <a class="el" href="DirektSection_8h_source.html#l00036">titleBarAccessoryWidth</a>, and <a class="el" href="DirektSection_8h_source.html#l00038">titleHeight</a>.</p>
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00057">controls</a>, <a class="el" href="DirektSection_8h_source.html#l00055">numColumns</a>, <a class="el" href="DirektSection_8h_source.html#l00065">padding</a>, <a class="el" href="DirektSection_8h_source.html#l00054">title</a>, <a class="el" href="DirektSection_8h_source.html#l00058">titleBarAccessory</a>, <a class="el" href="DirektSection_8h_source.html#l00059">titleBarAccessoryWidth</a>, and <a class="el" href="DirektSection_8h_source.html#l00064">titleHeight</a>.</p>
 
 </div>
 </div>
@@ -332,9 +477,36 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00020">20</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00021">21</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00032">numColumns</a>.</p>
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00055">numColumns</a>.</p>
+
+</div>
+</div>
+<a id="abc4985cb080da87aadc9baf011179915" name="abc4985cb080da87aadc9baf011179915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc4985cb080da87aadc9baf011179915">&#9670;&#160;</a></span>setDraggable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektSection::setDraggable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable the drag handle in the title bar. </p>
+<p>When enabled, the section fires <a class="el" href="classDirektDSP_1_1DirektSection.html#a29292b5b0b860185c32af1999d00172b">onDragMoved</a> and <a class="el" href="classDirektDSP_1_1DirektSection.html#a1e717a0d947c3868cb51938283b75991">onDragEnded</a> as the user drags from the title area. Typically called by the parent <a class="el" href="classDirektDSP_1_1DirektFlexContainer.html">DirektFlexContainer</a> after enableDragReorder(true). </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00021">21</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00061">draggable</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektFlexContainer_8cpp_source.html#l00126">DirektDSP::DirektFlexContainer::clearSectionDragCallbacks()</a>, and <a class="el" href="DirektFlexContainer_8cpp_source.html#l00117">DirektDSP::DirektFlexContainer::setupSectionDragCallbacks()</a>.</p>
 
 </div>
 </div>
@@ -365,7 +537,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektSection_8cpp_source.html#l00012">12</a> of file <a class="el" href="DirektSection_8cpp_source.html">DirektSection.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00035">titleBarAccessory</a>.</p>
+<p class="reference">References <a class="el" href="DirektSection_8h_source.html#l00058">titleBarAccessory</a>.</p>
 
 </div>
 </div>
@@ -390,9 +562,61 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00034">34</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00057">57</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00098">addControl()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00186">addControl()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>.</p>
+
+</div>
+</div>
+<a id="ab2f6fcb34c6404cbfb8a15db6dc2c552" name="ab2f6fcb34c6404cbfb8a15db6dc2c552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f6fcb34c6404cbfb8a15db6dc2c552">&#9670;&#160;</a></span>draggable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektSection::draggable = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00061">61</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00044">mouseDown()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00027">mouseMove()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00021">setDraggable()</a>.</p>
+
+</div>
+</div>
+<a id="ab2d13ae1b1465108bca5aaa240c04fbf" name="ab2d13ae1b1465108bca5aaa240c04fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d13ae1b1465108bca5aaa240c04fbf">&#9670;&#160;</a></span>dragging</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektSection::dragging = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00062">62</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00044">mouseDown()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00058">mouseDrag()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00071">mouseUp()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>.</p>
 
 </div>
 </div>
@@ -416,7 +640,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00033">33</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00056">56</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
 </div>
 </div>
@@ -440,9 +664,49 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00032">32</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00055">55</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>, and <a class="el" href="DirektSection_8h_source.html#l00020">setColumns()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>, and <a class="el" href="DirektSection_8h_source.html#l00021">setColumns()</a>.</p>
+
+</div>
+</div>
+<a id="a1e717a0d947c3868cb51938283b75991" name="a1e717a0d947c3868cb51938283b75991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e717a0d947c3868cb51938283b75991">&#9670;&#160;</a></span>onDragEnded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; DirektDSP::DirektSection::onDragEnded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fired when the drag gesture ends (mouse released). </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00046">46</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektFlexContainer_8cpp_source.html#l00126">DirektDSP::DirektFlexContainer::clearSectionDragCallbacks()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00071">mouseUp()</a>, and <a class="el" href="DirektFlexContainer_8cpp_source.html#l00117">DirektDSP::DirektFlexContainer::setupSectionDragCallbacks()</a>.</p>
+
+</div>
+</div>
+<a id="a29292b5b0b860185c32af1999d00172b" name="a29292b5b0b860185c32af1999d00172b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29292b5b0b860185c32af1999d00172b">&#9670;&#160;</a></span>onDragMoved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void (juce::Point&lt;int&gt;)&gt; DirektDSP::DirektSection::onDragMoved</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fired continuously while the section is being dragged; receives current screen position. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00043">43</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektFlexContainer_8cpp_source.html#l00126">DirektDSP::DirektFlexContainer::clearSectionDragCallbacks()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00058">mouseDrag()</a>, and <a class="el" href="DirektFlexContainer_8cpp_source.html#l00117">DirektDSP::DirektFlexContainer::setupSectionDragCallbacks()</a>.</p>
 
 </div>
 </div>
@@ -466,9 +730,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00039">39</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00065">65</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00021">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00044">mouseDown()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00027">mouseMove()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>.</p>
 
 </div>
 </div>
@@ -492,9 +756,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00031">31</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00054">54</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8h_source.html#l00021">getTitle()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00021">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8h_source.html#l00022">getTitle()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>.</p>
 
 </div>
 </div>
@@ -518,9 +782,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00035">35</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00058">58</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00021">paint()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00012">setTitleBarAccessory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00012">setTitleBarAccessory()</a>.</p>
 
 </div>
 </div>
@@ -544,9 +808,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00036">36</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00059">59</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00021">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>.</p>
 
 </div>
 </div>
@@ -570,9 +834,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00038">38</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektSection_8h_source.html#l00064">64</a> of file <a class="el" href="DirektSection_8h_source.html">DirektSection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00021">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00048">resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektSection_8cpp_source.html#l00044">mouseDown()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00027">mouseMove()</a>, <a class="el" href="DirektSection_8cpp_source.html#l00088">paint()</a>, and <a class="el" href="DirektSection_8cpp_source.html#l00136">resized()</a>.</p>
 
 </div>
 </div>

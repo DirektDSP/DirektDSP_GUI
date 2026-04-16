@@ -62,9 +62,10 @@ var NAVTREEINDEX =
 [
 "DirektAutoLayout_8cpp.html",
 "classDirektDSP_1_1DirektComboBox.html#ac48dd57ae37a94d5348c59e17713ebd8",
-"classDirektDSP_1_1DirektPresetBrowser.html#a15023b9b5438c4d71b4943767e5903fe",
-"functions_vars.html",
-"structDirektDSP_1_1MacroKnobDesc.html#aa88b25fdc4eb328a68f064653c9e5d3d"
+"classDirektDSP_1_1DirektPopupPanel.html#a592255fa72bd38e5a77917403ffc3763",
+"classService_1_1PresetManager.html#af6d35acc18992c0a44f3f63e2ced2772",
+"structDirektDSP_1_1LabelDesc.html",
+"structDirektDSP_1_1XYPadDesc.html#ad8f12159c94264211f88f37f7e85d3f6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

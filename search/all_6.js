@@ -9,9 +9,10 @@ var searchData=
   ['getcurrentcategory_6',['getCurrentCategory',['../classService_1_1PresetManager.html#a37f814d3e0f34f611b6527ce9f7a2786',1,'Service::PresetManager']]],
   ['getcurrentpreset_7',['getCurrentPreset',['../classService_1_1PresetManager.html#a93529821551dc70be909433a2f7bb627',1,'Service::PresetManager']]],
   ['getcustomfactories_8',['getCustomFactories',['../classDirektDSP_1_1DirektComponentRegistry.html#aa02f79de0ad0c4e1a0cc52684c30411f',1,'DirektDSP::DirektComponentRegistry']]],
-  ['getidealwidth_9',['getIdealWidth',['../classDirektDSP_1_1DirektModuleBypassSoloStrip.html#ab4626e652ea719156708353d0c371182',1,'DirektDSP::DirektModuleBypassSoloStrip']]],
-  ['getnumrows_10',['getnumrows',['../classDirektDSP_1_1DirektPresetBrowser_1_1CategoryListModel.html#a005cb82dd1958f022e54a4e3f5bdac36',1,'DirektDSP::DirektPresetBrowser::CategoryListModel::getNumRows()'],['../classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html#a531afed08167578c674e5023d2c478fd',1,'DirektDSP::DirektPresetBrowser::PresetListModel::getNumRows()']]],
-  ['getpresetmetadataincategory_11',['getPresetMetadataInCategory',['../classService_1_1PresetManager.html#a8bc76aae2dc035c67c16edbc9041ea84',1,'Service::PresetManager']]],
-  ['getslider_12',['getslider',['../classDirektDSP_1_1DirektKnob.html#a30b934cf8931f764bdd5f14f05d7f77c',1,'DirektDSP::DirektKnob::getSlider()'],['../classDirektDSP_1_1DirektMacroControl.html#ad796309bbd77d37e247da9c02338afcc',1,'DirektDSP::DirektMacroControl::getSlider()']]],
-  ['gettitle_13',['getTitle',['../classDirektDSP_1_1DirektSection.html#a1f9e8717b4c2ebf2922b8f346f4c087b',1,'DirektDSP::DirektSection']]]
+  ['getdropindexfromposition_9',['getDropIndexFromPosition',['../classDirektDSP_1_1DirektFlexContainer.html#af978b5ba69c311720ab985b579033567',1,'DirektDSP::DirektFlexContainer']]],
+  ['getidealwidth_10',['getIdealWidth',['../classDirektDSP_1_1DirektModuleBypassSoloStrip.html#ab4626e652ea719156708353d0c371182',1,'DirektDSP::DirektModuleBypassSoloStrip']]],
+  ['getnumrows_11',['getnumrows',['../classDirektDSP_1_1DirektPresetBrowser_1_1CategoryListModel.html#a005cb82dd1958f022e54a4e3f5bdac36',1,'DirektDSP::DirektPresetBrowser::CategoryListModel::getNumRows()'],['../classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html#a531afed08167578c674e5023d2c478fd',1,'DirektDSP::DirektPresetBrowser::PresetListModel::getNumRows()']]],
+  ['getpresetmetadataincategory_12',['getPresetMetadataInCategory',['../classService_1_1PresetManager.html#a8bc76aae2dc035c67c16edbc9041ea84',1,'Service::PresetManager']]],
+  ['getslider_13',['getslider',['../classDirektDSP_1_1DirektKnob.html#a30b934cf8931f764bdd5f14f05d7f77c',1,'DirektDSP::DirektKnob::getSlider()'],['../classDirektDSP_1_1DirektMacroControl.html#ad796309bbd77d37e247da9c02338afcc',1,'DirektDSP::DirektMacroControl::getSlider()']]],
+  ['gettitle_14',['getTitle',['../classDirektDSP_1_1DirektSection.html#a1f9e8717b4c2ebf2922b8f346f4c087b',1,'DirektDSP::DirektSection']]]
 ];
