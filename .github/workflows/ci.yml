@@ -4,7 +4,6 @@ on:
   push:
     branches: ["main", "develop"]
   pull_request:
-  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -76,10 +75,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install -y \
-            clang clang-tidy cmake ninja-build \
+            clang clang-tidy cmake ninja-build pkg-config \
             libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
-            libxcursor-dev libfreetype-dev libfontconfig1-dev \
-            libglu1-mesa-dev libgl1-mesa-dev
+            libxcursor-dev libfreetype-dev libfontconfig1-dev libglu1-mesa-dev libgl1-mesa-dev
 
       - name: Cache JUCE
         id: cache-juce
@@ -100,16 +98,27 @@ jobs:
             -G Ninja \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-            -DCMAKE_C_COMPILER=clang \
-            -DCMAKE_CXX_COMPILER=clang++ \
             -DJUCE_DIR=/tmp/JUCE
 
       - name: Run clang-tidy
         run: |
           echo "Collecting C++ translation units…"
-          FILES=$(find . \( -name "*.cpp" \) \
-                    ! -path "./.git/*" \
-                    ! -path "./build/*" | sort)
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_REF="${{ github.base_ref }}"
+            git fetch --no-tags --depth=1 origin "$BASE_REF"
+            FILES=$(git diff --name-only "origin/$BASE_REF"...HEAD | \
+              grep -E '\.(cpp|h)$' | sort || true)
+          else
+            FILES=$(find . \( -name "*.cpp" \) \
+                      ! -path "./.git/*" \
+                      ! -path "./build/*" | sort)
+          fi
+
+          if [ -z "$FILES" ]; then
+            echo "No C++ files changed for lint."
+            exit 0
+          fi
 
           FAILED=0
           WARNING_COUNT=0

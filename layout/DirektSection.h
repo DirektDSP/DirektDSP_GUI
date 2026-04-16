@@ -1,6 +1,8 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
 
+#include <memory>
+
 #include "theme/DirektColours.h"
 
 namespace DirektDSP
@@ -18,11 +20,20 @@ public:
     void setColumns (int cols) { numColumns = cols; }
     const juce::String& getTitle() const { return title; }
 
+    /**
+     * @brief Optional right-aligned controls in the title row (e.g. bypass / solo strip).
+     *
+     * @param accessory Owned component; typically DirektModuleBypassSoloStrip.
+     */
+    void setTitleBarAccessory (std::unique_ptr<juce::Component> accessory);
+
 private:
     juce::String title;
     int numColumns;
     juce::OwnedArray<juce::Component> dummyOwners; // doesn't own — just for tracking
     std::vector<juce::Component*> controls;
+    std::unique_ptr<juce::Component> titleBarAccessory;
+    int titleBarAccessoryWidth = 0;
 
     static constexpr int titleHeight = 22;
     static constexpr int padding = 6;
