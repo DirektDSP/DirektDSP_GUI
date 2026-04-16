@@ -1,5 +1,6 @@
 #include "controls/DirektComboBox.h"
 
+#include "core/DirektMidiLearn.h"
 #include "core/DirektParameterHistory.h"
 #include "theme/DirektColours.h"
 
@@ -34,6 +35,7 @@ DirektComboBox::DirektComboBox (juce::AudioProcessorValueTreeState& apvts, const
     }
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment> (apvts, paramID, combo);
+    midiLearnMouseListener = DirektMidiLearn::createHostContextMenuListener (combo, parameter);
 
     combo.onChange = [this]
     {

@@ -29,6 +29,7 @@ private:
     juce::ComboBox combo;
     juce::Label label;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> attachment;
+    std::unique_ptr<juce::MouseListener> midiLearnMouseListener;
     juce::RangedAudioParameter* parameter = nullptr;
     DirektParameterHistory* parameterHistory = nullptr;
     float lastValue = 0.0F;

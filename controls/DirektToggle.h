@@ -28,6 +28,7 @@ public:
 private:
     juce::ToggleButton button;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> attachment;
+    std::unique_ptr<juce::MouseListener> midiLearnMouseListener;
     juce::RangedAudioParameter* parameter = nullptr;
     DirektParameterHistory* parameterHistory = nullptr;
     float lastValue = 0.0F;

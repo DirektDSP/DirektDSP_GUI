@@ -2,6 +2,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_gui_basics/juce_gui_basics.h>
 
+#include <memory>
 #include <optional>
 
 namespace DirektDSP
@@ -33,6 +34,7 @@ private:
     juce::Slider slider;
     juce::Label label;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> attachment;
+    std::unique_ptr<juce::MouseListener> midiLearnMouseListener;
     juce::RangedAudioParameter* parameter = nullptr;
     DirektParameterHistory* parameterHistory = nullptr;
     std::optional<float> dragStartValue;
