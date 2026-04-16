@@ -56,7 +56,8 @@ std::vector<BuiltSection> DirektAutoLayout::buildSections (juce::AudioProcessorV
 
         if (auto strip =
                 DirektModuleBypassSoloStrip::tryCreate (apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
-                                                        desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
+                                                        desc.soloLabel, desc.bypassTooltip, desc.soloTooltip,
+                                                        desc.cpuSource, desc.cpuLabel, desc.cpuWarningThreshold))
         {
             built.section->setTitleBarAccessory (std::move (strip));
         }
@@ -100,7 +101,10 @@ NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<Sectio
                                                   desc.bypassLabel,
                                                   desc.soloLabel,
                                                   desc.bypassTooltip,
-                                                  desc.soloTooltip}));
+                                                  desc.soloTooltip,
+                                                  juce::String(),
+                                                  desc.cpuLabel,
+                                                  desc.cpuWarningThreshold}));
     }
 
     return VBoxDesc{{}, std::move (sectionNodes)};

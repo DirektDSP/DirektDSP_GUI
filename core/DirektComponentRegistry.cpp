@@ -210,9 +210,23 @@ BuiltNode buildSectionNode (const SectionDesc& desc, BuildContext& ctx, const Di
 {
     auto section = std::make_unique<DirektSection> (desc.title, desc.columns);
     applyNodeProps (*section, desc.props);
+    const std::atomic<float>* cpuSource = nullptr;
+    if (desc.cpuSourceID.isNotEmpty())
+    {
+        if (auto it = ctx.meterSources.find (desc.cpuSourceID); it != ctx.meterSources.end())
+        {
+            cpuSource = it->second;
+        }
+        else
+        {
+            DBG ("DirektComponentRegistry: missing cpuSourceID '" + desc.cpuSourceID + "' for section '" + desc.title + "'");
+        }
+    }
+
     if (auto strip =
             DirektModuleBypassSoloStrip::tryCreate (ctx.apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
-                                                    desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
+                                                    desc.soloLabel, desc.bypassTooltip, desc.soloTooltip, cpuSource,
+                                                    desc.cpuLabel, desc.cpuWarningThreshold))
     {
         section->setTitleBarAccessory (std::move (strip));
     }
