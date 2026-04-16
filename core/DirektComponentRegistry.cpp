@@ -2,6 +2,7 @@
 
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
+#include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
@@ -68,6 +69,73 @@ BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
     }
     applyNodeProps (*combo, desc.props);
     return {std::move (combo), {}};
+}
+
+BuiltNode buildMacroKnobNode (const MacroKnobDesc& desc, BuildContext& ctx)
+{
+    std::vector<MacroControlTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroControlTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.normMin;
+            target.maxNormalized = targetDesc.normMax;
+
+            switch (targetDesc.curve)
+            {
+                case MacroCurve::Linear:
+                    target.curveExponent = 1.0f;
+                    break;
+                case MacroCurve::Quadratic:
+                    target.curveExponent = 2.0f;
+                    break;
+                case MacroCurve::SquareRoot:
+                    target.curveExponent = 0.5f;
+                    break;
+            }
+
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
+    if (desc.tooltip.isNotEmpty())
+    {
+        macro->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
+}
+
+BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
+{
+    std::vector<MacroControlTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroControlTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.minNormalized;
+            target.maxNormalized = targetDesc.maxNormalized;
+            target.curveExponent = targetDesc.curveExponent;
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
+    if (desc.tooltip.isNotEmpty())
+    {
+        macro->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
 }
 
 BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
@@ -259,18 +327,8 @@ struct NodeBuilder
     BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
     BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
     BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
-    BuiltNode operator() (const MacroKnobDesc& d) const
-    {
-        auto comp = std::make_unique<juce::Component>();
-        applyNodeProps (*comp, d.props);
-        return {std::move (comp), {}};
-    }
-    BuiltNode operator() (const MacroDesc& d) const
-    {
-        auto comp = std::make_unique<juce::Component>();
-        applyNodeProps (*comp, d.props);
-        return {std::move (comp), {}};
-    }
+    BuiltNode operator() (const MacroKnobDesc& d) const { return buildMacroKnobNode (d, *ctx); }
+    BuiltNode operator() (const MacroDesc& d) const { return buildMacroNode (d, *ctx); }
     BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
     BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
