@@ -5,6 +5,12 @@
 namespace DirektDSP
 {
 
+namespace
+{
+// Conservative cross-platform filename character whitelist used for autosave file names.
+constexpr auto safeFilenameChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
+}
+
 // ============================================================================
 // Common init — shared by both constructors
 // ============================================================================
@@ -331,13 +337,13 @@ void DirektBaseEditor::configureCrashRecovery (const juce::String& pluginName)
         return;
     }
 
-    auto safePluginName = pluginName.retainCharacters ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_");
+    auto safePluginName = pluginName.retainCharacters (safeFilenameChars);
     if (safePluginName.isEmpty())
     {
         safePluginName = "DirektDSP";
     }
 
-    auto const autosaveDirectory = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+    const auto autosaveDirectory = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
                                        .getChildFile ("DirektDSP")
                                        .getChildFile ("crash-recovery");
 
@@ -352,11 +358,11 @@ void DirektBaseEditor::configureCrashRecovery (const juce::String& pluginName)
     if (crashRecoveryFile.existsAsFile())
     {
         auto safeThis = juce::Component::SafePointer<DirektBaseEditor> (this);
-        juce::MessageManager::callAsync ([safeThis]
+        juce::MessageManager::callAsync ([safeThisCopy = safeThis]
         {
-            if (safeThis != nullptr)
+            if (safeThisCopy != nullptr)
             {
-                safeThis->restoreCrashRecoveryIfNeeded();
+                safeThisCopy->restoreCrashRecoveryIfNeeded();
             }
         });
     }
@@ -367,14 +373,23 @@ void DirektBaseEditor::configureCrashRecovery (const juce::String& pluginName)
 
 void DirektBaseEditor::saveCrashRecoverySnapshot() const
 {
-    if (!crashRecoveryEnabled || crashRecoveryFile.getFullPathName().isEmpty())
+    if (!crashRecoveryEnabled)
     {
         return;
     }
 
-    if (auto xml = apvts.copyState().createXml())
+    const auto state = apvts.copyState();
+    if (auto xml = state.createXml())
     {
-        crashRecoveryFile.replaceWithText (xml->toString());
+        if (!crashRecoveryFile.replaceWithText (xml->toString()))
+        {
+            DBG ("DirektDSP: failed to write crash recovery autosave to " + crashRecoveryFile.getFullPathName());
+        }
+    }
+    else
+    {
+        DBG ("DirektDSP: failed to serialize APVTS state for crash recovery. State type: "
+             + state.getType().toString());
     }
 }
 
@@ -385,13 +400,15 @@ void DirektBaseEditor::restoreCrashRecoveryIfNeeded()
         return;
     }
 
-    auto const shouldRestore = juce::AlertWindow::showOkCancelBox (
+    const auto shouldRestore = juce::AlertWindow::showOkCancelBox (
         juce::MessageBoxIconType::QuestionIcon, "Restore previous session?",
         "DirektDSP found autosaved settings from an unexpected shutdown.\n\nRestore these settings?",
         "Restore", "Discard", this);
 
     if (shouldRestore)
     {
+        auto restored = false;
+
         if (auto xml = juce::parseXML (crashRecoveryFile))
         {
             auto restoredState = juce::ValueTree::fromXml (*xml);
@@ -399,7 +416,16 @@ void DirektBaseEditor::restoreCrashRecoveryIfNeeded()
             {
                 apvts.replaceState (restoredState);
                 header.updatePresetName();
+                restored = true;
             }
+        }
+
+        if (!restored)
+        {
+            crashRecoveryFile.deleteFile();
+            juce::AlertWindow::showMessageBoxAsync (
+                juce::MessageBoxIconType::WarningIcon, "Autosave could not be restored",
+                "The autosave data appears to be invalid and has been discarded.", {}, this);
         }
     }
     else
