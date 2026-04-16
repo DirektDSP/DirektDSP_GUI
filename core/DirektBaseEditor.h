@@ -24,7 +24,7 @@ class PresetManager;
 namespace DirektDSP
 {
 
-class DirektBaseEditor : public juce::AudioProcessorEditor
+class DirektBaseEditor : public juce::AudioProcessorEditor, private juce::Timer
 {
 public:
     // NEW — config-driven, no subclassing needed
@@ -70,6 +70,10 @@ protected:
 private:
     void initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio, int defaultWidth,
                      int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
+    void configureCrashRecovery (const juce::String& pluginName);
+    void saveCrashRecoverySnapshot() const;
+    void restoreCrashRecoveryIfNeeded();
+    void timerCallback() override;
 
     DirektLookAndFeel lookAndFeel;
     DirektHeader header;
@@ -93,9 +97,12 @@ private:
     BuildContext buildContext;
     bool showHeaderFlag = true;
     bool showFooterFlag = true;
+    bool crashRecoveryEnabled = false;
+    juce::File crashRecoveryFile;
 
     static constexpr int headerHeight = 36;
     static constexpr int footerHeight = 22;
+    static constexpr int autosaveIntervalMs = 10000;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektBaseEditor)
 };
