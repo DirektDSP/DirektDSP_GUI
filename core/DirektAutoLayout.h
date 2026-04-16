@@ -2,6 +2,8 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_gui_basics/juce_gui_basics.h>
 
+#include <atomic>
+
 #include "config/DirektDescriptors.h"
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
@@ -42,6 +44,13 @@ struct SectionDescriptor
     juce::String soloLabel{"Solo"};
     juce::String bypassTooltip;
     juce::String soloTooltip;
+
+    /** @brief Optional per-module CPU source for title-row display; nullptr omits CPU readout. */
+    const std::atomic<float>* cpuSource = nullptr;
+    /** @brief CPU label prefix shown before value (e.g. "CPU"). */
+    juce::String cpuLabel{"CPU"};
+    /** @brief Warning threshold in percent; label colour changes when reached/exceeded. */
+    float cpuWarningThreshold = 75.0f;
 };
 
 struct BuiltSection

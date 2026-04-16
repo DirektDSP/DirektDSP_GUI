@@ -223,6 +223,12 @@ struct SectionDesc
     juce::String bypassTooltip;
     /** @brief Optional tooltip on the solo toggle. */
     juce::String soloTooltip;
+    /** @brief Optional lookup key in BuildContext::meterSources for per-module CPU readout. */
+    juce::String cpuSourceID;
+    /** @brief Label prefix shown in module header before CPU value. */
+    juce::String cpuLabel{"CPU"};
+    /** @brief Warning threshold in percent where CPU text switches to warning colour. */
+    float cpuWarningThreshold = 75.0f;
 };
 
 struct HBoxDesc
@@ -264,9 +270,9 @@ struct CustomDesc
 // NodeDescriptor — variant of all descriptor types
 // ============================================================================
 
-struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, MacroDesc, SliderDesc, ButtonDesc,
-                                     RadioGroupDesc, XYPadDesc, MeterDesc, LabelDesc, SpacerDesc, DividerDesc,
-                                     SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, MacroDesc, SliderDesc,
+                                     ButtonDesc, RadioGroupDesc, XYPadDesc, MeterDesc, LabelDesc, SpacerDesc,
+                                     DividerDesc, SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };
