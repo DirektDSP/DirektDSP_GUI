@@ -13,7 +13,7 @@ class DirektSessionNotes : public juce::Component
 {
 public:
     /** @param sessionKey  Unique string used as the persistence key (e.g. plugin name + project path). */
-    explicit DirektSessionNotes (const juce::String& sessionKey);
+    explicit DirektSessionNotes (juce::String sessionKey);
     ~DirektSessionNotes() override;
 
     /** Replace the session key and reload notes for the new key. */

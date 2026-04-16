@@ -3,7 +3,7 @@
 namespace DirektDSP
 {
 
-DirektSessionNotes::DirektSessionNotes (const juce::String& sessionKey) : storageKey (sessionKey)
+DirektSessionNotes::DirektSessionNotes (juce::String sessionKey) : storageKey (std::move (sessionKey))
 {
     editor.setMultiLine (true);
     editor.setReturnKeyStartsNewLine (true);
@@ -48,7 +48,7 @@ juce::String DirektSessionNotes::getNotes() const
 
 void DirektSessionNotes::setNotes (const juce::String& text)
 {
-    editor.setText (text, juce::dontSendNotification);
+    editor.setText (text, false);
     save();
 }
 
@@ -76,7 +76,7 @@ void DirektSessionNotes::load()
 
     if (auto* props = appProps.getUserSettings())
     {
-        editor.setText (props->getValue (storageKey), juce::dontSendNotification);
+        editor.setText (props->getValue (storageKey), false);
     }
 }
 
