@@ -2,10 +2,13 @@
 
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
+#include "controls/DirektMacroControl.h"
+#include "controls/DirektMacroKnob.h"
 #include "controls/DirektToggle.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
 #include "layout/DirektFlexContainer.h"
+#include "layout/DirektModuleBypassSoloStrip.h"
 #include "layout/DirektSection.h"
 #include "layout/DirektTabPanel.h"
 #include "theme/DirektColours.h"
@@ -39,7 +42,7 @@ void applyNodeProps (juce::Component& comp, const NodeProps& props)
 
 BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
@@ -50,7 +53,7 @@ BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 
 BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 {
-    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label);
+    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         toggle->getButton().setTooltip (desc.tooltip);
@@ -61,7 +64,7 @@ BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 
 BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
 {
-    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label);
+    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         combo->getComboBox().setTooltip (desc.tooltip);
@@ -70,9 +73,20 @@ BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
     return {std::move (combo), {}};
 }
 
+BuiltNode buildMacroKnobNode (const MacroKnobDesc& desc, BuildContext& ctx)
+{
+    auto macroKnob = std::make_unique<DirektMacroKnob> (ctx.apvts, desc.paramID, desc.label, desc.targets);
+    if (desc.tooltip.isNotEmpty())
+    {
+        macroKnob->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macroKnob, desc.props);
+    return {std::move (macroKnob), {}};
+}
+
 BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
@@ -132,6 +146,33 @@ BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
     return {std::move (meter), {}};
 }
 
+BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
+{
+    std::vector<MacroTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.minNormalized;
+            target.maxNormalized = targetDesc.maxNormalized;
+            target.curveExponent = targetDesc.curveExponent;
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
+    if (desc.tooltip.isNotEmpty())
+    {
+        macro->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
+}
+
 BuiltNode buildLabelNode (const LabelDesc& desc, BuildContext& /*ctx*/)
 {
     DirektLabel::Style labelStyle = DirektLabel::Body;
@@ -169,6 +210,12 @@ BuiltNode buildSectionNode (const SectionDesc& desc, BuildContext& ctx, const Di
 {
     auto section = std::make_unique<DirektSection> (desc.title, desc.columns);
     applyNodeProps (*section, desc.props);
+    if (auto strip =
+            DirektModuleBypassSoloStrip::tryCreate (ctx.apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
+                                                    desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
+    {
+        section->setTitleBarAccessory (std::move (strip));
+    }
     std::vector<std::unique_ptr<juce::Component>> owned;
     for (const auto& childNode : desc.children)
     {
@@ -259,6 +306,8 @@ struct NodeBuilder
     BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
     BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
     BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
+    BuiltNode operator() (const MacroKnobDesc& d) const { return buildMacroKnobNode (d, *ctx); }
+    BuiltNode operator() (const MacroDesc& d) const { return buildMacroNode (d, *ctx); }
     BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
     BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
