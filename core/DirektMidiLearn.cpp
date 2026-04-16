@@ -9,8 +9,16 @@ class HostContextMenuMouseListener : public juce::MouseListener
 {
 public:
     HostContextMenuMouseListener (juce::Component& targetToUse, juce::AudioProcessorParameter* parameterToUse)
-        : target (targetToUse), parameter (parameterToUse)
+        : target (&targetToUse), parameter (parameterToUse)
     {
+    }
+
+    ~HostContextMenuMouseListener() override
+    {
+        if (target != nullptr)
+        {
+            target->removeMouseListener (this);
+        }
     }
 
     void mouseDown (const juce::MouseEvent& e) override
@@ -20,22 +28,28 @@ public:
             return;
         }
 
-        if (auto* editor = target.findParentComponentOfClass<juce::AudioProcessorEditor>())
+        if (target == nullptr)
+        {
+            return;
+        }
+
+        if (auto* editor = target->findParentComponentOfClass<juce::AudioProcessorEditor>())
         {
             if (auto* context = editor->getHostContext())
             {
                 if (auto menu = context->getContextMenuForParameter (parameter))
                 {
                     menu->getEquivalentPopupMenu().showMenuAsync (
-                        juce::PopupMenu::Options().withTargetComponent (&target).withMousePosition());
+                        juce::PopupMenu::Options().withTargetComponent (target.getComponent()).withMousePosition());
                 }
             }
         }
     }
 
 private:
-    juce::Component& target;
-    juce::AudioProcessorParameter* parameter = nullptr;
+    juce::Component::SafePointer<juce::Component> target;
+    // Non-owning: APVTS parameters outlive parameter-bound controls/listeners.
+    juce::AudioProcessorParameter* parameter;
 };
 } // namespace
 
