@@ -259,6 +259,18 @@ struct NodeBuilder
     BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
     BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
     BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
+    BuiltNode operator() (const MacroKnobDesc& d) const
+    {
+        auto comp = std::make_unique<juce::Component>();
+        applyNodeProps (*comp, d.props);
+        return {std::move (comp), {}};
+    }
+    BuiltNode operator() (const MacroDesc& d) const
+    {
+        auto comp = std::make_unique<juce::Component>();
+        applyNodeProps (*comp, d.props);
+        return {std::move (comp), {}};
+    }
     BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
     BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
