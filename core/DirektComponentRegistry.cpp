@@ -301,6 +301,14 @@ BuiltNode buildFlexNode (const std::vector<Node>& children, const NodeProps& pro
             owned.push_back (std::move (oc));
         }
     }
+
+    // Activate drag-to-reorder after all children have been added so that
+    // callbacks are wired to every DirektSection child in one pass.
+    if (props.draggable)
+    {
+        container->enableDragReorder (true);
+    }
+
     return {std::move (container), std::move (owned)};
 }
 

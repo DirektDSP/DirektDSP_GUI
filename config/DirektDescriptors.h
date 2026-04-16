@@ -28,6 +28,8 @@ struct NodeProps
     SizeHint size;
     int padding = 0;
     bool visible = true;
+    /** @brief When true on a VBoxDesc/HBoxDesc, enables drag-to-reorder on DirektSection children. */
+    bool draggable = false;
 };
 
 // ============================================================================
