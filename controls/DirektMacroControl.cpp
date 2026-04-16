@@ -9,7 +9,7 @@ namespace DirektDSP
 
 namespace
 {
-float mapMacroValue (const MacroTarget& target, float normalizedMacroValue)
+float mapMacroValue (const MacroControlTarget& target, float normalizedMacroValue)
 {
     auto const clampedMacro = juce::jlimit (0.0F, 1.0F, normalizedMacroValue);
     auto const clampedExponent = juce::jmax (0.01F, target.curveExponent);
@@ -20,7 +20,7 @@ float mapMacroValue (const MacroTarget& target, float normalizedMacroValue)
 }
 } // namespace
 
-DirektMacroControl::DirektMacroControl (const juce::String& labelText, std::vector<MacroTarget> targetsToOwn)
+DirektMacroControl::DirektMacroControl (const juce::String& labelText, std::vector<MacroControlTarget> targetsToOwn)
     : targets (std::move (targetsToOwn))
 {
     slider.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);

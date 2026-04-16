@@ -30,6 +30,8 @@ public:
 
     BuiltNode build (const NodeDescriptor& descriptor, BuildContext& ctx) const;
 
+    const std::map<juce::String, CustomFactory>& getCustomFactories() const { return customFactories; }
+
 private:
     DirektComponentRegistry() = default;
 

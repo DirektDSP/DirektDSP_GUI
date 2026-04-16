@@ -19,7 +19,9 @@ public:
     enum class Mode
     {
         Normal,
-        GainReduction
+        GainReduction,
+        Rms,
+        Lufs
     };
 
     struct Config
@@ -38,6 +40,10 @@ public:
 
     void setSource (const std::atomic<float>* src) { source = src; }
     void setColour (juce::Colour c) { config.colour = c; }
+
+    /** Returns true if the meter has clipped (peak >= 0 dBFS) since last reset. */
+    bool hasClipped() const { return clipped; }
+    void resetClip() { clipped = false; }
 
     void paint (juce::Graphics& g) override
     {
@@ -120,6 +126,24 @@ public:
             }
         }
 
+        // LUFS reference line at -23 dBFS (EBU R128 target)
+        if (config.mode == Mode::Lufs)
+        {
+            constexpr float lufsTarget = -23.0f;
+            float normRef = juce::jlimit (0.0f, 1.0f, (lufsTarget - config.rangeMinDb) / range);
+            g.setColour (Colours::textDim);
+            if (config.orientation == Orientation::Vertical)
+            {
+                float refY = inner.getBottom() - inner.getHeight() * normRef;
+                g.fillRect (inner.getX(), refY, inner.getWidth(), 1.0f);
+            }
+            else
+            {
+                float refX = inner.getX() + inner.getWidth() * normRef;
+                g.fillRect (refX, inner.getY(), 1.0f, inner.getHeight());
+            }
+        }
+
         // Optional label
         if (config.label.isNotEmpty())
         {
@@ -138,9 +162,18 @@ private:
 
         targetDb = juce::jlimit (config.rangeMinDb, config.rangeMaxDb, targetDb);
 
-        // Exponential smoothing
-        constexpr float attackCoeff = 0.6f;
-        constexpr float releaseCoeff = 0.15f;
+        if (targetDb >= 0.0f)
+            clipped = true;
+
+        // Mode-specific smoothing coefficients.
+        // Rms/Lufs use slower ballistics to approximate integration time.
+        float attackCoeff = 0.6f;
+        float releaseCoeff = 0.15f;
+        if (config.mode == Mode::Rms || config.mode == Mode::Lufs)
+        {
+            attackCoeff = 0.2f;
+            releaseCoeff = 0.05f;
+        }
 
         float coeff = (targetDb > smoothedDb) ? attackCoeff : releaseCoeff;
         smoothedDb += coeff * (targetDb - smoothedDb);
@@ -168,6 +201,7 @@ private:
     float smoothedDb = -60.0f;
     float peakDb = -60.0f;
     int peakHoldCounter = 0;
+    bool clipped = false;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektMeter)
 };

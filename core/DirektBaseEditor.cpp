@@ -1,6 +1,8 @@
 #include "core/DirektBaseEditor.h"
 
+#include "display/DirektClipIndicator.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 
 namespace DirektDSP
 {
@@ -279,38 +281,23 @@ juce::Component* DirektBaseEditor::findComponentByID (const juce::String& id) co
 
 void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source)
 {
+    if (source == nullptr)
+    {
+        return;
+    }
+
     buildContext.meterSources[sourceID] = source;
 
-    // If the tree is already built, find any meters with matching sourceID and connect them
-    std::function<void (juce::Component*)> connectMeters;
-    connectMeters = [&] (juce::Component* parent)
-    {
-        if (parent == nullptr)
-        {
-            return;
-        }
-
-        if (auto* meter = dynamic_cast<DirektMeter*> (parent))
-        {
-            // Meters don't expose their sourceID, but we can use component ID
-            // In practice, meters should be rebuilt or we store the mapping
-            meter->setSource (source);
-        }
-        for (auto* child : parent->getChildren())
-        {
-            if (child != nullptr)
-            {
-                connectMeters (child);
-            }
-        }
-    };
-
-    // For meters that need post-build connection, search by component ID
+    // For meters/indicators that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))
     {
         if (auto* meter = dynamic_cast<DirektMeter*> (comp))
         {
             meter->setSource (source);
+        }
+        else if (auto* indicator = dynamic_cast<DirektClipIndicator*> (comp))
+        {
+            indicator->setSource (source);
         }
     }
 }
