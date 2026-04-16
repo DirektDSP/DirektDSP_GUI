@@ -217,6 +217,10 @@ BuiltNode buildSectionNode (const SectionDesc& desc, BuildContext& ctx, const Di
         {
             cpuSource = it->second;
         }
+        else
+        {
+            DBG ("DirektComponentRegistry: missing cpuSourceID '" + desc.cpuSourceID + "' for section '" + desc.title + "'");
+        }
     }
 
     if (auto strip =

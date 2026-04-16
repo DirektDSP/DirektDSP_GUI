@@ -83,7 +83,8 @@ void DirektModuleBypassSoloStrip::resized()
     }
 
     int const totalGap = (n - 1) * kGap;
-    int const tw = juce::jmax (1, (r.getWidth() - totalGap) / n);
+    int const availableWidth = juce::jmax (0, r.getWidth() - totalGap);
+    int const tw = juce::jmax (1, availableWidth / n);
     int x = r.getX();
     int const h = r.getHeight();
 
