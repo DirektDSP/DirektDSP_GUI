@@ -4,6 +4,7 @@ on:
   push:
     branches: ["main", "develop"]
   pull_request:
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -77,7 +78,8 @@ jobs:
           sudo apt-get install -y \
             clang clang-tidy cmake ninja-build pkg-config \
             libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
-            libxcursor-dev libfreetype-dev libfontconfig1-dev libglu1-mesa-dev libgl1-mesa-dev
+            libxcursor-dev libfreetype-dev libfontconfig1-dev \
+            libglu1-mesa-dev libgl1-mesa-dev
 
       - name: Cache JUCE
         id: cache-juce
@@ -98,6 +100,8 @@ jobs:
             -G Ninja \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DCMAKE_C_COMPILER=clang \
+            -DCMAKE_CXX_COMPILER=clang++ \
             -DJUCE_DIR=/tmp/JUCE
 
       - name: Run clang-tidy

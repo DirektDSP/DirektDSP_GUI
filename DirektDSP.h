@@ -38,3 +38,4 @@
 // Theme
 #include "theme/DirektColours.h"
 #include "theme/DirektLookAndFeel.h"
+#include "theme/DirektTheme.h"

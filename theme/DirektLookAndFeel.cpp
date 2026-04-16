@@ -5,16 +5,27 @@ namespace DirektDSP
 
 DirektLookAndFeel::DirektLookAndFeel()
 {
-    setColour (juce::ResizableWindow::backgroundColourId, Colours::bgDark);
-    setColour (juce::Label::textColourId, Colours::textLabel);
-    setColour (juce::ComboBox::backgroundColourId, Colours::bgSection);
-    setColour (juce::ComboBox::textColourId, Colours::textBright);
-    setColour (juce::ComboBox::outlineColourId, Colours::divider);
-    setColour (juce::ComboBox::arrowColourId, Colours::textDim);
-    setColour (juce::PopupMenu::backgroundColourId, Colours::bgPanel);
-    setColour (juce::PopupMenu::textColourId, Colours::textBright);
-    setColour (juce::PopupMenu::highlightedBackgroundColourId, Colours::bgSection);
-    setColour (juce::PopupMenu::highlightedTextColourId, Colours::textBright);
+    applyThemeColourIds();
+}
+
+void DirektLookAndFeel::setTheme (const DirektTheme& t)
+{
+    theme = t;
+    applyThemeColourIds();
+}
+
+void DirektLookAndFeel::applyThemeColourIds()
+{
+    setColour (juce::ResizableWindow::backgroundColourId, theme.bgDark);
+    setColour (juce::Label::textColourId, theme.textLabel);
+    setColour (juce::ComboBox::backgroundColourId, theme.bgSection);
+    setColour (juce::ComboBox::textColourId, theme.textBright);
+    setColour (juce::ComboBox::outlineColourId, theme.divider);
+    setColour (juce::ComboBox::arrowColourId, theme.textDim);
+    setColour (juce::PopupMenu::backgroundColourId, theme.bgPanel);
+    setColour (juce::PopupMenu::textColourId, theme.textBright);
+    setColour (juce::PopupMenu::highlightedBackgroundColourId, theme.bgSection);
+    setColour (juce::PopupMenu::highlightedTextColourId, theme.textBright);
 }
 
 void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int width, int height, float sliderPos,
@@ -34,13 +45,13 @@ void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w
     auto arcRadius = radius - lineW * 0.5F;
 
     // Background circle
-    g.setColour (Colours::knobBg);
+    g.setColour (theme.knobBg);
     g.fillEllipse (rx, ry, rw, rw);
 
     // Track arc (full range)
     juce::Path bgArc;
     bgArc.addCentredArc (centreX, centreY, arcRadius, arcRadius, 0.0F, rotaryStartAngle, rotaryEndAngle, true);
-    g.setColour (Colours::knobTrack);
+    g.setColour (theme.knobTrack);
     g.strokePath (bgArc, juce::PathStrokeType (lineW, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
 
     // Value arc
@@ -70,12 +81,12 @@ void DirektLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w
     auto pointerThickness = juce::jmax (1.5F, radius * 0.08F);
     pointer.addRoundedRectangle (-pointerThickness * 0.5F, -pointerLength, pointerThickness, pointerLength, 1.0F);
     pointer.applyTransform (juce::AffineTransform::rotation (toAngle).translated (centreX, centreY));
-    g.setColour (Colours::knobPointer);
+    g.setColour (theme.knobPointer);
     g.fillPath (pointer);
 
     // Center dot
     auto dotRadius = radius * 0.12F;
-    g.setColour (Colours::knobPointer);
+    g.setColour (theme.knobPointer);
     g.fillEllipse (centreX - dotRadius, centreY - dotRadius, dotRadius * 2.0F, dotRadius * 2.0F);
 }
 
@@ -89,11 +100,11 @@ void DirektLookAndFeel::drawToggleButton (juce::Graphics& g, juce::ToggleButton&
                                                    indicatorSize, indicatorSize);
 
     // Indicator background
-    g.setColour (Colours::knobBg);
+    g.setColour (theme.knobBg);
     g.fillRoundedRectangle (indicatorBounds, 3.0F);
 
     // Indicator border
-    g.setColour (shouldDrawButtonAsHighlighted ? Colours::textDim : Colours::divider);
+    g.setColour (shouldDrawButtonAsHighlighted ? theme.textDim : theme.divider);
     g.drawRoundedRectangle (indicatorBounds, 3.0F, 1.0F);
 
     if (button.getToggleState())
@@ -109,7 +120,7 @@ void DirektLookAndFeel::drawToggleButton (juce::Graphics& g, juce::ToggleButton&
 
     // Label text
     auto textBounds = bounds.withTrimmedLeft (indicatorSize + 8.0F);
-    g.setColour (Colours::textLabel);
+    g.setColour (theme.textLabel);
     g.setFont (juce::Font (juce::FontOptions (juce::jmin (h * 0.55F, 13.0F))));
     g.drawText (button.getButtonText(), textBounds.toNearestInt(), juce::Justification::centredLeft);
 }
@@ -118,9 +129,9 @@ void DirektLookAndFeel::drawComboBox (juce::Graphics& g, int width, int height, 
                                       int /*buttonY*/, int /*buttonW*/, int /*buttonH*/, juce::ComboBox& box)
 {
     auto bounds = juce::Rectangle<int> (0, 0, width, height).toFloat();
-    g.setColour (Colours::bgSection);
+    g.setColour (theme.bgSection);
     g.fillRoundedRectangle (bounds, 4.0F);
-    g.setColour (box.isMouseOver() ? accentColour.withAlpha (0.5F) : Colours::divider);
+    g.setColour (box.isMouseOver() ? accentColour.withAlpha (0.5F) : theme.divider);
     g.drawRoundedRectangle (bounds.reduced (0.5F), 4.0F, 1.0F);
 
     // Arrow
@@ -129,7 +140,7 @@ void DirektLookAndFeel::drawComboBox (juce::Graphics& g, int width, int height, 
     juce::Path arrow;
     arrow.addTriangle (arrowZone.getCentreX() - 4.0F, arrowZone.getCentreY() - 2.0F, arrowZone.getCentreX() + 4.0F,
                        arrowZone.getCentreY() - 2.0F, arrowZone.getCentreX(), arrowZone.getCentreY() + 3.0F);
-    g.setColour (Colours::textDim);
+    g.setColour (theme.textDim);
     g.fillPath (arrow);
 }
 
@@ -150,8 +161,8 @@ void DirektLookAndFeel::drawLabel (juce::Graphics& g, juce::Label& label)
 
 void DirektLookAndFeel::drawPopupMenuBackground (juce::Graphics& g, int width, int height)
 {
-    g.fillAll (Colours::bgPanel);
-    g.setColour (Colours::divider);
+    g.fillAll (theme.bgPanel);
+    g.setColour (theme.divider);
     g.drawRect (0, 0, width, height);
 }
 
@@ -164,18 +175,18 @@ void DirektLookAndFeel::drawPopupMenuItem (juce::Graphics& g, const juce::Rectan
     {
         auto r = area.reduced (5, 0);
         r.removeFromTop (r.getHeight() / 2 - 1);
-        g.setColour (Colours::divider);
+        g.setColour (theme.divider);
         g.fillRect (r.removeFromTop (1));
         return;
     }
 
     if (isHighlighted && isActive)
     {
-        g.setColour (Colours::bgSection);
+        g.setColour (theme.bgSection);
         g.fillRect (area);
     }
 
-    auto textColourToUse = isActive ? Colours::textBright : Colours::textDim;
+    auto textColourToUse = isActive ? theme.textBright : theme.textDim;
     if (isTicked)
     {
         textColourToUse = accentColour;

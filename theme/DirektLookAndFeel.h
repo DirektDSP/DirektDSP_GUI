@@ -2,6 +2,7 @@
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include "theme/DirektColours.h"
+#include "theme/DirektTheme.h"
 
 namespace DirektDSP
 {
@@ -14,6 +15,9 @@ public:
 
     void setAccentColour (juce::Colour c) { accentColour = c; }
     juce::Colour getAccentColour() const { return accentColour; }
+
+    void setTheme (const DirektTheme& t);
+    const DirektTheme& getTheme() const { return theme; }
 
     // --- Rotary Slider ---
     void drawRotarySlider (juce::Graphics&, int x, int y, int width, int height, float sliderPos,
@@ -38,7 +42,10 @@ public:
                             const juce::Colour* textColour) override;
 
 private:
+    void applyThemeColourIds();
+
     juce::Colour accentColour{Colours::accentCyan};
+    DirektTheme theme;
 };
 
 } // namespace DirektDSP

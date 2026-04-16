@@ -15,6 +15,7 @@
 #include "layout/DirektSection.h"
 #include "theme/DirektColours.h"
 #include "theme/DirektLookAndFeel.h"
+#include "theme/DirektTheme.h"
 
 namespace Service
 {
@@ -55,6 +56,10 @@ public:
     juce::Component* findComponentByID (const juce::String& id) const;
     void bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source);
 
+    // Theme API
+    void setTheme (const DirektTheme& theme);
+    const DirektTheme& getTheme() const;
+
 protected:
     // Override points for plugins
     virtual void layoutCustomSections (juce::Rectangle<int> mainArea);
@@ -68,8 +73,8 @@ protected:
     std::vector<BuiltSection> builtSections; // legacy mode
 
 private:
-    void initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio, int defaultWidth,
-                     int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
+    void initCommon (const juce::String&, juce::Colour accentColour, float ratio, int, int minWidth, int maxWidth,
+                     bool showHeader, bool showFooter, bool resizable, bool showTooltips);
 
     DirektLookAndFeel lookAndFeel;
     DirektHeader header;
