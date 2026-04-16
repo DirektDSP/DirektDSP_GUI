@@ -1,5 +1,6 @@
 #include "controls/DirektKnob.h"
 
+#include "core/DirektMidiLearn.h"
 #include "core/DirektParameterHistory.h"
 #include "theme/DirektColours.h"
 
@@ -25,6 +26,7 @@ DirektKnob::DirektKnob (juce::AudioProcessorValueTreeState& apvts, const juce::S
     addAndMakeVisible (label);
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (apvts, paramID, slider);
+    midiLearnMouseListener = DirektMidiLearn::createHostContextMenuListener (slider, parameter);
 
     slider.onDragStart = [this]
     {

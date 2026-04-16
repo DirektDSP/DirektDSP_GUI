@@ -1,5 +1,6 @@
 #include "controls/DirektToggle.h"
 
+#include "core/DirektMidiLearn.h"
 #include "core/DirektParameterHistory.h"
 
 namespace DirektDSP
@@ -18,6 +19,7 @@ DirektToggle::DirektToggle (juce::AudioProcessorValueTreeState& apvts, const juc
     }
 
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment> (apvts, paramID, button);
+    midiLearnMouseListener = DirektMidiLearn::createHostContextMenuListener (button, parameter);
 
     button.onClick = [this]
     {
