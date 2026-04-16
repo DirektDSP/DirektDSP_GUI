@@ -102,7 +102,7 @@ NodeDescriptor DirektAutoLayout::convertLegacySections (const std::vector<Sectio
                                                   desc.soloLabel,
                                                   desc.bypassTooltip,
                                                   desc.soloTooltip,
-                                                  {},
+                                                  juce::String(),
                                                   desc.cpuLabel,
                                                   desc.cpuWarningThreshold}));
     }

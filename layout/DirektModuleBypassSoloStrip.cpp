@@ -1,5 +1,7 @@
 #include "layout/DirektModuleBypassSoloStrip.h"
 
+#include "theme/DirektColours.h"
+
 namespace DirektDSP
 {
 
@@ -66,7 +68,7 @@ void DirektModuleBypassSoloStrip::resized()
         int cpuW = juce::jmin (kCpuMinWidth, r.getWidth());
         if (n > 0)
         {
-            cpuW = juce::jmin (cpuW, juce::jmax (0, r.getWidth() - (n * kToggleMinWidth + (n - 1) * kGap + kGap)));
+            cpuW = juce::jmin (cpuW, juce::jmax (0, r.getWidth() - (n * kToggleMinWidth + n * kGap)));
         }
         cpuLabel.setBounds (r.removeFromLeft (cpuW));
         if (n > 0 && !r.isEmpty())
