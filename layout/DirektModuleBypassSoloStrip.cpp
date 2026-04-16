@@ -50,7 +50,8 @@ DirektModuleBypassSoloStrip::DirektModuleBypassSoloStrip (
 int DirektModuleBypassSoloStrip::getIdealWidth() const noexcept
 {
     int const n = static_cast<int> (toggles.size());
-    int width = n * kToggleMinWidth + (n > 1 ? (n - 1) * kGap : 0);
+    int const totalGap = n > 1 ? (n - 1) * kGap : 0;
+    int width = n * kToggleMinWidth + totalGap;
     if (cpuSource != nullptr)
     {
         width += kCpuMinWidth + (n > 0 ? kGap : 0);
@@ -68,7 +69,7 @@ void DirektModuleBypassSoloStrip::resized()
         int cpuW = juce::jmin (kCpuMinWidth, r.getWidth());
         if (n > 0)
         {
-            cpuW = juce::jmin (cpuW, juce::jmax (0, r.getWidth() - (n * kToggleMinWidth + n * kGap)));
+            cpuW = juce::jmin (cpuW, juce::jmax (0, r.getWidth() - n * (kToggleMinWidth + kGap)));
         }
         cpuLabel.setBounds (r.removeFromLeft (cpuW));
         if (n > 0 && !r.isEmpty())
