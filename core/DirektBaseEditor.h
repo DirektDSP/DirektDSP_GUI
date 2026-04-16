@@ -14,6 +14,7 @@
 #include "layout/DirektSection.h"
 #include "theme/DirektColours.h"
 #include "theme/DirektLookAndFeel.h"
+#include "theme/DirektTheme.h"
 
 namespace Service
 {
@@ -44,6 +45,10 @@ public:
     // New APIs for config-driven mode
     juce::Component* findComponentByID (const juce::String& id) const;
     void bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source);
+
+    // Theme API
+    void setTheme (const DirektTheme& theme);
+    const DirektTheme& getTheme() const;
 
 protected:
     // Override points for plugins

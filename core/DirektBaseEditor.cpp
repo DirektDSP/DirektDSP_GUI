@@ -127,9 +127,20 @@ DirektBaseEditor::~DirektBaseEditor()
     setLookAndFeel (nullptr);
 }
 
+void DirektBaseEditor::setTheme (const DirektTheme& theme)
+{
+    lookAndFeel.setTheme (theme);
+    repaint();
+}
+
+const DirektTheme& DirektBaseEditor::getTheme() const
+{
+    return lookAndFeel.getTheme();
+}
+
 void DirektBaseEditor::paint (juce::Graphics& g)
 {
-    g.fillAll (Colours::bgDark);
+    g.fillAll (lookAndFeel.getTheme().bgDark);
 
     auto bounds = getLocalBounds();
     if (showHeaderFlag)
