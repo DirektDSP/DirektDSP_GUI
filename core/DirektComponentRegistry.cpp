@@ -2,13 +2,11 @@
 
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
-#include "controls/DirektMacroKnob.h"
 #include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
 #include "layout/DirektFlexContainer.h"
-#include "layout/DirektModuleBypassSoloStrip.h"
 #include "layout/DirektSection.h"
 #include "layout/DirektTabPanel.h"
 #include "theme/DirektColours.h"
@@ -42,7 +40,7 @@ void applyNodeProps (juce::Component& comp, const NodeProps& props)
 
 BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
@@ -53,7 +51,7 @@ BuiltNode buildKnobNode (const KnobDesc& desc, BuildContext& ctx)
 
 BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 {
-    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
+    auto toggle = std::make_unique<DirektToggle> (ctx.apvts, desc.paramID, desc.label);
     if (desc.tooltip.isNotEmpty())
     {
         toggle->getButton().setTooltip (desc.tooltip);
@@ -64,7 +62,7 @@ BuiltNode buildToggleNode (const ToggleDesc& desc, BuildContext& ctx)
 
 BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
 {
-    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
+    auto combo = std::make_unique<DirektComboBox> (ctx.apvts, desc.paramID, desc.label);
     if (desc.tooltip.isNotEmpty())
     {
         combo->getComboBox().setTooltip (desc.tooltip);
@@ -75,18 +73,74 @@ BuiltNode buildComboBoxNode (const ComboBoxDesc& desc, BuildContext& ctx)
 
 BuiltNode buildMacroKnobNode (const MacroKnobDesc& desc, BuildContext& ctx)
 {
-    auto macroKnob = std::make_unique<DirektMacroKnob> (ctx.apvts, desc.paramID, desc.label, desc.targets);
+    std::vector<MacroControlTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroControlTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.normMin;
+            target.maxNormalized = targetDesc.normMax;
+
+            switch (targetDesc.curve)
+            {
+                case MacroCurve::Linear:
+                    target.curveExponent = 1.0f;
+                    break;
+                case MacroCurve::Quadratic:
+                    target.curveExponent = 2.0f;
+                    break;
+                case MacroCurve::SquareRoot:
+                    target.curveExponent = 0.5f;
+                    break;
+            }
+
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
     if (desc.tooltip.isNotEmpty())
     {
-        macroKnob->getSlider().setTooltip (desc.tooltip);
+        macro->getSlider().setTooltip (desc.tooltip);
     }
-    applyNodeProps (*macroKnob, desc.props);
-    return {std::move (macroKnob), {}};
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
+}
+
+BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
+{
+    std::vector<MacroControlTarget> targets;
+    targets.reserve (desc.targets.size());
+
+    for (const auto& targetDesc : desc.targets)
+    {
+        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
+        {
+            MacroControlTarget target;
+            target.parameter = parameter;
+            target.minNormalized = targetDesc.minNormalized;
+            target.maxNormalized = targetDesc.maxNormalized;
+            target.curveExponent = targetDesc.curveExponent;
+            targets.push_back (target);
+        }
+    }
+
+    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
+    if (desc.tooltip.isNotEmpty())
+    {
+        macro->getSlider().setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*macro, desc.props);
+    return {std::move (macro), {}};
 }
 
 BuiltNode buildSliderNode (const SliderDesc& desc, BuildContext& ctx)
 {
-    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label, ctx.parameterHistory);
+    auto knob = std::make_unique<DirektKnob> (ctx.apvts, desc.paramID, desc.label);
     if (desc.tooltip.isNotEmpty())
     {
         knob->getSlider().setTooltip (desc.tooltip);
@@ -146,33 +200,6 @@ BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
     return {std::move (meter), {}};
 }
 
-BuiltNode buildMacroNode (const MacroDesc& desc, BuildContext& ctx)
-{
-    std::vector<MacroTarget> targets;
-    targets.reserve (desc.targets.size());
-
-    for (const auto& targetDesc : desc.targets)
-    {
-        if (auto* parameter = ctx.apvts.getParameter (targetDesc.paramID))
-        {
-            MacroTarget target;
-            target.parameter = parameter;
-            target.minNormalized = targetDesc.minNormalized;
-            target.maxNormalized = targetDesc.maxNormalized;
-            target.curveExponent = targetDesc.curveExponent;
-            targets.push_back (target);
-        }
-    }
-
-    auto macro = std::make_unique<DirektMacroControl> (desc.label, std::move (targets));
-    if (desc.tooltip.isNotEmpty())
-    {
-        macro->getSlider().setTooltip (desc.tooltip);
-    }
-    applyNodeProps (*macro, desc.props);
-    return {std::move (macro), {}};
-}
-
 BuiltNode buildLabelNode (const LabelDesc& desc, BuildContext& /*ctx*/)
 {
     DirektLabel::Style labelStyle = DirektLabel::Body;
@@ -210,12 +237,6 @@ BuiltNode buildSectionNode (const SectionDesc& desc, BuildContext& ctx, const Di
 {
     auto section = std::make_unique<DirektSection> (desc.title, desc.columns);
     applyNodeProps (*section, desc.props);
-    if (auto strip =
-            DirektModuleBypassSoloStrip::tryCreate (ctx.apvts, desc.bypassParamID, desc.soloParamID, desc.bypassLabel,
-                                                    desc.soloLabel, desc.bypassTooltip, desc.soloTooltip))
-    {
-        section->setTitleBarAccessory (std::move (strip));
-    }
     std::vector<std::unique_ptr<juce::Component>> owned;
     for (const auto& childNode : desc.children)
     {
@@ -294,93 +315,60 @@ BuiltNode buildCustomNode (const CustomDesc& desc, BuildContext& ctx,
 } // namespace
 
 // ── Dispatch ──────────────────────────────────────────────────────────────
+namespace
+{
+// Visitor struct keeps each overload to one line, avoiding the cognitive
+// complexity penalty of a large if-constexpr chain inside a single lambda.
+struct NodeBuilder
+{
+    BuildContext* ctx;
+    const DirektComponentRegistry* reg;
+
+    BuiltNode operator() (const KnobDesc& d) const { return buildKnobNode (d, *ctx); }
+    BuiltNode operator() (const ToggleDesc& d) const { return buildToggleNode (d, *ctx); }
+    BuiltNode operator() (const ComboBoxDesc& d) const { return buildComboBoxNode (d, *ctx); }
+    BuiltNode operator() (const MacroKnobDesc& d) const { return buildMacroKnobNode (d, *ctx); }
+    BuiltNode operator() (const MacroDesc& d) const { return buildMacroNode (d, *ctx); }
+    BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
+    BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
+    BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
+    BuiltNode operator() (const MeterDesc& d) const { return buildMeterNode (d, *ctx); }
+    BuiltNode operator() (const LabelDesc& d) const { return buildLabelNode (d, *ctx); }
+    BuiltNode operator() (const DividerDesc& d) const { return buildDividerNode (d, *ctx); }
+    BuiltNode operator() (const SectionDesc& d) const { return buildSectionNode (d, *ctx, *reg); }
+    BuiltNode operator() (const CustomDesc& d) const { return buildCustomNode (d, *ctx, reg->getCustomFactories()); }
+
+    BuiltNode operator() (const HBoxDesc& d) const
+    {
+        return buildFlexNode (d.children, d.props, *ctx, *reg, DirektFlexContainer::Direction::Row);
+    }
+
+    BuiltNode operator() (const VBoxDesc& d) const
+    {
+        return buildFlexNode (d.children, d.props, *ctx, *reg, DirektFlexContainer::Direction::Column);
+    }
+
+    BuiltNode operator() (const TabPanelDesc& d) const { return buildTabPanelNode (d, *ctx, *reg); }
+
+    BuiltNode operator() (const XYPadDesc& d) const
+    {
+        auto comp = std::make_unique<juce::Component>();
+        applyNodeProps (*comp, d.props);
+        return {std::move (comp), {}};
+    }
+
+    BuiltNode operator() (const SpacerDesc& d) const
+    {
+        auto spacer = std::make_unique<juce::Component>();
+        applyNodeProps (*spacer, d.props);
+        return {std::move (spacer), {}};
+    }
+};
+} // namespace
+
 BuiltNode DirektComponentRegistry::build (const NodeDescriptor& descriptor, BuildContext& ctx) const
 {
-    return std::visit (
-        [&] (const auto& desc) -> BuiltNode
-        {
-            using T = std::decay_t<decltype (desc)>;
-            if constexpr (std::is_same_v<T, KnobDesc>)
-            {
-                return buildKnobNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, ToggleDesc>)
-            {
-                return buildToggleNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, ComboBoxDesc>)
-            {
-                return buildComboBoxNode (desc, ctx);
-            else if constexpr (std::is_same_v<T, MacroKnobDesc>)
-                return buildMacroKnobNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, SliderDesc>)
-            {
-                return buildSliderNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, ButtonDesc>)
-            {
-                return buildButtonNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, RadioGroupDesc>)
-            {
-                return buildRadioGroupNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, XYPadDesc>)
-            {
-                auto comp = std::make_unique<juce::Component>();
-                applyNodeProps (*comp, desc.props);
-                return {std::move (comp), {}};
-            }
-            else if constexpr (std::is_same_v<T, MacroDesc>)
-            {
-                return buildMacroNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, MeterDesc>)
-            {
-                return buildMeterNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, LabelDesc>)
-            {
-                return buildLabelNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, SpacerDesc>)
-            {
-                auto spacer = std::make_unique<juce::Component>();
-                applyNodeProps (*spacer, desc.props);
-                return {std::move (spacer), {}};
-            }
-            else if constexpr (std::is_same_v<T, DividerDesc>)
-            {
-                return buildDividerNode (desc, ctx);
-            }
-            else if constexpr (std::is_same_v<T, SectionDesc>)
-            {
-                return buildSectionNode (desc, ctx, *this);
-            }
-            else if constexpr (std::is_same_v<T, HBoxDesc>)
-            {
-                return buildFlexNode (desc.children, desc.props, ctx, *this, DirektFlexContainer::Direction::Row);
-            }
-            else if constexpr (std::is_same_v<T, VBoxDesc>)
-            {
-                return buildFlexNode (desc.children, desc.props, ctx, *this, DirektFlexContainer::Direction::Column);
-            }
-            else if constexpr (std::is_same_v<T, TabPanelDesc>)
-            {
-                return buildTabPanelNode (desc, ctx, *this);
-            }
-            else if constexpr (std::is_same_v<T, CustomDesc>)
-            {
-                return buildCustomNode (desc, ctx, customFactories);
-            }
-            else
-            {
-                auto comp = std::make_unique<juce::Component>();
-                return {std::move (comp), {}};
-            }
-        },
-        descriptor);
+    return std::visit (NodeBuilder{&ctx, this}, descriptor);
 }
 
 } // namespace DirektDSP

@@ -6,6 +6,7 @@
 #include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
 #include "chrome/DirektPresetBrowser.h"
+#include "chrome/DirektSessionNotes.h"
 #include "config/DirektConfig.h"
 #include "config/DirektDescriptors.h"
 #include "core/DirektAutoLayout.h"
@@ -55,6 +56,10 @@ public:
     juce::Component* findComponentByID (const juce::String& id) const;
     void bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source);
 
+    // Session notes API
+    void showSessionNotes();
+    void setSessionKey (const juce::String& key);
+
 protected:
     // Override points for plugins
     virtual void layoutCustomSections (juce::Rectangle<int> mainArea);
@@ -68,8 +73,8 @@ protected:
     std::vector<BuiltSection> builtSections; // legacy mode
 
 private:
-    void initCommon (const juce::String& pluginName, juce::Colour accentColour, float ratio, int defaultWidth,
-                     int minWidth, int maxWidth, bool showHeader, bool showFooter, bool resizable, bool showTooltips);
+    void initCommon (const juce::String&, juce::Colour accentColour, float ratio, int, int minWidth, int maxWidth,
+                     bool showHeader, bool showFooter, bool resizable, bool showTooltips);
 
     DirektLookAndFeel lookAndFeel;
     DirektHeader header;
@@ -84,6 +89,7 @@ private:
     float aspectRatio{};
     Service::PresetManager& presetManager;
     std::unique_ptr<DirektPresetBrowser> presetBrowser;
+    std::unique_ptr<DirektSessionNotes> sessionNotes;
 
     // Config-driven mode members
     bool configDriven = false;

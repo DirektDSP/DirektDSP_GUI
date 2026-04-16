@@ -21,7 +21,6 @@
 // Controls
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
-#include "controls/DirektMacroKnob.h"
 #include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 
@@ -34,6 +33,7 @@
 #include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
 #include "chrome/DirektPresetBrowser.h"
+#include "chrome/DirektSessionNotes.h"
 
 // Theme
 #include "theme/DirektColours.h"

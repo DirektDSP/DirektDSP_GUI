@@ -1,5 +1,6 @@
 #include "core/DirektBaseEditor.h"
 
+#include "chrome/DirektSessionNotes.h"
 #include "display/DirektMeter.h"
 
 namespace DirektDSP
@@ -19,7 +20,6 @@ void DirektBaseEditor::initCommon (const juce::String& /*pluginName*/, juce::Col
 
     lookAndFeel.setAccentColour (accentColour);
     setLookAndFeel (&lookAndFeel);
-    setWantsKeyboardFocus (true);
 
     if (showTooltips)
     {
@@ -73,7 +73,7 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::Audio
                                     const NodeDescriptor& rootDescriptor)
     : AudioProcessorEditor (processor), apvts (apvts),
       header (config.pluginName, config.accentColour, presetManager, apvts), presetManager (presetManager),
-      configDriven (true), buildContext{apvts, lookAndFeel, &parameterHistory, {}}
+      configDriven (true), buildContext{apvts, lookAndFeel, {}}
 {
     initCommon (config.pluginName, config.accentColour, config.aspectRatio, config.defaultWidth, config.minWidth,
                 config.maxWidth, config.showHeader, config.showFooter, config.resizable, config.showTooltips);
@@ -105,12 +105,12 @@ DirektBaseEditor::DirektBaseEditor (juce::AudioProcessor& processor, juce::Audio
                                     juce::Colour accentColour, float aspectRatio, int defaultWidth,
                                     const std::vector<SectionDescriptor>& sectionDescriptors)
     : AudioProcessorEditor (processor), apvts (apvts), header (pluginName, accentColour, presetManager, apvts),
-      presetManager (presetManager), buildContext{apvts, lookAndFeel, &parameterHistory, {}}
+      presetManager (presetManager), buildContext{apvts, lookAndFeel, {}}
 {
     initCommon (pluginName, accentColour, aspectRatio, defaultWidth, 400, 1600, true, true, true, true);
 
     // Build sections from descriptors (legacy path)
-    builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors, &parameterHistory);
+    builtSections = DirektAutoLayout::buildSections (apvts, sectionDescriptors);
     for (auto& bs : builtSections)
     {
         addAndMakeVisible (bs.section.get());
@@ -180,29 +180,6 @@ void DirektBaseEditor::resized()
         // Legacy: let subclass override layout
         layoutCustomSections (bounds);
     }
-}
-
-bool DirektBaseEditor::keyPressed (const juce::KeyPress& key)
-{
-    auto const isCommandDown = key.getModifiers().isCommandDown();
-    if (!isCommandDown)
-    {
-        return AudioProcessorEditor::keyPressed (key);
-    }
-
-    auto const keyCode = key.getKeyCode();
-    if (keyCode == 'z' || keyCode == 'Z')
-    {
-        auto const wantsRedo = key.getModifiers().isShiftDown();
-        return wantsRedo ? parameterHistory.redo (apvts) : parameterHistory.undo (apvts);
-    }
-
-    if (keyCode == 'y' || keyCode == 'Y')
-    {
-        return parameterHistory.redo (apvts);
-    }
-
-    return AudioProcessorEditor::keyPressed (key);
 }
 
 void DirektBaseEditor::layoutCustomSections (juce::Rectangle<int> mainArea)
@@ -279,31 +256,12 @@ juce::Component* DirektBaseEditor::findComponentByID (const juce::String& id) co
 
 void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source)
 {
-    buildContext.meterSources[sourceID] = source;
-
-    // If the tree is already built, find any meters with matching sourceID and connect them
-    std::function<void (juce::Component*)> connectMeters;
-    connectMeters = [&] (juce::Component* parent)
+    if (source == nullptr)
     {
-        if (parent == nullptr)
-        {
-            return;
-        }
+        return;
+    }
 
-        if (auto* meter = dynamic_cast<DirektMeter*> (parent))
-        {
-            // Meters don't expose their sourceID, but we can use component ID
-            // In practice, meters should be rebuilt or we store the mapping
-            meter->setSource (source);
-        }
-        for (auto* child : parent->getChildren())
-        {
-            if (child != nullptr)
-            {
-                connectMeters (child);
-            }
-        }
-    };
+    buildContext.meterSources[sourceID] = source;
 
     // For meters that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))
@@ -312,6 +270,31 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
         {
             meter->setSource (source);
         }
+    }
+}
+
+// ============================================================================
+// Session notes API
+// ============================================================================
+
+void DirektBaseEditor::showSessionNotes()
+{
+    if (sessionNotes == nullptr)
+    {
+        sessionNotes = std::make_unique<DirektSessionNotes> ("default");
+    }
+    showPopup ("Session Notes", sessionNotes.get(), 420, 320);
+}
+
+void DirektBaseEditor::setSessionKey (const juce::String& key)
+{
+    if (sessionNotes == nullptr)
+    {
+        sessionNotes = std::make_unique<DirektSessionNotes> (key);
+    }
+    else
+    {
+        sessionNotes->setSessionKey (key);
     }
 }
 
