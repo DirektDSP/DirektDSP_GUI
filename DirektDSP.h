@@ -30,6 +30,7 @@
 #include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
 #include "chrome/DirektPresetBrowser.h"
+#include "chrome/DirektSessionNotes.h"
 
 // Theme
 #include "theme/DirektColours.h"

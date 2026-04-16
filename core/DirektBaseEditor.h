@@ -6,6 +6,7 @@
 #include "chrome/DirektHeader.h"
 #include "chrome/DirektPopupPanel.h"
 #include "chrome/DirektPresetBrowser.h"
+#include "chrome/DirektSessionNotes.h"
 #include "config/DirektConfig.h"
 #include "config/DirektDescriptors.h"
 #include "core/DirektAutoLayout.h"
@@ -45,6 +46,10 @@ public:
     juce::Component* findComponentByID (const juce::String& id) const;
     void bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source);
 
+    // Session notes API
+    void showSessionNotes();
+    void setSessionKey (const juce::String& key);
+
 protected:
     // Override points for plugins
     virtual void layoutCustomSections (juce::Rectangle<int> mainArea);
@@ -74,6 +79,7 @@ private:
     float aspectRatio{};
     Service::PresetManager& presetManager;
     std::unique_ptr<DirektPresetBrowser> presetBrowser;
+    std::unique_ptr<DirektSessionNotes> sessionNotes;
 
     // Config-driven mode members
     bool configDriven = false;

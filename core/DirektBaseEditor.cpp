@@ -1,5 +1,6 @@
 #include "core/DirektBaseEditor.h"
 
+#include "chrome/DirektSessionNotes.h"
 #include "display/DirektMeter.h"
 
 namespace DirektDSP
@@ -269,6 +270,31 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
         {
             meter->setSource (source);
         }
+    }
+}
+
+// ============================================================================
+// Session notes API
+// ============================================================================
+
+void DirektBaseEditor::showSessionNotes()
+{
+    if (sessionNotes == nullptr)
+    {
+        sessionNotes = std::make_unique<DirektSessionNotes> ("default");
+    }
+    showPopup ("Session Notes", sessionNotes.get(), 420, 320);
+}
+
+void DirektBaseEditor::setSessionKey (const juce::String& key)
+{
+    if (sessionNotes == nullptr)
+    {
+        sessionNotes = std::make_unique<DirektSessionNotes> (key);
+    }
+    else
+    {
+        sessionNotes->setSessionKey (key);
     }
 }
 
