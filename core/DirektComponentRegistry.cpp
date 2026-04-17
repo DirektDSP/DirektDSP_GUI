@@ -1,5 +1,6 @@
 #include "core/DirektComponentRegistry.h"
 
+#include "controls/DirektABCompare.h"
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
 #include "controls/DirektMacroControl.h"
@@ -98,6 +99,17 @@ BuiltNode buildButtonNode (const ButtonDesc& desc, BuildContext& /*ctx*/)
     }
     applyNodeProps (*btn, desc.props);
     return {std::move (btn), {}};
+}
+
+BuiltNode buildABCompareNode (const ABCompareDesc& desc, BuildContext& ctx)
+{
+    auto comp = std::make_unique<DirektABCompare> (ctx.apvts);
+    if (desc.tooltip.isNotEmpty())
+    {
+        comp->setTooltip (desc.tooltip);
+    }
+    applyNodeProps (*comp, desc.props);
+    return {std::move (comp), {}};
 }
 
 BuiltNode buildRadioGroupNode (const RadioGroupDesc& desc, BuildContext& /*ctx*/)
@@ -371,6 +383,7 @@ struct NodeBuilder
     BuiltNode operator() (const MacroDesc& d) const { return buildMacroNode (d, *ctx); }
     BuiltNode operator() (const SliderDesc& d) const { return buildSliderNode (d, *ctx); }
     BuiltNode operator() (const ButtonDesc& d) const { return buildButtonNode (d, *ctx); }
+    BuiltNode operator() (const ABCompareDesc& d) const { return buildABCompareNode (d, *ctx); }
     BuiltNode operator() (const RadioGroupDesc& d) const { return buildRadioGroupNode (d, *ctx); }
     BuiltNode operator() (const MeterDesc& d) const { return buildMeterNode (d, *ctx); }
     BuiltNode operator() (const StereoMeterDesc& d) const { return buildStereoMeterNode (d, *ctx); }
