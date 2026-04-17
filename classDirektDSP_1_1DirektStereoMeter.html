@@ -131,6 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a26562cd8e30feb337deca24290b4cd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade1c8accbbde9afd2254a0aee00a9f8b" id="r_ade1c8accbbde9afd2254a0aee00a9f8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#ade1c8accbbde9afd2254a0aee00a9f8b">setSourceRight</a> (const std::atomic&lt; float &gt; *src)</td></tr>
 <tr class="separator:ade1c8accbbde9afd2254a0aee00a9f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf9328c0691d83a8b70321a0e16ed13" id="r_a4bf9328c0691d83a8b70321a0e16ed13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#a4bf9328c0691d83a8b70321a0e16ed13">setSourceIDs</a> (const juce::String &amp;leftID, const juce::String &amp;rightID)</td></tr>
+<tr class="memdesc:a4bf9328c0691d83a8b70321a0e16ed13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the source IDs used for post-build binding via <a class="el" href="classDirektDSP_1_1DirektBaseEditor.html#a76fdab546754d471e8a6b485b9d6d390">DirektBaseEditor::bindMeterSource</a>.  <br /></td></tr>
+<tr class="separator:a4bf9328c0691d83a8b70321a0e16ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fb8547ecd18e220a1682ced5b058b" id="r_a343fb8547ecd18e220a1682ced5b058b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#a343fb8547ecd18e220a1682ced5b058b">tryBindSource</a> (const juce::String &amp;id, const std::atomic&lt; float &gt; *src)</td></tr>
+<tr class="memdesc:a343fb8547ecd18e220a1682ced5b058b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a source by ID.  <br /></td></tr>
+<tr class="separator:a343fb8547ecd18e220a1682ced5b058b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab32ff2c952906ca90b201e888eb8784a" id="r_ab32ff2c952906ca90b201e888eb8784a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#ab32ff2c952906ca90b201e888eb8784a">resized</a> () override</td></tr>
 <tr class="separator:ab32ff2c952906ca90b201e888eb8784a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -140,6 +146,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afa32da8e89df51f5875de90cc7821591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5246979faaca1b9483d0549452086aec" id="r_a5246979faaca1b9483d0549452086aec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDirektDSP_1_1DirektMeter.html">DirektMeter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#a5246979faaca1b9483d0549452086aec">meterR</a></td></tr>
 <tr class="separator:a5246979faaca1b9483d0549452086aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e78eb744c4bf463ee3f1dfe3130f71" id="r_a54e78eb744c4bf463ee3f1dfe3130f71"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#a54e78eb744c4bf463ee3f1dfe3130f71">sourceIDLeft</a></td></tr>
+<tr class="separator:a54e78eb744c4bf463ee3f1dfe3130f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae341f8f6179215076c0dd119c3db4ac3" id="r_ae341f8f6179215076c0dd119c3db4ac3"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektStereoMeter.html#ae341f8f6179215076c0dd119c3db4ac3">sourceIDRight</a></td></tr>
+<tr class="separator:ae341f8f6179215076c0dd119c3db4ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A stereo meter pair (L + R) laid out side-by-side (vertical) or stacked top-to-bottom (horizontal orientation). </p>
@@ -172,7 +182,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00006">6</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00037">meterL</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00038">meterR</a>.</p>
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00049">meterL</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00050">meterR</a>.</p>
 
 </div>
 </div>
@@ -200,9 +210,43 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00047">47</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00049">meterL</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00050">meterR</a>.</p>
+
+</div>
+</div>
+<a id="a4bf9328c0691d83a8b70321a0e16ed13" name="a4bf9328c0691d83a8b70321a0e16ed13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf9328c0691d83a8b70321a0e16ed13">&#9670;&#160;</a></span>setSourceIDs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektStereoMeter::setSourceIDs </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>leftID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>rightID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store the source IDs used for post-build binding via <a class="el" href="classDirektDSP_1_1DirektBaseEditor.html#a76fdab546754d471e8a6b485b9d6d390">DirektBaseEditor::bindMeterSource</a>. </p>
+
 <p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00026">26</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00037">meterL</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00038">meterR</a>.</p>
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00052">sourceIDLeft</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00053">sourceIDRight</a>.</p>
 
 </div>
 </div>
@@ -224,7 +268,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00016">16</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00037">meterL</a>, and <a class="el" href="DirektMeter_8h_source.html#l00041">DirektDSP::DirektMeter::setSource()</a>.</p>
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00049">meterL</a>, and <a class="el" href="DirektMeter_8h_source.html#l00041">DirektDSP::DirektMeter::setSource()</a>.</p>
 
 </div>
 </div>
@@ -246,7 +290,42 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00021">21</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00038">meterR</a>, and <a class="el" href="DirektMeter_8h_source.html#l00041">DirektDSP::DirektMeter::setSource()</a>.</p>
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00050">meterR</a>, and <a class="el" href="DirektMeter_8h_source.html#l00041">DirektDSP::DirektMeter::setSource()</a>.</p>
+
+</div>
+</div>
+<a id="a343fb8547ecd18e220a1682ced5b058b" name="a343fb8547ecd18e220a1682ced5b058b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343fb8547ecd18e220a1682ced5b058b">&#9670;&#160;</a></span>tryBindSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektStereoMeter::tryBindSource </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::atomic&lt; float &gt; *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind a source by ID. </p>
+<p>Returns true if the ID matched either sourceIDLeft or sourceIDRight and the source was connected. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8cpp_source.html#l00032">32</a> of file <a class="el" href="DirektStereoMeter_8cpp_source.html">DirektStereoMeter.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektStereoMeter_8h_source.html#l00049">meterL</a>, <a class="el" href="DirektStereoMeter_8h_source.html#l00050">meterR</a>, <a class="el" href="DirektMeter_8h_source.html#l00041">DirektDSP::DirektMeter::setSource()</a>, <a class="el" href="DirektStereoMeter_8h_source.html#l00052">sourceIDLeft</a>, and <a class="el" href="DirektStereoMeter_8h_source.html#l00053">sourceIDRight</a>.</p>
 
 </div>
 </div>
@@ -271,9 +350,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00037">37</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00049">49</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00006">DirektStereoMeter()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00026">resized()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00016">setSourceLeft()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00006">DirektStereoMeter()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00047">resized()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00016">setSourceLeft()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00032">tryBindSource()</a>.</p>
 
 </div>
 </div>
@@ -297,9 +376,61 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00038">38</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00050">50</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00006">DirektStereoMeter()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00026">resized()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00021">setSourceRight()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00006">DirektStereoMeter()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00047">resized()</a>, <a class="el" href="DirektStereoMeter_8cpp_source.html#l00021">setSourceRight()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00032">tryBindSource()</a>.</p>
+
+</div>
+</div>
+<a id="a54e78eb744c4bf463ee3f1dfe3130f71" name="a54e78eb744c4bf463ee3f1dfe3130f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e78eb744c4bf463ee3f1dfe3130f71">&#9670;&#160;</a></span>sourceIDLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String DirektDSP::DirektStereoMeter::sourceIDLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00052">52</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00026">setSourceIDs()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00032">tryBindSource()</a>.</p>
+
+</div>
+</div>
+<a id="ae341f8f6179215076c0dd119c3db4ac3" name="ae341f8f6179215076c0dd119c3db4ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae341f8f6179215076c0dd119c3db4ac3">&#9670;&#160;</a></span>sourceIDRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String DirektDSP::DirektStereoMeter::sourceIDRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektStereoMeter_8h_source.html#l00053">53</a> of file <a class="el" href="DirektStereoMeter_8h_source.html">DirektStereoMeter.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektStereoMeter_8cpp_source.html#l00026">setSourceIDs()</a>, and <a class="el" href="DirektStereoMeter_8cpp_source.html#l00032">tryBindSource()</a>.</p>
 
 </div>
 </div>

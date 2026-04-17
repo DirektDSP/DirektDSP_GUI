@@ -9,10 +9,11 @@ var searchData=
   ['setcolumns_6',['setColumns',['../classDirektDSP_1_1DirektSection.html#a46729ce4229f610f5f01e82192bbc2a9',1,'DirektDSP::DirektSection']]],
   ['setdraggable_7',['setDraggable',['../classDirektDSP_1_1DirektSection.html#abc4985cb080da87aadc9baf011179915',1,'DirektDSP::DirektSection']]],
   ['setsource_8',['setsource',['../classDirektDSP_1_1DirektClipIndicator.html#a7b0b14b77db140b099cfe309ee40362e',1,'DirektDSP::DirektClipIndicator::setSource()'],['../classDirektDSP_1_1DirektMeter.html#a28450004ae4a9c9aaf4ebe0ed87d612d',1,'DirektDSP::DirektMeter::setSource()']]],
-  ['setsourceleft_9',['setSourceLeft',['../classDirektDSP_1_1DirektStereoMeter.html#a26562cd8e30feb337deca24290b4cd16',1,'DirektDSP::DirektStereoMeter']]],
-  ['setsourceright_10',['setSourceRight',['../classDirektDSP_1_1DirektStereoMeter.html#ade1c8accbbde9afd2254a0aee00a9f8b',1,'DirektDSP::DirektStereoMeter']]],
-  ['settitlebaraccessory_11',['setTitleBarAccessory',['../classDirektDSP_1_1DirektSection.html#afc4b3a4f65c2eaf527e851bfa897673f',1,'DirektDSP::DirektSection']]],
-  ['setupsectiondragcallbacks_12',['setupSectionDragCallbacks',['../classDirektDSP_1_1DirektFlexContainer.html#afb410d88ba57eb8d18a2123eb853e238',1,'DirektDSP::DirektFlexContainer']]],
-  ['show_13',['show',['../classDirektDSP_1_1DirektPopupPanel.html#a16631e7319f0446824363862beaad617',1,'DirektDSP::DirektPopupPanel']]],
-  ['showpopup_14',['showPopup',['../classDirektDSP_1_1DirektBaseEditor.html#aa945ed272221ee189b0b14c0dd8772dd',1,'DirektDSP::DirektBaseEditor']]]
+  ['setsourceids_9',['setSourceIDs',['../classDirektDSP_1_1DirektStereoMeter.html#a4bf9328c0691d83a8b70321a0e16ed13',1,'DirektDSP::DirektStereoMeter']]],
+  ['setsourceleft_10',['setSourceLeft',['../classDirektDSP_1_1DirektStereoMeter.html#a26562cd8e30feb337deca24290b4cd16',1,'DirektDSP::DirektStereoMeter']]],
+  ['setsourceright_11',['setSourceRight',['../classDirektDSP_1_1DirektStereoMeter.html#ade1c8accbbde9afd2254a0aee00a9f8b',1,'DirektDSP::DirektStereoMeter']]],
+  ['settitlebaraccessory_12',['setTitleBarAccessory',['../classDirektDSP_1_1DirektSection.html#afc4b3a4f65c2eaf527e851bfa897673f',1,'DirektDSP::DirektSection']]],
+  ['setupsectiondragcallbacks_13',['setupSectionDragCallbacks',['../classDirektDSP_1_1DirektFlexContainer.html#afb410d88ba57eb8d18a2123eb853e238',1,'DirektDSP::DirektFlexContainer']]],
+  ['show_14',['show',['../classDirektDSP_1_1DirektPopupPanel.html#a16631e7319f0446824363862beaad617',1,'DirektDSP::DirektPopupPanel']]],
+  ['showpopup_15',['showPopup',['../classDirektDSP_1_1DirektBaseEditor.html#aa945ed272221ee189b0b14c0dd8772dd',1,'DirektDSP::DirektBaseEditor']]]
 ];

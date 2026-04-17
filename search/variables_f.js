@@ -17,7 +17,7 @@ var searchData=
   ['solotooltip_14',['solotooltip',['../structDirektDSP_1_1SectionDesc.html#ae9fc67c4cc1a319fdbc7061e5adeed3f',1,'DirektDSP::SectionDesc::soloTooltip'],['../structDirektDSP_1_1SectionDescriptor.html#a36a426f0acbdbe67522dfdcbf95b0d23',1,'DirektDSP::SectionDescriptor::soloTooltip']]],
   ['source_15',['source',['../classDirektDSP_1_1DirektClipIndicator.html#a2fef8c2ce93c1f2f8ba4d551e4b39560',1,'DirektDSP::DirektClipIndicator::source'],['../classDirektDSP_1_1DirektMeter.html#a5ad87dd1c5227b4553b4497502be9c5e',1,'DirektDSP::DirektMeter::source']]],
   ['sourceid_16',['sourceid',['../structDirektDSP_1_1MeterDesc.html#aae830528a8f32c780466c32035a2bdd6',1,'DirektDSP::MeterDesc::sourceID'],['../structDirektDSP_1_1ClipIndicatorDesc.html#a627a1fdce0667d4fc3bac2a5f1bf986d',1,'DirektDSP::ClipIndicatorDesc::sourceID']]],
-  ['sourceidleft_17',['sourceIDLeft',['../structDirektDSP_1_1StereoMeterDesc.html#a1f98c5fd684b95c380c66747f3fbc69a',1,'DirektDSP::StereoMeterDesc']]],
-  ['sourceidright_18',['sourceIDRight',['../structDirektDSP_1_1StereoMeterDesc.html#a8a2511d0ff554db86a88e9391a23d479',1,'DirektDSP::StereoMeterDesc']]],
+  ['sourceidleft_17',['sourceidleft',['../structDirektDSP_1_1StereoMeterDesc.html#a1f98c5fd684b95c380c66747f3fbc69a',1,'DirektDSP::StereoMeterDesc::sourceIDLeft'],['../classDirektDSP_1_1DirektStereoMeter.html#a54e78eb744c4bf463ee3f1dfe3130f71',1,'DirektDSP::DirektStereoMeter::sourceIDLeft']]],
+  ['sourceidright_18',['sourceidright',['../structDirektDSP_1_1StereoMeterDesc.html#a8a2511d0ff554db86a88e9391a23d479',1,'DirektDSP::StereoMeterDesc::sourceIDRight'],['../classDirektDSP_1_1DirektStereoMeter.html#ae341f8f6179215076c0dd119c3db4ac3',1,'DirektDSP::DirektStereoMeter::sourceIDRight']]],
   ['style_19',['style',['../structDirektDSP_1_1LabelDesc.html#ade2129e8f20e742559064f16034d5272',1,'DirektDSP::LabelDesc']]]
 ];
