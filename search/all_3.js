@@ -3,7 +3,7 @@ var searchData=
   ['defaultwidth_0',['defaultWidth',['../structDirektDSP_1_1PluginConfig.html#aa55d220a6fddf898747d574f8f2419e4',1,'DirektDSP::PluginConfig']]],
   ['deletebtn_1',['deleteBtn',['../classDirektDSP_1_1DirektPresetBrowser.html#ad46b7f8c9c02f47c12c979ab34d396e8',1,'DirektDSP::DirektPresetBrowser']]],
   ['deletepreset_2',['deletePreset',['../classService_1_1PresetManager.html#a42fe58f401972ab2ede7cbcc1d80bc27',1,'Service::PresetManager']]],
-  ['direction_3',['direction',['../classDirektDSP_1_1DirektFlexContainer.html#a54bb4ea6450e249a8c50e67f52a47fa2',1,'DirektDSP::DirektFlexContainer::Direction'],['../classDirektDSP_1_1DirektFlexContainer.html#a91e81188324d360a22203db6b90e1023',1,'DirektDSP::DirektFlexContainer::direction']]],
+  ['direction_3',['direction',['../classDirektDSP_1_1DirektFlexContainer.html#a91e81188324d360a22203db6b90e1023',1,'DirektDSP::DirektFlexContainer::direction'],['../classDirektDSP_1_1DirektFlexContainer.html#a54bb4ea6450e249a8c50e67f52a47fa2',1,'DirektDSP::DirektFlexContainer::Direction']]],
   ['direktautolayout_4',['DirektAutoLayout',['../classDirektDSP_1_1DirektAutoLayout.html',1,'DirektDSP']]],
   ['direktautolayout_2ecpp_5',['DirektAutoLayout.cpp',['../DirektAutoLayout_8cpp.html',1,'']]],
   ['direktautolayout_2eh_6',['DirektAutoLayout.h',['../DirektAutoLayout_8h.html',1,'']]],

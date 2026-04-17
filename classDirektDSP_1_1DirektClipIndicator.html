@@ -124,6 +124,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1142ac717a8d84c7e774e646383249f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b0b14b77db140b099cfe309ee40362e" id="r_a7b0b14b77db140b099cfe309ee40362e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#a7b0b14b77db140b099cfe309ee40362e">setSource</a> (const std::atomic&lt; float &gt; *src)</td></tr>
 <tr class="separator:a7b0b14b77db140b099cfe309ee40362e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c34d6806aa757e9757bc64390be123e" id="r_a3c34d6806aa757e9757bc64390be123e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#a3c34d6806aa757e9757bc64390be123e">setSourceID</a> (const juce::String &amp;id)</td></tr>
+<tr class="memdesc:a3c34d6806aa757e9757bc64390be123e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the source ID used for post-build binding via <a class="el" href="classDirektDSP_1_1DirektBaseEditor.html#a76fdab546754d471e8a6b485b9d6d390">DirektBaseEditor::bindMeterSource</a>.  <br /></td></tr>
+<tr class="separator:a3c34d6806aa757e9757bc64390be123e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae84551f1c841f33de33cfc8ff1ddf4" id="r_acae84551f1c841f33de33cfc8ff1ddf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#acae84551f1c841f33de33cfc8ff1ddf4">tryBindSource</a> (const juce::String &amp;id, const std::atomic&lt; float &gt; *src)</td></tr>
+<tr class="memdesc:acae84551f1c841f33de33cfc8ff1ddf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a source by ID.  <br /></td></tr>
+<tr class="separator:acae84551f1c841f33de33cfc8ff1ddf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadfbd3e08b828f2d789b129b475e6e68" id="r_aadfbd3e08b828f2d789b129b475e6e68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#aadfbd3e08b828f2d789b129b475e6e68">resetClip</a> ()</td></tr>
 <tr class="separator:aadfbd3e08b828f2d789b129b475e6e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad49195a7345cc3a157b23733a6a25beb" id="r_ad49195a7345cc3a157b23733a6a25beb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#ad49195a7345cc3a157b23733a6a25beb">hasClipped</a> () const</td></tr>
@@ -140,6 +146,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:af99785cb35830bfdd5e80aea2bd8c3dd" id="r_af99785cb35830bfdd5e80aea2bd8c3dd"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#af99785cb35830bfdd5e80aea2bd8c3dd">sourceID</a></td></tr>
+<tr class="separator:af99785cb35830bfdd5e80aea2bd8c3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fef8c2ce93c1f2f8ba4d551e4b39560" id="r_a2fef8c2ce93c1f2f8ba4d551e4b39560"><td class="memItemLeft" align="right" valign="top">const std::atomic&lt; float &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#a2fef8c2ce93c1f2f8ba4d551e4b39560">source</a> = nullptr</td></tr>
 <tr class="separator:a2fef8c2ce93c1f2f8ba4d551e4b39560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20134bc4f6f124a7a4c04fbdb9c6c902" id="r_a20134bc4f6f124a7a4c04fbdb9c6c902"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirektDSP_1_1DirektClipIndicator.html#a20134bc4f6f124a7a4c04fbdb9c6c902">clipped</a> = false</td></tr>
@@ -203,9 +211,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00021">21</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00034">34</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00030">clipped</a>.</p>
+<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00044">clipped</a>.</p>
 
 </div>
 </div>
@@ -233,9 +241,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00032">32</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00047">47</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektClipIndicator_8cpp_source.html#l00016">resetClip()</a>.</p>
+<p class="reference">References <a class="el" href="DirektClipIndicator_8cpp_source.html#l00031">resetClip()</a>.</p>
 
 </div>
 </div>
@@ -263,9 +271,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00022">22</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00037">37</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektColours_8h_source.html#l00027">DirektDSP::Colours::accentRed</a>, <a class="el" href="DirektColours_8h_source.html#l00010">DirektDSP::Colours::bgPanel</a>, <a class="el" href="DirektClipIndicator_8h_source.html#l00030">clipped</a>, and <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>.</p>
+<p class="reference">References <a class="el" href="DirektColours_8h_source.html#l00027">DirektDSP::Colours::accentRed</a>, <a class="el" href="DirektColours_8h_source.html#l00010">DirektDSP::Colours::bgPanel</a>, <a class="el" href="DirektClipIndicator_8h_source.html#l00044">clipped</a>, and <a class="el" href="DirektColours_8h_source.html#l00032">DirektDSP::Colours::divider</a>.</p>
 
 </div>
 </div>
@@ -284,11 +292,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00016">16</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00031">31</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00030">clipped</a>.</p>
+<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00044">clipped</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00032">mouseDown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00047">mouseDown()</a>.</p>
 
 </div>
 </div>
@@ -310,7 +318,33 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00011">11</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00029">source</a>.</p>
+<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00043">source</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00021">tryBindSource()</a>.</p>
+
+</div>
+</div>
+<a id="a3c34d6806aa757e9757bc64390be123e" name="a3c34d6806aa757e9757bc64390be123e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c34d6806aa757e9757bc64390be123e">&#9670;&#160;</a></span>setSourceID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DirektDSP::DirektClipIndicator::setSourceID </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store the source ID used for post-build binding via <a class="el" href="classDirektDSP_1_1DirektBaseEditor.html#a76fdab546754d471e8a6b485b9d6d390">DirektBaseEditor::bindMeterSource</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00016">16</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00042">sourceID</a>.</p>
 
 </div>
 </div>
@@ -337,9 +371,44 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00037">37</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00052">52</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00030">clipped</a>, and <a class="el" href="DirektClipIndicator_8h_source.html#l00029">source</a>.</p>
+<p class="reference">References <a class="el" href="DirektClipIndicator_8h_source.html#l00044">clipped</a>, and <a class="el" href="DirektClipIndicator_8h_source.html#l00043">source</a>.</p>
+
+</div>
+</div>
+<a id="acae84551f1c841f33de33cfc8ff1ddf4" name="acae84551f1c841f33de33cfc8ff1ddf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae84551f1c841f33de33cfc8ff1ddf4">&#9670;&#160;</a></span>tryBindSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DirektDSP::DirektClipIndicator::tryBindSource </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::atomic&lt; float &gt; *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind a source by ID. </p>
+<p>Returns true if the ID matched the stored sourceID and the source was connected. </p>
+
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8cpp_source.html#l00021">21</a> of file <a class="el" href="DirektClipIndicator_8cpp_source.html">DirektClipIndicator.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DirektClipIndicator_8cpp_source.html#l00011">setSource()</a>, and <a class="el" href="DirektClipIndicator_8h_source.html#l00042">sourceID</a>.</p>
 
 </div>
 </div>
@@ -364,9 +433,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00030">30</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00044">44</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8h_source.html#l00021">hasClipped()</a>, <a class="el" href="DirektClipIndicator_8cpp_source.html#l00022">paint()</a>, <a class="el" href="DirektClipIndicator_8cpp_source.html#l00016">resetClip()</a>, and <a class="el" href="DirektClipIndicator_8cpp_source.html#l00037">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8h_source.html#l00034">hasClipped()</a>, <a class="el" href="DirektClipIndicator_8cpp_source.html#l00037">paint()</a>, <a class="el" href="DirektClipIndicator_8cpp_source.html#l00031">resetClip()</a>, and <a class="el" href="DirektClipIndicator_8cpp_source.html#l00052">timerCallback()</a>.</p>
 
 </div>
 </div>
@@ -390,9 +459,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00029">29</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00043">43</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00011">setSource()</a>, and <a class="el" href="DirektClipIndicator_8cpp_source.html#l00037">timerCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00011">setSource()</a>, and <a class="el" href="DirektClipIndicator_8cpp_source.html#l00052">timerCallback()</a>.</p>
+
+</div>
+</div>
+<a id="af99785cb35830bfdd5e80aea2bd8c3dd" name="af99785cb35830bfdd5e80aea2bd8c3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af99785cb35830bfdd5e80aea2bd8c3dd">&#9670;&#160;</a></span>sourceID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String DirektDSP::DirektClipIndicator::sourceID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DirektClipIndicator_8h_source.html#l00042">42</a> of file <a class="el" href="DirektClipIndicator_8h_source.html">DirektClipIndicator.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DirektClipIndicator_8cpp_source.html#l00016">setSourceID()</a>, and <a class="el" href="DirektClipIndicator_8cpp_source.html#l00021">tryBindSource()</a>.</p>
 
 </div>
 </div>

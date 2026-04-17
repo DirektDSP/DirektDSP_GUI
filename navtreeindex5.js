@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"structDirektDSP_1_1TabPanelDesc.html#ab9efa8ec0c9fc75cf1027e7ec9001672":[0,0,0,51,0],
+"structDirektDSP_1_1TabPanelDesc.html#ab9efa8ec0c9fc75cf1027e7ec9001672":[1,0,0,50,0],
+"structDirektDSP_1_1ToggleDesc.html":[1,0,0,51],
+"structDirektDSP_1_1ToggleDesc.html":[0,0,0,52],
+"structDirektDSP_1_1ToggleDesc.html#a892f9327aaf9cc9f2ce9359a2a477311":[1,0,0,51,3],
+"structDirektDSP_1_1ToggleDesc.html#a892f9327aaf9cc9f2ce9359a2a477311":[0,0,0,52,3],
 "structDirektDSP_1_1ToggleDesc.html#a8de64d9624519e625c9706d8051d3354":[0,0,0,52,0],
 "structDirektDSP_1_1ToggleDesc.html#a8de64d9624519e625c9706d8051d3354":[1,0,0,51,0],
 "structDirektDSP_1_1ToggleDesc.html#ab2c757406a6dc4ab1d04e19749f5bd40":[1,0,0,51,2],

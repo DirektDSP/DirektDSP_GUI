@@ -428,24 +428,29 @@ $(document).ready(function(){initNavTree('DirektBaseEditor_8cpp_source.html','')
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        }</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="comment">// Also try binding to any DirektStereoMeter in the tree by source ID</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    std::function&lt;void (juce::Component*)&gt; bindStereo;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    bindStereo = [&amp;] (juce::Component* parent)</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span>* stereoMeter = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classDirektDSP_1_1DirektStereoMeter.html">DirektStereoMeter</a>*<span class="keyword">&gt;</span> (parent))</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        {</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            stereoMeter-&gt;tryBindSource (sourceID, source);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>* child : parent-&gt;getChildren())</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        {</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            bindStereo (child);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        }</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    };</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    bindStereo (<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>}</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="comment">// Walk the tree to bind DirektStereoMeter and DirektClipIndicator by source ID,</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="comment">// which allows the component ID and source ID to differ.</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    std::function&lt;void (juce::Component*)&gt; bindBySourceID;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    bindBySourceID = [&amp;] (juce::Component* parent)</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span>* stereoMeter = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classDirektDSP_1_1DirektStereoMeter.html">DirektStereoMeter</a>*<span class="keyword">&gt;</span> (parent))</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        {</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            stereoMeter-&gt;tryBindSource (sourceID, source);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span>* indicator = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classDirektDSP_1_1DirektClipIndicator.html">DirektClipIndicator</a>*<span class="keyword">&gt;</span> (parent))</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            indicator-&gt;tryBindSource (sourceID, source);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>* child : parent-&gt;getChildren())</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            bindBySourceID (child);</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    };</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    bindBySourceID (<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
 </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>} <span class="comment">// namespace DirektDSP</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>} <span class="comment">// namespace DirektDSP</span></div>
 <div class="ttc" id="aDirektBaseEditor_8h_html"><div class="ttname"><a href="DirektBaseEditor_8h.html">DirektBaseEditor.h</a></div></div>
 <div class="ttc" id="aDirektClipIndicator_8h_html"><div class="ttname"><a href="DirektClipIndicator_8h.html">DirektClipIndicator.h</a></div></div>
 <div class="ttc" id="aDirektMeter_8h_html"><div class="ttname"><a href="DirektMeter_8h.html">DirektMeter.h</a></div></div>

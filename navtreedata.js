@@ -61,11 +61,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "DirektAutoLayout_8cpp.html",
-"classDirektDSP_1_1DirektComboBox.html#ac48dd57ae37a94d5348c59e17713ebd8",
-"classDirektDSP_1_1DirektPopupPanel.html#a592255fa72bd38e5a77917403ffc3763",
-"classService_1_1PresetManager.html#a94d1b4b2db5a16f122419ed905fcf4f7",
-"structDirektDSP_1_1KnobDesc.html#a1ecef73483ee8ae206fb231f0f1cd2b3",
-"structDirektDSP_1_1ToggleDesc.html#a8de64d9624519e625c9706d8051d3354"
+"classDirektDSP_1_1DirektComboBox.html#a726283c1c50cacb5923245ffec9247fb",
+"classDirektDSP_1_1DirektPopupPanel.html#a1625ea0da02f6fb51b871d33926f6b43",
+"classService_1_1PresetManager.html#a568c746e7eceb00f9462462b30dc2ac3",
+"structDirektDSP_1_1HBoxDesc.html#a841e4e744f03b48ab41140866ce52812",
+"structDirektDSP_1_1TabPanelDesc.html#ab9efa8ec0c9fc75cf1027e7ec9001672"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
