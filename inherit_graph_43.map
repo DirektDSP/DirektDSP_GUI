@@ -1,40 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="35,375,167,400"/>
-<area shape="rect" id="Node000001" href="$classDirektDSP_1_1DirektABCompare.html" title="A/B compare control that stores two APVTS snapshots and lets the user switch between them." alt="" coords="254,400,467,425"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="182,392,254,400,253,405,181,398"/>
-<area shape="rect" id="Node000002" href="$classDirektDSP_1_1DirektClipIndicator.html" title="A small LED indicator that lights red when the signal has clipped (&gt;= 0 dBFS)." alt="" coords="251,5,470,31"/>
-<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="103,361,114,295,138,208,156,162,179,117,208,76,244,40,261,29,264,33,247,44,212,79,184,120,161,164,143,210,119,296,108,361"/>
-<area shape="rect" id="Node000006" href="$classDirektDSP_1_1DirektComboBox.html" title=" " alt="" coords="257,449,464,475"/>
-<area shape="poly" id="edge4_Node000000_Node000006" title=" " alt="" coords="148,402,246,435,292,447,291,452,245,441,146,407"/>
-<area shape="rect" id="Node000007" href="$classDirektDSP_1_1DirektFlexContainer.html" title=" " alt="" coords="247,499,474,524"/>
-<area shape="poly" id="edge5_Node000000_Node000007" title=" " alt="" coords="129,407,181,447,213,468,246,485,279,496,277,501,244,490,210,472,178,452,126,411"/>
-<area shape="rect" id="Node000008" href="$classDirektDSP_1_1DirektFooter.html" title=" " alt="" coords="272,548,449,573"/>
-<area shape="poly" id="edge6_Node000000_Node000008" title=" " alt="" coords="120,410,172,473,207,507,247,534,273,545,270,550,244,539,203,511,168,477,116,413"/>
-<area shape="rect" id="Node000009" href="$classDirektDSP_1_1DirektHeader.html" title=" " alt="" coords="269,597,452,623"/>
-<area shape="poly" id="edge7_Node000000_Node000009" title=" " alt="" coords="116,411,135,450,164,497,201,545,247,584,270,595,268,600,244,588,197,548,159,500,130,453,111,413"/>
-<area shape="rect" id="Node000010" href="$classDirektDSP_1_1DirektKnob.html" title=" " alt="" coords="276,647,445,672"/>
-<area shape="poly" id="edge8_Node000000_Node000010" title=" " alt="" coords="112,412,129,461,156,521,195,582,220,610,247,633,277,648,274,653,244,638,216,613,191,585,152,524,124,463,107,414"/>
-<area shape="rect" id="Node000011" href="$classDirektDSP_1_1DirektMacroControl.html" title="One macro knob that drives multiple parameters." alt="" coords="249,696,472,721"/>
-<area shape="poly" id="edge9_Node000000_Node000011" title=" " alt="" coords="110,413,124,470,149,544,168,582,190,619,216,653,247,683,266,694,263,698,244,687,212,657,185,622,163,585,145,546,119,472,105,415"/>
-<area shape="rect" id="Node000005" href="$classDirektDSP_1_1DirektMeter.html" title=" " alt="" coords="273,55,448,80"/>
-<area shape="poly" id="edge10_Node000000_Node000005" title=" " alt="" coords="105,360,119,304,145,230,163,192,186,155,212,120,244,91,272,75,275,80,247,95,216,124,190,158,168,194,150,232,124,305,110,362"/>
-<area shape="rect" id="Node000012" href="$classDirektDSP_1_1DirektModuleBypassSoloStrip.html" title="Compact bypass and solo toggles for a module section title bar." alt="" coords="245,746,476,786"/>
-<area shape="poly" id="edge11_Node000000_Node000012" title=" " alt="" coords="108,413,120,478,144,564,162,610,185,655,213,696,247,732,264,744,261,748,244,736,209,699,181,657,158,612,139,566,115,479,103,414"/>
-<area shape="rect" id="Node000013" href="$classDirektDSP_1_1DirektPopupPanel.html" title=" " alt="" coords="255,104,466,129"/>
-<area shape="poly" id="edge12_Node000000_Node000013" title=" " alt="" coords="108,360,125,312,152,252,192,191,216,164,244,140,267,127,270,132,247,144,220,167,196,194,157,255,130,314,113,362"/>
-<area shape="rect" id="Node000014" href="$classDirektDSP_1_1DirektPresetBrowser.html" title=" " alt="" coords="245,153,476,179"/>
-<area shape="poly" id="edge13_Node000000_Node000014" title=" " alt="" coords="111,360,131,322,160,275,198,228,244,189,270,176,272,181,247,194,202,232,165,278,136,324,116,363"/>
-<area shape="rect" id="Node000015" href="$classDirektDSP_1_1DirektSection.html" title=" " alt="" coords="269,203,453,228"/>
-<area shape="poly" id="edge14_Node000000_Node000015" title=" " alt="" coords="117,361,169,299,204,266,244,238,274,226,276,231,247,243,207,270,173,303,121,365"/>
-<area shape="rect" id="Node000016" href="$classDirektDSP_1_1DirektStereoMeter.html" title="A stereo meter pair (L + R) laid out side&#45;by&#45;side (vertical) or stacked top&#45;to&#45;bottom (horizontal ori..." alt="" coords="253,252,469,277"/>
-<area shape="poly" id="edge15_Node000000_Node000016" title=" " alt="" coords="126,364,179,325,244,288,282,275,284,280,246,292,181,329,129,368"/>
-<area shape="rect" id="Node000017" href="$classDirektDSP_1_1DirektTabPanel.html" title=" " alt="" coords="264,301,457,327"/>
-<area shape="poly" id="edge16_Node000000_Node000017" title=" " alt="" coords="149,368,245,337,296,324,297,329,246,342,151,373"/>
-<area shape="rect" id="Node000018" href="$classDirektDSP_1_1DirektToggle.html" title=" " alt="" coords="271,351,450,376"/>
-<area shape="poly" id="edge17_Node000000_Node000018" title=" " alt="" coords="181,377,271,369,272,374,181,383"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,197,31"/>
-<area shape="poly" id="edge18_Node000003_Node000002" title=" " alt="" coords="211,15,251,15,251,21,211,21"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="54,55,149,80"/>
-<area shape="poly" id="edge19_Node000004_Node000002" title=" " alt="" coords="162,53,293,28,294,33,163,58"/>
-<area shape="poly" id="edge20_Node000004_Node000005" title=" " alt="" coords="163,65,273,65,273,70,163,70"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,97,31"/>
+<area shape="rect" id="Node000001" href="$classDirektDSP_1_1DirektLabel.html" title=" " alt="" coords="145,5,316,31"/>
+<area shape="poly" id="edge22_Node000000_Node000001" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
 </map>

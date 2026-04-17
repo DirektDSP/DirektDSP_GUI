@@ -76,6 +76,7 @@ var hierarchy =
     [ "DirektDSP::DirektTabPanel::TabEntry", "structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html", null ],
     [ "DirektDSP::TabPanelDesc", "structDirektDSP_1_1TabPanelDesc.html", null ],
     [ "juce::Timer", null, [
+      [ "DirektDSP::DirektBaseEditor", "classDirektDSP_1_1DirektBaseEditor.html", null ],
       [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ],
       [ "DirektDSP::DirektMeter", "classDirektDSP_1_1DirektMeter.html", null ]
     ] ],

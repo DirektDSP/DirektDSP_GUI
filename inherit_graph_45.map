@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,45,151,70"/>
-<area shape="rect" id="Node000001" href="$classDirektDSP_1_1DirektPresetBrowser_1_1CategoryListModel.html" title=" " alt="" coords="199,5,429,45"/>
-<area shape="poly" id="edge22_Node000000_Node000001" title=" " alt="" coords="164,43,198,38,199,44,165,48"/>
-<area shape="rect" id="Node000002" href="$classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html" title=" " alt="" coords="199,69,429,109"/>
-<area shape="poly" id="edge23_Node000000_Node000002" title=" " alt="" coords="165,66,199,71,198,76,164,72"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000001" href="$classDirektDSP_1_1DirektLookAndFeel.html" title=" " alt="" coords="217,5,436,31"/>
+<area shape="poly" id="edge25_Node000000_Node000001" title=" " alt="" coords="183,15,217,15,217,21,183,21"/>
 </map>
