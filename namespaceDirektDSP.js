@@ -19,6 +19,7 @@ var namespaceDirektDSP =
       [ "textDim", "namespaceDirektDSP_1_1Colours.html#a83058fee648167fda2a41fd7bfb31be1", null ],
       [ "textLabel", "namespaceDirektDSP_1_1Colours.html#a1b7a2ba6a619a3530983497ea453292a", null ]
     ] ],
+    [ "ABCompareDesc", "structDirektDSP_1_1ABCompareDesc.html", "structDirektDSP_1_1ABCompareDesc" ],
     [ "BuildContext", "structDirektDSP_1_1BuildContext.html", "structDirektDSP_1_1BuildContext" ],
     [ "BuiltNode", "structDirektDSP_1_1BuiltNode.html", "structDirektDSP_1_1BuiltNode" ],
     [ "BuiltSection", "structDirektDSP_1_1BuiltSection.html", "structDirektDSP_1_1BuiltSection" ],
@@ -26,6 +27,7 @@ var namespaceDirektDSP =
     [ "ClipIndicatorDesc", "structDirektDSP_1_1ClipIndicatorDesc.html", "structDirektDSP_1_1ClipIndicatorDesc" ],
     [ "ComboBoxDesc", "structDirektDSP_1_1ComboBoxDesc.html", "structDirektDSP_1_1ComboBoxDesc" ],
     [ "CustomDesc", "structDirektDSP_1_1CustomDesc.html", "structDirektDSP_1_1CustomDesc" ],
+    [ "DirektABCompare", "classDirektDSP_1_1DirektABCompare.html", "classDirektDSP_1_1DirektABCompare" ],
     [ "DirektAutoLayout", "classDirektDSP_1_1DirektAutoLayout.html", "classDirektDSP_1_1DirektAutoLayout" ],
     [ "DirektBaseEditor", "classDirektDSP_1_1DirektBaseEditor.html", "classDirektDSP_1_1DirektBaseEditor" ],
     [ "DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", "classDirektDSP_1_1DirektClipIndicator" ],

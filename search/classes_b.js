@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['tabdesc_0',['TabDesc',['../structDirektDSP_1_1TabDesc.html',1,'DirektDSP']]],
-  ['tabentry_1',['TabEntry',['../structDirektDSP_1_1DirektTabPanel_1_1TabEntry.html',1,'DirektDSP::DirektTabPanel']]],
-  ['tabpaneldesc_2',['TabPanelDesc',['../structDirektDSP_1_1TabPanelDesc.html',1,'DirektDSP']]],
-  ['toggledesc_3',['ToggleDesc',['../structDirektDSP_1_1ToggleDesc.html',1,'DirektDSP']]]
+  ['sectiondesc_0',['SectionDesc',['../structDirektDSP_1_1SectionDesc.html',1,'DirektDSP']]],
+  ['sectiondescriptor_1',['SectionDescriptor',['../structDirektDSP_1_1SectionDescriptor.html',1,'DirektDSP']]],
+  ['sizehint_2',['SizeHint',['../structDirektDSP_1_1SizeHint.html',1,'DirektDSP']]],
+  ['sliderdesc_3',['SliderDesc',['../structDirektDSP_1_1SliderDesc.html',1,'DirektDSP']]],
+  ['spacerdesc_4',['SpacerDesc',['../structDirektDSP_1_1SpacerDesc.html',1,'DirektDSP']]],
+  ['stereometerdesc_5',['StereoMeterDesc',['../structDirektDSP_1_1StereoMeterDesc.html',1,'DirektDSP']]]
 ];

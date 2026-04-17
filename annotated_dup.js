@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "DirektDSP", "namespaceDirektDSP.html", [
+      [ "ABCompareDesc", "structDirektDSP_1_1ABCompareDesc.html", "structDirektDSP_1_1ABCompareDesc" ],
       [ "BuildContext", "structDirektDSP_1_1BuildContext.html", "structDirektDSP_1_1BuildContext" ],
       [ "BuiltNode", "structDirektDSP_1_1BuiltNode.html", "structDirektDSP_1_1BuiltNode" ],
       [ "BuiltSection", "structDirektDSP_1_1BuiltSection.html", "structDirektDSP_1_1BuiltSection" ],
@@ -8,6 +9,7 @@ var annotated_dup =
       [ "ClipIndicatorDesc", "structDirektDSP_1_1ClipIndicatorDesc.html", "structDirektDSP_1_1ClipIndicatorDesc" ],
       [ "ComboBoxDesc", "structDirektDSP_1_1ComboBoxDesc.html", "structDirektDSP_1_1ComboBoxDesc" ],
       [ "CustomDesc", "structDirektDSP_1_1CustomDesc.html", "structDirektDSP_1_1CustomDesc" ],
+      [ "DirektABCompare", "classDirektDSP_1_1DirektABCompare.html", "classDirektDSP_1_1DirektABCompare" ],
       [ "DirektAutoLayout", "classDirektDSP_1_1DirektAutoLayout.html", "classDirektDSP_1_1DirektAutoLayout" ],
       [ "DirektBaseEditor", "classDirektDSP_1_1DirektBaseEditor.html", "classDirektDSP_1_1DirektBaseEditor" ],
       [ "DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", "classDirektDSP_1_1DirektClipIndicator" ],

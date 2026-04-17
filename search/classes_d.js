@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xypaddesc_0',['XYPadDesc',['../structDirektDSP_1_1XYPadDesc.html',1,'DirektDSP']]]
+  ['vboxdesc_0',['VBoxDesc',['../structDirektDSP_1_1VBoxDesc.html',1,'DirektDSP']]]
 ];

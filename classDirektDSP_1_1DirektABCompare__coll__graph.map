@@ -1,0 +1,7 @@
+<map id="DirektDSP::DirektABCompare" name="DirektDSP::DirektABCompare">
+<area shape="rect" id="Node000001" title="A/B compare control that stores two APVTS snapshots and lets the user switch between them." alt="" coords="66,93,279,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,137,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,38,160,91,157,95,94,42"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="161,5,389,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,42,189,95,185,91,249,38"/>
+</map>

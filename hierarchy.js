@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "DirektDSP::ABCompareDesc", "structDirektDSP_1_1ABCompareDesc.html", null ],
     [ "juce::AudioProcessorEditor", null, [
       [ "DirektDSP::DirektBaseEditor", "classDirektDSP_1_1DirektBaseEditor.html", null ]
     ] ],
@@ -11,6 +12,7 @@ var hierarchy =
     [ "DirektDSP::ClipIndicatorDesc", "structDirektDSP_1_1ClipIndicatorDesc.html", null ],
     [ "DirektDSP::ComboBoxDesc", "structDirektDSP_1_1ComboBoxDesc.html", null ],
     [ "juce::Component", null, [
+      [ "DirektDSP::DirektABCompare", "classDirektDSP_1_1DirektABCompare.html", null ],
       [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ],
       [ "DirektDSP::DirektComboBox", "classDirektDSP_1_1DirektComboBox.html", null ],
       [ "DirektDSP::DirektFlexContainer", "classDirektDSP_1_1DirektFlexContainer.html", null ],

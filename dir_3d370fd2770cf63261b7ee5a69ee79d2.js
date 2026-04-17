@@ -1,5 +1,7 @@
 var dir_3d370fd2770cf63261b7ee5a69ee79d2 =
 [
+    [ "DirektABCompare.cpp", "DirektABCompare_8cpp.html", null ],
+    [ "DirektABCompare.h", "DirektABCompare_8h.html", "DirektABCompare_8h" ],
     [ "DirektComboBox.cpp", "DirektComboBox_8cpp.html", null ],
     [ "DirektComboBox.h", "DirektComboBox_8h.html", "DirektComboBox_8h" ],
     [ "DirektKnob.cpp", "DirektKnob_8cpp.html", null ],

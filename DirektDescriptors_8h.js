@@ -11,6 +11,7 @@ var DirektDescriptors_8h =
     [ "DirektDSP::ButtonDesc", "structDirektDSP_1_1ButtonDesc.html", "structDirektDSP_1_1ButtonDesc" ],
     [ "DirektDSP::RadioGroupDesc", "structDirektDSP_1_1RadioGroupDesc.html", "structDirektDSP_1_1RadioGroupDesc" ],
     [ "DirektDSP::XYPadDesc", "structDirektDSP_1_1XYPadDesc.html", "structDirektDSP_1_1XYPadDesc" ],
+    [ "DirektDSP::ABCompareDesc", "structDirektDSP_1_1ABCompareDesc.html", "structDirektDSP_1_1ABCompareDesc" ],
     [ "DirektDSP::MacroTargetDesc", "structDirektDSP_1_1MacroTargetDesc.html", "structDirektDSP_1_1MacroTargetDesc" ],
     [ "DirektDSP::MacroDesc", "structDirektDSP_1_1MacroDesc.html", "structDirektDSP_1_1MacroDesc" ],
     [ "DirektDSP::MeterDesc", "structDirektDSP_1_1MeterDesc.html", "structDirektDSP_1_1MeterDesc" ],
