@@ -21,13 +21,14 @@
 // Controls
 #include "controls/DirektComboBox.h"
 #include "controls/DirektKnob.h"
-#include "controls/DirektMacroKnob.h"
 #include "controls/DirektMacroControl.h"
 #include "controls/DirektToggle.h"
 
 // Display
+#include "display/DirektClipIndicator.h"
 #include "display/DirektLabel.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 
 // Chrome
 #include "chrome/DirektFooter.h"

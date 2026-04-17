@@ -28,6 +28,8 @@ struct NodeProps
     SizeHint size;
     int padding = 0;
     bool visible = true;
+    /** @brief When true on a VBoxDesc/HBoxDesc, enables drag-to-reorder on DirektSection children. */
+    bool draggable = false;
 };
 
 // ============================================================================
@@ -132,6 +134,19 @@ struct XYPadDesc
 };
 
 /**
+ * @brief A/B compare control that stores two APVTS snapshots.
+ *
+ * Clicking the inactive slot saves the current state to the active slot and
+ * recalls the other.  The copy arrow overwrites the inactive snapshot with the
+ * active one without switching.
+ */
+struct ABCompareDesc
+{
+    NodeProps props;
+    juce::String tooltip;
+};
+
+/**
  * @brief One macro mapping target.
  */
 struct MacroTargetDesc
@@ -165,7 +180,9 @@ enum class MeterOrientation
 enum class MeterMode
 {
     Normal,
-    GainReduction
+    GainReduction,
+    Rms,
+    Lufs
 };
 
 struct MeterDesc
@@ -175,6 +192,29 @@ struct MeterDesc
     MeterOrientation orientation = MeterOrientation::Vertical;
     MeterMode mode = MeterMode::Normal;
     juce::String label;
+    bool peakHold = true;
+    float rangeMinDb = -60.0f;
+    float rangeMaxDb = 0.0f;
+};
+
+struct StereoMeterDesc
+{
+    NodeProps props;
+    juce::String sourceIDLeft;
+    juce::String sourceIDRight;
+    MeterOrientation orientation = MeterOrientation::Vertical;
+    MeterMode mode = MeterMode::Normal;
+    juce::String label;
+    bool peakHold = true;
+    float rangeMinDb = -60.0f;
+    float rangeMaxDb = 0.0f;
+};
+
+struct ClipIndicatorDesc
+{
+    NodeProps props;
+    juce::String sourceID;
+    juce::String tooltip;
 };
 
 struct LabelDesc
@@ -264,9 +304,10 @@ struct CustomDesc
 // NodeDescriptor — variant of all descriptor types
 // ============================================================================
 
-struct NodeDescriptor : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroKnobDesc, MacroDesc, SliderDesc, ButtonDesc,
-                                     RadioGroupDesc, XYPadDesc, MeterDesc, LabelDesc, SpacerDesc, DividerDesc,
-                                     SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+struct NodeDescriptor
+    : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc,
+                   ABCompareDesc, MeterDesc, StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc,
+                   SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };

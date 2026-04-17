@@ -18,17 +18,84 @@ void DirektSection::setTitleBarAccessory (std::unique_ptr<juce::Component> acces
     }
 }
 
+void DirektSection::setDraggable (bool enable)
+{
+    draggable = enable;
+    repaint();
+}
+
+void DirektSection::mouseMove (const juce::MouseEvent& e)
+{
+    if (!draggable)
+    {
+        return;
+    }
+
+    if (e.getPosition().y < titleHeight + padding)
+    {
+        setMouseCursor (juce::MouseCursor::DraggingHandCursor);
+    }
+    else
+    {
+        setMouseCursor (juce::MouseCursor::NormalCursor);
+    }
+}
+
+void DirektSection::mouseDown (const juce::MouseEvent& e)
+{
+    if (!draggable)
+    {
+        return;
+    }
+
+    if (e.getPosition().y < titleHeight + padding)
+    {
+        dragging = true;
+        repaint();
+    }
+}
+
+void DirektSection::mouseDrag (const juce::MouseEvent& e)
+{
+    if (!dragging)
+    {
+        return;
+    }
+
+    if (onDragMoved != nullptr)
+    {
+        onDragMoved (e.getScreenPosition());
+    }
+}
+
+void DirektSection::mouseUp (const juce::MouseEvent& /*e*/)
+{
+    if (!dragging)
+    {
+        return;
+    }
+
+    dragging = false;
+
+    if (onDragEnded != nullptr)
+    {
+        onDragEnded();
+    }
+
+    repaint();
+}
+
 void DirektSection::paint (juce::Graphics& g)
 {
     auto bounds = getLocalBounds().toFloat();
 
-    // Rounded rect background
-    g.setColour (Colours::bgSection);
+    // Rounded rect background — brighter while being dragged
+    g.setColour (dragging ? Colours::bgSection.brighter (0.12F) : Colours::bgSection);
     g.fillRoundedRectangle (bounds, 6.0F);
 
-    // Border
-    g.setColour (Colours::divider);
-    g.drawRoundedRectangle (bounds.reduced (0.5F), 6.0F, 1.0F);
+    // Border — bolder when dragged to give visual feedback
+    g.setColour (dragging ? Colours::textLabel.withAlpha (0.55F) : Colours::divider);
+    g.drawRoundedRectangle (bounds.reduced (0.5F), 6.0F, dragging ? 2.0F : 1.0F);
 
     bool const showTitleBar = title.isNotEmpty() || titleBarAccessory != nullptr;
     if (showTitleBar && title.isNotEmpty())
@@ -38,10 +105,31 @@ void DirektSection::paint (juce::Graphics& g)
         {
             titleArea.removeFromRight (static_cast<float> (titleBarAccessoryWidth));
         }
+
+        // Drag handle: 6 dots arranged in a 2×3 grid on the left side of the title
+        if (draggable)
+        {
+            float const handleX = static_cast<float> (padding) + 1.0F;
+            float const handleStartY = titleArea.getY() + (titleArea.getHeight() - 8.0F) * 0.5F;
+            float const dotAlpha = dragging ? 0.6F : 0.35F;
+            g.setColour (Colours::textLabel.withAlpha (dotAlpha));
+            for (int row = 0; row < 3; ++row)
+            {
+                for (int col = 0; col < 2; ++col)
+                {
+                    g.fillEllipse (handleX + static_cast<float> (col) * 4.0F,
+                                   handleStartY + static_cast<float> (row) * 4.0F, 2.0F, 2.0F);
+                }
+            }
+        }
+
+        // Offset title text right to clear the drag handle
+        float const leftInset = draggable ? static_cast<float> (padding + 12) : static_cast<float> (padding);
+        auto textArea = titleArea.withTrimmedLeft (leftInset).withTrimmedRight (static_cast<float> (padding));
+
         g.setColour (Colours::textLabel);
         g.setFont (juce::Font (juce::FontOptions (12.0F).withStyle ("Bold")));
-        g.drawText (title, titleArea.reduced (static_cast<float> (padding), 0.0F).toNearestInt(),
-                    juce::Justification::centredLeft);
+        g.drawText (title, textArea.toNearestInt(), juce::Justification::centredLeft);
     }
 }
 

@@ -18,7 +18,7 @@ class DirektHeader : public juce::Component
 {
 public:
     DirektHeader (juce::String pluginName, juce::Colour accentColour, Service::PresetManager& presetManager,
-                  juce::AudioProcessorValueTreeState& apvts);
+                  juce::AudioProcessorValueTreeState&);
 
     void paint (juce::Graphics& g) override;
     void resized() override;

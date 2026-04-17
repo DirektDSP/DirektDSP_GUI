@@ -1,6 +1,8 @@
 #include "core/DirektBaseEditor.h"
 
+#include "display/DirektClipIndicator.h"
 #include "display/DirektMeter.h"
+#include "display/DirektStereoMeter.h"
 
 namespace DirektDSP
 {
@@ -9,7 +11,7 @@ namespace
 {
 // Conservative cross-platform filename character whitelist used for autosave file names.
 constexpr auto safeFilenameChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-}
+} // namespace
 
 // ============================================================================
 // Common init — shared by both constructors
@@ -294,40 +296,45 @@ juce::Component* DirektBaseEditor::findComponentByID (const juce::String& id) co
 
 void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std::atomic<float>* source)
 {
+    if (source == nullptr)
+    {
+        return;
+    }
+
     buildContext.meterSources[sourceID] = source;
 
-    // If the tree is already built, find any meters with matching sourceID and connect them
-    std::function<void (juce::Component*)> connectMeters;
-    connectMeters = [&] (juce::Component* parent)
-    {
-        if (parent == nullptr)
-        {
-            return;
-        }
-
-        if (auto* meter = dynamic_cast<DirektMeter*> (parent))
-        {
-            // Meters don't expose their sourceID, but we can use component ID
-            // In practice, meters should be rebuilt or we store the mapping
-            meter->setSource (source);
-        }
-        for (auto* child : parent->getChildren())
-        {
-            if (child != nullptr)
-            {
-                connectMeters (child);
-            }
-        }
-    };
-
-    // For meters that need post-build connection, search by component ID
+    // For meters/indicators that need post-build connection, search by component ID
     if (auto* comp = findComponentByID (sourceID))
     {
         if (auto* meter = dynamic_cast<DirektMeter*> (comp))
         {
             meter->setSource (source);
         }
+        else if (auto* indicator = dynamic_cast<DirektClipIndicator*> (comp))
+        {
+            indicator->setSource (source);
+        }
     }
+
+    // Walk the tree to bind DirektStereoMeter and DirektClipIndicator by source ID,
+    // which allows the component ID and source ID to differ.
+    std::function<void (juce::Component*)> bindBySourceID;
+    bindBySourceID = [&] (juce::Component* parent)
+    {
+        if (auto* stereoMeter = dynamic_cast<DirektStereoMeter*> (parent))
+        {
+            stereoMeter->tryBindSource (sourceID, source);
+        }
+        else if (auto* indicator = dynamic_cast<DirektClipIndicator*> (parent))
+        {
+            indicator->tryBindSource (sourceID, source);
+        }
+        for (auto* child : parent->getChildren())
+        {
+            bindBySourceID (child);
+        }
+    };
+    bindBySourceID (this);
 }
 
 void DirektBaseEditor::configureCrashRecovery (const juce::String& pluginName)
@@ -358,13 +365,14 @@ void DirektBaseEditor::configureCrashRecovery (const juce::String& pluginName)
     if (crashRecoveryFile.existsAsFile())
     {
         auto safeThis = juce::Component::SafePointer<DirektBaseEditor> (this);
-        juce::MessageManager::callAsync ([safeThisCopy = safeThis]
-        {
-            if (safeThisCopy != nullptr)
+        juce::MessageManager::callAsync (
+            [safeThisCopy = safeThis]
             {
-                safeThisCopy->restoreCrashRecoveryIfNeeded();
-            }
-        });
+                if (safeThisCopy != nullptr)
+                {
+                    safeThisCopy->restoreCrashRecoveryIfNeeded();
+                }
+            });
     }
 
     saveCrashRecoverySnapshot();
@@ -388,8 +396,8 @@ void DirektBaseEditor::saveCrashRecoverySnapshot() const
     }
     else
     {
-        DBG ("DirektDSP: failed to serialize APVTS state for crash recovery. State type: "
-             + state.getType().toString());
+        DBG ("DirektDSP: failed to serialize APVTS state for crash recovery. State type: " +
+             state.getType().toString());
     }
 }
 
@@ -402,8 +410,8 @@ void DirektBaseEditor::restoreCrashRecoveryIfNeeded()
 
     const auto shouldRestore = juce::AlertWindow::showOkCancelBox (
         juce::MessageBoxIconType::QuestionIcon, "Restore previous session?",
-        "DirektDSP found autosaved settings from an unexpected shutdown.\n\nRestore these settings?",
-        "Restore", "Discard", this);
+        "DirektDSP found autosaved settings from an unexpected shutdown.\n\nRestore these settings?", "Restore",
+        "Discard", this);
 
     if (shouldRestore)
     {
@@ -423,9 +431,10 @@ void DirektBaseEditor::restoreCrashRecoveryIfNeeded()
         if (!restored)
         {
             crashRecoveryFile.deleteFile();
-            juce::AlertWindow::showMessageBoxAsync (
-                juce::MessageBoxIconType::WarningIcon, "Autosave could not be restored",
-                "The autosave data appears to be invalid and has been discarded.", {}, this);
+            juce::AlertWindow::showMessageBoxAsync (juce::MessageBoxIconType::WarningIcon,
+                                                    "Autosave could not be restored",
+                                                    "The autosave data appears to be invalid and has been discarded.",
+                                                    {}, this);
         }
     }
     else
