@@ -134,6 +134,19 @@ struct XYPadDesc
 };
 
 /**
+ * @brief A/B compare control that stores two APVTS snapshots.
+ *
+ * Clicking the inactive slot saves the current state to the active slot and
+ * recalls the other.  The copy arrow overwrites the inactive snapshot with the
+ * active one without switching.
+ */
+struct ABCompareDesc
+{
+    NodeProps props;
+    juce::String tooltip;
+};
+
+/**
  * @brief One macro mapping target.
  */
 struct MacroTargetDesc
@@ -293,8 +306,8 @@ struct CustomDesc
 
 struct NodeDescriptor
     : std::variant<KnobDesc, ToggleDesc, ComboBoxDesc, MacroDesc, SliderDesc, ButtonDesc, RadioGroupDesc, XYPadDesc,
-                   MeterDesc, StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc, SectionDesc,
-                   HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
+                   ABCompareDesc, MeterDesc, StereoMeterDesc, ClipIndicatorDesc, LabelDesc, SpacerDesc, DividerDesc,
+                   SectionDesc, HBoxDesc, VBoxDesc, TabPanelDesc, CustomDesc>
 {
     using variant::variant;
 };
