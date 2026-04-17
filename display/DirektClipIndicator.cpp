@@ -13,6 +13,21 @@ void DirektClipIndicator::setSource (const std::atomic<float>* src)
     source = src;
 }
 
+void DirektClipIndicator::setSourceID (const juce::String& id)
+{
+    sourceID = id;
+}
+
+bool DirektClipIndicator::tryBindSource (const juce::String& id, const std::atomic<float>* src)
+{
+    if (id == sourceID)
+    {
+        setSource (src);
+        return true;
+    }
+    return false;
+}
+
 void DirektClipIndicator::resetClip()
 {
     clipped = false;

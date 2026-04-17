@@ -188,6 +188,7 @@ BuiltNode buildClipIndicatorNode (const ClipIndicatorDesc& desc, BuildContext& c
 {
     auto indicator = std::make_unique<DirektClipIndicator>();
     indicator->setTooltip (desc.tooltip.isNotEmpty() ? desc.tooltip : juce::String ("Clip indicator — click to reset"));
+    indicator->setSourceID (desc.sourceID);
 
     auto it = ctx.meterSources.find (desc.sourceID);
     if (it != ctx.meterSources.end())
