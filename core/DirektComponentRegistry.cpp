@@ -137,6 +137,9 @@ BuiltNode buildMeterNode (const MeterDesc& desc, BuildContext& ctx)
     meterCfg.mode = toMeterMode (desc.mode);
     meterCfg.label = desc.label;
     meterCfg.colour = ctx.lookAndFeel.getAccentColour();
+    meterCfg.peakHold = desc.peakHold;
+    meterCfg.rangeMinDb = desc.rangeMinDb;
+    meterCfg.rangeMaxDb = desc.rangeMaxDb;
 
     auto meter = std::make_unique<DirektMeter> (meterCfg);
 
@@ -158,8 +161,12 @@ BuiltNode buildStereoMeterNode (const StereoMeterDesc& desc, BuildContext& ctx)
     cfg.mode = toMeterMode (desc.mode);
     cfg.label = desc.label;
     cfg.colour = ctx.lookAndFeel.getAccentColour();
+    cfg.peakHold = desc.peakHold;
+    cfg.rangeMinDb = desc.rangeMinDb;
+    cfg.rangeMaxDb = desc.rangeMaxDb;
 
     auto stereoMeter = std::make_unique<DirektStereoMeter> (cfg);
+    stereoMeter->setSourceIDs (desc.sourceIDLeft, desc.sourceIDRight);
 
     auto itL = ctx.meterSources.find (desc.sourceIDLeft);
     if (itL != ctx.meterSources.end())
