@@ -23,6 +23,27 @@ void DirektStereoMeter::setSourceRight (const std::atomic<float>* src)
     meterR.setSource (src);
 }
 
+void DirektStereoMeter::setSourceIDs (const juce::String& leftID, const juce::String& rightID)
+{
+    sourceIDLeft = leftID;
+    sourceIDRight = rightID;
+}
+
+bool DirektStereoMeter::tryBindSource (const juce::String& id, const std::atomic<float>* src)
+{
+    if (id == sourceIDLeft)
+    {
+        meterL.setSource (src);
+        return true;
+    }
+    if (id == sourceIDRight)
+    {
+        meterR.setSource (src);
+        return true;
+    }
+    return false;
+}
+
 void DirektStereoMeter::resized()
 {
     auto bounds = getLocalBounds();

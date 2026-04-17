@@ -179,6 +179,9 @@ struct MeterDesc
     MeterOrientation orientation = MeterOrientation::Vertical;
     MeterMode mode = MeterMode::Normal;
     juce::String label;
+    bool peakHold = true;
+    float rangeMinDb = -60.0f;
+    float rangeMaxDb = 0.0f;
 };
 
 struct StereoMeterDesc
@@ -189,6 +192,9 @@ struct StereoMeterDesc
     MeterOrientation orientation = MeterOrientation::Vertical;
     MeterMode mode = MeterMode::Normal;
     juce::String label;
+    bool peakHold = true;
+    float rangeMinDb = -60.0f;
+    float rangeMaxDb = 0.0f;
 };
 
 struct ClipIndicatorDesc

@@ -31,11 +31,26 @@ public:
     void setSourceLeft (const std::atomic<float>* src);
     void setSourceRight (const std::atomic<float>* src);
 
+    /**
+     * @brief Store the source IDs used for post-build binding via
+     *        DirektBaseEditor::bindMeterSource.
+     */
+    void setSourceIDs (const juce::String& leftID, const juce::String& rightID);
+
+    /**
+     * @brief Bind a source by ID.  Returns true if the ID matched either
+     *        sourceIDLeft or sourceIDRight and the source was connected.
+     */
+    bool tryBindSource (const juce::String& id, const std::atomic<float>* src);
+
     void resized() override;
 
 private:
     DirektMeter meterL;
     DirektMeter meterR;
+
+    juce::String sourceIDLeft;
+    juce::String sourceIDRight;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektStereoMeter)
 };
