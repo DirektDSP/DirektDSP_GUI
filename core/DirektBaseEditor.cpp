@@ -301,20 +301,25 @@ void DirektBaseEditor::bindMeterSource (const juce::String& sourceID, const std:
         }
     }
 
-    // Also try binding to any DirektStereoMeter in the tree by source ID
-    std::function<void (juce::Component*)> bindStereo;
-    bindStereo = [&] (juce::Component* parent)
+    // Walk the tree to bind DirektStereoMeter and DirektClipIndicator by source ID,
+    // which allows the component ID and source ID to differ.
+    std::function<void (juce::Component*)> bindBySourceID;
+    bindBySourceID = [&] (juce::Component* parent)
     {
         if (auto* stereoMeter = dynamic_cast<DirektStereoMeter*> (parent))
         {
             stereoMeter->tryBindSource (sourceID, source);
         }
+        else if (auto* indicator = dynamic_cast<DirektClipIndicator*> (parent))
+        {
+            indicator->tryBindSource (sourceID, source);
+        }
         for (auto* child : parent->getChildren())
         {
-            bindStereo (child);
+            bindBySourceID (child);
         }
     };
-    bindStereo (this);
+    bindBySourceID (this);
 }
 
 } // namespace DirektDSP
