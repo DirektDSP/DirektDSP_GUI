@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hboxdesc_0',['HBoxDesc',['../structDirektDSP_1_1HBoxDesc.html',1,'DirektDSP']]]
+  ['gallerypresetmanager_0',['GalleryPresetManager',['../classStandaloneTestProcessor_1_1GalleryPresetManager.html',1,'StandaloneTestProcessor']]]
 ];

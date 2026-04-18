@@ -1,6 +1,9 @@
 var hierarchy =
 [
     [ "DirektDSP::ABCompareDesc", "structDirektDSP_1_1ABCompareDesc.html", null ],
+    [ "juce::AudioProcessor", null, [
+      [ "StandaloneTestProcessor", "classStandaloneTestProcessor.html", null ]
+    ] ],
     [ "juce::AudioProcessorEditor", null, [
       [ "DirektDSP::DirektBaseEditor", "classDirektDSP_1_1DirektBaseEditor.html", null ]
     ] ],
@@ -60,12 +63,15 @@ var hierarchy =
     [ "DirektDSP::ParamSlot", "structDirektDSP_1_1ParamSlot.html", null ],
     [ "DirektDSP::PluginConfig", "structDirektDSP_1_1PluginConfig.html", null ],
     [ "DirektDSP::DirektPresetBrowser::PresetEntry", "structDirektDSP_1_1DirektPresetBrowser_1_1PresetEntry.html", null ],
-    [ "Service::PresetManager", "classService_1_1PresetManager.html", null ],
+    [ "Service::PresetManager", "classService_1_1PresetManager.html", [
+      [ "StandaloneTestProcessor::GalleryPresetManager", "classStandaloneTestProcessor_1_1GalleryPresetManager.html", null ]
+    ] ],
     [ "Service::PresetMetadata", "structService_1_1PresetMetadata.html", null ],
     [ "DirektDSP::RadioGroupDesc", "structDirektDSP_1_1RadioGroupDesc.html", null ],
     [ "DirektDSP::SectionDesc", "structDirektDSP_1_1SectionDesc.html", null ],
     [ "DirektDSP::SectionDescriptor", "structDirektDSP_1_1SectionDescriptor.html", null ],
     [ "juce::SettableTooltipClient", null, [
+      [ "DirektDSP::DirektABCompare", "classDirektDSP_1_1DirektABCompare.html", null ],
       [ "DirektDSP::DirektClipIndicator", "classDirektDSP_1_1DirektClipIndicator.html", null ]
     ] ],
     [ "DirektDSP::SizeHint", "structDirektDSP_1_1SizeHint.html", null ],

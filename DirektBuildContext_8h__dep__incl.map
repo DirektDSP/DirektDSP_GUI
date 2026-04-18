@@ -1,16 +1,18 @@
 <map id="core/DirektBuildContext.h" name="core/DirektBuildContext.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="121,5,311,31"/>
-<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="5,225,104,251"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,38,121,55,89,81,76,97,67,116,57,157,55,196,56,225,51,225,49,196,52,156,62,114,72,95,85,77,118,51,155,33"/>
-<area shape="rect" id="Node000003" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="365,152,539,177"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,33,303,53,347,76,401,115,441,150,438,154,397,119,344,81,300,57,258,38"/>
-<area shape="rect" id="Node000005" href="$DirektComponentRegistry_8h.html" title=" " alt="" coords="99,79,333,104"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="219,44,219,79,213,79,213,44"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="375,182,105,230,104,225,374,177"/>
-<area shape="rect" id="Node000004" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="357,225,547,251"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="455,191,455,225,449,225,449,191"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="152,111,114,128,82,154,71,171,64,190,58,225,53,224,59,189,66,168,78,150,111,123,150,106"/>
-<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="268,105,415,149,413,154,266,110"/>
-<area shape="rect" id="Node000006" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="92,152,340,177"/>
-<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="219,118,219,152,213,152,213,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="179,5,369,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="63,225,162,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,38,179,55,147,81,134,97,125,116,115,157,113,196,114,225,109,225,107,196,110,156,120,114,130,95,143,77,176,51,213,33"/>
+<area shape="rect" id="Node000004" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="423,152,597,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,33,361,53,405,76,459,115,499,150,496,154,455,119,402,81,358,57,316,38"/>
+<area shape="rect" id="Node000006" href="$DirektComponentRegistry_8h.html" title=" " alt="" coords="157,79,391,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="277,44,277,79,271,79,271,44"/>
+<area shape="rect" id="Node000003" href="$StandaloneTestProcessor_8cpp.html" title=" " alt="" coords="5,299,220,339"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,264,115,299,110,299,110,264"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="433,182,163,230,162,225,432,177"/>
+<area shape="rect" id="Node000005" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="415,225,605,251"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="513,191,513,225,507,225,507,191"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="210,111,172,128,140,154,129,171,122,190,116,225,111,224,117,189,124,168,136,150,169,123,208,106"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="326,105,473,149,471,154,324,110"/>
+<area shape="rect" id="Node000007" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="150,152,398,177"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="277,118,277,152,271,152,271,118"/>
 </map>

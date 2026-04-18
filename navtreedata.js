@@ -52,6 +52,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]
@@ -61,11 +62,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "DirektABCompare_8cpp.html",
-"classDirektDSP_1_1DirektBaseEditor.html#aeef403500af053e88cf4ddd97688f634",
-"classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aa960b44c579bc2f6818d2daaf9e4c16f0",
-"classDirektDSP_1_1DirektTabPanel.html#a85213c25e9e8bc3cc2fd67f57758b183",
-"structDirektDSP_1_1DirektParameterHistory_1_1ParameterChange.html",
-"structDirektDSP_1_1SizeHint.html#aac3b316ceefebc1d139a7f04ba0036fe"
+"classDirektDSP_1_1DirektBaseEditor.html#abcb5f45c520f08e7cf64a9a6903cf2e7",
+"classDirektDSP_1_1DirektMeter.html#ad52560d3ca2e7256ea89dd97d3d14ca3",
+"classDirektDSP_1_1DirektTabPanel.html",
+"structDirektDSP_1_1BuiltSection.html#a36f70817ce0d5e8a4626139375210915",
+"structDirektDSP_1_1RadioGroupDesc.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

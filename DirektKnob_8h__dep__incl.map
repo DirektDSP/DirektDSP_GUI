@@ -2,18 +2,20 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="137,5,300,31"/>
 <area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="64,225,163,251"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,36,63,55,35,67,18,80,9,99,10,119,17,140,30,160,64,196,98,223,95,227,61,200,26,163,12,142,4,120,4,98,14,77,33,62,62,50,134,31"/>
-<area shape="rect" id="Node000003" href="$DirektKnob_8cpp.html" title=" " alt="" coords="28,79,207,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,41,135,81,132,76,190,36"/>
-<area shape="rect" id="Node000004" href="$DirektAutoLayout_8h.html" title=" " alt="" coords="231,79,411,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="248,36,306,76,303,81,245,41"/>
-<area shape="rect" id="Node000008" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="436,79,684,104"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="287,31,505,76,504,81,286,36"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="219,110,177,127,141,154,129,171,122,190,116,226,111,225,116,189,124,168,137,150,174,123,217,105"/>
-<area shape="rect" id="Node000005" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="151,152,345,177"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="301,116,262,154,258,150,298,112"/>
-<area shape="rect" id="Node000006" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="370,152,545,177"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="356,108,436,149,434,154,354,113"/>
-<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="389,183,163,229,162,224,388,177"/>
-<area shape="rect" id="Node000007" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="362,225,553,251"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="460,191,460,225,455,225,455,191"/>
+<area shape="rect" id="Node000004" href="$DirektKnob_8cpp.html" title=" " alt="" coords="28,79,207,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,41,135,81,132,76,190,36"/>
+<area shape="rect" id="Node000005" href="$DirektAutoLayout_8h.html" title=" " alt="" coords="231,79,411,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="248,36,306,76,303,81,245,41"/>
+<area shape="rect" id="Node000009" href="$DirektComponentRegistry_8cpp.html" title=" " alt="" coords="436,79,684,104"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="287,31,505,76,504,81,286,36"/>
+<area shape="rect" id="Node000003" href="$StandaloneTestProcessor_8cpp.html" title=" " alt="" coords="6,299,221,339"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,264,116,299,111,299,111,264"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="219,110,177,127,141,154,129,171,122,190,116,226,111,225,116,189,124,168,137,150,174,123,217,105"/>
+<area shape="rect" id="Node000006" href="$DirektAutoLayout_8cpp.html" title=" " alt="" coords="151,152,345,177"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="301,116,262,154,258,150,298,112"/>
+<area shape="rect" id="Node000007" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="370,152,545,177"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="356,108,436,149,434,154,354,113"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="389,183,163,229,162,224,388,177"/>
+<area shape="rect" id="Node000008" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="362,225,553,251"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="460,191,460,225,455,225,455,191"/>
 </map>

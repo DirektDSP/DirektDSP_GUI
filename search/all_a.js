@@ -7,9 +7,9 @@ var searchData=
   ['linear_4',['Linear',['../namespaceDirektDSP.html#ac4422bc9c8225b42eb17d5d0c6543489a32a843da6ea40ab3b17a3421ccdf671b',1,'DirektDSP']]],
   ['listboxitemclicked_5',['listBoxItemClicked',['../classDirektDSP_1_1DirektPresetBrowser_1_1PresetListModel.html#a23b7cfa949500301a72451c01ef4bda6',1,'DirektDSP::DirektPresetBrowser::PresetListModel']]],
   ['loadfavorites_6',['loadFavorites',['../classDirektDSP_1_1DirektPresetBrowser.html#a8c7381866d78f1fb339a4afe64037f84',1,'DirektDSP::DirektPresetBrowser']]],
-  ['loadnextpreset_7',['loadNextPreset',['../classService_1_1PresetManager.html#a956364e2a1b557b71140db6510a640fb',1,'Service::PresetManager']]],
-  ['loadpreset_8',['loadPreset',['../classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c',1,'Service::PresetManager']]],
-  ['loadpreviouspreset_9',['loadPreviousPreset',['../classService_1_1PresetManager.html#af6d35acc18992c0a44f3f63e2ced2772',1,'Service::PresetManager']]],
+  ['loadnextpreset_7',['loadnextpreset',['../classStandaloneTestProcessor_1_1GalleryPresetManager.html#a4cdccf408a2cf8c87361d8954718965a',1,'StandaloneTestProcessor::GalleryPresetManager::loadNextPreset()'],['../classService_1_1PresetManager.html#a956364e2a1b557b71140db6510a640fb',1,'Service::PresetManager::loadNextPreset()']]],
+  ['loadpreset_8',['loadpreset',['../classStandaloneTestProcessor_1_1GalleryPresetManager.html#a90db927159078eb3a0c20ee41b25661e',1,'StandaloneTestProcessor::GalleryPresetManager::loadPreset()'],['../classService_1_1PresetManager.html#a9b6760eddf845b0541ed474407998f5c',1,'Service::PresetManager::loadPreset()']]],
+  ['loadpreviouspreset_9',['loadpreviouspreset',['../classStandaloneTestProcessor_1_1GalleryPresetManager.html#a0f01d4b6a1954e03b6aaffda270af150',1,'StandaloneTestProcessor::GalleryPresetManager::loadPreviousPreset()'],['../classService_1_1PresetManager.html#af6d35acc18992c0a44f3f63e2ced2772',1,'Service::PresetManager::loadPreviousPreset()']]],
   ['lookandfeel_10',['lookandfeel',['../classDirektDSP_1_1DirektBaseEditor.html#aa19241541587384392f01f0c7afdf7e5',1,'DirektDSP::DirektBaseEditor::lookAndFeel'],['../structDirektDSP_1_1BuildContext.html#a3e4ed45a7656cc877370e226dc8c02f5',1,'DirektDSP::BuildContext::lookAndFeel']]],
   ['lufs_11',['lufs',['../classDirektDSP_1_1DirektMeter.html#aef49f6cf3e46992c1f42f1df891bca9aae352d283b3a0d1617ae2f5b79be4adb2',1,'DirektDSP::DirektMeter::Lufs'],['../namespaceDirektDSP.html#a2186e96b485cdb559fcdc65b3a6146eeae352d283b3a0d1617ae2f5b79be4adb2',1,'DirektDSP::Lufs']]]
 ];

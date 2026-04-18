@@ -1,12 +1,14 @@
 <map id="chrome/DirektPresetBrowser.h" name="chrome/DirektPresetBrowser.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="30,5,250,31"/>
-<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="44,152,142,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,38,38,55,12,80,9,90,9,100,22,119,43,136,68,150,65,154,40,140,18,123,4,101,3,89,8,77,35,50,68,33"/>
-<area shape="rect" id="Node000003" href="$DirektPresetBrowser_8cpp.html" title=" " alt="" coords="22,79,257,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,44,142,79,137,79,137,44"/>
-<area shape="rect" id="Node000004" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="282,79,456,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,32,333,76,331,81,189,37"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="312,110,138,154,137,149,311,105"/>
-<area shape="rect" id="Node000005" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="274,152,464,177"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="372,118,372,152,366,152,366,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="49,5,269,31"/>
+<area shape="rect" id="Node000002" href="$DirektDSP_8h.html" title=" " alt="" coords="63,152,162,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,38,58,55,32,80,28,90,29,100,41,119,63,136,87,150,85,154,60,140,37,123,24,101,23,89,28,77,55,50,88,33"/>
+<area shape="rect" id="Node000004" href="$DirektPresetBrowser_8cpp.html" title=" " alt="" coords="42,79,277,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,44,162,79,157,79,157,44"/>
+<area shape="rect" id="Node000005" href="$DirektBaseEditor_8h.html" title=" " alt="" coords="301,79,476,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="210,32,352,76,351,81,209,37"/>
+<area shape="rect" id="Node000003" href="$StandaloneTestProcessor_8cpp.html" title=" " alt="" coords="5,225,220,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,191,115,225,110,225,110,191"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="332,110,158,154,157,149,330,105"/>
+<area shape="rect" id="Node000006" href="$DirektBaseEditor_8cpp.html" title=" " alt="" coords="293,152,484,177"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="391,118,391,152,386,152,386,118"/>
 </map>

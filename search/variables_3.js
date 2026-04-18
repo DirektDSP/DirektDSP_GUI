@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['defaultwidth_0',['defaultWidth',['../structDirektDSP_1_1PluginConfig.html#aa55d220a6fddf898747d574f8f2419e4',1,'DirektDSP::PluginConfig']]],
+  ['defaultwidth_0',['defaultwidth',['../structDirektDSP_1_1PluginConfig.html#aa55d220a6fddf898747d574f8f2419e4',1,'DirektDSP::PluginConfig::defaultWidth'],['../namespaceStandaloneTestLayout.html#a4caa6d467210f2b166015d2541342e95',1,'StandaloneTestLayout::defaultWidth']]],
   ['deletebtn_1',['deleteBtn',['../classDirektDSP_1_1DirektPresetBrowser.html#ad46b7f8c9c02f47c12c979ab34d396e8',1,'DirektDSP::DirektPresetBrowser']]],
   ['direction_2',['direction',['../classDirektDSP_1_1DirektFlexContainer.html#a91e81188324d360a22203db6b90e1023',1,'DirektDSP::DirektFlexContainer']]],
   ['divider_3',['divider',['../namespaceDirektDSP_1_1Colours.html#ae0fb6145a2a93a12f0ef8a0dd0df812b',1,'DirektDSP::Colours']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['knobdesc_0',['KnobDesc',['../structDirektDSP_1_1KnobDesc.html',1,'DirektDSP']]]
+  ['hboxdesc_0',['HBoxDesc',['../structDirektDSP_1_1HBoxDesc.html',1,'DirektDSP']]]
 ];

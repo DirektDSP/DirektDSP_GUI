@@ -1,0 +1,13 @@
+<map id="StandaloneTestProcessor" name="StandaloneTestProcessor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="915,84,1099,109"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="546,5,703,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="718,13,803,18,848,24,891,34,945,56,988,82,986,86,943,61,890,39,847,29,802,23,717,18"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="547,84,702,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="716,94,914,94,914,99,716,99"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="485,134,764,174"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="777,131,890,114,934,107,935,112,891,119,778,136"/>
+<area shape="rect" id="Node000005" href="$classStandaloneTestProcessor_1_1GalleryPresetManager.html" title=" " alt="" coords="231,134,415,174"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="429,151,485,151,485,157,429,157"/>
+<area shape="rect" id="Node000006" href="$classService_1_1PresetManager.html" title=" " alt="" coords="5,141,181,167"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="195,151,230,151,230,157,195,157"/>
+</map>
