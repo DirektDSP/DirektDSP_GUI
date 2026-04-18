@@ -15,7 +15,7 @@ namespace DirektDSP
  * then recalls the target slot.  The arrow button copies the active snapshot
  * to the inactive slot without switching.
  */
-class DirektABCompare : public juce::Component
+class DirektABCompare : public juce::Component, public juce::SettableTooltipClient
 {
 public:
     explicit DirektABCompare (juce::AudioProcessorValueTreeState& apvts);

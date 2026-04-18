@@ -411,7 +411,7 @@ void DirektBaseEditor::restoreCrashRecoveryIfNeeded()
     const auto shouldRestore = juce::AlertWindow::showOkCancelBox (
         juce::MessageBoxIconType::QuestionIcon, "Restore previous session?",
         "DirektDSP found autosaved settings from an unexpected shutdown.\n\nRestore these settings?", "Restore",
-        "Discard", this);
+        "Discard", this, nullptr);
 
     if (shouldRestore)
     {
