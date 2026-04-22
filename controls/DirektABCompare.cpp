@@ -37,7 +37,9 @@ void DirektABCompare::onSlotClicked (int slot)
 void DirektABCompare::onCopyClicked()
 {
     int const target = 1 - activeSlot;
-    snapshots[target] = snapshots[activeSlot].createCopy();
+    // Copy the live APVTS state, not the last cached snapshot for the active slot. Edits after the last
+    // slot switch only exist in the processor; the slot cache can be stale until the next switch.
+    snapshots[static_cast<size_t> (target)] = apvts.copyState().createCopy();
 }
 
 void DirektABCompare::updateButtonStates()
