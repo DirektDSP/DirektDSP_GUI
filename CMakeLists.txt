@@ -17,8 +17,16 @@ else()
 endif()
 set(JUCE_DIR "${_JUCE_DEFAULT}" CACHE PATH "Path to JUCE root — required to build examples/StandaloneTest")
 
+# Only load JUCE ourselves in standalone mode. When this module is consumed by a
+# parent project, JUCE should be provided once at the root to avoid duplicate
+# source/binary directory mappings.
+set(DIREKTDSP_GUI_STANDALONE OFF)
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+    set(DIREKTDSP_GUI_STANDALONE ON)
+endif()
+
 if(JUCE_DIR AND EXISTS "${JUCE_DIR}/CMakeLists.txt")
-    if(NOT TARGET juce::juce_core)
+    if(DIREKTDSP_GUI_STANDALONE AND NOT TARGET juce::juce_core)
         add_subdirectory("${JUCE_DIR}" "${CMAKE_BINARY_DIR}/DirektDSP_GUI_JUCE" EXCLUDE_FROM_ALL)
     endif()
 elseif(JUCE_DIR)
