@@ -5,37 +5,34 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # ── JUCE integration ─────────────────────────────────────────────────────────
-# juce::* targets (and examples/StandaloneTest) exist only when this points at a
-# JUCE checkout (the directory that contains JUCE's top-level CMakeLists.txt).
+# When embedded in a plugin repo, the parent must load JUCE once (see
+# cmake-local/DirektDSPGUI.cmake in PluginTemplate / BandGate). Do not rely on
+# the optional JUCE submodule in this folder for consumer builds.
 #
-# Default: the git submodule at ./JUCE (clone with: git submodule update --init).
-# Override any time: cmake -B build -DJUCE_DIR=/other/juce
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/JUCE/CMakeLists.txt")
-    set(_JUCE_DEFAULT "${CMAKE_CURRENT_SOURCE_DIR}/JUCE")
-else()
-    set(_JUCE_DEFAULT "")
-endif()
-set(JUCE_DIR "${_JUCE_DEFAULT}" CACHE PATH "Path to JUCE root — required to build examples/StandaloneTest")
-
-# Only load JUCE ourselves in standalone mode. When this module is consumed by a
-# parent project, JUCE should be provided once at the root to avoid duplicate
-# source/binary directory mappings.
-set(DIREKTDSP_GUI_STANDALONE OFF)
-if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-    set(DIREKTDSP_GUI_STANDALONE ON)
-endif()
-
-if(JUCE_DIR AND EXISTS "${JUCE_DIR}/CMakeLists.txt")
-    if(DIREKTDSP_GUI_STANDALONE AND NOT TARGET juce::juce_core)
+# Standalone development of DirektDSP_GUI only:
+#   cmake -B build -DJUCE_DIR=/path/to/JUCE
+# or initialize the optional submodule:
+#   git submodule update --init JUCE
+if(TARGET juce::juce_gui_basics)
+    message(STATUS "DirektDSP_GUI: using JUCE from parent project")
+elseif(JUCE_DIR AND EXISTS "${JUCE_DIR}/CMakeLists.txt")
+    if(NOT TARGET juce::juce_core)
         add_subdirectory("${JUCE_DIR}" "${CMAKE_BINARY_DIR}/DirektDSP_GUI_JUCE" EXCLUDE_FROM_ALL)
     endif()
-elseif(JUCE_DIR)
-    message(WARNING "JUCE_DIR=\"${JUCE_DIR}\" does not contain CMakeLists.txt — JUCE targets disabled.")
+    message(STATUS "DirektDSP_GUI: using JUCE from JUCE_DIR=${JUCE_DIR}")
+elseif(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/JUCE/CMakeLists.txt")
+    if(NOT TARGET juce::juce_core)
+        add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/JUCE"
+                           "${CMAKE_BINARY_DIR}/DirektDSP_GUI_JUCE" EXCLUDE_FROM_ALL)
+    endif()
+    message(STATUS "DirektDSP_GUI: using optional bundled JUCE submodule")
+else()
+    message(WARNING
+        "DirektDSP_GUI: JUCE not found. GUI library headers still export; "
+        "StandaloneTest and analysis targets that need JUCE are skipped.")
 endif()
 
 # ── Source files ──────────────────────────────────────────────────────────────
-# GLOB_RECURSE must not include the JUCE submodule or examples — they are separate
-# CMake projects; pulling them in would add thousands of .cpp files to consumers.
 file(GLOB_RECURSE DirektGUI_Sources CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
@@ -56,8 +53,6 @@ if(TARGET juce::juce_gui_basics)
 endif()
 
 # ── Static-analysis helper target ────────────────────────────────────────────
-# Compiles all translation units so that CMAKE_EXPORT_COMPILE_COMMANDS produces
-# a populated compile_commands.json for clang-tidy.
 add_library(DirektDSP_GUI_analysis OBJECT EXCLUDE_FROM_ALL)
 target_sources(DirektDSP_GUI_analysis PRIVATE ${DirektGUI_Sources})
 target_include_directories(DirektDSP_GUI_analysis PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -74,9 +69,7 @@ if(TARGET juce::juce_gui_basics)
     add_subdirectory(examples/StandaloneTest)
 else()
     message(NOTICE "")
-    message(NOTICE "  StandaloneTest example skipped (JUCE not loaded). If this repo has the JUCE submodule:")
-    message(NOTICE "    git submodule update --init")
-    message(NOTICE "  Then reconfigure, or set JUCE explicitly: cmake -B build -DJUCE_DIR=/path/to/JUCE")
-    message(NOTICE "  Build: cmake --build build --target StandaloneTest")
+    message(NOTICE "  StandaloneTest skipped (no JUCE). Parent plugin builds are unaffected.")
+    message(NOTICE "  For local GUI dev: cmake -B build -DJUCE_DIR=/path/to/JUCE")
     message(NOTICE "")
 endif()

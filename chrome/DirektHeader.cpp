@@ -34,6 +34,7 @@ DirektHeader::DirektHeader (juce::String pluginName, juce::Colour accentColour, 
     presetLabel.setFont (juce::Font (juce::FontOptions (13.0F)));
     presetLabel.setInterceptsMouseClicks (true, false);
     presetLabel.addMouseListener (this, false);
+    presetLabel.setTooltip ("Click to open preset browser");
     addAndMakeVisible (presetLabel);
 
     updatePresetName();
@@ -56,7 +57,9 @@ void DirektHeader::paint (juce::Graphics& g)
     auto nameArea = getLocalBounds().withWidth (160).withX (80);
     g.drawText (pluginName.toUpperCase(), nameArea, juce::Justification::centredLeft);
 
-    // Bottom divider
+    // Bottom divider (accent so preset strip reads inside the plugin panel)
+    g.setColour (accent.withAlpha (0.55f));
+    g.fillRect (getLocalBounds().removeFromBottom (2));
     g.setColour (Colours::divider);
     g.fillRect (getLocalBounds().removeFromBottom (1));
 }
