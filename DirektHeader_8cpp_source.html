@@ -135,79 +135,82 @@ $(document).ready(function(){initNavTree('DirektHeader_8cpp_source.html',''); in
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setFont (juce::Font (juce::FontOptions (13.0F)));</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setInterceptsMouseClicks (<span class="keyword">true</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.addMouseListener (<span class="keyword">this</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    addAndMakeVisible (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">updatePresetName</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setTooltip (<span class="stringliteral">&quot;Click to open preset browser&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    addAndMakeVisible (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">updatePresetName</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">DirektHeader::paint</a> (juce::Graphics&amp; g)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">auto</span> bounds = getLocalBounds().toFloat();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#a204938cf4d98a7f3cf42766099dc1e74">Colours::bgHeader</a>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    g.fillRect (bounds);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// Brand name</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#a83058fee648167fda2a41fd7bfb31be1">Colours::textDim</a>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    g.setFont (juce::Font (juce::FontOptions (11.0F).withStyle (<span class="stringliteral">&quot;Bold&quot;</span>)));</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    g.drawText (<span class="stringliteral">&quot;DirektDSP&quot;</span>, bounds.removeFromLeft (80.0F).toNearestInt(), juce::Justification::centred);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Plugin name</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    g.setColour (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a5610242ac5c825fdc5033cf7211e0825">accent</a>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    g.setFont (juce::Font (juce::FontOptions (15.0F).withStyle (<span class="stringliteral">&quot;Bold&quot;</span>)));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">auto</span> nameArea = getLocalBounds().withWidth (160).withX (80);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    g.drawText (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#aa274c7aa7c3763f431f9da3c75450078">pluginName</a>.toUpperCase(), nameArea, juce::Justification::centredLeft);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// Bottom divider</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#ae0fb6145a2a93a12f0ef8a0dd0df812b">Colours::divider</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    g.fillRect (getLocalBounds().removeFromBottom (1));</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">DirektHeader::paint</a> (juce::Graphics&amp; g)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">auto</span> bounds = getLocalBounds().toFloat();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#a204938cf4d98a7f3cf42766099dc1e74">Colours::bgHeader</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    g.fillRect (bounds);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Brand name</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#a83058fee648167fda2a41fd7bfb31be1">Colours::textDim</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    g.setFont (juce::Font (juce::FontOptions (11.0F).withStyle (<span class="stringliteral">&quot;Bold&quot;</span>)));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    g.drawText (<span class="stringliteral">&quot;DirektDSP&quot;</span>, bounds.removeFromLeft (80.0F).toNearestInt(), juce::Justification::centred);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// Plugin name</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    g.setColour (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a5610242ac5c825fdc5033cf7211e0825">accent</a>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    g.setFont (juce::Font (juce::FontOptions (15.0F).withStyle (<span class="stringliteral">&quot;Bold&quot;</span>)));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">auto</span> nameArea = getLocalBounds().withWidth (160).withX (80);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    g.drawText (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#aa274c7aa7c3763f431f9da3c75450078">pluginName</a>.toUpperCase(), nameArea, juce::Justification::centredLeft);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Bottom divider (accent so preset strip reads inside the plugin panel)</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    g.setColour (<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a5610242ac5c825fdc5033cf7211e0825">accent</a>.withAlpha (0.55f));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    g.fillRect (getLocalBounds().removeFromBottom (2));</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    g.setColour (<a class="code hl_variable" href="namespaceDirektDSP_1_1Colours.html#ae0fb6145a2a93a12f0ef8a0dd0df812b">Colours::divider</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    g.fillRect (getLocalBounds().removeFromBottom (1));</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">DirektHeader::resized</a>()</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> bounds = getLocalBounds();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">auto</span> rightArea = bounds.removeFromRight (bounds.getWidth() / 2);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">auto</span> presetArea = rightArea.reduced (4, 4);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a9e6c966540388eccfe3207b5af931540">prevBtn</a>.setBounds (presetArea.removeFromLeft (28));</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a5e4a8d2ab46e54633f0d0ad99fff5c5c">nextBtn</a>.setBounds (presetArea.removeFromRight (28));</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setBounds (presetArea);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">DirektHeader::resized</a>()</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">auto</span> bounds = getLocalBounds();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">auto</span> rightArea = bounds.removeFromRight (bounds.getWidth() / 2);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">auto</span> presetArea = rightArea.reduced (4, 4);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a9e6c966540388eccfe3207b5af931540">prevBtn</a>.setBounds (presetArea.removeFromLeft (28));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a5e4a8d2ab46e54633f0d0ad99fff5c5c">nextBtn</a>.setBounds (presetArea.removeFromRight (28));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setBounds (presetArea);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">DirektHeader::mouseDown</a> (<span class="keyword">const</span> juce::MouseEvent&amp; e)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (e.eventComponent == &amp;<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a> &amp;&amp; <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a1b26879eec916cb1abad853c6260b4de">onPresetLabelClicked</a>)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a1b26879eec916cb1abad853c6260b4de">onPresetLabelClicked</a>();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">DirektHeader::mouseDown</a> (<span class="keyword">const</span> juce::MouseEvent&amp; e)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (e.eventComponent == &amp;<a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a> &amp;&amp; <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a1b26879eec916cb1abad853c6260b4de">onPresetLabelClicked</a>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a1b26879eec916cb1abad853c6260b4de">onPresetLabelClicked</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">   83</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">DirektHeader::updatePresetName</a>()</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">auto</span> name = <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a9ec69118e43c506c630eb2b7e37dcbae">presetManager</a>.<a class="code hl_function" href="classService_1_1PresetManager.html#a93529821551dc70be909433a2f7bb627">getCurrentPreset</a>();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setText (name.isEmpty() ? <span class="stringliteral">&quot;Init&quot;</span> : name, juce::dontSendNotification);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">DirektHeader::updatePresetName</a>()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">auto</span> name = <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a9ec69118e43c506c630eb2b7e37dcbae">presetManager</a>.<a class="code hl_function" href="classService_1_1PresetManager.html#a93529821551dc70be909433a2f7bb627">getCurrentPreset</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_variable" href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">presetLabel</a>.setText (name.isEmpty() ? <span class="stringliteral">&quot;Init&quot;</span> : name, juce::dontSendNotification);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <span class="comment">// namespace DirektDSP</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>} <span class="comment">// namespace DirektDSP</span></div>
 <div class="ttc" id="aDirektHeader_8h_html"><div class="ttname"><a href="DirektHeader_8h.html">DirektHeader.h</a></div></div>
 <div class="ttc" id="aPresetManager_8h_html"><div class="ttname"><a href="PresetManager_8h.html">PresetManager.h</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a1b26879eec916cb1abad853c6260b4de"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a1b26879eec916cb1abad853c6260b4de">DirektDSP::DirektHeader::onPresetLabelClicked</a></div><div class="ttdeci">std::function&lt; void()&gt; onPresetLabelClicked</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00029">DirektHeader.h:29</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a5610242ac5c825fdc5033cf7211e0825"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a5610242ac5c825fdc5033cf7211e0825">DirektDSP::DirektHeader::accent</a></div><div class="ttdeci">juce::Colour accent</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00033">DirektHeader.h:33</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a5e4a8d2ab46e54633f0d0ad99fff5c5c"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a5e4a8d2ab46e54633f0d0ad99fff5c5c">DirektDSP::DirektHeader::nextBtn</a></div><div class="ttdeci">juce::TextButton nextBtn</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00036">DirektHeader.h:36</a></div></div>
-<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a611525121cb6cfe07be4a766453a9ba0"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">DirektDSP::DirektHeader::updatePresetName</a></div><div class="ttdeci">void updatePresetName()</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00083">DirektHeader.cpp:83</a></div></div>
+<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a611525121cb6cfe07be4a766453a9ba0"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a611525121cb6cfe07be4a766453a9ba0">DirektDSP::DirektHeader::updatePresetName</a></div><div class="ttdeci">void updatePresetName()</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00086">DirektHeader.cpp:86</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a61a234a7996bdad0c5a17f21bdaad030"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a61a234a7996bdad0c5a17f21bdaad030">DirektDSP::DirektHeader::DirektHeader</a></div><div class="ttdeci">DirektHeader(juce::String pluginName, juce::Colour accentColour, Service::PresetManager &amp;presetManager, juce::AudioProcessorValueTreeState &amp;)</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00010">DirektHeader.cpp:10</a></div></div>
-<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a631b4f3e1d4c726af5991e3b7af21eed"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">DirektDSP::DirektHeader::mouseDown</a></div><div class="ttdeci">void mouseDown(const juce::MouseEvent &amp;e) override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00075">DirektHeader.cpp:75</a></div></div>
-<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a7255368a67645916314c289bab95c7dc"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">DirektDSP::DirektHeader::resized</a></div><div class="ttdeci">void resized() override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00064">DirektHeader.cpp:64</a></div></div>
+<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a631b4f3e1d4c726af5991e3b7af21eed"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a631b4f3e1d4c726af5991e3b7af21eed">DirektDSP::DirektHeader::mouseDown</a></div><div class="ttdeci">void mouseDown(const juce::MouseEvent &amp;e) override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00078">DirektHeader.cpp:78</a></div></div>
+<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a7255368a67645916314c289bab95c7dc"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a7255368a67645916314c289bab95c7dc">DirektDSP::DirektHeader::resized</a></div><div class="ttdeci">void resized() override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00067">DirektHeader.cpp:67</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a876c5ac9c3e767a27a964bf64c88f7ab"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a876c5ac9c3e767a27a964bf64c88f7ab">DirektDSP::DirektHeader::presetLabel</a></div><div class="ttdeci">juce::Label presetLabel</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00037">DirektHeader.h:37</a></div></div>
-<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a9b825a34ff3acd7f18fb656db037ccfc"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">DirektDSP::DirektHeader::paint</a></div><div class="ttdeci">void paint(juce::Graphics &amp;g) override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00042">DirektHeader.cpp:42</a></div></div>
+<div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a9b825a34ff3acd7f18fb656db037ccfc"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a9b825a34ff3acd7f18fb656db037ccfc">DirektDSP::DirektHeader::paint</a></div><div class="ttdeci">void paint(juce::Graphics &amp;g) override</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8cpp_source.html#l00043">DirektHeader.cpp:43</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a9e6c966540388eccfe3207b5af931540"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a9e6c966540388eccfe3207b5af931540">DirektDSP::DirektHeader::prevBtn</a></div><div class="ttdeci">juce::TextButton prevBtn</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00035">DirektHeader.h:35</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_a9ec69118e43c506c630eb2b7e37dcbae"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#a9ec69118e43c506c630eb2b7e37dcbae">DirektDSP::DirektHeader::presetManager</a></div><div class="ttdeci">Service::PresetManager &amp; presetManager</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00039">DirektHeader.h:39</a></div></div>
 <div class="ttc" id="aclassDirektDSP_1_1DirektHeader_html_aa274c7aa7c3763f431f9da3c75450078"><div class="ttname"><a href="classDirektDSP_1_1DirektHeader.html#aa274c7aa7c3763f431f9da3c75450078">DirektDSP::DirektHeader::pluginName</a></div><div class="ttdeci">juce::String pluginName</div><div class="ttdef"><b>Definition</b> <a href="DirektHeader_8h_source.html#l00032">DirektHeader.h:32</a></div></div>
