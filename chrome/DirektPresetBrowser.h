@@ -2,7 +2,7 @@
 #include <juce_gui_basics/juce_gui_basics.h>
 
 #include <functional>
-#include <unordered_set>
+#include <set>
 
 #include "theme/DirektColours.h"
 
@@ -124,7 +124,7 @@ private:
     juce::TextButton deleteBtn{"Delete"};
     juce::TextButton moveBtn{"Move"};
     juce::TextButton newCatBtn{"New Category"};
-    std::unordered_set<std::string> favoritePresetKeys;
+    std::set<juce::String> favoritePresetKeys;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DirektPresetBrowser)
 };

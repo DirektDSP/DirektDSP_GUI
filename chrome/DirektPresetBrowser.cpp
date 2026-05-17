@@ -62,7 +62,9 @@ void DirektPresetBrowser::PresetListModel::paintListBoxItem (int row, juce::Grap
     auto const favorite = isFavorite && isFavorite (entry);
     g.setColour (favorite ? Colours::textBright : Colours::textDim);
     g.setFont (juce::Font (juce::FontOptions (14.0F)));
-    g.drawText (favorite ? "★" : "☆", width - 24, 0, 16, height, juce::Justification::centred);
+    g.drawText (favorite ? juce::String (juce::CharPointer_UTF8 ("\xe2\x98\x85"))
+                        : juce::String (juce::CharPointer_UTF8 ("\xe2\x98\x86")),
+                width - 24, 0, 16, height, juce::Justification::centred);
 }
 
 void DirektPresetBrowser::PresetListModel::listBoxItemClicked (int row, const juce::MouseEvent& event)
@@ -231,8 +233,7 @@ void DirektPresetBrowser::refreshPresets()
         }
         if (selectedCategoryOrTag == "Favorites")
         {
-            auto const key = makeFavoriteKey (item.name, item.category).toStdString();
-            return favoritePresetKeys.find (key) != favoritePresetKeys.end();
+            return favoritePresetKeys.count (makeFavoriteKey (item.name, item.category)) > 0;
         }
         if (selectedCategoryOrTag.startsWithChar ('#'))
             return item.category == selectedCategoryOrTag.substring (1);
@@ -309,15 +310,11 @@ void DirektPresetBrowser::onFavoriteToggleRequested (int row)
     }
 
     auto const& entry = presetModel.presets[static_cast<size_t> (row)];
-    auto const key = makeFavoriteKey (entry.name, entry.category).toStdString();
-    if (favoritePresetKeys.find (key) != favoritePresetKeys.end())
-    {
+    const auto key = makeFavoriteKey (entry.name, entry.category);
+    if (favoritePresetKeys.count (key) > 0)
         favoritePresetKeys.erase (key);
-    }
     else
-    {
         favoritePresetKeys.insert (key);
-    }
 
     saveFavorites();
     presetList.repaint();
@@ -388,8 +385,7 @@ void DirektPresetBrowser::doDelete()
                                  if (result == 1)
                                  {
                                      presetManager.deletePreset (nameToDelete, catToDelete);
-                                     favoritePresetKeys.erase (
-                                         makeFavoriteKey (nameToDelete, catToDelete).toStdString());
+                                     favoritePresetKeys.erase (makeFavoriteKey (nameToDelete, catToDelete));
                                      saveFavorites();
                                      refreshCategories();
                                      refreshPresets();
@@ -431,12 +427,11 @@ void DirektPresetBrowser::doMove()
                                      if (toCat.isNotEmpty() && toCat != fromCat)
                                      {
                                          presetManager.movePresetToCategory (presetName, fromCat, toCat);
-                                         auto const oldKey = makeFavoriteKey (presetName, fromCat).toStdString();
-                                         if (favoritePresetKeys.find (oldKey) != favoritePresetKeys.end())
+                                         const auto oldKey = makeFavoriteKey (presetName, fromCat);
+                                         if (favoritePresetKeys.count (oldKey) > 0)
                                          {
                                              favoritePresetKeys.erase (oldKey);
-                                             favoritePresetKeys.insert (
-                                                 makeFavoriteKey (presetName, toCat).toStdString());
+                                             favoritePresetKeys.insert (makeFavoriteKey (presetName, toCat));
                                              saveFavorites();
                                          }
                                          refreshCategories();
@@ -480,8 +475,7 @@ juce::String DirektPresetBrowser::makeFavoriteKey (const juce::String& name, con
 
 bool DirektPresetBrowser::isFavorite (const PresetEntry& entry) const
 {
-    return favoritePresetKeys.find (makeFavoriteKey (entry.name, entry.category).toStdString()) !=
-           favoritePresetKeys.end();
+    return favoritePresetKeys.count (makeFavoriteKey (entry.name, entry.category)) > 0;
 }
 
 void DirektPresetBrowser::loadFavorites()
@@ -509,7 +503,7 @@ void DirektPresetBrowser::loadFavorites()
         auto key = value.toString().trim();
         if (key.isNotEmpty())
         {
-            favoritePresetKeys.insert (key.toStdString());
+            favoritePresetKeys.insert (key);
         }
     }
 }
@@ -519,7 +513,7 @@ void DirektPresetBrowser::saveFavorites() const
     juce::Array<juce::var> data;
     for (auto const& key : favoritePresetKeys)
     {
-        data.add (juce::String (key));
+        data.add (key);
     }
 
     auto favoritesFile = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
