@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['favoritepresetkeys_0',['favoritePresetKeys',['../classDirektDSP_1_1DirektPresetBrowser.html#ab1f460d035103663af04edbc7b264483',1,'DirektDSP::DirektPresetBrowser']]],
+  ['favoritepresetkeys_0',['favoritePresetKeys',['../classDirektDSP_1_1DirektPresetBrowser.html#a17b4954e3079aebcc527ca308449616d',1,'DirektDSP::DirektPresetBrowser']]],
   ['findcomponentbyid_1',['findComponentByID',['../classDirektDSP_1_1DirektBaseEditor.html#a2e3ee3c20a28282dc7fa567fcc23acf0',1,'DirektDSP::DirektBaseEditor']]],
   ['findsection_2',['findSection',['../classDirektDSP_1_1DirektBaseEditor.html#a23667c00ee170dfc17aa836207f58f5d',1,'DirektDSP::DirektBaseEditor']]],
   ['flex_3',['flex',['../structDirektDSP_1_1SizeHint.html#aa8c7d1b3b2198ba01e1356d35fee96b5',1,'DirektDSP::SizeHint']]],

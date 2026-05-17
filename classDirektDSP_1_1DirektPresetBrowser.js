@@ -26,7 +26,7 @@ var classDirektDSP_1_1DirektPresetBrowser =
     [ "categoryList", "classDirektDSP_1_1DirektPresetBrowser.html#adbcf040fc4d21ee980f8fd32e0360aa9", null ],
     [ "categoryModel", "classDirektDSP_1_1DirektPresetBrowser.html#a95fb72f0443911afc18abee3d09c46c0", null ],
     [ "deleteBtn", "classDirektDSP_1_1DirektPresetBrowser.html#ad46b7f8c9c02f47c12c979ab34d396e8", null ],
-    [ "favoritePresetKeys", "classDirektDSP_1_1DirektPresetBrowser.html#ab1f460d035103663af04edbc7b264483", null ],
+    [ "favoritePresetKeys", "classDirektDSP_1_1DirektPresetBrowser.html#a17b4954e3079aebcc527ca308449616d", null ],
     [ "moveBtn", "classDirektDSP_1_1DirektPresetBrowser.html#af0f6ee1b391c1c21982f658dfb522f11", null ],
     [ "newCatBtn", "classDirektDSP_1_1DirektPresetBrowser.html#ac6f1f9a3c2e6520f5b77430bafc47b58", null ],
     [ "onPresetLoaded", "classDirektDSP_1_1DirektPresetBrowser.html#a16ab500c3712036c608446f2fd02310e", null ],

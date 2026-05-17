@@ -1,12 +1,12 @@
 <map id="chrome/DirektPresetBrowser.h" name="chrome/DirektPresetBrowser.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="20,5,240,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="95,152,250,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,33,54,45,26,62,16,71,10,81,9,91,13,103,27,119,44,132,83,151,81,156,41,137,23,123,9,105,3,92,5,79,11,68,22,57,52,41,85,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="24,79,110,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,33,88,70,84,66,117,29"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="135,79,250,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,29,175,66,171,70,138,33"/>
-<area shape="rect" id="Node000005" href="$DirektColours_8h.html" title=" " alt="" coords="274,79,444,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="167,28,310,72,308,77,166,33"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="333,106,231,149,229,144,331,102"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,225,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="63,152,218,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,33,54,46,29,62,15,82,14,92,18,103,38,126,65,144,62,148,35,130,13,105,8,92,10,80,25,59,51,41,80,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="28,79,115,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,32,88,68,83,66,106,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="139,79,182,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="125,30,148,66,144,69,121,32"/>
+<area shape="rect" id="Node000005" href="$DirektColours_8h.html" title=" " alt="" coords="207,79,376,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="145,28,251,71,249,76,143,33"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="270,107,190,148,188,143,268,102"/>
 </map>
