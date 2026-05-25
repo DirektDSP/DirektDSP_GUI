@@ -23,10 +23,18 @@ inline const juce::Colour knobTrack{0xff404048};
 inline const juce::Colour knobPointer{0xffe8e8ec};
 
 // --- Per-plugin accents ---
-inline const juce::Colour accentCyan{0xff00d4ff};   // Pneumatica
-inline const juce::Colour accentRed{0xffff2244};    // Hydraulica
-inline const juce::Colour accentOrange{0xffff8c1a}; // Mechanica
-inline const juce::Colour accentBlue{0xff4488ff};   // Electrica
+// Each DirektDSP plugin owns one accent. Picked so adjacent plugins on the
+// same page stay visually distinct under a dark UI; H spacing keeps them
+// >= 45 degrees apart on the colour wheel.
+inline const juce::Colour accentCyan{0xff00d4ff};      // Pneumatica
+inline const juce::Colour accentRed{0xffff2244};       // Hydraulica
+inline const juce::Colour accentOrange{0xffff8c1a};    // Mechanica
+inline const juce::Colour accentBlue{0xff4488ff};      // Electrica
+inline const juce::Colour accentBandGate{0xff6ee7b7};  // BandGate (cool mint-green)
+
+// --- Semantic states (shared across plugins) ---
+inline const juce::Colour soloAmber{0xffffb84d};
+inline const juce::Colour muteRed{0xffff5a5a};
 
 // --- Misc ---
 inline const juce::Colour divider{0xff3a3a42};
